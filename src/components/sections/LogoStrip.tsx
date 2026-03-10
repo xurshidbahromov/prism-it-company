@@ -10,17 +10,17 @@ export function LogoStrip() {
     ];
 
     return (
-        <section className="py-12 border-y border-border/50 bg-background/50">
+        <section className="py-12 border-y border-foreground/10 bg-background transition-colors">
             <Container>
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                     <p className="text-sm font-semibold tracking-widest text-text-muted uppercase shrink-0">
-                        Choice of market leaders
+                        Trusted by industry innovators
                     </p>
                     <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 w-full opacity-50 grayscale">
                         {logos.map((logo, index) => (
                             <div
                                 key={index}
-                                className="text-xl font-heading font-bold text-text-muted hover:text-white transition-colors duration-300"
+                                className="text-xl font-heading font-bold text-foreground/40 hover:text-foreground transition-all duration-300 transform hover:scale-105 cursor-default"
                             >
                                 {logo}
                             </div>

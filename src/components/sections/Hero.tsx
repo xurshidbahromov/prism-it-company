@@ -7,7 +7,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 // Assuming you have simple SVG logos in LogoStrip, we can inline or import it.
 // We'll build a custom logo section to match the screenshot perfectly.
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiFigma } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiFigma, SiNodedotjs, SiPython, SiPostgresql, SiOpenai } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
 export function Hero() {
     const shouldReduceMotion = useReducedMotion();
@@ -43,20 +44,26 @@ export function Hero() {
     };
 
     return (
-        <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden bg-[#05050A]">
+        <section id="top" className="relative pt-44 pb-20 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden bg-background">
 
-            {/* Glowing Backgrounds (SURA Style) */}
+            {/* Glowing Backgrounds (Adaptive & Ultra-Vivid for Blur Visibility) */}
             {/* Left Huge Blue Glow */}
-            <div className="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] bg-blue-600/40 blur-[150px] rounded-full pointer-events-none mix-blend-screen"></div>
+            <div className="absolute top-[-15%] left-[-10%] w-[1000px] h-[1000px] bg-blue-600/30 blur-[180px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000 opacity-80"></div>
 
-            {/* Right Subtle Glow */}
-            <div className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen"></div>
+            {/* Right Vibrant Magenta/Purple Glow — Specifically for refractive glass test */}
+            <div className="absolute top-[-5%] right-[-10%] w-[800px] h-[800px] bg-purple-600/25 blur-[150px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000 opacity-90"></div>
+
+            {/* Neon Orange Glow — High contrast for blur visibility */}
+            <div className="absolute top-[-25%] left-[15%] w-[600px] h-[400px] bg-amber-500/15 blur-[140px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000"></div>
+
+            {/* Electric Cyan Glow */}
+            <div className="absolute top-[-10%] left-[60%] w-[500px] h-[500px] bg-cyan-400/20 blur-[130px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000"></div>
 
             {/* Custom Cursor SVG component (reusable inline) */}
             {/* Badge 1 — Frontend Expert (Top Left) */}
             <motion.div
                 animate={floatAnimation}
-                className="absolute top-[18%] left-[1%] xl:left-[2%] hidden xl:flex items-center gap-3 bg-white/8 backdrop-blur-xl border border-white/15 text-white pl-2 pr-5 py-2 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.4)] hover-trigger z-10 group"
+                className="absolute top-[18%] left-[1%] xl:left-[2%] hidden xl:flex items-center gap-3 bg-background/40 backdrop-blur-xl border border-foreground/10 text-foreground pl-2 pr-5 py-2 rounded-2xl shadow-[0_8px_40px_var(--aero-shadow)] hover-trigger z-10 group"
             >
                 {/* Initials avatar */}
                 <div className="relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center ring-2 ring-white/10 overflow-hidden">
@@ -67,11 +74,11 @@ export function Hero() {
 
                 </div>
                 <div className="flex flex-col leading-none">
-                    <span className="text-sm font-semibold text-white">Alex Chen</span>
-                    <span className="text-xs text-white/50 mt-0.5">Frontend Expert · 120+ projects</span>
+                    <span className="text-sm font-semibold text-foreground">Alex Chen</span>
+                    <span className="text-xs text-foreground/50 mt-0.5">Frontend Expert · 120+ projects</span>
                 </div>
                 {/* Code cursor icon for Frontend */}
-                <svg className="absolute -right-4 -bottom-4 w-6 h-6 drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)] select-none pointer-events-none text-blue-300 bg-[#05050A] rounded-full p-1 ring-1 ring-white/10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="absolute -right-4 -bottom-4 w-6 h-6 drop-shadow-[0_4px_8px_var(--aero-shadow)] select-none pointer-events-none text-blue-300 bg-background rounded-full p-1 ring-1 ring-foreground/10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 17L22 12L17 7M7 7L2 12L7 17M14 3L10 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </motion.div>
@@ -79,10 +86,10 @@ export function Hero() {
             {/* Badge 2 — UI/UX Expert (Right Mid) */}
             <motion.div
                 animate={floatAnimationDelayed}
-                className="absolute top-[48%] right-[1%] xl:right-[2%] hidden xl:flex items-center gap-3 bg-white/8 backdrop-blur-xl border border-white/15 text-white pl-2 pr-5 py-2 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.4)] hover-trigger z-10"
+                className="absolute top-[48%] right-[1%] xl:right-[2%] hidden xl:flex items-center gap-3 bg-background/40 backdrop-blur-xl border border-foreground/10 text-foreground pl-2 pr-5 py-2 rounded-2xl shadow-[0_8px_40px_var(--aero-shadow)] hover-trigger z-10"
             >
                 {/* Git branch cursor icon for Figma designer */}
-                <svg className="absolute -left-4 -top-3 w-6 h-6 drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)] select-none pointer-events-none text-purple-300 bg-[#05050A] rounded-full p-1 ring-1 ring-white/10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="absolute -left-4 -top-3 w-6 h-6 drop-shadow-[0_4px_8px_var(--aero-shadow)] select-none pointer-events-none text-purple-300 bg-background rounded-full p-1 ring-1 ring-foreground/10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 7L3 7M21 7L14 7M14 7.25195C17.4505 8.14004 20 11.2722 20 14.9999M4 14.9999C4 11.2722 6.54955 8.14004 10 7.25195M3.6 19H4.4C4.96005 19 5.24008 19 5.45399 18.891C5.64215 18.7951 5.79513 18.6422 5.89101 18.454C6 18.2401 6 17.9601 6 17.4V16.6C6 16.0399 6 15.7599 5.89101 15.546C5.79513 15.3578 5.64215 15.2049 5.45399 15.109C5.24008 15 4.96005 15 4.4 15H3.6C3.03995 15 2.75992 15 2.54601 15.109C2.35785 15.2049 2.20487 15.3578 2.10899 15.546C2 15.7599 2 16.0399 2 16.6V17.4C2 17.9601 2 18.2401 2.10899 18.454C2.20487 18.6422 2.35785 18.7951 2.54601 18.891C2.75992 19 3.03995 19 3.6 19ZM11.6 9H12.4C12.9601 9 13.2401 9 13.454 8.89101C13.6422 8.79513 13.7951 8.64215 13.891 8.45399C14 8.24008 14 7.96005 14 7.4V6.6C14 6.03995 14 5.75992 13.891 5.54601C13.7951 5.35785 13.6422 5.20487 13.454 5.10899C13.2401 5 12.9601 5 12.4 5H11.6C11.0399 5 10.7599 5 10.546 5.10899C10.3578 5.20487 10.2049 5.35785 10.109 5.54601C10 5.75992 10 6.03995 10 6.6V7.4C10 7.96005 10 8.24008 10.109 8.45399C10.2049 8.64215 10.3578 8.79513 10.546 8.89101C10.7599 9 11.0399 9 11.6 9ZM19.6 19H20.4C20.9601 19 21.2401 19 21.454 18.891C21.6422 18.7951 21.7951 18.6422 21.891 18.454C22 18.2401 22 17.9601 22 17.4V16.6C22 16.0399 22 15.7599 21.891 15.546C21.7951 15.3578 21.6422 15.2049 21.454 15.109C21.2401 15 20.9601 15 20.4 15H19.6C19.0399 15 18.7599 15 18.546 15.109C18.3578 15.2049 18.2049 15.3578 18.109 15.546C18 15.7599 18 16.0399 18 16.6V17.4C18 17.9601 18 18.2401 18.109 18.454C18.2049 18.6422 18.3578 18.7951 18.546 18.891C18.7599 19 19.0399 19 19.6 19ZM22 7C22 7.55228 21.5523 8 21 8C20.4477 8 20 7.55228 20 7C20 6.44772 20.4477 6 21 6C21.5523 6 22 6.44772 22 7ZM4 7C4 7.55228 3.55228 8 3 8C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6C3.55228 6 4 6.44772 4 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <div className="relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center ring-2 ring-white/10 overflow-hidden">
@@ -93,15 +100,15 @@ export function Hero() {
 
                 </div>
                 <div className="flex flex-col leading-none">
-                    <span className="text-sm font-semibold text-white">Sara Kim</span>
-                    <span className="text-xs text-white/50 mt-0.5">UI/UX Expert · Figma wizard</span>
+                    <span className="text-sm font-semibold text-foreground">Sara Kim</span>
+                    <span className="text-xs text-foreground/50 mt-0.5">UI/UX Expert · Figma wizard</span>
                 </div>
             </motion.div>
 
             {/* Badge 3 — Backend Expert (Left Lower) */}
             <motion.div
                 animate={floatAnimationDelayed2}
-                className="absolute top-[62%] left-[1%] xl:left-[2%] hidden xl:flex items-center gap-3 bg-white/8 backdrop-blur-xl border border-white/15 text-white pl-2 pr-5 py-2 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.4)] hover-trigger z-10"
+                className="absolute top-[62%] left-[1%] xl:left-[2%] hidden xl:flex items-center gap-3 bg-background/40 backdrop-blur-xl border border-foreground/10 text-foreground pl-2 pr-5 py-2 rounded-2xl shadow-[0_8px_40px_var(--aero-shadow)] hover-trigger z-10"
             >
                 <div className="relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-slate-700 flex items-center justify-center ring-2 ring-white/10 overflow-hidden">
                     <svg className="w-8 h-8 text-white/60 mt-1" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -111,11 +118,11 @@ export function Hero() {
 
                 </div>
                 <div className="flex flex-col leading-none">
-                    <span className="text-sm font-semibold text-white">James L.</span>
-                    <span className="text-xs text-white/50 mt-0.5">Backend Expert · Node / Go</span>
+                    <span className="text-sm font-semibold text-foreground">James L.</span>
+                    <span className="text-xs text-foreground/50 mt-0.5">Backend Expert · Node / Go</span>
                 </div>
                 {/* Code cursor icon for Backend */}
-                <svg className="absolute -right-4 -bottom-4 w-6 h-6 drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)] select-none pointer-events-none text-cyan-300 bg-[#05050A] rounded-full p-1 ring-1 ring-white/10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="absolute -right-4 -bottom-4 w-6 h-6 drop-shadow-[0_4px_8px_var(--aero-shadow)] select-none pointer-events-none text-cyan-300 bg-background rounded-full p-1 ring-1 ring-foreground/10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 17L22 12L17 7M7 7L2 12L7 17M14 3L10 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </motion.div>
@@ -127,10 +134,10 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full mb-10 shadow-[0_0_30px_rgba(255,255,255,0.1)] hover-trigger"
+                    className="flex items-center gap-2 bg-foreground px-5 py-2.5 rounded-full mb-10 shadow-[0_0_30px_var(--aero-shadow)] hover-trigger"
                 >
                     <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
-                    <span className="text-black text-sm font-semibold tracking-tight">
+                    <span className="text-background text-sm font-semibold tracking-tight">
                         Join +50 enterprise clients scaling with our engineering.
                     </span>
                 </motion.div>
@@ -140,9 +147,9 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl sm:text-6xl md:text-[76px] lg:text-[84px] font-heading font-medium text-white mb-6 tracking-tight leading-[1.1] max-w-5xl"
+                    className="text-5xl sm:text-6xl md:text-[76px] lg:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-5xl"
                 >
-                    We Build The <span className="font-script italic font-light text-white/[0.95] text-[1.1em] px-2">Software</span> That <br className="hidden sm:block" />
+                    We Build The <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">Software</span> That <br className="hidden sm:block" />
                     Transforms Businesses.
                 </motion.h1>
 
@@ -151,7 +158,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-lg md:text-[20px] font-light text-white/50 mb-12 leading-relaxed max-w-[700px]"
+                    className="text-lg md:text-[20px] font-light text-foreground/60 mb-12 leading-relaxed max-w-[700px]"
                 >
                     We partner with ambitious brands to engineer high-performing
                     technological solutions and digital products that turn visions into reality.
@@ -179,7 +186,7 @@ export function Hero() {
                     <Link href="/work" tabIndex={-1} className="w-full sm:w-auto hover-trigger">
                         <Button
                             variant="secondary"
-                            className="w-full sm:w-auto px-8 py-6 rounded-full text-base font-medium border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-300"
+                            className="w-full sm:w-auto px-8 py-6 rounded-full text-base font-medium border border-foreground/20 text-foreground bg-transparent hover:bg-foreground/5 transition-all duration-300"
                         >
                             View Case Studies
                         </Button>
@@ -193,17 +200,33 @@ export function Hero() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="w-full max-w-5xl flex flex-col items-center"
                 >
-                    <p className="text-white/60 text-sm font-medium mb-6">
-                        Powered by Industry-Leading Technologies
+                    <p className="text-sm font-semibold tracking-widest text-foreground/40 uppercase shrink-0">
+                        Full-Stack & AI Infrastructure
                     </p>
 
-                    <div className="w-full flex flex-wrap justify-center items-center gap-8 md:gap-14 bg-white/5 border border-white/10 backdrop-blur-md rounded-full px-8 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover-trigger">
-                        <SiReact className="w-16 h-8 md:w-20 md:h-10 text-white/60 hover:text-[#61DAFB] transition-colors" />
-                        <SiNextdotjs className="w-16 h-8 md:w-20 md:h-10 text-white/60 hover:text-white transition-colors" />
-                        <SiTypescript className="w-16 h-8 md:w-20 md:h-10 text-white/60 hover:text-[#3178C6] transition-colors" />
-                        <SiTailwindcss className="w-16 h-8 md:w-20 md:h-10 text-white/60 hover:text-[#06B6D4] transition-colors" />
-                        <SiVercel className="w-16 h-8 md:w-20 md:h-10 text-white/60 hover:text-white transition-colors" />
-                        <SiFigma className="w-16 h-8 md:w-20 md:h-10 text-white/60 hover:text-[#F24E1E] transition-colors" />
+                    <div className="w-full flex flex-wrap justify-center items-center gap-6 md:gap-10 bg-background/5 border border-foreground/10 backdrop-blur-md rounded-[32px] px-8 py-6 shadow-[0_10px_40px_var(--aero-shadow)] hover-trigger">
+                        <div className="flex items-center gap-8 md:gap-12 flex-wrap justify-center">
+                            {/* Frontend */}
+                            <div className="flex items-center gap-6 border-r border-foreground/10 pr-8">
+                                <SiNextdotjs className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-foreground transition-colors" />
+                                <SiReact className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#61DAFB] transition-colors" />
+                                <SiTypescript className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3178C6] transition-colors" />
+                            </div>
+
+                            {/* Backend & DB */}
+                            <div className="flex items-center gap-6 border-r border-foreground/10 pr-8">
+                                <SiNodedotjs className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#339933] transition-colors" />
+                                <SiPython className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3776AB] transition-colors" />
+                                <SiPostgresql className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#4169E1] transition-colors" />
+                            </div>
+
+                            {/* AI & Cloud */}
+                            <div className="flex items-center gap-6">
+                                <SiOpenai className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#412991] transition-colors" />
+                                <FaAws className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#FF9900] transition-colors" />
+                                <SiFigma className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#F24E1E] transition-colors" />
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
 

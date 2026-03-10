@@ -1,88 +1,120 @@
+"use client";
+
 import { Container } from "@/components/layout/Container";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
-import { PenTool, Code2, Zap, ArrowRight } from "lucide-react";
+import { PenTool, Code2, Cpu, Cloud, ArrowRight } from "lucide-react";
+import { SiOpenai } from "react-icons/si";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/cn";
 
 export function Services() {
+    const services = [
+        {
+            title: "UI/UX Design",
+            description: "Human-centered interfaces built on behavioral psychology to maximize user retention.",
+            Icon: PenTool,
+            href: "/expertise#creative-design",
+        },
+        {
+            title: "Full-Stack Dev",
+            description: "Resilient, horizontally scalable applications engineered with modern type-safe engines.",
+            Icon: Code2,
+            href: "/expertise#full-stack",
+        },
+        {
+            title: "AI Integration",
+            description: "Custom LLM workflows and autonomous agents designed for measurable business impact.",
+            Icon: Cpu,
+            href: "/expertise#ai-automation",
+        },
+        {
+            title: "Cloud Systems",
+            description: "High-uptime infrastructure with automated CI/CD and zero-trust security protocols.",
+            Icon: Cloud,
+            href: "/expertise#cloud-infra",
+        },
+    ];
+
     return (
-        <section id="services" className="bg-[#05050A] pt-24 pb-32 relative z-10 overflow-hidden">
-            {/* Soft background glow */}
-            <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+        <section id="services" className="bg-background pt-32 pb-40 relative z-10 overflow-hidden border-t border-foreground/5">
+            {/* Minimal Background — No heavy glows */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent"></div>
 
             <Container>
-                <div className="mb-20 max-w-3xl">
-                    <h2 className="text-4xl md:text-5xl lg:text-[64px] font-heading font-medium text-white tracking-tight leading-[1.1] mb-6">
-                        Services That Scale Your <br />
-                        <span className="font-bold">Business</span>
-                    </h2>
-                    <p className="text-lg text-white/50 font-light max-w-lg leading-relaxed">
-                        From concept to launch, we provide end-to-end solutions that drive measurable results.
-                    </p>
+                <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div className="max-w-2xl">
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-4 block"
+                        >
+                            Capabilities
+                        </motion.span>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.05]"
+                        >
+                            Services built for <br />
+                            high-growth <span className="text-foreground/40">ventures.</span>
+                        </motion.h2>
+                    </div>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <Link href="/expertise" className="group flex items-center gap-2 text-sm font-medium text-foreground/50 hover:text-foreground transition-colors">
+                            View all expertise
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </motion.div>
                 </div>
 
-                {/* SURA Style Glowing Cards Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-                    {/* Left Tall Card: UI/UX Design */}
-                    <SpotlightCard className="col-span-1 lg:row-span-2 flex flex-col justify-between p-10 lg:p-14 group border-white/[0.08] bg-white/[0.02]">
-                        <div className="w-full flex justify-center items-center py-16 mb-8 relative">
-                            {/* Inner Glow */}
-                            <div className="absolute inset-0 bg-blue-500/20 blur-[60px] rounded-full scale-50 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
-
-                            {/* Hexagon/Icon Container */}
-                            <div className="relative z-10 w-48 h-48 border border-blue-400/30 bg-blue-900/10 backdrop-blur-sm rounded-[2rem] rotate-12 flex items-center justify-center shadow-[0_0_50px_rgba(59,130,246,0.2)] group-hover:rotate-0 transition-all duration-700 ease-out">
-                                <PenTool className="w-20 h-20 text-blue-400 drop-shadow-[0_0_15px_rgba(96,165,250,0.8)]" strokeWidth={1} />
+                {/* Minimal 4-Column Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/5 border border-foreground/5 rounded-[32px] overflow-hidden">
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group relative bg-background p-10 lg:p-12 flex flex-col justify-between hover:bg-foreground/[0.01] transition-colors duration-500"
+                        >
+                            {/* Subtle Mist Glass Hover Effect */}
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
+                                <div className="absolute inset-0 bg-foreground/[0.02] backdrop-blur-[12px]"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] to-transparent"></div>
                             </div>
-                        </div>
 
-                        <div>
-                            <h4 className="text-2xl lg:text-3xl font-heading font-medium mb-4 text-white">UI/UX Design</h4>
-                            <p className="text-base text-white/50 font-light leading-relaxed mb-8">
-                                Beautiful, intuitive interfaces designed to engage users and drive conversions.
-                            </p>
-                            <Link href="/expertise" className="inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors group/link border border-white/10 rounded-full px-6 py-3 hover:bg-white/5">
-                                View Details
-                                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                            </Link>
-                        </div>
-                    </SpotlightCard>
+                            <div className="relative z-10">
+                                <div className="mb-12">
+                                    <service.Icon className="w-8 h-8 text-foreground/40 group-hover:text-foreground transition-colors duration-500" strokeWidth={1} />
+                                </div>
+                                <h4 className="text-xl font-heading font-medium mb-4 text-foreground tracking-tight">
+                                    {service.title}
+                                </h4>
+                                <p className="text-sm text-foreground/40 leading-relaxed font-light group-hover:text-foreground/60 transition-colors duration-500">
+                                    {service.description}
+                                </p>
+                            </div>
 
-                    {/* Right Top Card: Performance */}
-                    <SpotlightCard className="col-span-1 flex flex-col sm:flex-row justify-between p-10 lg:p-12 group border-white/[0.08] bg-white/[0.02]">
-                        <div className="flex-1 order-2 sm:order-1 mt-8 sm:mt-0">
-                            <h4 className="text-2xl font-heading font-medium mb-4 text-white">Performance Optimization</h4>
-                            <p className="text-base text-white/50 font-light leading-relaxed mb-8 max-w-xs">
-                                Lightning-fast websites optimized for speed, SEO, and user experience.
-                            </p>
-                            <Link href="/expertise" className="inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors group/link border border-white/10 rounded-full px-6 py-3 hover:bg-white/5">
-                                View Details
-                                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                            </Link>
-                        </div>
-                        <div className="w-32 h-32 shrink-0 flex items-center justify-center order-1 sm:order-2 relative ml-auto">
-                            <div className="absolute inset-0 bg-cyan-500/20 blur-[40px] rounded-full scale-50 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
-                            <Zap className="relative z-10 w-16 h-16 text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.8)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
-                        </div>
-                    </SpotlightCard>
-
-                    {/* Right Bottom Card: Web Dev */}
-                    <SpotlightCard className="col-span-1 flex flex-col sm:flex-row justify-between p-10 lg:p-12 group border-white/[0.08] bg-white/[0.02]">
-                        <div className="flex-1 order-2 sm:order-1 mt-8 sm:mt-0">
-                            <h4 className="text-2xl font-heading font-medium mb-4 text-white">Web Development</h4>
-                            <p className="text-base text-white/50 font-light leading-relaxed mb-8 max-w-xs">
-                                Custom websites and web applications built with cutting-edge technologies for optimal performance.
-                            </p>
-                            <Link href="/expertise" className="inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors group/link border border-white/10 rounded-full px-6 py-3 hover:bg-white/5">
-                                View Details
-                                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                            </Link>
-                        </div>
-                        <div className="w-32 h-32 shrink-0 flex items-center justify-center order-1 sm:order-2 relative ml-auto">
-                            <div className="absolute inset-0 bg-blue-500/20 blur-[40px] rounded-full scale-50 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
-                            <Code2 className="relative z-10 w-20 h-20 text-blue-400 drop-shadow-[0_0_15px_rgba(96,165,250,0.8)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
-                        </div>
-                    </SpotlightCard>
-
+                            <div className="relative z-10 mt-12 pt-8 border-t border-foreground/5 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                                <Link
+                                    href={service.href}
+                                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-foreground/70 hover:text-foreground"
+                                >
+                                    Learn More
+                                    <ArrowRight className="w-3 h-3" />
+                                </Link>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </Container>
         </section>

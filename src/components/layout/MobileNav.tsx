@@ -50,15 +50,15 @@ export function MobileNav() {
                     exit={{ y: 100, opacity: 0 }}
                     className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:hidden w-[calc(100%-48px)] max-w-sm"
                 >
-                    {/* SVG Filter for Liquid/Gooey effect */}
+                    {/* SVG Filters for Liquid/Gooey effects — Precision Solid Physics */}
                     <svg className="invisible absolute w-0 h-0 pointer-events-none" aria-hidden="true">
                         <defs>
                             <filter id="mobile-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
                                 <feColorMatrix
                                     in="blur"
                                     mode="matrix"
-                                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -15"
+                                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
                                     result="goo"
                                 />
                                 <feComposite in="SourceGraphic" in2="goo" operator="atop" />
@@ -66,37 +66,30 @@ export function MobileNav() {
                         </defs>
                     </svg>
 
-                    <div className="relative flex items-center justify-between bg-white/[0.08] backdrop-blur-2xl border border-white/[0.12] rounded-full p-2 shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <div className="relative flex items-center justify-between aero-island rounded-[24px] p-2.5 overflow-hidden">
+                        {/* Glass Reflection Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-40"></div>
+
                         {/* Liquid Background Layer */}
                         <div
-                            className="absolute inset-2 pointer-events-none"
-                            style={{ filter: "url(#mobile-goo)" }}
+                            className="absolute inset-x-2.5 inset-y-2.5 pointer-events-none z-0 flex items-center justify-between"
+                            style={{ filter: "url(#mobile-goo)", width: "calc(100% - 20px)" }}
                         >
                             {mobileLinks.map((link) => (
-                                <div key={`bg-mobile-${link.href}`} className="absolute inset-0 flex items-center justify-around">
-                                    {/* These are just placeholders to define the grid, only the active one renders the pill */}
+                                <div key={`bg-${link.href}`} className="relative h-full flex-1 flex items-center justify-center">
+                                    {isActive(link.href) && (
+                                        <motion.div
+                                            layoutId="mobile-nav-pill"
+                                            className="h-full w-full aero-pill rounded-[14px]"
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 450,
+                                                damping: 32,
+                                                mass: 0.8,
+                                            }}
+                                        />
+                                    )}
                                 </div>
-                            ))}
-
-                            {/* The single active pill that moves */}
-                            {mobileLinks.map((link, idx) => (
-                                isActive(link.href) && (
-                                    <motion.div
-                                        key="active-pill"
-                                        layoutId="mobile-liquid-pill"
-                                        className="absolute h-full bg-white rounded-full transition-shadow"
-                                        style={{
-                                            width: `${100 / mobileLinks.length}%`,
-                                            left: `${(100 / mobileLinks.length) * idx}%`
-                                        }}
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 400,
-                                            damping: 28,
-                                            mass: 1.2,
-                                        }}
-                                    />
-                                )
                             ))}
                         </div>
 
@@ -109,12 +102,12 @@ export function MobileNav() {
                                     key={link.href}
                                     href={link.href}
                                     className={cn(
-                                        "relative flex-1 flex flex-col items-center justify-center gap-1 py-2.5 rounded-full transition-colors duration-500 z-10",
-                                        active ? "text-black" : "text-white/50 hover:text-white"
+                                        "relative flex-1 flex flex-col items-center justify-center gap-1.5 py-3 rounded-[14px] transition-colors duration-500 z-10",
+                                        active ? "text-black font-bold" : "text-white/50 hover:text-white"
                                     )}
                                 >
-                                    <Icon size={20} strokeWidth={active ? 2.5 : 2} />
-                                    <span className="text-[10px] font-medium tracking-tight whitespace-nowrap">
+                                    <Icon size={22} strokeWidth={active ? 2.5 : 2} />
+                                    <span className="text-[11px] font-semibold tracking-tight whitespace-nowrap">
                                         {link.label}
                                     </span>
                                 </Link>

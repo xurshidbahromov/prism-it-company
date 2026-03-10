@@ -9,12 +9,13 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                background: "#0B0B0B",
-                surface: "#111111",
-                border: "rgba(255, 255, 255, 0.10)",
-                glass: "rgba(255, 255, 255, 0.06)",
-                "text-muted": "#9CA3AF",
-                accent: "#4F46E5",
+                background: "var(--background)",
+                foreground: "var(--foreground)",
+                surface: "var(--surface)",
+                border: "var(--border)",
+                glass: "var(--glass-bg)",
+                "text-muted": "var(--text-muted)",
+                accent: "var(--accent)",
             },
             fontFamily: {
                 heading: ["var(--font-space-grotesk)", "sans-serif"],

@@ -4,9 +4,9 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { Footer } from "@/components/layout/Footer";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import { PageTransition } from "@/components/ui/PageTransition";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,20 +34,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${dancingScript.variable} antialiased bg-background text-white min-h-screen flex flex-col font-body`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${dancingScript.variable} antialiased bg-background text-foreground min-h-screen flex flex-col font-body transition-colors duration-500`}
       >
-        <NoiseOverlay />
-        <CustomCursor />
-        <Navbar />
-        <main className="flex-grow pt-16">
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </main>
-        <MobileNav />
-        <Footer />
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NoiseOverlay />
+          <Navbar />
+          <main className="flex-grow">
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </main>
+          <MobileNav />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

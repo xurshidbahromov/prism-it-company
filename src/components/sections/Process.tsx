@@ -32,8 +32,20 @@ export function Process() {
     ];
 
     return (
-        <section id="process" className="bg-background pt-32 pb-48 border-b border-white/5 relative z-10">
+        <section id="process" className="bg-background pt-24 pb-32 relative z-10 overflow-hidden">
+            {/* Soft background glow (Adaptive) */}
+            <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-500/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000"></div>
+
             <Container>
+                <div className="mb-20 text-center mx-auto max-w-2xl">
+                    <h2 className="text-4xl md:text-5xl lg:text-[64px] font-heading font-medium text-foreground tracking-tight leading-[1.1] mb-6">
+                        Our <br />
+                        <span className="font-bold italic font-script text-accent">Creative</span> Process
+                    </h2>
+                    <p className="text-lg text-foreground/60 font-light leading-relaxed">
+                        A transparent, data-driven approach designed to deliver exceptional results.
+                    </p>
+                </div>
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
 
                     {/* Left Side: Sticky Storytelling Title */}
@@ -42,10 +54,10 @@ export function Process() {
                             <h2 className="text-accent text-sm font-semibold tracking-widest uppercase mb-4">
                                 Delivery Methodology
                             </h2>
-                            <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-medium tracking-tight leading-tight mb-8">
-                                Execution without <span className="text-white/40 italic font-serif">compromise.</span>
+                            <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-medium tracking-tight leading-tight mb-8 text-foreground">
+                                Execution without <span className="text-foreground/40 italic font-serif">compromise.</span>
                             </h3>
-                            <p className="text-xl text-text-muted font-light leading-relaxed max-w-md">
+                            <p className="text-xl text-foreground/60 font-light leading-relaxed max-w-md">
                                 We replace agency chaos with engineering discipline. Predictable velocity, transparent reporting, and elite code quality.
                             </p>
                         </div>
@@ -57,17 +69,17 @@ export function Process() {
                             <SpotlightCard
                                 key={idx}
                                 spotlightColor={step.color}
-                                className="w-full relative group cursor-pointer p-8 md:p-12 hover:-translate-y-2 transition-transform duration-500 ease-out"
+                                className="w-full relative group cursor-pointer p-8 md:p-12 hover:-translate-y-2 transition-transform duration-500 ease-out border-foreground/10 bg-background/50"
                             >
                                 <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
-                                    <div className="text-7xl font-heading font-black tracking-tighter text-white/5 group-hover:text-white/10 transition-colors">
+                                    <div className="text-7xl font-heading font-black tracking-tighter text-foreground/5 group-hover:text-foreground/10 transition-colors">
                                         {step.number}
                                     </div>
                                     <div className="flex flex-col justify-center">
-                                        <h4 className="text-2xl md:text-3xl font-heading font-medium text-white mb-4">
+                                        <h4 className="text-2xl md:text-3xl font-heading font-medium text-foreground mb-4">
                                             {step.title}
                                         </h4>
-                                        <p className="text-lg text-text-muted font-light leading-relaxed">
+                                        <p className="text-lg text-foreground/60 font-light leading-relaxed">
                                             {step.desc}
                                         </p>
                                     </div>
