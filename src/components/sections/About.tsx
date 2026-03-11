@@ -93,7 +93,7 @@ export function About() {
                                 key={i}
                                 {...fadeUp}
                                 transition={{ delay: i * 0.1 }}
-                                className="flex flex-col"
+                                className="flex flex-col items-center text-center"
                             >
                                 <span className="text-4xl md:text-5xl font-heading font-medium tracking-tighter text-foreground mb-2">
                                     {stat.value}
