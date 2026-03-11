@@ -8,6 +8,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 // Assuming you have simple SVG logos in LogoStrip, we can inline or import it.
 // We'll build a custom logo section to match the screenshot perfectly.
+import { cn } from "@/lib/cn";
 import { SiReact, SiNextdotjs, SiTypescript, SiFigma, SiNodedotjs, SiPython, SiPostgresql, SiOpenai } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 
@@ -144,18 +145,12 @@ export function Hero() {
     return (
         <section id="top" role="region" aria-labelledby="hero-heading" className="relative pt-44 pb-20 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden bg-background">
 
-            {/* Glowing Backgrounds (Adaptive & Ultra-Vivid for Blur Visibility) */}
-            {/* Left Huge Blue Glow */}
-            <div aria-hidden="true" className="absolute top-[-15%] left-[-10%] w-[1000px] h-[1000px] bg-blue-600/30 blur-[180px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000 opacity-80"></div>
+            {/* High-Contrast Minimalist Monochromatic Glows */}
+            {/* Left Dominant Glow (White in Dark, Black in Light) */}
+            <div aria-hidden="true" className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-foreground/[0.08] blur-[150px] rounded-full pointer-events-none transition-opacity duration-1000"></div>
 
-            {/* Right Vibrant Magenta/Purple Glow — Specifically for refractive glass test */}
-            <div aria-hidden="true" className="absolute top-[-5%] right-[-10%] w-[800px] h-[800px] bg-purple-600/25 blur-[150px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000 opacity-90"></div>
-
-            {/* Neon Orange Glow — High contrast for blur visibility */}
-            <div aria-hidden="true" className="absolute top-[-25%] left-[15%] w-[600px] h-[400px] bg-amber-500/15 blur-[140px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000"></div>
-
-            {/* Electric Cyan Glow */}
-            <div aria-hidden="true" className="absolute top-[-10%] left-[60%] w-[500px] h-[500px] bg-cyan-400/20 blur-[130px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000"></div>
+            {/* Right Supporting Glow */}
+            <div aria-hidden="true" className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] bg-foreground/[0.04] blur-[120px] rounded-full pointer-events-none transition-opacity duration-1000"></div>
 
             {/* Custom Cursor SVG component (reusable inline) */}
             {/* Expert badges are now data-driven to simplify updates */}
@@ -170,8 +165,10 @@ export function Hero() {
                     <motion.div
                         key={b.id}
                         animate={animMap[b.animation]}
-                        aria-hidden="true"
-                        className={`absolute ${b.positionClasses} hidden xl:flex items-center gap-3 bg-background/40 backdrop-blur-xl border border-foreground/10 text-foreground pl-2 pr-5 py-2 rounded-2xl shadow-[0_8px_40px_var(--aero-shadow)] hover-trigger z-10`}
+                        className={cn(
+                            "absolute z-20 hidden sm:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-xl border border-foreground/10 shadow-[0_8px_32px_var(--aero-shadow)] cursor-default select-none",
+                            b.positionClasses
+                        )}
                     >
                         <div
                             className={`relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-${b.gradientFrom} to-${b.gradientTo} flex items-center justify-center ring-2 ring-white/10 overflow-hidden`}

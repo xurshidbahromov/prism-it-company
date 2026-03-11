@@ -86,22 +86,22 @@ export function Tabs() {
                             </motion.h2>
                         </div>
 
-                        {/* Architectural Tabs Navigation Box */}
-                        <div className="relative space-y-1 p-2 rounded-2xl bg-foreground/[0.01] border border-foreground/5 backdrop-blur-sm">
+                        {/* Architectural Tabs Navigation Box - Minimalist Makeover */}
+                        <div className="relative space-y-1">
                             {TABS_CONTENT.map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={cn(
-                                        "group relative w-full text-left px-6 py-5 transition-all duration-500 rounded-xl overflow-hidden",
-                                        activeTab === tab.id ? "text-foreground bg-foreground/[0.02]" : "text-foreground/30 hover:text-foreground/60"
+                                        "group relative w-full text-left px-6 py-5 transition-all duration-500 rounded-xl overflow-hidden text-lg font-heading font-medium tracking-tight",
+                                        activeTab === tab.id ? "text-foreground" : "text-foreground/30 hover:text-foreground/60"
                                     )}
                                 >
-                                    <div className="relative z-10">
-                                        <span className="text-[10px] font-bold uppercase tracking-widest block mb-1">
+                                    <div className="relative z-10 flex items-center gap-4">
+                                        <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 font-body">
                                             {String(TABS_CONTENT.indexOf(tab) + 1).padStart(2, '0')}
                                         </span>
-                                        <span className="text-xl font-heading font-medium tracking-tight">
+                                        <span>
                                             {tab.label}
                                         </span>
                                     </div>
@@ -109,8 +109,8 @@ export function Tabs() {
                                     {activeTab === tab.id && (
                                         <motion.div
                                             layoutId="active-tab-indicator"
-                                            className="absolute left-0 top-0 w-1.5 h-full bg-blue-500"
-                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                            className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-1/2 bg-blue-500 rounded-r-full"
+                                            transition={{ type: "spring", stiffness: 400, damping: 30 }}
                                         />
                                     )}
                                 </button>
@@ -129,10 +129,9 @@ export function Tabs() {
                                 transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
                                 className="relative group"
                             >
-                                {/* Subtle Mist Glass */}
-                                <div className="absolute inset-0 bg-foreground/[0.01] backdrop-blur-[12px] border border-foreground/5 rounded-[40px] z-[-1]"></div>
-
-                                <div className="p-10 md:p-14 lg:p-16 space-y-12">
+                                {/* Subtle Mist Glass background removed in favor of a clean, structureless look like Services.tsx */}
+                                
+                                <div className="space-y-12">
                                     <div className="space-y-6">
                                         <h4 className="text-3xl md:text-4xl lg:text-5xl font-heading font-medium tracking-tighter text-foreground leading-[1.05]">
                                             {activeContent.title}

@@ -1,6 +1,8 @@
+"use client";
+
 import { Container } from "@/components/layout/Container";
-import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Work() {
     const projects = [
@@ -25,72 +27,85 @@ export function Work() {
     ];
 
     return (
-        <section id="work" className="bg-background pt-24 pb-32 relative z-10">
-            {/* Subtle background glow (Adaptive) */}
-            <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-blue-500/10 dark:bg-blue-500/20 blur-[100px] rounded-full pointer-events-none mix-blend-screen transition-opacity duration-1000"></div>
+        <section id="work" className="pt-24 pb-32 relative z-10">
             <Container>
-                <div className="mb-20 max-w-3xl">
-                    <h2 className="text-4xl md:text-5xl lg:text-[64px] font-heading font-medium text-foreground tracking-tight leading-[1.1] mb-6">
-                        Selected <br />
-                        <span className="font-bold">Projects</span>
-                    </h2>
-                    <p className="text-lg text-foreground/60 font-light max-w-lg leading-relaxed">
-                        A showcase of our best work in design, engineering, and digital strategy.
-                    </p>
+                <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div className="max-w-2xl">
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-4 block"
+                        >
+                            Case Studies
+                        </motion.span>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.05]"
+                        >
+                            Selected recent <br className="hidden md:block"/>
+                            <span className="text-foreground/40">projects.</span>
+                        </motion.h2>
+                    </div>
                 </div>
 
-                {/* Sticky Stacking Cards Container */}
-                <div className="relative w-full flex flex-col gap-6">
-                    {projects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="sticky top-32 w-full transition-all duration-500 ease-in-out hover:scale-[1.01]"
-                            style={{
-                                top: `calc(130px + ${index * 30}px)`,
-                                zIndex: index + 10,
-                            }}
-                        >
-                            <SpotlightCard
-                                spotlightColor={project.color}
-                                className="w-full flex flex-col md:flex-row gap-8 lg:gap-16 p-6 md:p-12 min-h-[500px] border-foreground/10 bg-background/95 backdrop-blur-3xl shadow-[0_-10px_40px_-20px_var(--aero-shadow)]"
+                {/* Cinematic Alternating Projects */}
+                <div className="w-full flex flex-col pt-12">
+                    {projects.map((project, index) => {
+                        const isEven = index % 2 === 0;
+
+                        return (
+                            <div
+                                key={index}
+                                className="sticky w-full py-16 lg:py-24 flex flex-col lg:flex-row gap-12 lg:gap-24 items-center bg-background/95 backdrop-blur-2xl border-t border-foreground/5 shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.1)] dark:shadow-[0_-20px_50px_-20px_rgba(255,255,255,0.02)]"
+                                style={{
+                                    top: `calc(100px + ${index * 40}px)`,
+                                    zIndex: index + 10,
+                                }}
                             >
-                                {/* Image Side (Left) */}
-                                <div className="w-full md:w-5/12 aspect-[4/3] md:aspect-auto rounded-xl bg-foreground/5 border border-foreground/5 relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-foreground/5 to-transparent z-10"></div>
-                                    {/* Subtle placeholder abstract visual */}
-                                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-foreground/5 blur-3xl transform group-hover:scale-150 transition-transform duration-1000 ease-out"></div>
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-foreground/5 font-heading font-black text-6xl tracking-tighter mix-blend-overlay">
-                                        {index + 1}
+                                {/* Visual Side */}
+                                <div className={`w-full lg:w-1/2 justify-center aspect-[4/3] rounded-3xl bg-foreground/[0.02] relative overflow-hidden flex items-center group/visual ${!isEven ? 'lg:order-2' : ''}`}>
+                                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-foreground/5 blur-3xl transform group-hover/visual:scale-110 transition-transform duration-1000 ease-out"></div>
+                                    <div className="text-foreground/5 font-heading font-black text-6xl md:text-9xl tracking-tighter mix-blend-overlay select-none transition-transform duration-1000 group-hover/visual:scale-105">
+                                        0{index + 1}
                                     </div>
+                                    {/* Abstract Accent Color representation (simulating a project image/gradient) */}
+                                    <div 
+                                        className="absolute inset-0 opacity-0 group-hover/visual:opacity-100 transition-opacity duration-1000 mix-blend-overlay"
+                                        style={{ background: `radial-gradient(circle at center, ${project.color}, transparent 70%)` }}
+                                    />
                                 </div>
 
-                                {/* Content Side (Right) */}
-                                <div className="w-full md:w-7/12 flex flex-col justify-center py-4">
-                                    <div className="text-sm font-medium tracking-widest text-foreground/40 uppercase mb-4">
+                                {/* Content Side */}
+                                <div className={`w-full lg:w-1/2 flex flex-col justify-center ${!isEven ? 'lg:order-1' : ''} group`}>
+                                    <div className="text-sm font-medium tracking-widest text-foreground/40 uppercase mb-6">
                                         {project.category}
                                     </div>
-                                    <h4 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground mb-8 tracking-tight">
+                                    
+                                    <h4 className="text-4xl md:text-5xl lg:text-7xl font-heading font-medium text-foreground mb-10 tracking-tight leading-[1.1]">
                                         {project.title}
                                     </h4>
 
-                                    <div className="flex flex-wrap gap-4 mb-12">
+                                    <div className="flex flex-wrap gap-4 mb-14">
                                         {project.metrics.map((metric, idx) => (
-                                            <div key={idx} className="px-5 py-3 rounded-xl bg-foreground/5 border border-foreground/10 backdrop-blur-md">
-                                                <span className="text-sm font-medium text-foreground/90">{metric}</span>
+                                            <div key={idx} className="px-6 py-4 rounded-2xl bg-foreground/[0.03] border border-transparent group-hover:border-foreground/[0.05] transition-colors duration-500">
+                                                <span className="text-base font-medium text-foreground tracking-wide">{metric}</span>
                                             </div>
                                         ))}
                                     </div>
 
-                                    <div className="mt-auto pt-8 border-t border-foreground/5 flex items-center justify-between text-foreground/80 group-hover:text-foreground transition-colors w-fit group/btn cursor-pointer">
-                                        <span className="text-lg font-medium mr-4">Explore Case Study</span>
-                                        <div className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center bg-foreground/5 group-hover/btn:bg-foreground/10 group-hover/btn:scale-110 transition-all duration-300">
-                                            <ArrowRight className="w-4 h-4" />
+                                    <div className="flex items-center text-foreground/80 group-hover:text-foreground transition-colors w-fit group/btn cursor-pointer">
+                                        <span className="text-xl font-medium mr-6 border-b border-transparent group-hover:border-foreground/20 pb-1 transition-all">Explore Case Study</span>
+                                        <div className="w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center bg-foreground/5 group-hover/btn:bg-foreground/10 group-hover/btn:scale-110 transition-all duration-300">
+                                            <ArrowRight className="w-5 h-5" />
                                         </div>
                                     </div>
                                 </div>
-                            </SpotlightCard>
-                        </div>
-                    ))}
+                            </div>
+                        );
+                    })}
                 </div>
             </Container>
         </section>

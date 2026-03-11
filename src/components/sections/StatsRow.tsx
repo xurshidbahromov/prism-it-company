@@ -135,7 +135,6 @@ export function StatsRow() {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="absolute top-4 right-4 w-1 h-1 rounded-full bg-blue-500/40 group-hover:scale-[4] group-hover:bg-blue-500 transition-all duration-700"></div>
                                 </motion.div>
                             ))}
                         </div>
