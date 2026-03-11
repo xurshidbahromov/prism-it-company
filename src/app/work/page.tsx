@@ -1,18 +1,52 @@
+"use client";
+
 import { Work } from "@/components/sections/Work";
 import { CTA } from "@/components/sections/CTA";
 import { FadeIn } from "@/components/ui/FadeIn";
-
-export const metadata = {
-    title: "Work | PRISM",
-    description: "Selected case studies and digital products.",
-};
+import { Container } from "@/components/layout/Container";
+import { motion } from "framer-motion";
 
 export default function WorkPage() {
     return (
-        <main className="pt-20">
-            <FadeIn>
-                <Work />
-            </FadeIn>
+        <main className="relative overflow-hidden">
+            {/* Background Glows */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+                <div className="absolute top-[10%] left-[-10%] w-[1000px] h-[1000px] bg-foreground/[0.02] blur-[150px] rounded-full transition-opacity duration-1000"></div>
+                <div className="absolute top-[40%] right-[-5%] w-[800px] h-[800px] bg-blue-500/[0.01] blur-[120px] rounded-full transition-opacity duration-1000"></div>
+            </div>
+
+            {/* 1. Hero Section */}
+            <section className="pt-44 pb-20 md:pt-48 md:pb-32 relative z-10">
+                <Container>
+                    <motion.span 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-8 block"
+                    >
+                        Case Studies
+                    </motion.span>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-5xl md:text-7xl lg:text-8xl font-heading font-medium tracking-tighter leading-[1.05] mb-8 text-foreground max-w-5xl"
+                    >
+                        Proof of <br className="hidden md:block" />
+                        <span className="text-foreground/40">execution.</span>
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-xl md:text-2xl text-foreground/50 font-light max-w-2xl leading-relaxed"
+                    >
+                        A showcase of engineering challenges solved and digital products scaled.
+                    </motion.p>
+                </Container>
+            </section>
+
+            <Work showTitle={false} />
+
             <FadeIn>
                 <CTA />
             </FadeIn>

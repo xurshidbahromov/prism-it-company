@@ -30,36 +30,36 @@ function Counter({ value, suffix = "", prefix = "" }: { value: number; suffix?: 
     );
 }
 
-export function StatsRow() {
-    const stats = [
-        {
-            label: "Client Retention",
-            value: 95,
-            suffix: "%",
-            description: "Built on engineering excellence and long-term partnership trust."
-        },
-        {
-            label: "Projects Delivered",
-            value: 200,
-            prefix: "+",
-            description: "From tactical MVP launches to enterprise-scale digital transformations."
-        },
-        {
-            label: "Users Reached",
-            value: 3.2,
-            prefix: "+",
-            suffix: "M",
-            isDecimal: true,
-            description: "Products engineered by PRISM serve millions of daily active users."
-        },
-        {
-            label: "Efficiency Lift",
-            value: 40,
-            suffix: "%",
-            description: "Average operational performance gain through intelligent automation."
-        }
-    ];
+const stats = [
+    {
+        label: "Client Retention",
+        value: 95,
+        suffix: "%",
+        description: "Built on engineering excellence and long-term partnership trust."
+    },
+    {
+        label: "Projects Delivered",
+        value: 200,
+        prefix: "+",
+        description: "From tactical MVP launches to enterprise-scale digital transformations."
+    },
+    {
+        label: "Users Reached",
+        value: 3.2,
+        prefix: "+",
+        suffix: "M",
+        isDecimal: true,
+        description: "Products engineered by PRISM serve millions of daily active users."
+    },
+    {
+        label: "Efficiency Lift",
+        value: 40,
+        suffix: "%",
+        description: "Average operational performance gain through intelligent automation."
+    }
+];
 
+export function StatsRow() {
     return (
         <section id="stats" className="bg-background py-32 md:py-48 relative z-10 overflow-hidden border-t border-foreground/5">
             {/* Minimal architectural line */}

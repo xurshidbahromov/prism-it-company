@@ -26,9 +26,7 @@ export default function Home() {
       <FadeIn>
         <Process />
       </FadeIn>
-      <FadeIn>
-        <Work />
-      </FadeIn>
+      <Work />
       <FadeIn>
         <CTA />
       </FadeIn>

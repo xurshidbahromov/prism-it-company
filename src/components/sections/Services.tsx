@@ -8,34 +8,34 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/cn";
 
-export function Services() {
-    const services = [
-        {
-            title: "UI/UX Design",
-            description: "Human-centered interfaces built on behavioral psychology to maximize user retention.",
-            Icon: PenTool,
-            href: "/expertise#creative-design",
-        },
-        {
-            title: "Full-Stack Dev",
-            description: "Resilient, horizontally scalable applications engineered with modern type-safe engines.",
-            Icon: Code2,
-            href: "/expertise#full-stack",
-        },
-        {
-            title: "AI Integration",
-            description: "Custom LLM workflows and autonomous agents designed for measurable business impact.",
-            Icon: Cpu,
-            href: "/expertise#ai-automation",
-        },
-        {
-            title: "Cloud Systems",
-            description: "High-uptime infrastructure with automated CI/CD and zero-trust security protocols.",
-            Icon: Cloud,
-            href: "/expertise#cloud-infra",
-        },
-    ];
+const services = [
+    {
+        title: "UI/UX Design",
+        description: "Human-centered interfaces built on behavioral psychology to maximize user retention.",
+        Icon: PenTool,
+        href: "/expertise#creative-design",
+    },
+    {
+        title: "Full-Stack Dev",
+        description: "Resilient, horizontally scalable applications engineered with modern type-safe engines.",
+        Icon: Code2,
+        href: "/expertise#full-stack",
+    },
+    {
+        title: "AI Integration",
+        description: "Custom LLM workflows and autonomous agents designed for measurable business impact.",
+        Icon: Cpu,
+        href: "/expertise#ai-automation",
+    },
+    {
+        title: "Cloud Systems",
+        description: "High-uptime infrastructure with automated CI/CD and zero-trust security protocols.",
+        Icon: Cloud,
+        href: "/expertise#cloud-infra",
+    },
+];
 
+export function Services({ showViewAll = true }: { showViewAll?: boolean }) {
     return (
         <section id="services" className="bg-background pt-32 pb-40 relative z-10 overflow-hidden border-t border-foreground/5">
             {/* Minimal Background — No heavy glows */}
@@ -62,17 +62,19 @@ export function Services() {
                             high-growth <span className="text-foreground/40">ventures.</span>
                         </motion.h2>
                     </div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <Link href="/expertise" className="group flex items-center gap-2 text-sm font-medium text-foreground/50 hover:text-foreground transition-colors">
-                            View all expertise
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                    </motion.div>
+                    {showViewAll && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <Link href="/expertise" className="group flex items-center gap-2 text-sm font-medium text-foreground/50 hover:text-foreground transition-colors">
+                                View all expertise
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div>
+                    )}
                 </div>
 
                 {/* Minimal 4-Column Grid */}
