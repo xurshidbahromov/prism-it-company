@@ -5,6 +5,7 @@ import { Tabs } from "@/components/sections/Tabs";
 import { Process } from "@/components/sections/Process";
 import { Work } from "@/components/sections/Work";
 import { CTA } from "@/components/sections/CTA";
+import { Contact } from "@/components/sections/Contact";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export default function Home() {
@@ -30,6 +31,9 @@ export default function Home() {
       </FadeIn>
       <FadeIn>
         <CTA />
+      </FadeIn>
+      <FadeIn>
+        <Contact />
       </FadeIn>
     </>
   );
