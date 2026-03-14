@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
+import { AeroButton as Button } from "@/components/ui/AeroButton";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";

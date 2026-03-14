@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { AeroButton as Button } from "@/components/ui/AeroButton";
 import { cn } from "@/lib/cn";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeSwitcher } from "./ThemeSwitcher";
