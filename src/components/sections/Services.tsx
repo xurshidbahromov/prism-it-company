@@ -37,7 +37,7 @@ const services = [
 
 export function Services({ showViewAll = true }: { showViewAll?: boolean }) {
     return (
-        <section id="services" className="bg-background pt-32 pb-40 relative z-10 overflow-hidden border-t border-foreground/5">
+        <section id="services" className="pt-32 pb-40 relative z-10 overflow-hidden">
             {/* Minimal Background — No heavy glows */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent"></div>
 

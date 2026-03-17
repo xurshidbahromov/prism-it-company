@@ -8,16 +8,7 @@ import ButtonWithIconDemo from "@/components/ui/button-witn-icon";
 
 export function CTA() {
     return (
-        <section id="contact" className="py-32 w-full relative z-10 overflow-hidden border-t border-foreground/[0.05]">
-            {/* Subtle background element */}
-            <div className="absolute inset-0 z-0 opacity-10 blur-sm pointer-events-none">
-                <img 
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" 
-                    alt="Abstract data background" 
-                    className="w-full h-full object-cover"
-                />
-            </div>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-foreground/[0.03] via-transparent to-transparent pointer-events-none"></div>
+        <section id="contact" className="py-32 w-full relative z-10 overflow-hidden">
 
             <Container>
                 <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto py-12 md:py-24">
@@ -59,9 +50,7 @@ export function CTA() {
                         className="flex flex-col sm:flex-row shadow-[0_4px_40px_rgba(0,0,0,0.05)] dark:shadow-none items-center justify-center gap-6 w-full sm:w-auto p-4 rounded-3xl md:rounded-[2rem] bg-foreground/[0.02] border border-foreground/[0.05] backdrop-blur-xl"
                     >
                         {/* Primary Button */}
-                        <Link href="#contact" passHref legacyBehavior>
-                            <ButtonWithIconDemo />
-                        </Link>
+                        <ButtonWithIconDemo href="#contact" />
 
                         {/* Secondary Button */}
                         <Link href="mailto:hello@prism.com" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent hover:bg-foreground/5 text-foreground px-8 py-5 rounded-xl md:rounded-2xl text-base font-medium transition-all duration-300">

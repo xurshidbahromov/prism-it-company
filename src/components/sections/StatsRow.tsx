@@ -61,7 +61,7 @@ const stats = [
 
 export function StatsRow() {
     return (
-        <section id="stats" className="bg-background py-32 md:py-48 relative z-10 overflow-hidden border-t border-foreground/5">
+        <section id="stats" className="py-32 md:py-48 relative z-10 overflow-hidden">
             {/* Minimal architectural line */}
             <div className="absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-foreground/10 via-transparent to-transparent hidden md:block"></div>
 
@@ -104,8 +104,8 @@ export function StatsRow() {
                     </div>
 
                     {/* Right: Metrics Grid */}
-                    <div className="lg:col-span-7">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="lg:col-span-7 mt-12 lg:mt-0">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
                             {stats.map((stat, index) => (
                                 <motion.div
                                     key={index}

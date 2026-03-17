@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { GlobalBackground } from "@/components/ui/GlobalBackground";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-inter", // Keeping variable name same to minimize CSS/Tailwind changes
@@ -44,6 +45,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <GlobalBackground />
           <NoiseOverlay />
           <Navbar />
           <main className="flex-grow">

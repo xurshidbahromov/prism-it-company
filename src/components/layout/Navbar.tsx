@@ -118,7 +118,7 @@ export function Navbar() {
 
                 {/* Desktop Nav Island with Mega Menu */}
                 <div
-                    className="hidden md:flex items-center relative rounded-[24px] min-w-[500px]"
+                    className="hidden md:flex items-center relative rounded-[24px] min-w-[420px] lg:min-w-[500px]"
                     onMouseLeave={handleNavMouseLeave}
                 >
                     {/* Glass Layer — pill row only */}
@@ -134,7 +134,7 @@ export function Navbar() {
                                         <motion.div
                                             layoutId="liquid-pill"
                                             className="absolute inset-0 aero-pill rounded-[18px]"
-                                            transition={{ type: "spring", stiffness: 500, damping: 30, mass: 0.8 }}
+                                            transition={{ type: "spring", stiffness: 700, damping: 35 }}
                                         />
                                     )}
                                 </div>
@@ -225,7 +225,7 @@ export function Navbar() {
                 <button
                     type="button"
                     onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden p-2 -mr-2 text-foreground/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md transition-colors"
+                    className="hidden md:hidden p-2 -mr-2 text-foreground/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md transition-colors"
                     aria-expanded={isOpen}
                     aria-label={isOpen ? "Close menu" : "Open menu"}
                 >
@@ -233,44 +233,6 @@ export function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
-            <div
-                className={cn(
-                    "md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-2xl border-b transition-all duration-300 overflow-hidden",
-                    isOpen ? "max-h-screen opacity-100 border-foreground/10 shadow-2xl" : "max-h-0 opacity-0 border-transparent"
-                )}
-            >
-                <div className="flex flex-col gap-4 p-6">
-                    {/* Nav links */}
-                    <nav className="flex flex-col gap-1" aria-label="Mobile Navigation">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                onClick={closeMenu}
-                                className={cn(
-                                    "text-lg font-heading font-medium transition-colors px-4 py-3 rounded-xl",
-                                    isActive(link.href)
-                                        ? "text-foreground bg-foreground/10"
-                                        : "text-foreground/60 hover:text-foreground hover:bg-foreground/[0.04]"
-                                )}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                    </nav>
-
-                    <div className="border-t border-foreground/[0.06] pt-4 flex items-center justify-between gap-3">
-                        <ThemeSwitcher uniqueId="mobile-dropdown" />
-                        <LanguageSwitcher />
-                        <Link href="/#contact" onClick={closeMenu} tabIndex={-1} className="flex-1">
-                            <Button variant="primary" size="lg" className="w-full font-bold rounded-xl px-4">
-                                Get a Proposal
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
         </header>
     );
 }

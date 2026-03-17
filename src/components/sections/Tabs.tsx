@@ -58,7 +58,7 @@ export function Tabs() {
     const activeContent = TABS_CONTENT.find((tab) => tab.id === activeTab)!;
 
     return (
-        <section id="standard" className="py-32 md:py-48 relative overflow-hidden bg-background border-t border-foreground/5">
+        <section id="standard" className="py-32 md:py-48 relative overflow-hidden">
             {/* Architectural guide line */}
             <div className="absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-foreground/5 via-transparent to-transparent hidden lg:block"></div>
 

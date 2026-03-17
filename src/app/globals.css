@@ -30,50 +30,52 @@
 }
 
 :root {
-  --background: #05050A;
-  --foreground: #ffffff;
-  --accent: #3b82f6;
-  --surface: #111111;
-  --border: rgba(255, 255, 255, 0.1);
-  --text-muted: #9CA3AF;
-  --glow-primary: rgba(59, 130, 246, 0.4);
-  --glow-secondary: rgba(124, 58, 237, 0.3);
+  /* Salt & Pepper — Dark Mode */
+  --background: #111111;
+  --foreground: #F5F5F5;
+  --accent: #D4D4D4;
+  --surface: #1E1E1E;
+  --border: rgba(212, 212, 212, 0.12);
+  --text-muted: #B3B3B3;
+  --glow-primary: rgba(212, 212, 212, 0.30); /* Salt gray orb */
+  --glow-secondary: rgba(255, 255, 255, 0.15); /* Lighter soft orb */
 
-  /* Glass / Aero Tokens - Dark Default */
+  /* Glass / Aero Tokens - Dark */
   --glass-bg: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --aero-bg: rgba(255, 255, 255, 0.12);
-  --aero-border: rgba(255, 255, 255, 0.20);
-  --aero-inner-glow: rgba(255, 255, 255, 0.3);
-  --aero-pill-bg: #ececec;
-  --aero-pill-text: #05050A;
-  --aero-shadow: rgba(0, 0, 0, 0.8);
-  --aero-shadow-sm: rgba(0, 0, 0, 0.5);
-  --aero-reflection: 0.5;
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --aero-bg: rgba(255, 255, 255, 0.07);
+  --aero-border: rgba(255, 255, 255, 0.14);
+  --aero-inner-glow: rgba(255, 255, 255, 0.15);
+  --aero-pill-bg: #F5F5F5;    /* White pill for active navbar link */
+  --aero-pill-text: #111111;
+  --aero-shadow: rgba(0, 0, 0, 0.6);
+  --aero-shadow-sm: rgba(0, 0, 0, 0.35);
+  --aero-reflection: 0.4;
 }
 
 
 [data-theme='light'] {
-  --background: #fcfcfd;
-  --foreground: #020617;
-  --accent: #2563eb;
-  --surface: #f1f5f9;
-  --border: rgba(15, 23, 42, 0.1);
-  --text-muted: #64748b;
-  --glow-primary: rgba(59, 130, 246, 0.2);
-  --glow-secondary: rgba(124, 58, 237, 0.15);
+  /* Salt & Pepper — Light Mode */
+  --background: #FFFFFF;
+  --foreground: #2B2B2B;
+  --accent: #2B2B2B;
+  --surface: #F7F7F7;
+  --border: rgba(43, 43, 43, 0.08);
+  --text-muted: #B3B3B3;
+  --glow-primary: rgba(43, 43, 43, 0.12); /* Soft charcoal orb */
+  --glow-secondary: rgba(100, 100, 100, 0.08);
 
-  /* Glass / Aero Tokens - Light Mode */
-  --glass-bg: rgba(15, 23, 42, 0.02);
-  --glass-border: rgba(15, 23, 42, 0.06);
-  --aero-bg: rgba(255, 255, 255, 0.2);
-  --aero-border: rgba(15, 23, 42, 0.1);
-  --aero-inner-glow: rgba(255, 255, 255, 0.85);
-  --aero-pill-bg: #020617;
-  --aero-pill-text: #ffffff;
-  --aero-shadow: rgba(15, 23, 42, 0.1);
-  --aero-shadow-sm: rgba(15, 23, 42, 0.05);
-  --aero-reflection: 0.15;
+  /* Glass / Aero Tokens - Light */
+  --glass-bg: rgba(43, 43, 43, 0.02);
+  --glass-border: rgba(43, 43, 43, 0.07);
+  --aero-bg: rgba(255, 255, 255, 0.55);
+  --aero-border: rgba(43, 43, 43, 0.08);
+  --aero-inner-glow: rgba(255, 255, 255, 0.9);
+  --aero-pill-bg: #2B2B2B;    /* Dark pill for active navbar in light mode */
+  --aero-pill-text: #FFFFFF;
+  --aero-shadow: rgba(43, 43, 43, 0.08);
+  --aero-shadow-sm: rgba(43, 43, 43, 0.04);
+  --aero-reflection: 0.2;
 }
 
 html,

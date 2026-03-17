@@ -7,7 +7,6 @@ import { Work } from "@/components/sections/Work";
 import { CTA } from "@/components/sections/CTA";
 import { Contact } from "@/components/sections/Contact";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { BackgroundLines } from "@/components/ui/BackgroundLines";
 
 export default function Home() {
   return (
@@ -15,9 +14,6 @@ export default function Home() {
       <FadeIn direction="none">
         <Hero />
       </FadeIn>
-      
-      {/* Background Architectural Lines - Starting AFTER Hero */}
-      <BackgroundLines />
       
       <div className="relative z-10">
         <FadeIn>

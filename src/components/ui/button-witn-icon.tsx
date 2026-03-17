@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
-const ButtonWithIconDemo = () => {
-  return (
-    <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-700 ease-in-out hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
+import Link from "next/link";
+
+interface ButtonWithIconProps {
+  href?: string;
+  className?: string;
+}
+
+const ButtonWithIconDemo = ({ href, className }: ButtonWithIconProps) => {
+  const content = (
+    <Button className={`relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-700 ease-in-out hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer ${className || ""}`}>
       <span className="relative z-10 transition-all duration-700 ease-in-out">
         Let's Collaborate
       </span>
@@ -12,6 +19,12 @@ const ButtonWithIconDemo = () => {
       </div>
     </Button>
   );
+
+  if (href) {
+    return <Link href={href}>{content}</Link>;
+  }
+
+  return content;
 };
 
 export default ButtonWithIconDemo;

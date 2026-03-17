@@ -7,10 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Home, Grid, Layers, Briefcase, User } from "lucide-react";
 import { cn } from "@/lib/cn";
 
+import { ThemeSwitcher } from "./ThemeSwitcher";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+
 const mobileLinks = [
     { label: "Home", href: "/", icon: Home },
     { label: "Services", href: "/expertise", icon: Grid },
-    { label: "Process", href: "/process", icon: Layers },
     { label: "Work", href: "/work", icon: Briefcase },
     { label: "About", href: "/about", icon: User },
 ];
@@ -66,53 +68,65 @@ export function MobileNav() {
                         </defs>
                     </svg>
 
-                    <div className="relative flex items-center justify-between aero-island rounded-[24px] p-2.5 overflow-hidden">
+                    <div className="relative flex flex-col aero-island rounded-[32px] p-2 overflow-hidden" 
+                         style={{ backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }}>
+                        
                         {/* Glass Reflection Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-40"></div>
 
-                        {/* Liquid Background Layer */}
-                        <div
-                            className="absolute inset-x-2.5 inset-y-2.5 pointer-events-none z-0 flex items-center justify-between"
-                            style={{ filter: "url(#mobile-goo)", width: "calc(100% - 20px)" }}
-                        >
-                            {mobileLinks.map((link) => (
-                                <div key={`bg-${link.href}`} className="relative h-full flex-1 flex items-center justify-center">
-                                    {isActive(link.href) && (
-                                        <motion.div
-                                            layoutId="mobile-nav-pill"
-                                            className="h-full w-full aero-pill rounded-[14px]"
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 450,
-                                                damping: 32,
-                                                mass: 0.8,
-                                            }}
-                                        />
-                                    )}
-                                </div>
-                            ))}
+                        {/* Top Section: Nav Icons */}
+                        <div className="relative flex items-center justify-between">
+                            {/* Liquid Background Layer */}
+                            <div
+                                className="absolute inset-x-1 inset-y-1 pointer-events-none z-0 flex items-center justify-between"
+                                style={{ filter: "url(#mobile-goo)", width: "calc(100% - 8px)" }}
+                            >
+                                {mobileLinks.map((link) => (
+                                    <div key={`bg-${link.href}`} className="relative h-full flex-1 flex items-center justify-center">
+                                        {isActive(link.href) && (
+                                            <motion.div
+                                                layoutId="mobile-nav-pill"
+                                                className="h-full w-full aero-pill rounded-[18px]"
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 450,
+                                                    damping: 32,
+                                                    mass: 0.8,
+                                                }}
+                                            />
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Icons Layer */}
+                            {mobileLinks.map((link) => {
+                                const active = isActive(link.href);
+                                const Icon = link.icon;
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={cn(
+                                            "relative flex-1 flex flex-col items-center justify-center gap-1 py-3 rounded-[18px] transition-colors duration-500 z-10",
+                                            active ? "text-black font-bold" : "text-white/50 hover:text-white"
+                                        )}
+                                    >
+                                        <Icon size={20} strokeWidth={active ? 2.5 : 2} />
+                                        <span className="text-[10px] font-semibold tracking-tight whitespace-nowrap">
+                                            {link.label}
+                                        </span>
+                                    </Link>
+                                );
+                            })}
                         </div>
 
-                        {/* Icons Layer */}
-                        {mobileLinks.map((link) => {
-                            const active = isActive(link.href);
-                            const Icon = link.icon;
-                            return (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={cn(
-                                        "relative flex-1 flex flex-col items-center justify-center gap-1.5 py-3 rounded-[14px] transition-colors duration-500 z-10",
-                                        active ? "text-black font-bold" : "text-white/50 hover:text-white"
-                                    )}
-                                >
-                                    <Icon size={22} strokeWidth={active ? 2.5 : 2} />
-                                    <span className="text-[11px] font-semibold tracking-tight whitespace-nowrap">
-                                        {link.label}
-                                    </span>
-                                </Link>
-                            );
-                        })}
+                        {/* Bottom Section: Theme & Language Switchers */}
+                        <div className="relative z-10 flex items-center justify-center gap-6 py-2 border-t border-white/10 mt-1">
+                            <ThemeSwitcher uniqueId="mobile-island-theme" />
+                            <div className="w-[1px] h-4 bg-white/10" />
+                            <LanguageSwitcher />
+                        </div>
                     </div>
                 </motion.div>
             )}

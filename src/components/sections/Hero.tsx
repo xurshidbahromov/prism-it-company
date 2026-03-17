@@ -143,14 +143,7 @@ export function Hero() {
     };
 
     return (
-        <section id="top" role="region" aria-labelledby="hero-heading" className="relative pt-44 pb-20 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden bg-background">
-
-            {/* High-Contrast Minimalist Monochromatic Glows */}
-            {/* Left Dominant Glow (White in Dark, Black in Light) */}
-            <div aria-hidden="true" className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-foreground/[0.08] blur-[150px] rounded-full pointer-events-none transition-opacity duration-1000"></div>
-
-            {/* Right Supporting Glow */}
-            <div aria-hidden="true" className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] bg-foreground/[0.04] blur-[120px] rounded-full pointer-events-none transition-opacity duration-1000"></div>
+        <section id="top" role="region" aria-labelledby="hero-heading" className="relative pt-44 pb-20 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden">
 
             {/* Custom Cursor SVG component (reusable inline) */}
             {/* Expert badges are now data-driven to simplify updates */}
@@ -166,8 +159,12 @@ export function Hero() {
                         key={b.id}
                         animate={animMap[b.animation]}
                         className={cn(
-                            "absolute z-20 hidden sm:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-xl border border-foreground/10 shadow-[0_8px_32px_var(--aero-shadow)] cursor-default select-none",
-                            b.positionClasses
+                            "absolute z-20 hidden lg:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-xl border border-foreground/10 shadow-[0_8px_32px_var(--aero-shadow)] cursor-default select-none transition-all duration-500",
+                            b.positionClasses,
+                            // At 1024px (lg), shift slightly outward
+                            b.id === "frontend" && "lg:left-[0%] xl:left-[2%]",
+                            b.id === "uiux" && "lg:right-[0%] xl:right-[2%]",
+                            b.id === "backend" && "lg:left-[0%] xl:left-[2%]"
                         )}
                     >
                         <div
@@ -213,7 +210,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl sm:text-6xl md:text-[76px] lg:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-5xl"
+                    className="text-4xl sm:text-6xl md:text-[76px] lg:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-5xl"
                 >
                     We Build The <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">Software</span> That <br className="hidden sm:block" />
                     Transforms Businesses.
@@ -240,8 +237,9 @@ export function Hero() {
                     {/* Primary CTA (Blue Pill) */}
                     <Link href="#contact" className="w-full sm:w-auto hover-trigger">
                         <Button
-                            variant="primary"
-                            className="w-full sm:w-auto px-8 py-6 rounded-full text-base font-semibold bg-blue-500 hover:bg-blue-400 text-white border border-transparent shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300 flex items-center justify-center gap-2 group"
+                            variant="aero"
+                            size="pill"
+                            className="w-full sm:w-auto flex items-center justify-center gap-2 group"
                         >
                             Start a Project
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -251,8 +249,9 @@ export function Hero() {
                     {/* Secondary CTA (Outline Pill) */}
                     <Link href="/work" className="w-full sm:w-auto hover-trigger">
                         <Button
-                            variant="secondary"
-                            className="w-full sm:w-auto px-8 py-6 rounded-full text-base font-medium border border-foreground/20 text-foreground bg-transparent hover:bg-foreground/5 transition-all duration-300"
+                            variant="ghost"
+                            size="pill"
+                            className="w-full sm:w-auto font-medium"
                         >
                             View Case Studies
                         </Button>

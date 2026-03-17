@@ -6,7 +6,7 @@ import { ArrowRight, Mail, MapPin } from "lucide-react";
 
 export function Contact() {
     return (
-        <section id="contact-form" className="py-32 bg-background relative z-10 overflow-hidden border-t border-foreground/[0.05]">
+        <section id="contact-form" className="py-32 relative z-10 overflow-hidden">
             <Container>
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
                     {/* Left Side: Info */}

@@ -47,43 +47,56 @@ export function ThemeSwitcher({ uniqueId = "default" }: ThemeSwitcherProps) {
             >
                 <AnimatePresence mode="popLayout">
                     {hovered ? (
-                        // Expanded: show all options
-                        options.map((option) => {
-                            const active = theme === option.value;
-                            const Icon = option.icon;
-                            return (
+                            // Expanded: show all options
+                            <div className="flex relative">
+                                {options.map((option, index) => {
+                                    const active = theme === option.value;
+                                    const Icon = option.icon;
+                                    return (
+                                        <div key={option.value} className="relative w-9 h-8 shrink-0 flex items-center justify-center">
+                                            {active && (
+                                                <motion.div
+                                                    layoutId={`active-theme-pill-${uniqueId}`}
+                                                    className="absolute inset-0 bg-foreground rounded-[18px]"
+                                                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                                                />
+                                            )}
+                                            <button
+                                                onClick={() => setTheme(option.value)}
+                                                className={cn(
+                                                    "relative z-10 w-full h-full flex items-center justify-center transition-colors duration-300",
+                                                    active ? "text-background" : "text-foreground/50 hover:text-foreground"
+                                                )}
+                                                title={`${option.label} mode`}
+                                            >
+                                                <Icon size={15} strokeWidth={active ? 2.5 : 1.8} />
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        ) : (
+                            // Collapsed: show only current
+                            <div className="relative w-9 h-8 shrink-0">
+                                <motion.div
+                                    layoutId={`theme-active-${uniqueId}`}
+                                    className="absolute inset-0 bg-transparent rounded-[18px]"
+                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                />
                                 <motion.button
-                                    key={option.value}
+                                    key="current"
                                     initial={{ opacity: 0, scale: 0.85 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.85 }}
                                     transition={{ duration: 0.25, ease: "easeOut" }}
-                                    onClick={() => setTheme(option.value)}
-                                    className={cn(
-                                        "w-9 h-8 flex items-center justify-center rounded-[18px] transition-colors duration-300 shrink-0",
-                                        active ? "bg-foreground text-background" : "text-foreground/40 hover:text-foreground"
-                                    )}
-                                    title={`${option.label} mode`}
+                                    onClick={() => setHovered(true)}
+                                    className="relative z-10 w-full h-full flex items-center justify-center rounded-[18px] text-foreground/60"
+                                    title="Change theme"
                                 >
-                                    <Icon size={15} strokeWidth={active ? 2.5 : 1.8} />
+                                    <CurrentIcon size={15} strokeWidth={2} />
                                 </motion.button>
-                            );
-                        })
-                    ) : (
-                        // Collapsed: show only current
-                        <motion.button
-                            key="current"
-                            initial={{ opacity: 0, scale: 0.85 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.85 }}
-                            transition={{ duration: 0.25, ease: "easeOut" }}
-                            onClick={() => setHovered(true)}
-                            className="w-9 h-8 flex items-center justify-center rounded-[18px] text-foreground/60 shrink-0"
-                            title="Change theme"
-                        >
-                            <CurrentIcon size={15} strokeWidth={2} />
-                        </motion.button>
-                    )}
+                            </div>
+                        )}
                 </AnimatePresence>
             </motion.div>
         </div>
