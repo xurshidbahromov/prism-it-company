@@ -54,14 +54,14 @@ const values = [
 const fadeUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
+    viewport: { once: true, margin: "-20px" },
 };
 
 export function About() {
     return (
         <div>
             {/* 1. Hero / Manifesto */}
-            <section className="pt-32 pb-24 relative z-10">
+            <section className="pt-44 pb-20 md:pt-48 md:pb-32 relative z-10">
                 <Container>
                     <motion.span {...fadeUp} className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-8 block">
                         About Us
@@ -87,7 +87,7 @@ export function About() {
             {/* 2. Stats Row */}
             <section className="py-16 border-t border-b border-foreground/[0.05] relative z-10">
                 <Container>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-12">
                         {stats.map((stat, i) => (
                             <motion.div
                                 key={i}
@@ -95,7 +95,7 @@ export function About() {
                                 transition={{ delay: i * 0.1 }}
                                 className="flex flex-col items-center text-center"
                             >
-                                <span className="text-4xl md:text-5xl font-heading font-medium tracking-tighter text-foreground mb-2">
+                                <span className="text-3xl sm:text-4xl md:text-5xl font-heading font-medium tracking-tighter text-foreground mb-2">
                                     {stat.value}
                                 </span>
                                 <span className="text-sm text-foreground/40 font-medium uppercase tracking-widest">
@@ -110,7 +110,7 @@ export function About() {
             {/* 3. Mission Statement */}
             <section className="py-32 relative z-10">
                 <Container>
-                    <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
+                    <div className="flex flex-col lg:flex-row gap-16 xl:gap-32">
                         <div className="w-full lg:w-5/12">
                             <motion.span {...fadeUp} className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6 block">
                                 Who We Are
@@ -162,7 +162,7 @@ export function About() {
                                 key={i}
                                 {...fadeUp}
                                 transition={{ delay: i * 0.1 }}
-                                className="bg-foreground/[0.02] border border-foreground/[0.05] rounded-2xl p-8 flex flex-col gap-4 hover:bg-foreground/[0.04] transition-colors duration-500"
+                                className="bg-foreground/[0.02] border border-foreground/[0.05] rounded-2xl p-5 sm:p-8 flex flex-col gap-4 hover:bg-foreground/[0.04] transition-colors duration-500"
                             >
                                 {/* Avatar placeholder */}
                                 <div className="w-14 h-14 rounded-full bg-foreground/[0.06] border border-foreground/[0.08] flex items-center justify-center text-foreground/20 font-heading font-bold text-xl">

@@ -92,8 +92,8 @@ export function Work({ showTitle = true }: WorkProps) {
                                 id={project.id}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-10%" }}
-                                transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+                                viewport={{ once: true, margin: "-5%" }}
+                                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                                 className="sticky w-full mb-12 lg:mb-20"
                                 style={{
                                     top: `calc(80px + ${index * (isMobile ? 20 : 40)}px)`,
@@ -101,7 +101,7 @@ export function Work({ showTitle = true }: WorkProps) {
                                 }}
                             >
                                 <div className={cn(
-                                    "flex flex-col lg:flex-row items-center gap-8 lg:gap-24 p-6 lg:p-12 rounded-[32px] md:rounded-[40px] bg-white/[0.03] border border-white/[0.08] backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.4)] transition-all duration-700 hover:bg-white/[0.05] hover:border-white/[0.12]",
+                                    "flex flex-col lg:flex-row items-center gap-6 lg:gap-12 xl:gap-24 p-4 sm:p-6 lg:p-8 xl:p-12 rounded-[24px] md:rounded-[40px] bg-white/[0.03] border border-white/[0.08] backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.4)] transition-all duration-700 hover:bg-white/[0.05] hover:border-white/[0.12]",
                                     !isEven && "lg:flex-row-reverse"
                                 )}>
                                     
@@ -142,7 +142,7 @@ export function Work({ showTitle = true }: WorkProps) {
                                                 </span>
                                             </div>
                                             
-                                            <h4 className="text-3xl md:text-4xl lg:text-5xl font-heading font-medium text-foreground tracking-tight leading-[1.1]">
+                                            <h4 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium text-foreground tracking-tight leading-[1.1]">
                                                 {project.title}
                                             </h4>
                                             

@@ -3,12 +3,11 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { AeroButton as Button } from "@/components/ui/AeroButton";
 import { cn } from "@/lib/cn";
 import { motion, AnimatePresence } from "framer-motion";
-import { ThemeSwitcher } from "./ThemeSwitcher";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { SettingsDropdown } from "./SettingsDropdown";
 
 const megaMenu: Record<string, { label: string; desc: string; href: string }[]> = {
     "/expertise": [
@@ -42,16 +41,16 @@ const navLinks = [
     { label: "Process", href: "/process" },
     { label: "Work", href: "/work" },
     { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const pathname = usePathname();
     const closeTimeout = useRef<NodeJS.Timeout | null>(null);
 
-    const closeMenu = useCallback(() => setIsOpen(false), []);
+    const closeMenu = useCallback(() => setHoveredLink(null), []);
 
     const handleNavMouseEnter = (href: string) => {
         if (closeTimeout.current) clearTimeout(closeTimeout.current);
@@ -68,7 +67,11 @@ export function Navbar() {
         const handleScroll = () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
-                    setScrolled(window.scrollY > 20);
+                    const shouldBeScrolled = window.scrollY > 20;
+                    setScrolled(prev => {
+                        if (prev !== shouldBeScrolled) return shouldBeScrolled;
+                        return prev;
+                    });
                     ticking = false;
                 });
                 ticking = true;
@@ -99,15 +102,15 @@ export function Navbar() {
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-                scrolled ? "py-4" : "py-6"
+                scrolled ? "py-3 md:py-4" : "py-4 md:py-6"
             )}
         >
-            <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between">
+            <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 md:px-8 xl:px-20 flex items-center justify-between gap-2 sm:gap-4">
                 {/* Logo */}
                 <Link
                     href="/"
                     onClick={closeMenu}
-                    className="flex items-center gap-2.5 font-heading font-bold text-xl tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-[24px] px-6 py-3.5 hover:scale-[1.02] active:scale-[0.98] group relative"
+                    className="flex items-center gap-2 font-heading font-bold text-base sm:text-xl tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-[20px] px-4 sm:px-6 py-2.5 sm:py-3.5 hover:scale-[1.02] active:scale-[0.98] group relative"
                     aria-label="PRISM Home"
                 >
                     <div className="absolute inset-0 aero-island rounded-[24px] z-[-1]" style={{ backdropFilter: "blur(16px) saturate(180%)", WebkitBackdropFilter: "blur(16px) saturate(180%)" }} />
@@ -118,7 +121,7 @@ export function Navbar() {
 
                 {/* Desktop Nav Island with Mega Menu */}
                 <div
-                    className="hidden md:flex items-center relative rounded-[24px] min-w-[420px] lg:min-w-[500px]"
+                    className="hidden lg:flex items-center relative rounded-[24px] min-w-[400px] xl:min-w-[500px]"
                     onMouseLeave={handleNavMouseLeave}
                 >
                     {/* Glass Layer — pill row only */}
@@ -127,20 +130,6 @@ export function Navbar() {
 
                     {/* Pill Row */}
                     <div className="relative flex items-center px-1.5 py-1.5 w-full">
-                        <div className="absolute inset-x-1.5 inset-y-1.5 pointer-events-none flex items-center justify-between z-0">
-                            {navLinks.map((link) => (
-                                <div key={`bg-${link.href}`} className="relative h-full flex-1 flex items-center justify-center">
-                                    {isActive(link.href) && (
-                                        <motion.div
-                                            layoutId="liquid-pill"
-                                            className="absolute inset-0 aero-pill rounded-[18px]"
-                                            transition={{ type: "spring", stiffness: 700, damping: 35 }}
-                                        />
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-
                         <nav className="relative flex items-center justify-between w-full z-10" aria-label="Desktop Navigation">
                             {navLinks.map((link) => {
                                 const active = isActive(link.href);
@@ -151,11 +140,18 @@ export function Navbar() {
                                         onClick={closeMenu}
                                         onMouseEnter={() => handleNavMouseEnter(link.href)}
                                         className={cn(
-                                            "relative px-5 py-2.5 rounded-[18px] text-sm transition-all duration-300 flex-1 text-center",
+                                            "relative px-5 py-2.5 rounded-[18px] text-sm transition-all duration-300 flex-1 text-center group",
                                             active ? "text-background font-semibold" : "text-foreground/60 hover:text-foreground font-medium"
                                         )}
                                     >
-                                        {link.label}
+                                        {active && (
+                                            <motion.div
+                                                layoutId="liquid-pill-navbar"
+                                                className="absolute inset-0 aero-pill rounded-[18px] pointer-events-none z-[-1]"
+                                                transition={{ type: "spring", stiffness: 700, damping: 35 }}
+                                            />
+                                        )}
+                                        <span className="relative z-10 tracking-tight">{link.label}</span>
                                     </Link>
                                 );
                             })}
@@ -205,11 +201,10 @@ export function Navbar() {
                 </div>
 
                 {/* Right Controls */}
-                <div className="hidden lg:flex items-center gap-2">
-                    <ThemeSwitcher uniqueId="desktop-nav" />
-                    <LanguageSwitcher />
+                <div className="flex items-center gap-2">
+                    <SettingsDropdown />
 
-                    <Link href="/#contact" tabIndex={-1} className="rounded-[24px] p-1 group relative">
+                    <Link href="/contact" tabIndex={-1} className="hidden lg:flex rounded-[24px] p-1 group relative">
                         <div className="absolute inset-0 aero-island rounded-[24px] z-[-1]" style={{ backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }} />
                         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-50 rounded-[24px]" />
                         <Button
@@ -220,17 +215,6 @@ export function Navbar() {
                         </Button>
                     </Link>
                 </div>
-
-                {/* Mobile Toggle */}
-                <button
-                    type="button"
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="hidden md:hidden p-2 -mr-2 text-foreground/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md transition-colors"
-                    aria-expanded={isOpen}
-                    aria-label={isOpen ? "Close menu" : "Open menu"}
-                >
-                    {isOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
             </div>
 
         </header>

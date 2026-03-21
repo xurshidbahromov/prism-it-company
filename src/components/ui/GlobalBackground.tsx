@@ -35,8 +35,8 @@ export function GlobalBackground() {
       <motion.div
         style={{
           y: y1, x: x1, scale: scale1, opacity: opacity1,
-          background: "radial-gradient(circle at 40% 40%, rgba(99,155,219,0.30) 0%, rgba(147,197,253,0.15) 45%, transparent 70%)",
-          filter: "blur(80px)",
+          background: "radial-gradient(circle at 40% 40%, rgba(99,155,219,0.22) 0%, rgba(147,197,253,0.1) 40%, transparent 80%)",
+          filter: "blur(40px)",
         }}
         className="absolute -top-[20%] -left-[15%] w-[70vw] h-[70vw] min-w-[550px] min-h-[550px] rounded-full"
       />
@@ -45,8 +45,8 @@ export function GlobalBackground() {
       <motion.div
         style={{
           y: y2, x: x2, scale: scale2, opacity: opacity2,
-          background: "radial-gradient(circle at 60% 60%, rgba(59,130,246,0.22) 0%, rgba(212,212,212,0.10) 45%, transparent 70%)",
-          filter: "blur(80px)",
+          background: "radial-gradient(circle at 60% 60%, rgba(59,130,246,0.18) 0%, rgba(212,212,212,0.06) 45%, transparent 80%)",
+          filter: "blur(40px)",
         }}
         className="absolute -bottom-[20%] -right-[15%] w-[60vw] h-[60vw] min-w-[480px] min-h-[480px] rounded-full"
       />
@@ -55,8 +55,8 @@ export function GlobalBackground() {
       <motion.div
         style={{
           y: y3, scale: scale3, opacity: opacity3,
-          background: "radial-gradient(circle at 50% 50%, rgba(147,197,253,0.20) 0%, rgba(99,155,219,0.08) 50%, transparent 70%)",
-          filter: "blur(100px)",
+          background: "radial-gradient(circle at 50% 50%, rgba(147,197,253,0.15) 0%, rgba(99,155,219,0.06) 50%, transparent 80%)",
+          filter: "blur(60px)",
         }}
         className="absolute top-[20%] left-[15%] w-[65vw] h-[65vw] min-w-[500px] min-h-[500px] rounded-full"
       />

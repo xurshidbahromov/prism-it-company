@@ -63,7 +63,7 @@ export function Tabs() {
             <div className="absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-foreground/5 via-transparent to-transparent hidden lg:block"></div>
 
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 xl:gap-24 items-start">
 
                     {/* Left: Heading & Protocol Navigation (lg:col-span-5) */}
                     <div className="lg:col-span-5 space-y-16">
@@ -80,7 +80,7 @@ export function Tabs() {
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1] max-w-sm"
+                                className="text-3xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1] max-w-sm"
                             >
                                 Delivery without <span className="text-foreground/40">doubt.</span>
                             </motion.h2>
@@ -93,7 +93,7 @@ export function Tabs() {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={cn(
-                                        "group relative w-full text-left px-6 py-5 transition-all duration-500 rounded-xl overflow-hidden text-lg font-heading font-medium tracking-tight",
+                                        "group relative w-full text-left px-4 sm:px-6 py-4 sm:py-5 transition-all duration-500 rounded-xl overflow-hidden text-base sm:text-lg font-heading font-medium tracking-tight",
                                         activeTab === tab.id ? "text-foreground" : "text-foreground/30 hover:text-foreground/60"
                                     )}
                                 >
@@ -126,7 +126,7 @@ export function Tabs() {
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -20 }}
-                                transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
+                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                                 className="relative group"
                             >
                                 {/* Subtle Mist Glass background removed in favor of a clean, structureless look like Services.tsx */}

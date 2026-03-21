@@ -127,7 +127,7 @@ export function DetailedCapabilities() {
                                 className="space-y-10 relative z-10"
                             >
                                 <div className="space-y-6">
-                                    <div className={cn("inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-foreground/[0.03] border border-foreground/[0.08] backdrop-blur-md", cap.color.replace('text-', 'text-opacity-80 text-'))}>
+                                    <div className={cn("inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-foreground/[0.04] border border-foreground/[0.08] backdrop-blur-sm", cap.color.replace('text-', 'text-opacity-80 text-'))}>
                                         <cap.icon className="w-3.5 h-3.5" strokeWidth={2.5} />
                                         <span className="text-[10px] font-bold uppercase tracking-[0.25em]">{cap.title.split(' ').slice(-1)}</span>
                                     </div>
@@ -169,14 +169,14 @@ export function DetailedCapabilities() {
                                 initial={{ opacity: 0, scale: 0.98 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.1, duration: 0.8 }}
+                                transition={{ delay: 0.1, duration: 0.5 }}
                                 className="relative z-10"
                             >
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {cap.features.map((feature, idx) => (
                                         <div 
                                             key={idx} 
-                                            className="group relative bg-foreground/[0.02] border border-foreground/[0.06] backdrop-blur-sm p-8 flex flex-col justify-between rounded-3xl hover:bg-foreground/[0.04] hover:border-foreground/10 transition-all duration-500 min-h-[200px]"
+                                            className="group relative bg-foreground/[0.02] border border-foreground/[0.06] p-8 flex flex-col justify-between rounded-3xl hover:bg-foreground/[0.04] hover:border-foreground/10 transition-all duration-500 min-h-[200px] will-change-transform"
                                         >
                                             <div className="mb-6">
                                                 <div className={cn("w-1.5 h-10 rounded-full opacity-20 group-hover:opacity-60 transition-opacity duration-500", cap.bgGlow.replace('/10', '/60'))}></div>
@@ -187,7 +187,7 @@ export function DetailedCapabilities() {
                                             
                                             {/* Subtle liquid glow on hover */}
                                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none rounded-3xl overflow-hidden">
-                                                <div className={cn("absolute -top-1/2 -left-1/2 w-full h-full opacity-10 blur-[80px]", cap.bgGlow)}></div>
+                                                <div className={cn("absolute -top-1/2 -left-1/2 w-full h-full opacity-10 blur-[40px]", cap.bgGlow)}></div>
                                             </div>
                                         </div>
                                     ))}

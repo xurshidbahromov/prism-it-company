@@ -9,9 +9,9 @@ export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="pt-24 pb-6 mt-0 relative overflow-hidden">
+        <footer className="pt-16 sm:pt-24 pb-32 lg:pb-6 mt-0 relative overflow-hidden">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-24 relative z-10">
+                <div className="grid grid-cols-12 gap-8 lg:gap-8 mb-16 sm:mb-24 relative z-10">
 
                     {/* Brand Col - 4 cols */}
                     <div className="col-span-12 lg:col-span-4 flex flex-col justify-between">
@@ -22,14 +22,14 @@ export function Footer() {
                                     PRISM
                                 </span>
                             </Link>
-                            <p className="text-foreground/50 text-base leading-relaxed max-w-[280px] font-light">
+                            <p className="text-foreground/50 text-sm sm:text-base leading-relaxed max-w-[280px] font-light">
                                 Building digital engines that drive growth for ambitious brands worldwide.
                             </p>
                         </div>
                     </div>
 
                     {/* Services Links Col */}
-                    <div className="col-span-6 md:col-span-4 lg:col-span-2">
+                    <div className="col-span-6 sm:col-span-4 lg:col-span-2">
                         <h4 className="font-medium text-foreground mb-6 text-sm uppercase tracking-widest opacity-40">Services</h4>
                         <ul className="flex flex-col gap-4">
                             <li><Link href="/expertise" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">Web Development</Link></li>
@@ -40,7 +40,7 @@ export function Footer() {
                     </div>
 
                     {/* Company Links Col */}
-                    <div className="col-span-6 md:col-span-4 lg:col-span-2">
+                    <div className="col-span-6 sm:col-span-4 lg:col-span-2">
                         <h4 className="font-medium text-foreground mb-6 text-sm uppercase tracking-widest opacity-40">Company</h4>
                         <ul className="flex flex-col gap-4">
                             <li><Link href="/about" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">About Us</Link></li>
@@ -51,7 +51,7 @@ export function Footer() {
                     </div>
 
                     {/* Connect Links Col */}
-                    <div className="col-span-6 md:col-span-4 lg:col-span-2">
+                    <div className="col-span-6 sm:col-span-4 lg:col-span-2">
                         <h4 className="font-medium text-foreground mb-6 text-sm uppercase tracking-widest opacity-40">Connect</h4>
                         <ul className="flex flex-col gap-4">
                             <li>
@@ -78,7 +78,7 @@ export function Footer() {
                     </div>
 
                     {/* Legal Links Col */}
-                    <div className="col-span-6 md:col-span-4 lg:col-span-2">
+                    <div className="col-span-6 sm:col-span-4 lg:col-span-2">
                         <h4 className="font-medium text-foreground mb-6 text-sm uppercase tracking-widest opacity-40">Legal</h4>
                         <ul className="flex flex-col gap-4">
                             <li><a href="#" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">Privacy Policy</a></li>
@@ -89,7 +89,7 @@ export function Footer() {
                 </div>
 
                 {/* Copyright Bar */}
-                <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-foreground/40 border-t border-foreground/[0.05] relative z-10">
+                <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-foreground/40 border-t border-foreground/[0.05] relative z-10">
                     <p className="text-xs font-medium tracking-wide">
                         &copy; {currentYear} PRISM. ALL RIGHTS RESERVED.
                     </p>
@@ -105,6 +105,7 @@ export function Footer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeOut" }}
+
                 className="w-full overflow-hidden pointer-events-none select-none"
             >
                 <h2 className="w-full text-center whitespace-nowrap font-heading font-black tracking-tighter text-foreground/[0.06] leading-none uppercase"

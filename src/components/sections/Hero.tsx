@@ -30,8 +30,8 @@ const badges: BadgeInfo[] = [
         id: "frontend",
         name: "Alex Chen",
         subtitle: "Frontend Expert · 120+ projects",
-        gradientFrom: "blue-500",
-        gradientTo: "indigo-600",
+        gradientFrom: "from-blue-500",
+        gradientTo: "to-indigo-600",
         positionClasses: "top-[18%] left-[1%] xl:left-[2%]",
         animation: "float",
         cursor: "frontend",
@@ -40,8 +40,8 @@ const badges: BadgeInfo[] = [
         id: "uiux",
         name: "Sara Kim",
         subtitle: "UI/UX Expert · Figma wizard",
-        gradientFrom: "violet-500",
-        gradientTo: "pink-500",
+        gradientFrom: "from-violet-500",
+        gradientTo: "to-pink-500",
         positionClasses: "top-[48%] right-[1%] xl:right-[2%]",
         animation: "floatDelayed",
         cursor: "figma",
@@ -50,8 +50,8 @@ const badges: BadgeInfo[] = [
         id: "backend",
         name: "James L.",
         subtitle: "Backend Expert · Node / Go",
-        gradientFrom: "cyan-500",
-        gradientTo: "slate-700",
+        gradientFrom: "from-cyan-500",
+        gradientTo: "to-slate-700",
         positionClasses: "top-[62%] left-[1%] xl:left-[2%]",
         animation: "floatDelayed2",
         cursor: "backend",
@@ -114,36 +114,22 @@ export function Hero() {
 
     // Floating animation for expert badges
     const floatAnimation = {
-        y: shouldReduceMotion ? 0 : [0, -15, 0],
-        transition: {
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeOut" as const
-        }
+        y: shouldReduceMotion ? 0 : [0, -12, 0],
+        transition: { duration: 3, repeat: Infinity, ease: "easeInOut" as const }
     };
 
     const floatAnimationDelayed = {
-        y: shouldReduceMotion ? 0 : [0, 15, 0],
-        transition: {
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeOut" as const,
-            delay: 1
-        }
+        y: shouldReduceMotion ? 0 : [0, 12, 0],
+        transition: { duration: 3.5, repeat: Infinity, ease: "easeInOut" as const, delay: 0.5 }
     };
 
     const floatAnimationDelayed2 = {
-        y: shouldReduceMotion ? 0 : [0, -10, 0],
-        transition: {
-            duration: 4.5,
-            repeat: Infinity,
-            ease: "easeOut" as const,
-            delay: 2
-        }
+        y: shouldReduceMotion ? 0 : [0, -8, 0],
+        transition: { duration: 3.2, repeat: Infinity, ease: "easeInOut" as const, delay: 1 }
     };
 
     return (
-        <section id="top" role="region" aria-labelledby="hero-heading" className="relative pt-44 pb-20 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden">
+        <section id="top" role="region" aria-labelledby="hero-heading" className="relative pt-32 pb-16 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden">
 
             {/* Custom Cursor SVG component (reusable inline) */}
             {/* Expert badges are now data-driven to simplify updates */}
@@ -159,16 +145,16 @@ export function Hero() {
                         key={b.id}
                         animate={animMap[b.animation]}
                         className={cn(
-                            "absolute z-20 hidden lg:flex items-center gap-3 px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-xl border border-foreground/10 shadow-[0_8px_32px_var(--aero-shadow)] cursor-default select-none transition-all duration-500",
+                            "absolute z-20 hidden lg:flex lg:scale-[0.8] xl:scale-100 origin-center items-center gap-3 px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-xl border border-foreground/10 shadow-[0_8px_32px_var(--aero-shadow)] cursor-default select-none transition-all duration-500 will-change-transform",
                             b.positionClasses,
-                            // At 1024px (lg), shift slightly outward
-                            b.id === "frontend" && "lg:left-[0%] xl:left-[2%]",
-                            b.id === "uiux" && "lg:right-[0%] xl:right-[2%]",
-                            b.id === "backend" && "lg:left-[0%] xl:left-[2%]"
+                            // Adjust inward strictly on lg so they don't hit edge
+                            b.id === "frontend" && "lg:left-[2%] xl:left-[2%]",
+                            b.id === "uiux" && "lg:right-[2%] xl:right-[2%]",
+                            b.id === "backend" && "lg:left-[2%] xl:left-[2%]"
                         )}
                     >
                         <div
-                            className={`relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-${b.gradientFrom} to-${b.gradientTo} flex items-center justify-center ring-2 ring-white/10 overflow-hidden`}
+                            className={`relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br ${b.gradientFrom} ${b.gradientTo} flex items-center justify-center ring-2 ring-white/10 overflow-hidden`}
                         >
                             <svg
                                 className="w-8 h-8 text-white/60 mt-1"
@@ -195,7 +181,7 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     className="flex items-center gap-2 bg-foreground px-5 py-2.5 rounded-full mb-10 shadow-[0_0_30px_var(--aero-shadow)] hover-trigger"
                 >
                     <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
@@ -209,8 +195,8 @@ export function Hero() {
                     id="hero-heading"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-4xl sm:text-6xl md:text-[76px] lg:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-5xl"
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
+                    className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[68px] xl:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-4xl xl:max-w-5xl"
                 >
                     We Build The <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">Software</span> That <br className="hidden sm:block" />
                     Transforms Businesses.
@@ -220,8 +206,8 @@ export function Hero() {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-lg md:text-[20px] font-light text-foreground/60 mb-12 leading-relaxed max-w-[700px]"
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                    className="text-sm sm:text-lg md:text-[20px] font-light text-foreground/60 mb-10 leading-relaxed max-w-[700px]"
                 >
                     We partner with ambitious brands to engineer high-performing
                     technological solutions and digital products that turn visions into reality.
@@ -231,11 +217,11 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row items-center gap-4 mb-24"
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+                    className="flex flex-col sm:flex-row items-center gap-3 mb-16 w-full sm:w-auto"
                 >
                     {/* Primary CTA (Blue Pill) */}
-                    <Link href="#contact" className="w-full sm:w-auto hover-trigger">
+                    <Link href="/contact" className="w-full sm:w-auto hover-trigger">
                         <Button
                             variant="aero"
                             size="pill"
@@ -258,49 +244,40 @@ export function Hero() {
                     </Link>
                 </motion.div>
 
-                {/* small expert badge strip shown only on mobile */}
-                <div className="flex xl:hidden justify-center gap-6 mb-12">
-                    {badges.map((b) => (
-                        <div
-                            key={b.id}
-                            className={`w-10 h-10 rounded-full bg-gradient-to-br from-${b.gradientFrom} to-${b.gradientTo}`}
-                            aria-label={`${b.name}, ${b.subtitle}`}
-                        />
-                    ))}
-                </div>
+
 
                 {/* Trust Logos (Glass Bottom Panel) */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
                     className="w-full max-w-5xl flex flex-col items-center"
                 >
                     <p className="text-sm font-semibold tracking-widest text-foreground/40 uppercase shrink-0">
                         Full-Stack & AI Infrastructure
                     </p>
 
-                    <div className="w-full flex flex-wrap justify-center items-center gap-6 md:gap-10 bg-background/5 border border-foreground/10 backdrop-blur-md rounded-[32px] px-8 py-6 shadow-[0_10px_40px_var(--aero-shadow)] hover-trigger">
-                        <div className="flex items-center gap-8 md:gap-12 flex-wrap justify-center">
+                    <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-10 bg-background/5 border border-foreground/10 backdrop-blur-md rounded-[24px] sm:rounded-[32px] px-4 sm:px-8 py-4 sm:py-6 shadow-[0_10px_40px_var(--aero-shadow)] hover-trigger">
+                        <div className="flex items-center gap-4 sm:gap-8 md:gap-12 flex-wrap justify-center">
                             {/* Frontend */}
-                            <div className="flex items-center gap-6 border-r border-foreground/10 pr-8">
-                                <SiNextdotjs className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-foreground transition-colors" />
-                                <SiReact className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#61DAFB] transition-colors" />
-                                <SiTypescript className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3178C6] transition-colors" />
+                            <div className="flex items-center gap-3 sm:gap-6 lg:border-r border-foreground/10 pr-3 sm:pr-4 lg:pr-8">
+                                <SiNextdotjs className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-foreground transition-colors" />
+                                <SiReact className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#61DAFB] transition-colors" />
+                                <SiTypescript className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3178C6] transition-colors" />
                             </div>
 
                             {/* Backend & DB */}
-                            <div className="flex items-center gap-6 border-r border-foreground/10 pr-8">
-                                <SiNodedotjs className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#339933] transition-colors" />
-                                <SiPython className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3776AB] transition-colors" />
-                                <SiPostgresql className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#4169E1] transition-colors" />
+                            <div className="flex items-center gap-3 sm:gap-6 lg:border-r border-foreground/10 pr-3 sm:pr-4 lg:pr-8">
+                                <SiNodedotjs className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#339933] transition-colors" />
+                                <SiPython className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3776AB] transition-colors" />
+                                <SiPostgresql className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#4169E1] transition-colors" />
                             </div>
 
                             {/* AI & Cloud */}
-                            <div className="flex items-center gap-6">
-                                <SiOpenai className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#412991] transition-colors" />
-                                <FaAws className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#FF9900] transition-colors" />
-                                <SiFigma className="w-12 h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#F24E1E] transition-colors" />
+                            <div className="flex items-center gap-3 sm:gap-6">
+                                <SiOpenai className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#412991] transition-colors" />
+                                <FaAws className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#FF9900] transition-colors" />
+                                <SiFigma className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#F24E1E] transition-colors" />
                             </div>
                         </div>
                     </div>

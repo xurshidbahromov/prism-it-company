@@ -9,14 +9,14 @@ import { motion, useInView, useSpring, useTransform, animate } from "framer-moti
 
 function Counter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-100px" });
+    const inView = useInView(ref, { once: true, margin: "-20px" });
     const [displayValue, setDisplayValue] = useState(0);
 
     useEffect(() => {
         if (inView) {
             const controls = animate(0, value, {
-                duration: 2,
-                ease: "easeOut",
+                duration: 1.2,
+                ease: [0.16, 1, 0.3, 1], // Custom extremely smooth easeOut curve
                 onUpdate: (latest) => setDisplayValue(Math.floor(latest)),
             });
             return () => controls.stop();
@@ -66,7 +66,7 @@ export function StatsRow() {
             <div className="absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-foreground/10 via-transparent to-transparent hidden md:block"></div>
 
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 xl:gap-24 items-start">
 
                     {/* Left: Heading & Narrative */}
                     <div className="lg:col-span-5 space-y-8">
@@ -76,7 +76,7 @@ export function StatsRow() {
                             viewport={{ once: true }}
                         >
                             <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6 block">Our Impact</span>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.05] mb-8">
+                            <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.05] mb-8">
                                 The logic beyond <br />
                                 high-impact <span className="text-foreground/40">success.</span>
                             </h2>
@@ -105,7 +105,7 @@ export function StatsRow() {
 
                     {/* Right: Metrics Grid */}
                     <div className="lg:col-span-7 mt-12 lg:mt-0">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                             {stats.map((stat, index) => (
                                 <motion.div
                                     key={index}
@@ -119,7 +119,7 @@ export function StatsRow() {
                                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 backdrop-blur-[12px] rounded-2xl transition-opacity duration-700 pointer-events-none"></div>
 
                                     <div className="relative z-10 flex flex-col items-start gap-4">
-                                        <div className="text-5xl lg:text-6xl font-heading font-medium tracking-tighter text-foreground">
+                                        <div className="text-4xl lg:text-5xl xl:text-6xl font-heading font-medium tracking-tighter text-foreground">
                                             {stat.isDecimal ? (
                                                 <DecimalCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                                             ) : (
@@ -149,14 +149,14 @@ export function StatsRow() {
 // Fixed Counter for Decimal points (e.g. 3.2M)
 function DecimalCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-100px" });
+    const inView = useInView(ref, { once: true, margin: "-20px" });
     const [displayValue, setDisplayValue] = useState(0);
 
     useEffect(() => {
         if (inView) {
             const controls = animate(0, value * 10, {
-                duration: 2,
-                ease: "easeOut",
+                duration: 1.2,
+                ease: [0.16, 1, 0.3, 1],
                 onUpdate: (latest) => setDisplayValue(Math.floor(latest)),
             });
             return () => controls.stop();

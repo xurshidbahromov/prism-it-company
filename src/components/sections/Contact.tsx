@@ -3,12 +3,13 @@
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export function Contact() {
     return (
-        <section id="contact-form" className="py-32 relative z-10 overflow-hidden">
+        <section id="contact" className="py-24 md:py-32 relative z-10 overflow-hidden">
             <Container>
-                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center lg:items-start">
                     {/* Left Side: Info */}
                     <div className="w-full lg:w-5/12 flex flex-col justify-center">
                         <motion.span
@@ -23,7 +24,7 @@ export function Contact() {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-5xl lg:text-7xl font-heading font-medium tracking-tighter leading-[1.05] mb-8 text-foreground"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-medium tracking-tighter leading-[1.05] mb-6 sm:mb-8 text-foreground"
                         >
                             Let's start a <br className="hidden lg:block"/>
                             <span className="text-foreground/40">conversation.</span>
@@ -34,7 +35,7 @@ export function Contact() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-xl text-foreground/60 font-light leading-relaxed mb-12"
+                            className="text-base sm:text-xl text-foreground/60 font-light leading-relaxed mb-8 sm:mb-12"
                         >
                             Have an idea, project, or question? Drop us a message and our team will get back to you within 24 hours.
                         </motion.p>
@@ -44,30 +45,30 @@ export function Contact() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="flex flex-col gap-6"
+                            className="flex flex-col gap-5"
                         >
                             <div className="flex items-center gap-4 text-foreground/80">
-                                <div className="w-12 h-12 rounded-full bg-foreground/[0.03] border border-foreground/[0.05] flex items-center justify-center">
-                                    <Mail className="w-5 h-5" />
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-foreground/[0.03] border border-foreground/[0.05] flex items-center justify-center shrink-0">
+                                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                                 </div>
                                 <div>
                                     <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">Email</div>
-                                    <a href="mailto:hello@prism.com" className="text-lg font-medium hover:text-blue-500 transition-colors">hello@prism.com</a>
+                                    <a href="mailto:hello@prism.dev" className="text-sm sm:text-lg font-medium hover:text-blue-500 transition-colors">hello@prism.dev</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 text-foreground/80">
-                                <div className="w-12 h-12 rounded-full bg-foreground/[0.03] border border-foreground/[0.05] flex items-center justify-center">
-                                    <MapPin className="w-5 h-5" />
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-foreground/[0.03] border border-foreground/[0.05] flex items-center justify-center shrink-0">
+                                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                                 </div>
                                 <div>
                                     <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">Office</div>
-                                    <span className="text-lg font-medium">100 Innovation Drive, Tech City</span>
+                                    <span className="text-sm sm:text-lg font-medium">San Francisco, CA</span>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Right Side: Form */}
+                    {/* Right Side: CTA Card → links to /contact */}
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -75,59 +76,38 @@ export function Contact() {
                         transition={{ delay: 0.4 }}
                         className="w-full lg:w-7/12"
                     >
-                        <form className="bg-foreground/[0.02] border border-foreground/[0.05] rounded-[2rem] p-8 md:p-12 backdrop-blur-xl flex flex-col gap-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="flex flex-col gap-2">
-                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Full Name</label>
-                                    <input
-                                        type="text"
-                                        placeholder="John Doe"
-                                        className="w-full px-5 py-4 bg-background/50 border border-foreground/10 rounded-xl focus:outline-none focus:border-foreground/30 focus:bg-background/80 transition-all text-foreground placeholder:text-foreground/20"
-                                    />
+                        <Link href="/contact" className="group block">
+                            <div className="relative bg-foreground/[0.02] border border-foreground/[0.06] rounded-[24px] sm:rounded-[2rem] p-8 sm:p-12 md:p-16 flex flex-col gap-8 hover:border-foreground/10 hover:bg-foreground/[0.04] transition-all duration-500 overflow-hidden">
+                                {/* Background glow */}
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/[0.04] rounded-full blur-[80px] pointer-events-none group-hover:bg-blue-500/[0.07] transition-all duration-700" />
+                                
+                                <div className="relative z-10">
+                                    <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6">Start a Project</p>
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-medium tracking-tighter text-foreground mb-4 leading-tight">
+                                        Ready to build something<br/>
+                                        <span className="text-foreground/40">remarkable?</span>
+                                    </h3>
+                                    <p className="text-sm sm:text-base text-foreground/50 font-light leading-relaxed max-w-md">
+                                        Fill out our project brief and get a tailored proposal within 24 hours. No generic quotes — just a precise scope and roadmap built for you.
+                                    </p>
                                 </div>
-                                <div className="flex flex-col gap-2">
-                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Email Address</label>
-                                    <input
-                                        type="email"
-                                        placeholder="john@company.com"
-                                        className="w-full px-5 py-4 bg-background/50 border border-foreground/10 rounded-xl focus:outline-none focus:border-foreground/30 focus:bg-background/80 transition-all text-foreground placeholder:text-foreground/20"
-                                    />
-                                </div>
-                            </div>
-                            
-                            <div className="flex flex-col gap-2">
-                                <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Inquiry Type</label>
-                                <div className="relative">
-                                    <select className="w-full px-5 py-4 bg-background/50 border border-foreground/10 rounded-xl focus:outline-none focus:border-foreground/30 focus:bg-background/80 transition-all text-foreground appearance-none cursor-pointer">
-                                        <option value="project" className="bg-background text-foreground">New Project</option>
-                                        <option value="career" className="bg-background text-foreground">Career</option>
-                                        <option value="other" className="bg-background text-foreground">Other</option>
-                                    </select>
-                                    <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-foreground/40">
-                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div className="flex flex-col gap-2">
-                                <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Message</label>
-                                <textarea
-                                    placeholder="Tell us about your goals..."
-                                    rows={4}
-                                    className="w-full px-5 py-4 bg-background/50 border border-foreground/10 rounded-xl focus:outline-none focus:border-foreground/30 focus:bg-background/80 transition-all text-foreground placeholder:text-foreground/20 resize-none"
-                                />
-                            </div>
+                                {/* What's inside preview */}
+                                <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    {["Project Type", "Budget & Timeline", "Project Brief"].map((item, i) => (
+                                        <div key={i} className="flex items-center gap-2 bg-foreground/[0.03] border border-foreground/[0.05] rounded-xl px-4 py-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500/60 shrink-0" />
+                                            <span className="text-xs font-medium text-foreground/50">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
 
-                            <button
-                                type="button"
-                                className="mt-4 w-full bg-foreground text-background hover:bg-foreground/90 px-8 py-5 rounded-xl text-base font-medium transition-all duration-300 flex items-center justify-center gap-2 group"
-                            >
-                                Send Message
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
-                        </form>
+                                <div className="relative z-10 flex items-center gap-3 text-sm font-semibold text-foreground group-hover:text-blue-500 transition-colors duration-300">
+                                    Open the project form
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                </div>
+                            </div>
+                        </Link>
                     </motion.div>
                 </div>
             </Container>

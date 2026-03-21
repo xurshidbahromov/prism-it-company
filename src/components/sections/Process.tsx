@@ -20,16 +20,16 @@ const StepCard = ({ step, idx }: { step: any; idx: number }) => {
             ref={cardRef}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20%" }}
+            viewport={{ once: true, margin: "-5%" }}
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setOpacity(1)}
             onMouseLeave={() => setOpacity(0)}
             transition={{ 
-                duration: 1, 
+                duration: 0.6, 
                 delay: idx * 0.05,
                 ease: [0.19, 1, 0.22, 1] 
             }}
-            className="group relative bg-foreground/[0.02] border border-foreground/[0.06] backdrop-blur-xl p-8 md:p-12 rounded-[32px] hover:border-foreground/10 transition-colors duration-700 overflow-hidden"
+            className="group relative bg-foreground/[0.02] border border-foreground/[0.06] backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-[24px] sm:rounded-[32px] hover:border-foreground/10 transition-colors duration-700 overflow-hidden"
         >
             {/* Mouse Spotlight Glow */}
             <div 
@@ -84,7 +84,7 @@ export function Process() {
     return (
         <section id="process" className="py-24 relative z-10">
             <Container>
-                <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 relative items-start">
+                <div className="flex flex-col lg:flex-row gap-16 xl:gap-32 relative items-start">
 
                     {/* Left Side: Sticky Storytelling Title */}
                     <div className="w-full lg:w-5/12 lg:sticky lg:top-40 h-fit">
@@ -101,7 +101,7 @@ export function Process() {
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="text-5xl md:text-6xl lg:text-7xl font-heading font-medium tracking-tighter leading-[1] mb-10 text-foreground"
+                                className="text-4xl md:text-6xl lg:text-7xl font-heading font-medium tracking-tighter leading-[1] mb-10 text-foreground"
                             >
                                 Protocol <br className="hidden lg:block"/>
                                 <span className="text-foreground/40">Mindset.</span>

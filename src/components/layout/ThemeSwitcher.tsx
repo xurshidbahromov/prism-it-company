@@ -29,22 +29,24 @@ export function ThemeSwitcher({ uniqueId = "default" }: ThemeSwitcherProps) {
 
     return (
         <div
-            className="relative flex items-center rounded-[24px] px-1 py-1"
+            className="relative flex h-10 w-11 items-center justify-center z-20"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            {/* Glass background */}
-            <div
-                className="absolute inset-0 aero-island rounded-[24px] z-[-1]"
-                style={{ backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-40 rounded-[24px]" />
-
+            {/* Absolute expanding container to prevent flex sibling pushing */}
             <motion.div
-                className="relative flex items-center z-10 h-8 overflow-hidden"
-                animate={{ width: hovered ? options.length * 36 : 36 }}
+                className="absolute right-0 flex items-center rounded-[24px] px-1 py-1 origin-right"
+                animate={{ width: hovered ? options.length * 36 + 8 : 44 }}
                 transition={{ type: "spring", stiffness: 200, damping: 28, mass: 0.9 }}
             >
+                {/* Glass background */}
+                <div
+                    className="absolute inset-0 aero-island rounded-[24px] z-[-1]"
+                    style={{ backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-40 rounded-[24px]" />
+
+                <div className="relative flex items-center z-10 h-8 overflow-hidden w-full">
                 <AnimatePresence mode="popLayout">
                     {hovered ? (
                             // Expanded: show all options
@@ -98,6 +100,7 @@ export function ThemeSwitcher({ uniqueId = "default" }: ThemeSwitcherProps) {
                             </div>
                         )}
                 </AnimatePresence>
+                </div>
             </motion.div>
         </div>
     );

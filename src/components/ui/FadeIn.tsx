@@ -30,11 +30,11 @@ export function FadeIn({ children, delay = 0, direction = "up", className }: Fad
                 x: 0,
                 y: 0
             }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             transition={{
-                duration: 0.7,
+                duration: 0.5,
                 delay: delay,
-                ease: [0.21, 0.47, 0.32, 0.98] // custom gentle cubic bezier
+                ease: [0.16, 1, 0.3, 1] // smoother and faster custom cubic bezier
             }}
             className={className}
         >

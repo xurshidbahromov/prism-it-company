@@ -56,7 +56,7 @@ export function Services({ showViewAll = true }: { showViewAll?: boolean }) {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.05]"
+                            className="text-3xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.05]"
                         >
                             Services built for <br />
                             high-growth <span className="text-foreground/40">ventures.</span>
@@ -78,7 +78,7 @@ export function Services({ showViewAll = true }: { showViewAll?: boolean }) {
                 </div>
 
                 {/* Minimal 4-Column Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/5 border border-foreground/5 rounded-[32px] overflow-hidden">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-foreground/5 border border-foreground/5 rounded-[32px] overflow-hidden">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -86,7 +86,7 @@ export function Services({ showViewAll = true }: { showViewAll?: boolean }) {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative bg-background p-10 lg:p-12 flex flex-col justify-between hover:bg-foreground/[0.01] transition-colors duration-500"
+                            className="group relative bg-background p-6 md:p-10 xl:p-12 flex flex-col justify-between hover:bg-foreground/[0.01] transition-colors duration-500"
                         >
                             {/* Subtle Mist Glass Hover Effect */}
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
