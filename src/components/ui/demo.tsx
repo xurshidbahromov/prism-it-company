@@ -1,4 +1,4 @@
-import ButtonWithIconDemo from "@/components/ui/button-witn-icon";
+import ButtonWithIconDemo from "@/components/ui/ButtonWithIcon";
 
 export default function DemoOne() {
   return <ButtonWithIconDemo />;

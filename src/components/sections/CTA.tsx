@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import ButtonWithIconDemo from "@/components/ui/button-witn-icon";
+import ButtonWithIconDemo from "@/components/ui/ButtonWithIcon";
 
 export function CTA() {
     return (
