@@ -101,7 +101,7 @@ export function Work({ showTitle = true }: WorkProps) {
                                 }}
                             >
                                 <div className={cn(
-                                    "flex flex-col lg:flex-row items-center gap-6 lg:gap-12 xl:gap-24 p-4 sm:p-6 lg:p-8 xl:p-12 rounded-[24px] md:rounded-[40px] bg-white/[0.03] border border-white/[0.08] backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.4)] transition-all duration-700 hover:bg-white/[0.05] hover:border-white/[0.12]",
+                                    "flex flex-col lg:flex-row items-center gap-6 lg:gap-12 xl:gap-24 p-4 sm:p-6 lg:p-8 xl:p-12 rounded-[24px] md:rounded-[40px] bg-foreground/[0.02] border border-foreground/[0.08] backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.4)] transition-all duration-700 hover:bg-foreground/[0.04] hover:border-foreground/[0.12]",
                                     !isEven && "lg:flex-row-reverse"
                                 )}>
                                     
@@ -119,8 +119,8 @@ export function Work({ showTitle = true }: WorkProps) {
                                         </div>
 
                                         {/* The Mockup Display */}
-                                        <div className="absolute inset-4 md:inset-8 rounded-[24px] overflow-hidden border border-white/10 shadow-2xl z-10 transition-transform duration-1000 group-hover/visual:scale-[1.02]">
-                                            <div className="relative w-full h-full bg-white/[0.02]">
+                                        <div className="absolute inset-4 md:inset-8 rounded-[24px] overflow-hidden border border-foreground/10 shadow-2xl z-10 transition-transform duration-1000 group-hover/visual:scale-[1.02]">
+                                            <div className="relative w-full h-full bg-foreground/[0.02]">
                                                 <Image 
                                                     src={project.image} 
                                                     alt={project.title}

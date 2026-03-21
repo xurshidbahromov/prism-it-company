@@ -12,7 +12,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
                 ref={ref}
                 className={cn(
                     "glass-panel rounded-2xl p-6 md:p-8 transition-all duration-300",
-                    hoverable && "hover:border-white/20 hover:bg-white/[0.05] hover:shadow-glass group",
+                    hoverable && "hover:border-foreground/20 hover:bg-foreground/[0.05] hover:shadow-glass group",
                     className
                 )}
                 {...props}

@@ -146,7 +146,7 @@ export function MobileNav() {
                                 ref={(el) => { linkRefs.current[index] = el; }}
                                 className={cn(
                                     "relative flex-1 flex flex-col items-center justify-center gap-0.5 py-2 sm:py-3 rounded-[14px] sm:rounded-[18px] transition-colors duration-500 z-10",
-                                    active ? "text-black font-bold" : "text-white/50 hover:text-white"
+                                    active ? "text-[var(--aero-pill-text)] font-bold" : "text-foreground/50 hover:text-foreground"
                                 )}
                             >
                                 <Icon size={18} strokeWidth={active ? 2.5 : 2} />
