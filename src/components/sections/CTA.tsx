@@ -53,8 +53,8 @@ export function CTA() {
                         <ButtonWithIconDemo href="#contact" />
 
                         {/* Secondary Button */}
-                        <Link href="mailto:hello@prism.com" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent hover:bg-foreground/5 text-foreground px-8 py-5 rounded-xl md:rounded-2xl text-base font-medium transition-all duration-300">
-                            hello@prism.com
+                        <Link href="mailto:xurshidbahromov06@gmail.com" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent hover:bg-foreground/5 text-foreground px-8 py-5 rounded-xl md:rounded-2xl text-base sm:text-lg font-medium transition-all duration-300 break-all">
+                            xurshidbahromov06@gmail.com
                         </Link>
                     </motion.div>
                 </div>

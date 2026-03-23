@@ -8,6 +8,7 @@ import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { GlobalBackground } from "@/components/ui/GlobalBackground";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-inter", // Keeping variable name same to minimize CSS/Tailwind changes
@@ -55,6 +56,7 @@ export default function RootLayout({
           </main>
           <MobileNav />
           <Footer />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

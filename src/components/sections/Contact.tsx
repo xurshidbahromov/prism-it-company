@@ -53,7 +53,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">Email</div>
-                                    <a href="mailto:hello@prism.dev" className="text-sm sm:text-lg font-medium hover:text-blue-500 transition-colors">hello@prism.dev</a>
+                                    <a href="mailto:xurshidbahromov06@gmail.com" className="text-sm sm:text-base md:text-lg font-medium hover:text-blue-500 transition-colors break-all">xurshidbahromov06@gmail.com</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 text-foreground/80">
@@ -62,7 +62,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">Office</div>
-                                    <span className="text-sm sm:text-lg font-medium">San Francisco, CA</span>
+                                    <span className="text-sm sm:text-lg font-medium">Tashkent, Uzbekistan</span>
                                 </div>
                             </div>
                         </motion.div>

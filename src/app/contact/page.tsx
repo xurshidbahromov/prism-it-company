@@ -3,8 +3,36 @@
 import { useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Mail, MapPin, Phone, Clock, ChevronRight } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone, Clock, ChevronRight, Instagram, Linkedin, Send } from "lucide-react";
 import { cn } from "@/lib/cn";
+import confetti from "canvas-confetti";
+
+const triggerConfetti = () => {
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    const frame = () => {
+        confetti({
+            particleCount: 4,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0, y: 0.8 },
+            colors: ['#3b82f6', '#8b5cf6', '#ffffff'] // Brand colors
+        });
+        confetti({
+            particleCount: 4,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1, y: 0.8 },
+            colors: ['#3b82f6', '#8b5cf6', '#ffffff']
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    };
+    frame();
+};
 
 const projectTypes = [
     { id: "web", label: "Web Application", desc: "SaaS, internal tools, platforms" },
@@ -36,6 +64,7 @@ export default function ContactPage() {
     const [selectedBudget, setSelectedBudget] = useState<string>("");
     const [selectedTimeline, setSelectedTimeline] = useState<string>("");
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const toggleType = (id: string) => {
         setSelectedTypes((prev) =>
@@ -43,9 +72,48 @@ export default function ContactPage() {
         );
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSubmitted(true);
+        setIsSubmitting(true);
+        
+        const formData = new FormData(e.currentTarget);
+        
+        // Add Web3Forms access key
+        const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+        if (!accessKey) {
+            alert("Xatolik: Web3Forms kaliti (NEXT_PUBLIC_WEB3FORMS_KEY) topilmadi. Sozlamalarni tekshiring.");
+            return;
+        }
+        formData.append("access_key", accessKey);
+        
+        // Add custom state-driven fields
+        formData.append("Project Types", selectedTypes.length > 0 ? selectedTypes.join(", ") : "None selected");
+        formData.append("Timeline/Budget", selectedTimeline);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json"
+                },
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                setSubmitted(true);
+                triggerConfetti();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+                console.error("Form error:", data);
+                alert("Xatolik: Xabar yuborilmadi. Qayta urinib ko'ring.");
+            }
+        } catch (error) {
+            console.error("Fetch error:", error);
+            alert("Tarmoq xatosi. Iltimos kuting va qayta urinib ko'ring.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -55,8 +123,16 @@ export default function ContactPage() {
             <div className="absolute bottom-0 right-0 w-[300px] sm:w-[400px] lg:w-[600px] h-[300px] sm:h-[400px] bg-violet-500/[0.03] rounded-full blur-[100px] pointer-events-none overflow-hidden" />
 
             <Container>
-                    {/* 1. Hero Section */}
-                    <div className="pt-44 pb-20 md:pt-48 md:pb-32 relative z-10">
+                <AnimatePresence mode="wait">
+                    {!submitted ? (
+                        <motion.div 
+                            key="form-view"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0, filter: "blur(10px)", scale: 0.96 }}
+                            transition={{ duration: 0.5 }}
+                            className="pt-44 pb-20 md:pt-48 md:pb-32 relative z-10"
+                        >
 
                     {/* Page Header */}
                     <motion.div
@@ -80,21 +156,11 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 xl:gap-20 items-start relative">
 
                         {/* Left — Form */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
-                            className="lg:col-span-7"
-                        >
-                            <AnimatePresence mode="wait">
-                                {!submitted ? (
-                                    <motion.form
-                                        key="form"
-                                        initial={{ opacity: 1 }}
-                                        exit={{ opacity: 0, y: -20 }}
-                                        onSubmit={handleSubmit}
-                                        className="flex flex-col gap-8 sm:gap-10"
-                                    >
+                        <div className="lg:col-span-7">
+                            <form
+                                onSubmit={handleSubmit}
+                                className="flex flex-col gap-8 sm:gap-10"
+                            >
                                         {/* Step 1: About You */}
                                         <div className="flex flex-col gap-6">
                                             <div className="flex items-center gap-3 mb-2">
@@ -104,19 +170,19 @@ export default function ContactPage() {
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="flex flex-col gap-2">
                                                     <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Full Name *</label>
-                                                    <input required type="text" placeholder="Alex Chen" className={inputClass} />
+                                                    <input name="name" required type="text" placeholder="Alex Chen" className={inputClass} />
                                                 </div>
                                                 <div className="flex flex-col gap-2">
                                                     <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Email *</label>
-                                                    <input required type="email" placeholder="alex@company.com" className={inputClass} />
+                                                    <input name="email" required type="email" placeholder="alex@company.com" className={inputClass} />
                                                 </div>
                                                 <div className="flex flex-col gap-2">
                                                     <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Company</label>
-                                                    <input type="text" placeholder="Acme Inc." className={inputClass} />
+                                                    <input name="company" type="text" placeholder="Acme Inc." className={inputClass} />
                                                 </div>
                                                 <div className="flex flex-col gap-2">
                                                     <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Phone (optional)</label>
-                                                    <input type="tel" placeholder="+1 555 000 0000" className={inputClass} />
+                                                    <input name="phone" type="tel" placeholder="+998 90 123 45 67" className={inputClass} />
                                                 </div>
                                             </div>
                                         </div>
@@ -219,6 +285,7 @@ export default function ContactPage() {
                                                 <div className="flex flex-col gap-2">
                                                     <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Project Summary *</label>
                                                     <textarea
+                                                        name="message"
                                                         required
                                                         rows={5}
                                                         placeholder="Describe your project, goals, and any specific requirements. The more detail, the better our proposal..."
@@ -227,7 +294,7 @@ export default function ContactPage() {
                                                 </div>
                                                 <div className="flex flex-col gap-2">
                                                     <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Reference or Inspiration URL (optional)</label>
-                                                    <input type="url" placeholder="https://example.com" className={inputClass} />
+                                                    <input name="reference_url" type="url" placeholder="https://example.com" className={inputClass} />
                                                 </div>
                                             </div>
                                         </div>
@@ -235,40 +302,17 @@ export default function ContactPage() {
                                         {/* Submit */}
                                         <button
                                             type="submit"
-                                            className="group relative w-full sm:w-auto sm:self-start flex items-center justify-center gap-3 bg-foreground text-background px-8 sm:px-10 py-4 sm:py-5 rounded-[24px] text-base font-semibold transition-all duration-500 sm:hover:px-14 overflow-hidden"
+                                            disabled={isSubmitting}
+                                            className="group relative w-full sm:w-auto sm:self-start flex items-center justify-center gap-3 bg-foreground text-background px-8 sm:px-10 py-4 sm:py-5 rounded-[24px] text-base font-semibold transition-all duration-500 hover:px-14 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:px-8 sm:disabled:hover:px-10 overflow-hidden"
                                         >
                                             <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                            <span className="relative z-10 group-hover:text-white transition-colors duration-500">Submit Your Brief</span>
-                                            <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-white transition-all duration-300" />
+                                            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+                                                {isSubmitting ? "Sending..." : "Submit Your Brief"}
+                                            </span>
+                                            {!isSubmitting && <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-white transition-all duration-300" />}
                                         </button>
-                                    </motion.form>
-                                ) : (
-                                    <motion.div
-                                        key="success"
-                                        initial={{ opacity: 0, scale: 0.96 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        className="flex flex-col items-start gap-8 py-16"
-                                    >
-                                        <div className="w-12 h-[2px] bg-blue-500 rounded-full" />
-                                        <div>
-                                            <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-tighter text-foreground mb-4">
-                                                Brief received.
-                                            </h2>
-                                            <p className="text-xl text-foreground/50 font-light leading-relaxed max-w-lg">
-                                                Thank you! Our team will review your project brief and reach out within 24 hours with a tailored proposal.
-                                            </p>
-                                        </div>
-                                        <button
-                                            onClick={() => setSubmitted(false)}
-                                            className="flex items-center gap-2 text-sm font-medium text-foreground/40 hover:text-foreground transition-colors"
-                                        >
-                                            <ChevronRight className="w-4 h-4 rotate-180" />
-                                            Submit another brief
-                                        </button>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.div>
+                                    </form>
+                        </div>
 
                         {/* Right — Info Panel */}
                         <motion.aside
@@ -316,9 +360,9 @@ export default function ContactPage() {
                             <div className="flex flex-col gap-5">
                                 <h3 className="text-xs uppercase tracking-widest text-foreground/30 font-bold">Prefer to reach out directly?</h3>
                                 {[
-                                    { icon: Mail, label: "Email", value: "hello@prism.dev", href: "mailto:hello@prism.dev" },
-                                    { icon: Phone, label: "Phone", value: "+1 (555) 000-0000", href: "tel:+15550000000" },
-                                    { icon: MapPin, label: "Office", value: "San Francisco, CA", href: "#" },
+                                    { icon: Mail, label: "Email", value: "xurshidbahromov06@gmail.com", href: "mailto:xurshidbahromov06@gmail.com" },
+                                    { icon: Phone, label: "Phone", value: "+998 94 101 26 80", href: "tel:+998941012680" },
+                                    { icon: MapPin, label: "Office", value: "Tashkent, Uzbekistan", href: "#" },
                                 ].map((item) => (
                                     <a key={item.label} href={item.href} className="flex items-center gap-4 group">
                                         <div className="w-10 h-10 rounded-full bg-foreground/[0.03] border border-foreground/[0.06] flex items-center justify-center group-hover:border-blue-500/30 group-hover:bg-blue-500/5 transition-all duration-300">
@@ -331,9 +375,71 @@ export default function ContactPage() {
                                     </a>
                                 ))}
                             </div>
+
+                            {/* Interactive Map */}
+                            {/* Interactive Map */}
+                            <div className="h-64 sm:h-80 lg:h-[360px] rounded-[20px] sm:rounded-[28px] overflow-hidden border border-foreground/[0.06] relative group mt-2">
+                                {/* Subtle blue overlay to match brand */}
+                                <div className="absolute inset-0 bg-blue-500/5 pointer-events-none z-10 transition-colors duration-500 group-hover:bg-transparent" />
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.50263717281!2d69.13085278786968!3d41.2825125464132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1711200000000!5m2!1sen!2s" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style={{ border: 0, filter: "invert(100%) hue-rotate(180deg) brightness(85%) contrast(85%) grayscale(20%)" }} 
+                                    allowFullScreen={false} 
+                                    loading="lazy" 
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
+                                />
+                            </div>
+
+                            {/* Social Links */}
+                            <div className="flex items-center gap-3 mt-2">
+                                {[
+                                    { icon: Instagram, href: "#" },
+                                    { icon: Linkedin, href: "#" },
+                                    { icon: Send, href: "#" }, // Telegram
+                                ].map((social, i) => (
+                                    <a 
+                                        key={i} 
+                                        href={social.href} 
+                                        className="w-12 h-12 rounded-full border border-foreground/[0.08] flex items-center justify-center text-foreground/40 hover:text-blue-500 hover:border-blue-500/30 hover:bg-blue-500/5 transition-all duration-300"
+                                    >
+                                        <social.icon className="w-5 h-5" strokeWidth={1.5} />
+                                    </a>
+                                ))}
+                            </div>
                         </motion.aside>
                     </div>
-                </div>
+                </motion.div>
+                ) : (
+                    <motion.div
+                        key="success-view"
+                        initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+                        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                        className="pt-44 md:pt-48 pb-36 lg:pb-24 min-h-[70vh] flex flex-col items-center justify-center text-center relative z-10"
+                    >
+                        <div className="w-20 h-20 md:w-24 md:h-24 bg-blue-500/10 rounded-full flex items-center justify-center mb-8 border border-blue-500/20">
+                            <svg className="w-10 h-10 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h2 className="text-6xl md:text-8xl lg:text-9xl font-heading font-medium tracking-tighter text-foreground mb-6">
+                            Brief received.
+                        </h2>
+                        <p className="text-xl md:text-2xl text-foreground/50 font-light leading-relaxed max-w-2xl mx-auto mb-12">
+                            Thank you! Our team will review your project brief and reach out within 24 hours with a tailored proposal.
+                        </p>
+                        <button
+                            onClick={() => setSubmitted(false)}
+                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-foreground/[0.03] hover:bg-foreground/[0.08] border border-foreground/[0.06] rounded-full text-base font-medium transition-all duration-300"
+                        >
+                            <ChevronRight className="w-5 h-5 rotate-180 group-hover:-translate-x-1 transition-transform duration-300" />
+                            Submit another brief
+                        </button>
+                    </motion.div>
+                )}
+                </AnimatePresence>
             </Container>
         </div>
     );
