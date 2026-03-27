@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/cn";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 const languages = [
     { value: "uz", label: "UZ" },
@@ -11,8 +13,14 @@ const languages = [
 ];
 
 export function LanguageSwitcher() {
-    const [current, setCurrent] = useState("en");
+    const current = useLocale();
+    const router = useRouter();
+    const pathname = usePathname();
     const [hovered, setHovered] = useState(false);
+
+    const changeLanguage = (lang: string) => {
+        router.replace(pathname, { locale: lang });
+    };
 
     return (
         <div
@@ -43,7 +51,7 @@ export function LanguageSwitcher() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.85 }}
                                 transition={{ duration: 0.25, ease: "easeOut" }}
-                                onClick={() => setCurrent(lang.value)}
+                                onClick={() => changeLanguage(lang.value)}
                                 className={cn(
                                     "w-10 h-8 flex items-center justify-center rounded-[18px] text-[11px] font-bold tracking-wider transition-colors duration-300 shrink-0",
                                     current === lang.value
