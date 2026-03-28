@@ -1,5 +1,130 @@
 {
   "Index": {
     "title": "Zamonaviy raqamli mahsulotlar muhandisligi."
+  },
+  "Hero": {
+    "pill": "Bizning muhandislik orqali o'sayotgan 50+ yirik korxonalarga qo'shiling.",
+    "headingMain": "Biz Biznesni O'zgartiradigan",
+    "headingHighlight": "Dasturiy Ta'minotni",
+    "headingSuffix": "Yaratamiz.",
+    "subtext": "Biz maqsadli brendlar bilan hamkorlik qilib, ularning qadriyatlarini haqiqatga aylantiradigan yuqori samarali texnologik yechimlar va raqamli mahsulotlar yaratamiz.",
+    "ctaPrimary": "Loyihani Boshlash",
+    "ctaSecondary": "Keyslarni Ko'rish",
+    "trustLabel": "Full-Stack va AI Infratuzilmasi",
+    "badges": {
+      "frontend": {
+        "name": "Alex Chen",
+        "subtitle": "Frontend Ekspert · 120+ loyihalar"
+      },
+      "uiux": {
+        "name": "Sara Kim",
+        "subtitle": "UI/UX Ekspert · Figma ustasi"
+      },
+      "backend": {
+        "name": "James L.",
+        "subtitle": "Backend Ekspert · Node / Go"
+      }
+    }
+  },
+  "Services": {
+    "badge": "Imkoniyatlar",
+    "heading1": "Yuqori o'sishga erishayotgan",
+    "heading2": "korxonalar uchun",
+    "headingHighlight": "xizmatlar.",
+    "viewAll": "Barcha xizmatlarni ko'rish",
+    "learnMore": "Batafsil",
+    "items": {
+      "uiux": {
+        "title": "UI/UX Dizayn",
+        "description": "Foydalanuvchini ushlab qolishni maksimal darajaga ko'taruvchi inson psixologiyasiga ruxlantirilgan interfeyslar."
+      },
+      "fullstack": {
+        "title": "Full-Stack Dasturlash",
+        "description": "Zamonaviy ishonchli dvigatellar yordamida yaratilgan barqaror va kengayuvchan ilovalar."
+      },
+      "ai": {
+        "title": "Sun'iy Intellekt",
+        "description": "Biznesga sezilarli ta'sir ko'rsatish uchun mo'ljallangan maxsus LLM jarayonlari va avtonom agentlar."
+      },
+      "cloud": {
+        "title": "Bulutli Tizimlar",
+        "description": "To'liq avtomatlashtirilgan CI/CD va yuqori ishonchli xavfsizlik protokollari bilan barqaror infratuzilma."
+      }
+    }
+  },
+  "StatsRow": {
+    "badge": "Bizning Natijalar",
+    "heading1": "Yuqori ta'sirli",
+    "heading2": "muvaffaqiyat",
+    "headingHighlight": "ortidagi mantiq.",
+    "description": "Aniqlik bizning asosiy drayverimiz. Biz muvaffaqiyatni arxitektura barqarorligi va biznesingizga keltirilgan haqiqiy qiymat bilan o'lchaymiz.",
+    "linkPortfolio": "Portfolioni Ko'rish",
+    "linkTrust": "Mijozlar Ishonchi",
+    "items": {
+      "retention": {
+        "label": "Mijozlarni Saqlab Qolish",
+        "description": "Muhandislik mukammalligi va uzoq muddatli hamkorlik ishonchiga asoslangan."
+      },
+      "projects": {
+        "label": "Yetkazilgan Loyihalar",
+        "description": "Taktik MVP ishga tushirishdan tortib yirik korporativ raqamli transformatsiyalargacha."
+      },
+      "users": {
+        "label": "Qamrab Olingan Foydalanuvchilar",
+        "description": "PRISM tomonidan yaratilgan mahsulotlar har kuni millionlab faol foydalanuvchilarga xizmat qiladi."
+      },
+      "efficiency": {
+        "label": "Samaradorlik O'sishi",
+        "description": "Aqlli avtomatlashtirish orqali o'rtacha operatsion samaradorlikning oshishi."
+      }
+    }
+  },
+  "Tabs": {
+    "badge": "PRISM Standarti",
+    "heading1": "Hech qanday",
+    "headingHighlight": "shubhasiz yetkazib berish.",
+    "link": "Standart spetsifikatsiyani o'rganish",
+    "items": {
+      "reliability": {
+        "label": "Ishonchlilik",
+        "title": "Maksimal barqarorlik uchun loyihalashtirilgan.",
+        "description": "Biz faqat birinchi kun ishlaydigan emas, balki foydalanuvchilar bazasi o'sishi bilan moslasha oladigan tizimlarni quramiz.",
+        "bullets": {
+          "0": "Uzilishsiz joylashtirish strategiyalari",
+          "1": "Avtomatlashtirilgan test va QA jarayonlari",
+          "2": "Infratuzilma kod sifatida (IaC)"
+        }
+      },
+      "transparency": {
+        "label": "Shaffoflik",
+        "title": "Aniq muloqot, oldindan prognoz qilinadigan yetkazib berish.",
+        "description": "Yopiq jarayonlar yo'q. Loyiha kodlari, sprint holati va qaror qabul qilish jarayonining to'liq tahliliga egasiz.",
+        "bullets": {
+          "0": "Haftalik o'sish va tezlik hisobotlari",
+          "1": "Muhandislik rahbarlari bilan to'g'ridan-to'g'ri aloqa",
+          "2": "Ochiq arxitektura hujjatlari"
+        }
+      },
+      "scale": {
+        "label": "Kengayuvchanlik",
+        "title": "Ertangi kun uchun qurilgan arxitektura.",
+        "description": "Biz oson yo'llarni izlamaymiz. Kodning har bir qatori kelajakdagi imkoniyatlarni kengaytirishni hisobga olgan holda yoziladi.",
+        "bullets": {
+          "0": "Mikroservislar va serverless ga tayyor",
+          "1": "Global CDN va chekka hisoblash",
+          "2": "Optimallashtirilgan ma'lumotlar bazasi sxemalari"
+        }
+      },
+      "growth": {
+        "label": "O'sish",
+        "title": "Sizning biznes ko'rsatkichlaringiz bilan bir qatorda.",
+        "description": "Texnologiya bu o'sish vositasidir. Biz konversiya, faollik va ishlash tezligi uchun optimallashtiramiz.",
+        "bullets": {
+          "0": "Texnik SEO asoslari",
+          "1": "Core Web Vitals optimizatsiyasi",
+          "2": "A/B test infratuzilmasi"
+        }
+      }
+    }
   }
 }

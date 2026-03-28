@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { SiReact, SiNextdotjs, SiTypescript, SiFigma, SiNodedotjs, SiPython, SiPostgresql, SiOpenai } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-
+import { useTranslations } from 'next-intl';
 // badge / expert data structure makes it easy to update from one place
 
 interface BadgeInfo {
@@ -110,6 +110,7 @@ const cursorSvgs: Record<string, ReactNode> = {
 };
 
 export function Hero() {
+    const t = useTranslations('Hero');
     const shouldReduceMotion = useReducedMotion();
 
     // Floating animation for expert badges
@@ -167,8 +168,8 @@ export function Hero() {
                             </svg>
                         </div>
                         <div className="flex flex-col leading-none">
-                            <span className="text-sm font-semibold text-foreground">{b.name}</span>
-                            <span className="text-xs text-foreground/50 mt-0.5">{b.subtitle}</span>
+                            <span className="text-sm font-semibold text-foreground">{t(`badges.${b.id}.name` as any)}</span>
+                            <span className="text-xs text-foreground/50 mt-0.5">{t(`badges.${b.id}.subtitle` as any)}</span>
                         </div>
                         {b.cursor && cursorSvgs[b.cursor]}
                     </motion.div>
@@ -186,7 +187,7 @@ export function Hero() {
                 >
                     <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
                     <span className="text-background text-sm font-semibold tracking-tight">
-                        Join +50 enterprise clients scaling with our engineering.
+                        {t('pill')}
                     </span>
                 </motion.div>
 
@@ -198,8 +199,7 @@ export function Hero() {
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
                     className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[68px] xl:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-4xl xl:max-w-5xl"
                 >
-                    We Build The <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">Software</span> That <br className="hidden sm:block" />
-                    Transforms Businesses.
+                    {t('headingMain')} <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">{t('headingHighlight')}</span> {t('headingSuffix')}
                 </motion.h1>
 
                 {/* Subtext */}
@@ -209,8 +209,7 @@ export function Hero() {
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                     className="text-sm sm:text-lg md:text-[20px] font-light text-foreground/60 mb-10 leading-relaxed max-w-[700px]"
                 >
-                    We partner with ambitious brands to engineer high-performing
-                    technological solutions and digital products that turn visions into reality.
+                    {t('subtext')}
                 </motion.p>
 
                 {/* CTAs */}
@@ -227,7 +226,7 @@ export function Hero() {
                             size="pill"
                             className="w-full sm:w-auto flex items-center justify-center gap-2 group"
                         >
-                            Start a Project
+                            {t('ctaPrimary')}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
                     </Link>
@@ -239,7 +238,7 @@ export function Hero() {
                             size="pill"
                             className="w-full sm:w-auto font-medium"
                         >
-                            View Case Studies
+                            {t('ctaSecondary')}
                         </Button>
                     </Link>
                 </motion.div>
@@ -254,7 +253,7 @@ export function Hero() {
                     className="w-full max-w-5xl flex flex-col items-center"
                 >
                     <p className="text-sm font-semibold tracking-widest text-foreground/40 uppercase shrink-0">
-                        Full-Stack & AI Infrastructure
+                        {t('trustLabel')}
                     </p>
 
                     <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-10 bg-background/5 border border-foreground/10 backdrop-blur-md rounded-[24px] sm:rounded-[32px] px-4 sm:px-8 py-4 sm:py-6 shadow-[0_10px_40px_var(--aero-shadow)] hover-trigger">

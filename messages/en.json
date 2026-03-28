@@ -1,5 +1,130 @@
 {
   "Index": {
     "title": "Engineering modern digital products."
+  },
+  "Hero": {
+    "pill": "Join +50 enterprise clients scaling with our engineering.",
+    "headingMain": "We Build The",
+    "headingHighlight": "Software",
+    "headingSuffix": "That Transforms Businesses.",
+    "subtext": "We partner with ambitious brands to engineer high-performing technological solutions and digital products that turn visions into reality.",
+    "ctaPrimary": "Start a Project",
+    "ctaSecondary": "View Case Studies",
+    "trustLabel": "Full-Stack & AI Infrastructure",
+    "badges": {
+      "frontend": {
+        "name": "Alex Chen",
+        "subtitle": "Frontend Expert · 120+ projects"
+      },
+      "uiux": {
+        "name": "Sara Kim",
+        "subtitle": "UI/UX Expert · Figma wizard"
+      },
+      "backend": {
+        "name": "James L.",
+        "subtitle": "Backend Expert · Node / Go"
+      }
+    }
+  },
+  "Services": {
+    "badge": "Capabilities",
+    "heading1": "Services built for",
+    "heading2": "high-growth",
+    "headingHighlight": "ventures.",
+    "viewAll": "View all expertise",
+    "learnMore": "Learn More",
+    "items": {
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "Human-centered interfaces built on behavioral psychology to maximize user retention."
+      },
+      "fullstack": {
+        "title": "Full-Stack Dev",
+        "description": "Resilient, horizontally scalable applications engineered with modern type-safe engines."
+      },
+      "ai": {
+        "title": "AI Integration",
+        "description": "Custom LLM workflows and autonomous agents designed for measurable business impact."
+      },
+      "cloud": {
+        "title": "Cloud Systems",
+        "description": "High-uptime infrastructure with automated CI/CD and zero-trust security protocols."
+      }
+    }
+  },
+  "StatsRow": {
+    "badge": "Our Impact",
+    "heading1": "The logic beyond",
+    "heading2": "high-impact",
+    "headingHighlight": "success.",
+    "description": "Precision is our primary driver. We measure success by the resilience of the architecture and the tangible value delivered to your bottom line.",
+    "linkPortfolio": "View Portfolio",
+    "linkTrust": "Client Trust",
+    "items": {
+      "retention": {
+        "label": "Client Retention",
+        "description": "Built on engineering excellence and long-term partnership trust."
+      },
+      "projects": {
+        "label": "Projects Delivered",
+        "description": "From tactical MVP launches to enterprise-scale digital transformations."
+      },
+      "users": {
+        "label": "Users Reached",
+        "description": "Products engineered by PRISM serve millions of daily active users."
+      },
+      "efficiency": {
+        "label": "Efficiency Lift",
+        "description": "Average operational performance gain through intelligent automation."
+      }
+    }
+  },
+  "Tabs": {
+    "badge": "The PRISM Standard",
+    "heading1": "Delivery without",
+    "headingHighlight": "doubt.",
+    "link": "Investigate standard specification",
+    "items": {
+      "reliability": {
+        "label": "Reliability",
+        "title": "Engineered for maximum stability.",
+        "description": "We build systems that don't just work on day one, but scale elegantly as your user base grows.",
+        "bullets": {
+          "0": "Zero-downtime deployment strategies",
+          "1": "Automated testing and QA pipelines",
+          "2": "Infrastructure as code (IaC)"
+        }
+      },
+      "transparency": {
+        "label": "Transparency",
+        "title": "Clear communication, predictable delivery.",
+        "description": "No black boxes. You have full visibility into our codebase, sprint progress, and decision-making.",
+        "bullets": {
+          "0": "Weekly progress and velocity reports",
+          "1": "Direct access to engineering leads",
+          "2": "Open architecture documentation"
+        }
+      },
+      "scale": {
+        "label": "Scale",
+        "title": "Architected for tomorrow.",
+        "description": "We don't take shortcuts. Every line of code is written with future feature expansions in mind.",
+        "bullets": {
+          "0": "Microservices and serverless ready",
+          "1": "Global CDN and edge computing",
+          "2": "Optimized database schemas"
+        }
+      },
+      "growth": {
+        "label": "Growth",
+        "title": "Aligned with your business metrics.",
+        "description": "Technology is a tool for growth. We optimize for conversion, retention, and performance.",
+        "bullets": {
+          "0": "Technical SEO foundations",
+          "1": "Core Web Vitals optimization",
+          "2": "A/B testing infrastructure"
+        }
+      }
+    }
   }
 }

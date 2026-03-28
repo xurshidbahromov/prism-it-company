@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { motion, useInView, useSpring, useTransform, animate } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 function Counter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
     const ref = useRef(null);
@@ -30,36 +31,34 @@ function Counter({ value, suffix = "", prefix = "" }: { value: number; suffix?: 
     );
 }
 
-const stats = [
+const statsData = [
     {
-        label: "Client Retention",
+        id: "retention",
         value: 95,
         suffix: "%",
-        description: "Built on engineering excellence and long-term partnership trust."
     },
     {
-        label: "Projects Delivered",
+        id: "projects",
         value: 200,
         prefix: "+",
-        description: "From tactical MVP launches to enterprise-scale digital transformations."
     },
     {
-        label: "Users Reached",
+        id: "users",
         value: 3.2,
         prefix: "+",
         suffix: "M",
         isDecimal: true,
-        description: "Products engineered by PRISM serve millions of daily active users."
     },
     {
-        label: "Efficiency Lift",
+        id: "efficiency",
         value: 40,
         suffix: "%",
-        description: "Average operational performance gain through intelligent automation."
     }
 ];
 
 export function StatsRow() {
+    const t = useTranslations('StatsRow');
+
     return (
         <section id="stats" className="py-32 md:py-48 relative z-10 overflow-hidden">
             {/* Minimal architectural line */}
@@ -75,13 +74,13 @@ export function StatsRow() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6 block">Our Impact</span>
+                            <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6 block">{t('badge')}</span>
                             <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.05] mb-8">
-                                The logic beyond <br />
-                                high-impact <span className="text-foreground/40">success.</span>
+                                {t('heading1')} <br />
+                                {t('heading2')} <span className="text-foreground/40">{t('headingHighlight')}</span>
                             </h2>
                             <p className="text-lg text-foreground/50 font-light leading-relaxed mb-10 max-w-md">
-                                Precision is our primary driver. We measure success by the resilience of the architecture and the tangible value delivered to your bottom line.
+                                {t('description')}
                             </p>
 
                             <div className="flex flex-wrap items-center gap-8 pt-4">
@@ -89,14 +88,14 @@ export function StatsRow() {
                                     href="/work"
                                     className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-foreground hover:text-blue-500 transition-colors"
                                 >
-                                    View Portolio
+                                    {t('linkPortfolio')}
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                                 <Link
                                     href="/about"
                                     className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-foreground/40 hover:text-foreground transition-colors"
                                 >
-                                    Client Trust
+                                    {t('linkTrust')}
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
@@ -106,7 +105,7 @@ export function StatsRow() {
                     {/* Right: Metrics Grid */}
                     <div className="lg:col-span-7 mt-12 lg:mt-0">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                            {stats.map((stat, index) => (
+                            {statsData.map((stat, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
@@ -128,10 +127,10 @@ export function StatsRow() {
                                         </div>
                                         <div className="space-y-1">
                                             <h4 className="text-sm font-bold uppercase tracking-widest text-foreground/80">
-                                                {stat.label}
+                                                {t(`items.${stat.id}.label` as any)}
                                             </h4>
                                             <p className="text-xs text-foreground/40 font-light leading-relaxed group-hover:text-foreground/60 transition-colors">
-                                                {stat.description}
+                                                {t(`items.${stat.id}.description` as any)}
                                             </p>
                                         </div>
                                     </div>
