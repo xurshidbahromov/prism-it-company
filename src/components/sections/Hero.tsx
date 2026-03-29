@@ -14,7 +14,7 @@ import { FaAws } from "react-icons/fa";
 import { useTranslations } from 'next-intl';
 // badge / expert data structure makes it easy to update from one place
 
-interface BadgeInfo {
+export interface BadgeInfo {
     id: string;
     name: string;
     subtitle: string;
@@ -22,7 +22,6 @@ interface BadgeInfo {
     gradientTo: string;
     positionClasses: string;
     animation: "float" | "floatDelayed" | "floatDelayed2";
-    cursor?: "frontend" | "figma" | "backend";
 }
 
 const badges: BadgeInfo[] = [
@@ -34,7 +33,6 @@ const badges: BadgeInfo[] = [
         gradientTo: "to-indigo-600",
         positionClasses: "top-[18%] left-[1%] xl:left-[2%]",
         animation: "float",
-        cursor: "frontend",
     },
     {
         id: "uiux",
@@ -44,7 +42,6 @@ const badges: BadgeInfo[] = [
         gradientTo: "to-pink-500",
         positionClasses: "top-[48%] right-[1%] xl:right-[2%]",
         animation: "floatDelayed",
-        cursor: "figma",
     },
     {
         id: "backend",
@@ -54,60 +51,8 @@ const badges: BadgeInfo[] = [
         gradientTo: "to-slate-700",
         positionClasses: "top-[62%] left-[1%] xl:left-[2%]",
         animation: "floatDelayed2",
-        cursor: "backend",
     },
 ];
-
-const cursorSvgs: Record<string, ReactNode> = {
-    frontend: (
-        <svg
-            className="absolute -right-4 -bottom-4 w-6 h-6 drop-shadow-[0_4px_8px_var(--aero-shadow)] select-none pointer-events-none text-blue-300 bg-background rounded-full p-1 ring-1 ring-foreground/10"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                d="M17 17L22 12L17 7M7 7L2 12L7 17M14 3L10 21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    ),
-    figma: (
-        <svg
-            className="absolute -left-4 -top-3 w-6 h-6 drop-shadow-[0_4px_8px_var(--aero-shadow)] select-none pointer-events-none text-purple-300 bg-background rounded-full p-1 ring-1 ring-foreground/10"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                d="M10 7L3 7M21 7L14 7M14 7.25195C17.4505 8.14004 20 11.2722 20 14.9999M4 14.9999C4 11.2722 6.54955 8.14004 10 7.25195M3.6 19H4.4C4.96005 19 5.24008 19 5.45399 18.891C5.64215 18.7951 5.79513 18.6422 5.89101 18.454C6 18.2401 6 17.9601 6 17.4V16.6C6 16.0399 6 15.7599 5.89101 15.546C5.79513 15.3578 5.64215 15.2049 5.45399 15.109C5.24008 15 4.96005 15 4.4 15H3.6C3.03995 15 2.75992 15 2.54601 15.109C2.35785 15.2049 2.20487 15.3578 2.10899 15.546C2 15.7599 2 16.0399 2 16.6V17.4C2 17.9601 2 18.2401 2.10899 18.454C2.20487 18.6422 2.35785 18.7951 2.54601 18.891C2.75992 19 3.03995 19 3.6 19ZM11.6 9H12.4C12.9601 9 13.2401 9 13.454 8.89101C13.6422 8.79513 13.7951 8.64215 13.891 8.45399C14 8.24008 14 7.96005 14 7.4V6.6C14 6.03995 14 5.75992 13.891 5.54601C13.7951 5.35785 13.6422 5.20487 13.454 5.10899C13.2401 5 12.9601 5 12.4 5H11.6C11.0399 5 10.7599 5 10.546 5.10899C10.3578 5.20487 10.2049 5.35785 10.109 5.54601C10 5.75992 10 6.03995 10 6.6V7.4C10 7.96005 10 8.24008 10.109 8.45399C10.2049 8.64215 10.3578 8.79513 10.546 8.89101C10.7599 9 11.0399 9 11.6 9ZM19.6 19H20.4C20.9601 19 21.2401 19 21.454 18.891C21.6422 18.7951 21.7951 18.6422 21.891 18.454C22 18.2401 22 17.9601 22 17.4V16.6C22 16.0399 22 15.7599 21.891 15.546C21.7951 15.3578 21.6422 15.2049 21.454 15.109C21.2401 15 20.9601 15 20.4 15H19.6C19.0399 15 18.7599 15 18.546 15.109C18.3578 15.2049 18.2049 15.3578 18.109 15.546C18 15.7599 18 16.0399 18 16.6V17.4C18 17.9601 18 18.2401 18.109 18.454C18.2049 18.6422 18.3578 18.7951 18.546 18.891C18.7599 19 19.0399 19 19.6 19ZM22 7C22 7.55228 21.5523 8 21 8C20.4477 8 20 7.55228 20 7C20 6.44772 20.4477 6 21 6C21.5523 6 22 6.44772 22 7ZM4 7C4 7.55228 3.55228 8 3 8C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6C3.55228 6 4 6.44772 4 7Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    ),
-    backend: (
-        <svg
-            className="absolute -right-4 -bottom-4 w-6 h-6 drop-shadow-[0_4px_8px_var(--aero-shadow)] select-none pointer-events-none text-cyan-300 bg-background rounded-full p-1 ring-1 ring-foreground/10"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                d="M17 17L22 12L17 7M7 7L2 12L7 17M14 3L10 21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    ),
-};
 
 export function Hero() {
     const t = useTranslations('Hero');
@@ -171,7 +116,6 @@ export function Hero() {
                             <span className="text-sm font-semibold text-foreground">{t(`badges.${b.id}.name` as any)}</span>
                             <span className="text-xs text-foreground/50 mt-0.5">{t(`badges.${b.id}.subtitle` as any)}</span>
                         </div>
-                        {b.cursor && cursorSvgs[b.cursor]}
                     </motion.div>
                 );
             })}

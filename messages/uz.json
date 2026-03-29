@@ -126,5 +126,171 @@
         }
       }
     }
+  },
+  "Navbar": {
+    "links": {
+      "home": "Asosiy",
+      "services": "Xizmatlar",
+      "process": "Jarayon",
+      "work": "Portfolio",
+      "about": "Biz Haqimizda",
+      "contact": "Aloqa"
+    },
+    "megaMenu": {
+      "expertise": {
+        "uiux": {
+          "label": "UI/UX Dizayn",
+          "desc": "Insonlarga yo'naltirilgan mukammal interfeyslar"
+        },
+        "fullstack": {
+          "label": "Full-Stack",
+          "desc": "Kengayuvchan va zamonaviy ilovalar"
+        },
+        "ai": {
+          "label": "AI Integratsiyasi",
+          "desc": "Maxsus LLM va avtonom agentlar"
+        },
+        "cloud": {
+          "label": "Bulutli Tizimlar",
+          "desc": "Yuqori xavfsiz va barqaror infratuzilma"
+        }
+      },
+      "process": {
+        "discovery": {
+          "label": "Tahlil va Arxitektura",
+          "desc": "Koddan oldin loyihalashtirish"
+        },
+        "design": {
+          "label": "Dizayn Tizimi",
+          "desc": "Brendga mos komponentlar kutubxonasi"
+        },
+        "development": {
+          "label": "Dasturlash",
+          "desc": "Agile sprintlar va qat'iy testlash"
+        },
+        "launch": {
+          "label": "Ishga Tushirish",
+          "desc": "Birinchi kundan uzilishsiz ishlash"
+        }
+      },
+      "work": {
+        "fintech": {
+          "label": "Fintech Banking",
+          "desc": "+40% tranzaksiya tezligi"
+        },
+        "healthcare": {
+          "label": "Healthcare Data",
+          "desc": "HIPAA mos keluvchi sinxronizatsiya"
+        },
+        "retail": {
+          "label": "Retail Avtomatlashtirish",
+          "desc": "Yiliga $1.2M tejamkorlik"
+        }
+      },
+      "about": {
+        "story": {
+          "label": "Bizning Tarix",
+          "desc": "PRISM qanday va nima uchun qurilgan"
+        },
+        "team": {
+          "label": "Jamoa",
+          "desc": "Elita muhandislar va dizaynerlar"
+        },
+        "values": {
+          "label": "Qadriyatlarimiz",
+          "desc": "Muhandislik birinchi o'rinda"
+        },
+        "careers": {
+          "label": "Karyera",
+          "desc": "Bizning jamoaga qo'shiling"
+        }
+      }
+    },
+    "cta": "Taklif Olish"
+  },
+  "Process": {
+    "badge": "Metodologiya",
+    "title": "Protokol",
+    "titleHighlight": "Falsafasi.",
+    "description": "Biz jarayonimizni noaniqliklarni bartaraf etish uchun loyihalashtirdik. Arxitekturaning birinchi qatoridan yakuniy ishga tushirishgacha, har bir qadam ma'lumotlar bilan boshqariladi.",
+    "steps": {
+      "01": {
+        "title": "Tahlil va Arxitektura",
+        "desc": "Biznes mantiqi, texnik cheklovlar va uzoq muddatli rivojlanish vektorlarini o'rganish."
+      },
+      "02": {
+        "title": "Dizayn Tizimi va UI/UX",
+        "desc": "Pixel-mukammal, qulay va kimetik interfeyslar muhandisligi."
+      },
+      "03": {
+        "title": "Full-Stack Dasturlash",
+        "desc": "Xavfsiz va yuqori samarali kodni Agile usulida yetkazish."
+      },
+      "04": {
+        "title": "Ishga Tushirish va Qo'llab-quvvatlash",
+        "desc": "Birinchi kundan barqarorlikni kafolatlovchi uzilishsiz joylashtirish va CI/CD."
+      }
+    }
+  },
+  "Work": {
+    "badge": "Keyslar",
+    "title": "Tanlangan so'nggi",
+    "titleHighlight": "loyihalar.",
+    "explore": "Loyihani O'rganish",
+    "projects": {
+      "fintech": {
+        "title": "Fintech Core Banking",
+        "category": "Platforma Muhandisligi",
+        "description": "Global miqyos uchun mo'ljallangan, millionlab tranzaksiyalarni boshqaruvchi bank dvigateli.",
+        "metrics": [
+          "+40% txn tezligi",
+          "0 uzilish"
+        ]
+      },
+      "healthcare": {
+        "title": "Healthcare Data Sync",
+        "category": "Ma'lumotlar Infratuzilmasi",
+        "description": "Tadqiqot institutlari o'rtasida real vaqtda ma'lumot almashish imkonini beruvchi qatlam.",
+        "metrics": [
+          "HIPAA mos",
+          "Tezkor sinxronizatsiya"
+        ]
+      },
+      "retail": {
+        "title": "Retail Avtomatlashtirish",
+        "category": "Ichki Tizimlar",
+        "description": "500 dan ortiq savdo nuqtalari uchun logistikani avtomatlashtiruvchi bulutli tizim.",
+        "metrics": [
+          "-30% qo'l mehnati",
+          "$1.2M+ tejamkorlik"
+        ]
+      }
+    }
+  },
+  "CTA": {
+    "badge": "Loyihangizni Boshlang",
+    "title": "Ajoyib narsa yaratishga",
+    "titleHighlight": "tayyormisiz?",
+    "description": "Keling, sizni raqobatchilardan ajratib turadigan raqamli tajriba yarataylik. Faqat natija va sifat.",
+    "primaryButton": "Hamkorlikni Boshlash"
+  },
+  "Footer": {
+    "description": "Zamonaviy texnologiyalar bilan raqamli tijorat va korporativ infratuzilmaning kelajagini quramiz.",
+    "addressLabel": "HQ — Toshkent, O'zbekiston",
+    "columns": {
+      "quickLinks": "Tezkor Havolalar",
+      "expertise": "Yo'nalishlar",
+      "connect": "Bog'lanish"
+    },
+    "copyright": "© 2024 PRISM IT KOMPANIYASI. BARCHA HUQUQLAR HIMOAYALANGAN."
+  },
+  "MobileNav": {
+    "tabs": {
+      "home": "Asosiy",
+      "work": "Portfolio",
+      "expertise": "Xizmatlar",
+      "about": "Biz haqimizda",
+      "contact": "Aloqa"
+    }
   }
 }

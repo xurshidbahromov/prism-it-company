@@ -126,5 +126,171 @@
         }
       }
     }
+  },
+  "Navbar": {
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "process": "Process",
+      "work": "Work",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "megaMenu": {
+      "expertise": {
+        "uiux": {
+          "label": "UI/UX Design",
+          "desc": "Human-centered, pixel-perfect interfaces"
+        },
+        "fullstack": {
+          "label": "Full-Stack Dev",
+          "desc": "Scalable, type-safe modern applications"
+        },
+        "ai": {
+          "label": "AI Integration",
+          "desc": "Custom LLMs and autonomous agents"
+        },
+        "cloud": {
+          "label": "Cloud Systems",
+          "desc": "Zero-trust, high-uptime infrastructure"
+        }
+      },
+      "process": {
+        "discovery": {
+          "label": "Discovery & Architecture",
+          "desc": "Blueprint before a single line of code"
+        },
+        "design": {
+          "label": "Design System",
+          "desc": "Component libraries aligned with your brand"
+        },
+        "development": {
+          "label": "Development",
+          "desc": "Agile sprints with strict testing protocols"
+        },
+        "launch": {
+          "label": "Launch & Iterate",
+          "desc": "Zero-downtime deployments from Day 1"
+        }
+      },
+      "work": {
+        "fintech": {
+          "label": "Fintech Core Banking",
+          "desc": "+40% transaction speed, zero downtime"
+        },
+        "healthcare": {
+          "label": "Healthcare Data Sync",
+          "desc": "HIPAA compliant, sub-second sync"
+        },
+        "retail": {
+          "label": "Retail Automation",
+          "desc": "$1.2M saved/yr, -30% manual ops"
+        }
+      },
+      "about": {
+        "story": {
+          "label": "Our Story",
+          "desc": "How PRISM was built and why it matters"
+        },
+        "team": {
+          "label": "The Team",
+          "desc": "Elite engineers and designers"
+        },
+        "values": {
+          "label": "Our Values",
+          "desc": "Engineering first, outcomes over output"
+        },
+        "careers": {
+          "label": "Careers",
+          "desc": "Join our distributed team"
+        }
+      }
+    },
+    "cta": "Get a Proposal"
+  },
+  "Process": {
+    "badge": "Method",
+    "title": "Protocol",
+    "titleHighlight": "Mindset.",
+    "description": "We've engineered our process to eliminate ambiguity. From the first line of architecture to the final deployment, every step is governed by data and discipline.",
+    "steps": {
+      "01": {
+        "title": "Discovery & Architecture",
+        "desc": "Deep-dive into business logic, technical constraints, and long-term scaling vectors."
+      },
+      "02": {
+        "title": "Design System & UI/UX",
+        "desc": "Pixel-perfect, accessible, and kinetic interface engineering."
+      },
+      "03": {
+        "title": "Full-Stack Development",
+        "desc": "Agile sprints deploying secure, highly performant code."
+      },
+      "04": {
+        "title": "Launch & Iterate",
+        "desc": "Zero-downtime deployments, real-time telemetry, and CI/CD stability."
+      }
+    }
+  },
+  "Work": {
+    "badge": "Case Studies",
+    "title": "Selected recent",
+    "titleHighlight": "projects.",
+    "explore": "Explore Case Study",
+    "projects": {
+      "fintech": {
+        "title": "Fintech Core Banking",
+        "category": "Platform Engineering",
+        "description": "A high-frequency banking engine designed for global scale, handling millions of transactions.",
+        "metrics": [
+          "+40% txn speed",
+          "Zero downtime"
+        ]
+      },
+      "healthcare": {
+        "title": "Healthcare Data Sync",
+        "category": "Data Infrastructure",
+        "description": "HIPAA-compliant data synchronization layer enabling real-time genomic data sharing.",
+        "metrics": [
+          "HIPAA compliant",
+          "Sub-second sync"
+        ]
+      },
+      "retail": {
+        "title": "Retail Automation",
+        "category": "Internal Tools",
+        "description": "Cloud-native inventory management system automating logistics for over 500+ locations.",
+        "metrics": [
+          "-30% manual ops",
+          "$1.2M saved/yr"
+        ]
+      }
+    }
+  },
+  "CTA": {
+    "badge": "Start Your Project",
+    "title": "Ready to build",
+    "titleHighlight": "something great?",
+    "description": "Let's create a digital experience that sets you apart from the competition. No fluff, just results.",
+    "primaryButton": "Let's Collaborate"
+  },
+  "Footer": {
+    "description": "Engineering the future of digital commerce and enterprise infrastructure with high-performance modern tech stacks.",
+    "addressLabel": "HQ — Tashkent, Uzbekistan",
+    "columns": {
+      "quickLinks": "Quick Links",
+      "expertise": "Expertise",
+      "connect": "Connect"
+    },
+    "copyright": "© 2024 PRISM IT COMPANY. ALL RIGHTS RESERVED."
+  },
+  "MobileNav": {
+    "tabs": {
+      "home": "Home",
+      "work": "Work",
+      "expertise": "Expertise",
+      "about": "About",
+      "contact": "Contact"
+    }
   }
 }
