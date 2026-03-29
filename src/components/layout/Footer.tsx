@@ -4,9 +4,10 @@ import { Container } from "./Container";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
-    const currentYear = new Date().getFullYear();
+    const t = useTranslations('Footer');
 
     return (
         <footer className="pt-16 sm:pt-24 pb-32 lg:pb-6 mt-0 relative overflow-hidden">
@@ -23,7 +24,7 @@ export function Footer() {
                                 </span>
                             </Link>
                             <p className="text-foreground/50 text-sm sm:text-base leading-relaxed max-w-[280px] font-light">
-                                Building digital engines that drive growth for ambitious brands worldwide.
+                                {t('description')}
                             </p>
                         </div>
                     </div>
@@ -88,10 +89,9 @@ export function Footer() {
 
                 </div>
 
-                {/* Copyright Bar */}
                 <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-foreground/40 border-t border-foreground/[0.05] relative z-10">
                     <p className="text-xs font-medium tracking-wide">
-                        &copy; {currentYear} PRISM. ALL RIGHTS RESERVED.
+                        {t('copyright')}
                     </p>
                     <p className="text-xs font-medium tracking-wide">
                         DESIGNED WITH <span className="text-foreground/80">&hearts;</span> BY PRISM

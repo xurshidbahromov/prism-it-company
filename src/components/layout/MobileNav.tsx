@@ -6,17 +6,18 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Home, Grid, Layers, Briefcase, User, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { useTranslations } from "next-intl";
 
-const mobileLinks = [
-    { label: "Home", href: "/", icon: Home },
-    { label: "Services", href: "/expertise", icon: Grid },
-    { label: "Process", href: "/process", icon: Layers },
-    { label: "Work", href: "/work", icon: Briefcase },
-    { label: "About", href: "/about", icon: User },
-    { label: "Contact", href: "/contact", icon: MessageCircle },
+const MOBILE_LINKS = [
+    { key: "home", href: "/", icon: Home },
+    { key: "expertise", href: "/expertise", icon: Grid },
+    { key: "work", href: "/work", icon: Briefcase },
+    { key: "about", href: "/about", icon: User },
+    { key: "contact", href: "/contact", icon: MessageCircle },
 ];
 
 export function MobileNav() {
+    const t = useTranslations('MobileNav');
     const pathname = usePathname();
     const [isVisible, setIsVisible] = useState(true);
     const lastScrollY = useRef(0);
@@ -24,7 +25,7 @@ export function MobileNav() {
     const [pillStyle, setPillStyle] = useState({ left: 0, width: 0, opacity: 0 });
     const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
-    const activeIndex = mobileLinks.findIndex(link => {
+    const activeIndex = MOBILE_LINKS.findIndex(link => {
         if (link.href === "/") return pathname === "/";
         return pathname.startsWith(link.href);
     });
@@ -136,7 +137,7 @@ export function MobileNav() {
                     </div>
 
                     {/* Icons Layer */}
-                    {mobileLinks.map((link, index) => {
+                    {MOBILE_LINKS.map((link, index) => {
                         const active = isActive(link.href);
                         const Icon = link.icon;
                         return (
@@ -151,7 +152,7 @@ export function MobileNav() {
                             >
                                 <Icon size={18} strokeWidth={active ? 2.5 : 2} />
                                 <span className="text-[9px] sm:text-[10px] font-semibold tracking-tight whitespace-nowrap">
-                                    {link.label}
+                                    {t(`tabs.${link.key}` as any)}
                                 </span>
                             </Link>
                         );

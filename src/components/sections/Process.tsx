@@ -3,6 +3,7 @@
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const StepCard = ({ step, idx }: { step: any; idx: number }) => {
     const cardRef = useRef<HTMLDivElement>(null);
@@ -57,30 +58,10 @@ const StepCard = ({ step, idx }: { step: any; idx: number }) => {
     );
 };
 
-const steps = [
-    {
-        title: "Discovery & Architecture",
-        desc: "Deep-dive into business logic, technical constraints, and long-term scaling vectors. We define the blueprint before writing a single line of code.",
-        number: "01",
-    },
-    {
-        title: "Design System & UI/UX",
-        desc: "Pixel-perfect, accessible, and kinetic interface engineering. We build comprehensive component libraries aligned with your core brand.",
-        number: "02",
-    },
-    {
-        title: "Full-Stack Development",
-        desc: "Agile sprints deploying secure, highly performant code. We leverage modern frameworks, cloud-native infra, and strict testing protocols.",
-        number: "03",
-    },
-    {
-        title: "Launch & Iterate",
-        desc: "Zero-downtime deployments, real-time telemetry, and continuous integration pipelines guaranteeing stability from Day 1 to Day 1000.",
-        number: "04",
-    }
-];
+const STEP_IDS = ["01", "02", "03", "04"];
 
 export function Process() {
+    const t = useTranslations('Process');
     return (
         <section id="process" className="py-24 relative z-10">
             <Container>
@@ -95,7 +76,7 @@ export function Process() {
                                 viewport={{ once: true }}
                                 className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-8 block"
                             >
-                                Method
+                                {t('badge')}
                             </motion.span>
                             <motion.h2
                                 initial={{ opacity: 0, y: 10 }}
@@ -103,8 +84,8 @@ export function Process() {
                                 viewport={{ once: true }}
                                 className="text-4xl md:text-6xl lg:text-7xl font-heading font-medium tracking-tighter leading-[1] mb-10 text-foreground"
                             >
-                                Protocol <br className="hidden lg:block"/>
-                                <span className="text-foreground/40">Mindset.</span>
+                                {t('title')} <br className="hidden lg:block"/>
+                                <span className="text-foreground/40">{t('titleHighlight')}</span>
                             </motion.h2>
                             <motion.p 
                                 initial={{ opacity: 0 }}
@@ -113,15 +94,15 @@ export function Process() {
                                 transition={{ delay: 0.2 }}
                                 className="text-xl text-foreground/50 font-light leading-relaxed max-w-md"
                             >
-                                We've engineered our process to eliminate ambiguity. From the first line of architecture to the final deployment, every step is governed by data and discipline.
+                                {t('description')}
                             </motion.p>
                         </div>
                     </div>
 
                     {/* Right Side: Scrolling Steps */}
                     <div className="w-full lg:w-7/12 flex flex-col gap-8 md:gap-12">
-                        {steps.map((step, idx) => (
-                            <StepCard key={idx} step={step} idx={idx} />
+                        {STEP_IDS.map((id, idx) => (
+                            <StepCard key={id} step={{ number: id, title: t(`steps.${id}.title` as any), desc: t(`steps.${id}.desc` as any) }} idx={idx} />
                         ))}
                     </div>
 

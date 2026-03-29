@@ -6,42 +6,20 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/cn";
+import { useTranslations } from "next-intl";
 
 interface WorkProps {
     showTitle?: boolean;
 }
 
-const projects = [
-    {
-        id: "fintech",
-        title: "Fintech Core Banking",
-        category: "Platform Engineering",
-        description: "A high-frequency banking engine designed for global scale, handling millions of transactions with sub-millisecond latency.",
-        metrics: ["+40% txn speed", "Zero downtime"],
-        color: "rgba(59, 130, 246, 0.2)", // Blue
-        image: "/projects/fintech.png"
-    },
-    {
-        id: "healthcare",
-        title: "Healthcare Data Sync",
-        category: "Data Infrastructure",
-        description: "HIPAA-compliant data synchronization layer enabling real-time genomic data sharing between research institutions.",
-        metrics: ["HIPAA compliant", "Sub-second sync"],
-        color: "rgba(16, 185, 129, 0.2)", // Emerald
-        image: "/projects/healthcare.png"
-    },
-    {
-        id: "retail",
-        title: "Retail Automation",
-        category: "Internal Tools",
-        description: "Cloud-native inventory management system automating logistics for over 500+ retail locations worldwide.",
-        metrics: ["-30% manual ops", "$1.2M saved/yr"],
-        color: "rgba(245, 158, 11, 0.2)", // Amber
-        image: "/projects/retail.png"
-    }
+const PROJECT_IDS = [
+    { id: "fintech", color: "rgba(59, 130, 246, 0.2)", image: "/projects/fintech.png" },
+    { id: "healthcare", color: "rgba(16, 185, 129, 0.2)", image: "/projects/healthcare.png" },
+    { id: "retail", color: "rgba(245, 158, 11, 0.2)", image: "/projects/retail.png" },
 ];
 
 export function Work({ showTitle = true }: WorkProps) {
+    const t = useTranslations('Work');
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -66,7 +44,7 @@ export function Work({ showTitle = true }: WorkProps) {
                                 viewport={{ once: true }}
                                 className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-4 block"
                             >
-                                Case Studies
+                                {t('badge')}
                             </motion.span>
                             <motion.h2
                                 initial={{ opacity: 0, y: 10 }}
@@ -74,8 +52,8 @@ export function Work({ showTitle = true }: WorkProps) {
                                 viewport={{ once: true }}
                                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-medium text-foreground tracking-tighter leading-[1]"
                             >
-                                Selected recent <br className="hidden md:block"/>
-                                <span className="text-foreground/40">projects.</span>
+                                {t('title')} <br className="hidden md:block"/>
+                                <span className="text-foreground/40">{t('titleHighlight')}</span>
                             </motion.h2>
                         </div>
                     </div>
@@ -83,7 +61,7 @@ export function Work({ showTitle = true }: WorkProps) {
 
                 {/* Cinematic Project Showcase */}
                 <div className="w-full flex flex-col pt-12">
-                    {projects.map((project, index) => {
+                    {PROJECT_IDS.map((project, index) => {
                         const isEven = index % 2 === 0;
 
                         return (
@@ -123,7 +101,7 @@ export function Work({ showTitle = true }: WorkProps) {
                                             <div className="relative w-full h-full bg-foreground/[0.02]">
                                                 <Image 
                                                     src={project.image} 
-                                                    alt={project.title}
+                                                    alt={t(`projects.${project.id}.title` as any)}
                                                     fill
                                                     className="object-cover transition-transform duration-1000 group-hover/visual:scale-105"
                                                 />
@@ -138,22 +116,22 @@ export function Work({ showTitle = true }: WorkProps) {
                                         <div className="space-y-6">
                                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
                                                 <span className="text-[10px] font-bold tracking-widest text-blue-500 uppercase">
-                                                    {project.category}
+                                                    {t(`projects.${project.id}.category` as any)}
                                                 </span>
                                             </div>
                                             
                                             <h4 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium text-foreground tracking-tight leading-[1.1]">
-                                                {project.title}
+                                                {t(`projects.${project.id}.title` as any)}
                                             </h4>
                                             
                                             <p className="text-lg text-foreground/50 font-light leading-relaxed max-w-md">
-                                                {project.description}
+                                                {t(`projects.${project.id}.description` as any)}
                                             </p>
                                         </div>
 
                                         {/* Key Results / Metrics */}
                                         <div className="flex flex-wrap gap-3">
-                                            {project.metrics.map((metric, idx) => (
+                                            {(t.raw(`projects.${project.id}.metrics` as any) as string[]).map((metric: string, idx: number) => (
                                                 <div key={idx} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-foreground/[0.03] border border-foreground/[0.05]">
                                                     <div className="w-1 h-1 rounded-full bg-blue-500" />
                                                     <span className="text-sm font-medium text-foreground/80 italic">{metric}</span>
@@ -165,7 +143,7 @@ export function Work({ showTitle = true }: WorkProps) {
                                         <div className="pt-4">
                                             <div className="group/btn flex items-center gap-6 cursor-pointer w-fit">
                                                 <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/40 group-hover/btn:text-foreground transition-colors">
-                                                    Explore Case Study
+                                                    {t('explore')}
                                                 </span>
                                                 <div className="w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center bg-foreground/[0.02] group-hover/btn:bg-blue-500 group-hover/btn:border-blue-500 transition-all duration-500 group-hover/btn:scale-110">
                                                     <ArrowRight className="w-5 h-5 group-hover/btn:text-white transition-colors" />

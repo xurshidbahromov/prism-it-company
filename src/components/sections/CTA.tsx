@@ -5,8 +5,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import ButtonWithIconDemo from "@/components/ui/ButtonWithIcon";
+import { useTranslations } from "next-intl";
 
 export function CTA() {
+    const t = useTranslations('CTA');
     return (
         <section id="contact" className="py-32 w-full relative z-10 overflow-hidden">
 
@@ -18,7 +20,7 @@ export function CTA() {
                         viewport={{ once: true }}
                         className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-8 block"
                     >
-                        Start Your Project
+                        {t('badge')}
                     </motion.span>
                     
                     <motion.h2
@@ -28,8 +30,8 @@ export function CTA() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-7xl lg:text-8xl font-heading font-medium tracking-tighter leading-[1.05] mb-8 text-foreground"
                     >
-                        Ready to build <br/> 
-                        <span className="text-foreground/40">something great?</span>
+                        {t('title')} <br/> 
+                        <span className="text-foreground/40">{t('titleHighlight')}</span>
                     </motion.h2>
 
                     <motion.p
@@ -39,7 +41,7 @@ export function CTA() {
                         transition={{ delay: 0.2 }}
                         className="text-xl md:text-2xl text-foreground/50 font-light mb-16 max-w-2xl leading-relaxed"
                     >
-                        Let&apos;s create a digital experience that sets you apart from the competition. No fluff, just results.
+                        {t('description')}
                     </motion.p>
 
                     <motion.div
