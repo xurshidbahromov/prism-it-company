@@ -1,6 +1,8 @@
 import { Container } from "@/components/layout/Container";
+import { useTranslations } from "next-intl";
 
 export function LogoStrip() {
+    const t = useTranslations("LogoStrip");
     const logos = [
         "ACME Corp",
         "GlobalTech",
@@ -14,7 +16,7 @@ export function LogoStrip() {
             <Container>
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                     <p className="text-sm font-semibold tracking-widest text-text-muted uppercase shrink-0">
-                        Trusted by industry innovators
+                        {t("trusted")}
                     </p>
                     <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 w-full opacity-50 grayscale">
                         {logos.map((logo, index) => (

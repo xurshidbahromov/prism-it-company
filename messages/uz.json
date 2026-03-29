@@ -292,5 +292,145 @@
       "about": "Biz haqimizda",
       "contact": "Aloqa"
     }
+  },
+  "DetailedCapabilities": {
+    "creative-design": {
+      "title": "Kreativ UI/UX Dizayn",
+      "tagline": "Insonlarga yo'naltirilgan raqamli tajriba",
+      "description": "Biz shunchaki interfeyslarni dizayn qilmaymiz - biz foydalanuvchi xatti-harakatlari va muloqot ma'lumotlariga asoslangan foydalanuvchi yo'llarini loyihalashtiramiz. Bizning maqsadimiz - mantiqiy qarorlarga asoslangan konversiyalarni keltirib chiqaradigan hissiy rezonans yaratishdir.",
+      "features": {
+        "0": "Foydalanuvchi tadqiqoti va yo'nalishlar xaritasi",
+        "1": "Yuqori aniqlikdagi interaktiv prototiplash",
+        "2": "Dizayn tizimlari va komponentlar kutubxonasi",
+        "3": "WCAG bo'yicha qulaylik auditini o'tkazish",
+        "4": "A/B testlash va optimallashtirish"
+      }
+    },
+    "full-stack": {
+      "title": "Full-Stack Muhandislik",
+      "tagline": "Kengayuvchan. Barqaror. Yuqori samarali.",
+      "description": "Millionlab so'rovlarni boshqarishga mo'ljallangan ishlab chiqarishga tayyor ilovalarni ishga tushirish. Biz 99.9% ishonchlilik uchun xavfsiz backend, samarali holat boshqaruvi va optimallashtirilgan yetkazib berish jarayonlariga ustuvor ahamiyat beramiz.",
+      "features": {
+        "0": "Zamonaviy React/Next.js arxitekturasi",
+        "1": "Xavfsiz backend (Node/Go/Python)",
+        "2": "Taqsimlangan tizimlar dizayni",
+        "3": "Real vaqtda ma'lumotlar oqimi",
+        "4": "Tezkor ishlashni sozlash va Core Web Vitals"
+      }
+    },
+    "ai-automation": {
+      "title": "AI va aqlli avtomatlashtirish",
+      "tagline": "Generativ AI-dan tashqari - Haqiqiy intellekt",
+      "description": "Biz AI shov-shuvi va biznes qiymati o'rtasidagi tafovutni bartaraf etamiz. Maxsus sozlangan LLM-lardan tortib avtonom ish oqimi agentlarigacha, biz infratuzilmangiz negiziga intellektni joylashtiramiz.",
+      "features": {
+        "0": "Maxsus LLM Fine-Tuning va RAG",
+        "1": "Bashoratli tahlil va prognozlash",
+        "2": "Avtonom agentlar va ish oqimi avtomatlashtirish",
+        "3": "Tabiiy til bo'yicha qidiruv (Vektorli ma'lumotlar bazasi)",
+        "4": "Kompyuter ko'rishi va naqshlarni aniqlash"
+      }
+    },
+    "cloud-infra": {
+      "title": "Bulutli infratuzilma",
+      "tagline": "Avtomatlashtirilgan. Xavfsiz. Global darajada kengayuvchan.",
+      "description": "DevOps - zamonaviy dasturiy ta'minotning yurak urishidir. Biz jamoangizga infratuzilmani kod sifatida ishlatgan holda, uzilishlarsiz va xavfsiz tarzda tezroq ishlash imkonini beruvchi avtomatlashtirilgan ekotizimlarni yaratamiz.",
+      "features": {
+        "0": "IaC (Terraform / Pulumi)",
+        "1": "Kubernetes va konteynerlarni boshqarish",
+        "2": "CI/CD jarayonlarini avtomatlashtirish",
+        "3": "Multi-Cloud va Edge Computing",
+        "4": "Zero-Trust xavfsizlik va muvofiqlik"
+      }
+    },
+    "inquire": "{category} bo'yicha so'rov qoldirish"
+  },
+  "About": {
+    "hero": {
+      "badge": "Biz haqimizda",
+      "titleMain": "Biz shunchaki dastur",
+      "titleHighlight": "qurmaymiz.",
+      "subtext": "Biz intiluvchan kompaniyalarning keyingi avlodini quvvatlantiradigan raqamli infratuzilmani quramiz."
+    },
+    "stats": {
+      "enterprise": "Yirik korporativ mijozlar",
+      "revenue": "Mijozlarga keltirilgan daromad",
+      "industry": "Sohadagi tajriba",
+      "countries": "Xizmat ko'rsatilgan davlatlar"
+    },
+    "mission": {
+      "badge": "Biz kimmiz",
+      "titleMain": "Yaratuvchilardan iborat jamoa,",
+      "titleHighlight": "shunchaki dasturchilar emas.",
+      "p1": "PRISM oddiy g'oya asosida tashkil etilgan: dunyodagi eng yaxshi dasturiy ta'minot jamoalari faqat Silikon vodiysi hududlari bilan cheklanib qolmasligi kerak. Biz an'anaviy agentlik emas, balki mahsulot kompaniyasi kabi ish yuritadigan elita muhandislar va dizaynerlardan iborat tarqoq jamoani tuzdik.",
+      "p2": "Bugungi kunda biz o'zining birinchi platformasini kengaytirayotgan startaplar va eskirgan tizimlarni qayta loyihalashtirayotgan yirik korxonalar bilan hamkorlik qilamiz. Barcha ishlarimizni sifat bo'yicha murosasizlik birlashtiradi."
+    },
+    "team": {
+      "badge": "Jamoa",
+      "titleMain": "Mahsulot ortidagi",
+      "titleHighlight": "insonlar.",
+      "members": {
+        "alex": {
+          "role": "Asoschisi va CEO",
+          "bio": "12 yillik tajribaga ega sobiq Google muhandisi. U yaxshi dasturiy ta'minotning 80% - fikrlash, 20% - koddan iborat ekanligiga ishonadi."
+        },
+        "sara": {
+          "role": "Dizayn bo'limi rahbari",
+          "bio": "Series B bosqichidagi fintex kompaniyasining sobiq yetakchi dizayneri. Piksellar va inson tajribasi uyg'unligi tarafdori."
+        },
+        "james": {
+          "role": "CTO",
+          "bio": "Mahsulot muhandisiga aylangan infratuzilma arxitektori. Kuniga 10 milliondan ortiq tranzaksiyalarni amalga oshirish tizimlarini qurgan."
+        },
+        "mia": {
+          "role": "Yetkazib berish bo'limi rahbari",
+          "bio": "Har bir loyihani o'z vaqtida, texnik topshiriq asosida va byudjet doirasida amalga oshirilishini ta'minlaydi."
+        }
+      }
+    },
+    "values": {
+      "badge": "Bizning tamoyillar",
+      "titleMain": "Biz qanday ishlaymiz,",
+      "titleHighlight": "va bu nima uchun muhim.",
+      "items": {
+        "engineering": {
+          "title": "Avvalo muhandislik",
+          "desc": "Biz shunchaki tez emas - biz to'g'ri loyihalashtiramiz. Har bir qaror vaqtinchalik yechimlar emas, balki texnik mukammallikka asoslanadi."
+        },
+        "transparency": {
+          "title": "Mutlaq shaffoflik",
+          "desc": "Hech qanday maxfiy jarayonlar yo'q. Biz jamoangiz bilan jarayon, muddatlar va o'zaro bog'liqliklarni to'liq ko'rsatgan holda ishlaymiz."
+        },
+        "outcomes": {
+          "title": "Natija birinchi o'rinda",
+          "desc": "Kod qatorlari muhim emas. Muhimi o'lchanadigan biznes ta'siri - tezlik, mijozlarni saqlab qolish va daromad."
+        }
+      }
+    }
+  },
+  "Contact": {
+    "badge": "Aloqa",
+    "titleMain": "Muloqotni",
+    "titleHighlight": "boshlaylik.",
+    "subtext": "G'oya, loyiha yoki savolingiz bormi? Bizga xabar qoldiring va jamoamiz 24 soat ichida siz bilan bog'lanadi.",
+    "labels": {
+      "email": "Email",
+      "office": "Ofis",
+      "officeLocation": "Tashkent, O'zbekiston"
+    },
+    "cta": {
+      "badge": "Loyihani boshlash",
+      "titleMain": "Ajoyib narsa yaratishga",
+      "titleHighlight": "tayyormisiz?",
+      "subtext": "Loyihangiz bo'yicha qisqacha ma'lumot qoldiring va 24 soat ichida moslashtirilgan taklif loyihasini oling. Umumiy takliflar emas - faqat siz uchun mo'ljallangan aniq qadamlar va rejalar.",
+      "items": {
+        "type": "Loyiha turi",
+        "budget": "Budjet va muddat",
+        "brief": "Loyiha tafsilotlari"
+      },
+      "link": "Loyiha formasini ochish"
+    }
+  },
+  "LogoStrip": {
+    "trusted": "Soha innovatorlari tomonidan ishonilgan"
   }
 }

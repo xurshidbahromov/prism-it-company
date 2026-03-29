@@ -292,5 +292,145 @@
       "about": "About",
       "contact": "Contact"
     }
+  },
+  "DetailedCapabilities": {
+    "creative-design": {
+      "title": "Creative UI/UX Design",
+      "tagline": "Human-Centered Digital Experiences",
+      "description": "We don't just 'design' interfaces — we engineer user journeys based on behavioral psychology and interaction data. Our goal is to create emotional resonance that drives logic-driven conversions.",
+      "features": {
+        "0": "User Research & Journey Mapping",
+        "1": "High-Fidelity Interaction Prototyping",
+        "2": "Design Systems & Component Libraries",
+        "3": "Accessibility (WCAG) Auditing",
+        "4": "A/B Testing & Optimization"
+      }
+    },
+    "full-stack": {
+      "title": "Full-Stack Engineering",
+      "tagline": "Scalable. Resilient. High-Performance.",
+      "description": "Deploying production-ready applications built to handle millions of requests. We prioritize type-safety, efficient state management, and optimized delivery pipelines for 99.9% reliability.",
+      "features": {
+        "0": "Modern React/Next.js Architecture",
+        "1": "Type-Safe Backend (Node/Go/Python)",
+        "2": "Distributed Systems Design",
+        "3": "Real-time Data Streaming",
+        "4": "Performance Tuning & Core Web Vitals"
+      }
+    },
+    "ai-automation": {
+      "title": "AI & Intelligent Automation",
+      "tagline": "Beyond Generative AI — True Intelligence",
+      "description": "We bridge the gap between AI hype and business value. From custom fine-tuned LLMs to autonomous workflow agents, we build intelligence into the fabric of your infrastructure.",
+      "features": {
+        "0": "Custom LLM Fine-Tuning & RAG",
+        "1": "Predictive Analytics & Forecasting",
+        "2": "Autonomous Agents & Workflow Automation",
+        "3": "Natural Language Search (Vector DBs)",
+        "4": "Computer Vision & Pattern Recognition"
+      }
+    },
+    "cloud-infra": {
+      "title": "Cloud & Infrastructure",
+      "tagline": "Automated. Secure. Globally Scalable.",
+      "description": "DevOps is the heartbeat of modern software. We engineer automated ecosystems that allow your team to ship faster with confidence, using zero-trust security and infrastructure-as-code.",
+      "features": {
+        "0": "IaC (Terraform / Pulumi)",
+        "1": "Kubernetes & Container Orchestration",
+        "2": "CI/CD Pipeline Automation",
+        "3": "Multi-Cloud & Edge Computing",
+        "4": "Zero-Trust Security & Compliance"
+      }
+    },
+    "inquire": "Inquire regarding {category}"
+  },
+  "About": {
+    "hero": {
+      "badge": "About Us",
+      "titleMain": "We don't just build",
+      "titleHighlight": "software.",
+      "subtext": "We architect digital infrastructure that powers the next generation of ambitious companies."
+    },
+    "stats": {
+      "enterprise": "Enterprise Clients",
+      "revenue": "Client Revenue Generated",
+      "industry": "In the Industry",
+      "countries": "Countries Served"
+    },
+    "mission": {
+      "badge": "Who We Are",
+      "titleMain": "A team of builders,",
+      "titleHighlight": "not just coders.",
+      "p1": "PRISM was founded on a simple idea: the best software teams in the world shouldn't be gatekept behind Silicon Valley zip codes. We built a distributed team of elite engineers and designers who operate with the rigour of a product company — not a traditional agency.",
+      "p2": "Today, we partner with startups scaling their first platform and enterprises re-architecting legacy systems alike. What unites all our work is an unwillingness to compromise on quality."
+    },
+    "team": {
+      "badge": "The Team",
+      "titleMain": "The people behind",
+      "titleHighlight": "the product.",
+      "members": {
+        "alex": {
+          "role": "Founder & CEO",
+          "bio": "Ex-Google engineer with 12 years building scalable systems. Believes great software is 80% thinking, 20% code."
+        },
+        "sara": {
+          "role": "Head of Design",
+          "bio": "Former lead designer at a Series B fintech. Obsessed with the space between pixels and the human experience."
+        },
+        "james": {
+          "role": "CTO",
+          "bio": "Infrastructure architect turned product engineer. Built systems that process 10M+ transactions daily."
+        },
+        "mia": {
+          "role": "Head of Delivery",
+          "bio": "Keeps every project on time, on spec, and on budget — all while making it look effortless."
+        }
+      }
+    },
+    "values": {
+      "badge": "Our Principles",
+      "titleMain": "How we work,",
+      "titleHighlight": "and why it matters.",
+      "items": {
+        "engineering": {
+          "title": "Engineering First",
+          "desc": "We don't ship fast — we ship right. Every decision is driven by technical excellence, not shortcuts."
+        },
+        "transparency": {
+          "title": "Radical Transparency",
+          "desc": "No black boxes. We work alongside your team with full visibility into process, timelines, and trade-offs."
+        },
+        "outcomes": {
+          "title": "Outcomes Over Output",
+          "desc": "Lines of code don't matter. What matters is measurable business impact — velocity, retention, revenue."
+        }
+      }
+    }
+  },
+  "Contact": {
+    "badge": "Contact Us",
+    "titleMain": "Let's start a",
+    "titleHighlight": "conversation.",
+    "subtext": "Have an idea, project, or question? Drop us a message and our team will get back to you within 24 hours.",
+    "labels": {
+      "email": "Email",
+      "office": "Office",
+      "officeLocation": "Tashkent, Uzbekistan"
+    },
+    "cta": {
+      "badge": "Start a Project",
+      "titleMain": "Ready to build something",
+      "titleHighlight": "remarkable?",
+      "subtext": "Fill out our project brief and get a tailored proposal within 24 hours. No generic quotes — just a precise scope and roadmap built for you.",
+      "items": {
+        "type": "Project Type",
+        "budget": "Budget & Timeline",
+        "brief": "Project Brief"
+      },
+      "link": "Open the project form"
+    }
+  },
+  "LogoStrip": {
+    "trusted": "Trusted by industry innovators"
   }
 }

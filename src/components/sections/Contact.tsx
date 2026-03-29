@@ -3,9 +3,13 @@
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export function Contact() {
+    const t = useTranslations("Contact");
+    const briefItems = ["type", "budget", "brief"] as const;
+
     return (
         <section id="contact" className="py-24 md:py-32 relative z-10 overflow-hidden">
             <Container>
@@ -18,7 +22,7 @@ export function Contact() {
                             viewport={{ once: true }}
                             className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6 block"
                         >
-                            Contact Us
+                            {t("badge")}
                         </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 10 }}
@@ -26,8 +30,8 @@ export function Contact() {
                             viewport={{ once: true }}
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-medium tracking-tighter leading-[1.05] mb-6 sm:mb-8 text-foreground"
                         >
-                            Let's start a <br className="hidden lg:block"/>
-                            <span className="text-foreground/40">conversation.</span>
+                            {t("titleMain")} <br className="hidden lg:block"/>
+                            <span className="text-foreground/40">{t("titleHighlight")}</span>
                         </motion.h2>
                         
                         <motion.p
@@ -37,7 +41,7 @@ export function Contact() {
                             transition={{ delay: 0.2 }}
                             className="text-base sm:text-xl text-foreground/60 font-light leading-relaxed mb-8 sm:mb-12"
                         >
-                            Have an idea, project, or question? Drop us a message and our team will get back to you within 24 hours.
+                            {t("subtext")}
                         </motion.p>
                         
                         <motion.div 
@@ -52,7 +56,7 @@ export function Contact() {
                                     <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                                 </div>
                                 <div>
-                                    <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">Email</div>
+                                    <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">{t("labels.email")}</div>
                                     <a href="mailto:xurshidbahromov06@gmail.com" className="text-sm sm:text-base md:text-lg font-medium hover:text-blue-500 transition-colors break-all">xurshidbahromov06@gmail.com</a>
                                 </div>
                             </div>
@@ -61,8 +65,8 @@ export function Contact() {
                                     <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                                 </div>
                                 <div>
-                                    <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">Office</div>
-                                    <span className="text-sm sm:text-lg font-medium">Tashkent, Uzbekistan</span>
+                                    <div className="text-xs uppercase tracking-widest text-foreground/40 mb-1">{t("labels.office")}</div>
+                                    <span className="text-sm sm:text-lg font-medium">{t("labels.officeLocation")}</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -82,28 +86,28 @@ export function Contact() {
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/[0.04] rounded-full blur-[80px] pointer-events-none group-hover:bg-blue-500/[0.07] transition-all duration-700" />
                                 
                                 <div className="relative z-10">
-                                    <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6">Start a Project</p>
+                                    <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6">{t("cta.badge")}</p>
                                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-medium tracking-tighter text-foreground mb-4 leading-tight">
-                                        Ready to build something<br/>
-                                        <span className="text-foreground/40">remarkable?</span>
+                                        {t("cta.titleMain")}<br/>
+                                        <span className="text-foreground/40">{t("cta.titleHighlight")}</span>
                                     </h3>
                                     <p className="text-sm sm:text-base text-foreground/50 font-light leading-relaxed max-w-md">
-                                        Fill out our project brief and get a tailored proposal within 24 hours. No generic quotes — just a precise scope and roadmap built for you.
+                                        {t("cta.subtext")}
                                     </p>
                                 </div>
 
                                 {/* What's inside preview */}
                                 <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                    {["Project Type", "Budget & Timeline", "Project Brief"].map((item, i) => (
-                                        <div key={i} className="flex items-center gap-2 bg-foreground/[0.03] border border-foreground/[0.05] rounded-xl px-4 py-3">
+                                    {briefItems.map((item) => (
+                                        <div key={item} className="flex items-center gap-2 bg-foreground/[0.03] border border-foreground/[0.05] rounded-xl px-4 py-3">
                                             <div className="w-1.5 h-1.5 rounded-full bg-blue-500/60 shrink-0" />
-                                            <span className="text-xs font-medium text-foreground/50">{item}</span>
+                                            <span className="text-xs font-medium text-foreground/50">{t(`cta.items.${item}`)}</span>
                                         </div>
                                     ))}
                                 </div>
 
                                 <div className="relative z-10 flex items-center gap-3 text-sm font-semibold text-foreground group-hover:text-blue-500 transition-colors duration-300">
-                                    Open the project form
+                                    {t("cta.link")}
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                                 </div>
                             </div>

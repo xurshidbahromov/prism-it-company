@@ -9,6 +9,7 @@ import { PageTransition } from "@/components/ui/PageTransition";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { GlobalBackground } from "@/components/ui/GlobalBackground";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -72,6 +73,7 @@ export default async function RootLayout({
           <MobileNav />
           <Footer />
           <SpeedInsights />
+          <Analytics />
         </ThemeProvider>
         </NextIntlClientProvider>
       </body>
