@@ -5,6 +5,8 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/cn";
 import { Settings, Sun, Moon, Monitor, ChevronRight, Check } from "lucide-react";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { useLocale } from "next-intl";
 
 const themes = [
     { value: "light", icon: Sun, label: "Light Mode" },
@@ -29,8 +31,14 @@ export function SettingsDropdown({ direction = "down" }: SettingsDropdownProps =
     const containerRef = useRef<HTMLDivElement>(null);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    // Current language (mock state since app doesn't have an active i18n provider yet)
-    const [currentLang, setCurrentLang] = useState("en");
+    const currentLang = useLocale();
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const changeLanguage = (lang: string) => {
+        router.replace(pathname, { locale: lang });
+        setIsOpen(false);
+    };
 
     useEffect(() => { setMounted(true); }, []);
 
@@ -129,7 +137,7 @@ export function SettingsDropdown({ direction = "down" }: SettingsDropdownProps =
                                 return (
                                     <button
                                         key={l.value}
-                                        onClick={() => setCurrentLang(l.value)}
+                                        onClick={() => changeLanguage(l.value)}
                                         className={cn(
                                             "w-full flex items-center justify-between px-4 py-2.5 rounded-[16px] text-sm font-medium transition-all duration-200",
                                             active ? "text-blue-500 bg-blue-500/10" : "text-foreground/70 hover:bg-foreground/[0.05] hover:text-foreground"

@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 import { Container } from "@/components/layout/Container";
 import { AeroButton as Button } from "@/components/ui/AeroButton";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 // Assuming you have simple SVG logos in LogoStrip, we can inline or import it.

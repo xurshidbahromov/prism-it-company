@@ -1,7 +1,7 @@
 "use client";
 
 import { Container } from "@/components/layout/Container";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import ButtonWithIconDemo from "@/components/ui/ButtonWithIcon";

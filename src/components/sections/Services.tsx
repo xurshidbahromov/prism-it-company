@@ -5,7 +5,7 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { PenTool, Code2, Cpu, Cloud, ArrowRight } from "lucide-react";
 import { SiOpenai } from "react-icons/si";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/cn";
 

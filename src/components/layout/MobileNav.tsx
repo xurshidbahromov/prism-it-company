@@ -1,163 +1,132 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { Home, Grid, Layers, Briefcase, User, MessageCircle } from "lucide-react";
+import { Link, usePathname } from "@/i18n/routing";
+import { motion, AnimatePresence } from "framer-motion";
+import { Home, Grid, Briefcase, User, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useTranslations } from "next-intl";
 
 const MOBILE_LINKS = [
-    { key: "home", href: "/", icon: Home },
+    { key: "home",      href: "/",          icon: Home },
     { key: "expertise", href: "/expertise", icon: Grid },
-    { key: "work", href: "/work", icon: Briefcase },
-    { key: "about", href: "/about", icon: User },
-    { key: "contact", href: "/contact", icon: MessageCircle },
+    { key: "work",      href: "/work",      icon: Briefcase },
+    { key: "about",     href: "/about",     icon: User },
+    { key: "contact",   href: "/contact",   icon: MessageCircle },
 ];
 
 export function MobileNav() {
-    const t = useTranslations('MobileNav');
+    const t = useTranslations("MobileNav");
     const pathname = usePathname();
     const [isVisible, setIsVisible] = useState(true);
     const lastScrollY = useRef(0);
     const ticking = useRef(false);
-    const [pillStyle, setPillStyle] = useState({ left: 0, width: 0, opacity: 0 });
-    const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-
-    const activeIndex = MOBILE_LINKS.findIndex(link => {
-        if (link.href === "/") return pathname === "/";
-        return pathname.startsWith(link.href);
-    });
 
     const isActive = (href: string) => {
         if (href === "/") return pathname === "/";
         return pathname.startsWith(href);
     };
 
-    // Hide on scroll down, show on scroll up logic with performance optimization
+    // Hide on scroll-down, show on scroll-up — rAF-throttled
     useEffect(() => {
         const handleScroll = () => {
-            if (!ticking.current) {
-                window.requestAnimationFrame(() => {
-                    const currentScrollY = window.scrollY;
-                    if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-                        setIsVisible(false);
-                    } else {
-                        setIsVisible(true);
-                    }
-                    lastScrollY.current = currentScrollY;
-                    ticking.current = false;
-                });
-                ticking.current = true;
-            }
+            if (ticking.current) return;
+            ticking.current = true;
+            window.requestAnimationFrame(() => {
+                const currentY = window.scrollY;
+                setIsVisible(currentY <= lastScrollY.current || currentY <= 80);
+                lastScrollY.current = currentY;
+                ticking.current = false;
+            });
         };
-
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Update pill position when pathname or visibility changes
-    useEffect(() => {
-        if (activeIndex !== -1 && linkRefs.current[activeIndex]) {
-            const el = linkRefs.current[activeIndex];
-            if (el) {
-                setPillStyle({
-                    left: el.offsetLeft,
-                    width: el.offsetWidth,
-                    opacity: 1
-                });
-            }
-        } else {
-            setPillStyle(prev => ({ ...prev, opacity: 0 }));
-        }
-    }, [activeIndex, pathname]);
-
     return (
         <motion.div
-            initial={{ bottom: -100, opacity: 0 }}
-            animate={{
-                bottom: isVisible ? 24 : -100,
-                opacity: isVisible ? 1 : 0
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="fixed left-1/2 -translate-x-1/2 z-50 lg:hidden w-[calc(100%-24px)] max-w-lg"
-            style={{
-                pointerEvents: isVisible ? "auto" : "none"
-            }}
+            initial={{ y: 120, opacity: 0 }}
+            animate={{ y: isVisible ? 0 : 120, opacity: isVisible ? 1 : 0 }}
+            transition={{ type: "spring", stiffness: 380, damping: 32, mass: 0.9 }}
+            className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 lg:hidden w-[calc(100%-20px)] max-w-[520px]"
+            style={{ pointerEvents: isVisible ? "auto" : "none" }}
+            aria-label="Mobile Navigation"
         >
-            {/* SVG Filters for Liquid/Gooey effects — Precision Solid Physics */}
-            <svg className="invisible absolute w-0 h-0 pointer-events-none" aria-hidden="true">
-                <defs>
-                    <filter id="mobile-goo">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-                        <feColorMatrix
-                            in="blur"
-                            mode="matrix"
-                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
-                            result="goo"
-                        />
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                    </filter>
-                </defs>
-            </svg>
+            {/* Glass island shell */}
+            <div className="relative flex items-center rounded-[26px] p-1.5">
+                {/* Background glass */}
+                <div
+                    className="absolute inset-0 aero-island rounded-[26px]"
+                    style={{ backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }}
+                />
+                {/* Glass reflection */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-40 rounded-[26px] pointer-events-none" />
 
-            <div className="relative flex rounded-[28px] p-1.5 sm:p-2 shadow-2xl shadow-black/20">
-                {/* Glass Layer from Laptop Navbar effect */}
-                <div className="absolute inset-0 aero-island rounded-[28px]" style={{ zIndex: 0, backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }} />
-
-                {/* Glass Reflection Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-40 rounded-[28px]" style={{ zIndex: 1 }}></div>
-
-                {/* Top Section: Nav Icons */}
-                <div className="relative flex flex-1 items-center justify-between" style={{ zIndex: 10 }}>
-                    {/* Stable Active Pill Layer */}
-                    <div className="absolute inset-0 pointer-events-none z-0">
-                        <motion.div
-                            className="h-full aero-pill rounded-[18px]"
-                            initial={false}
-                            animate={{
-                                left: pillStyle.left,
-                                width: pillStyle.width,
-                                opacity: pillStyle.opacity,
-                                scale: pillStyle.opacity > 0 ? 1 : 0.8
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 450,
-                                damping: 35,
-                                mass: 0.8
-                            }}
-                            style={{
-                                position: "absolute",
-                                top: 0,
-                                height: "100%"
-                            }}
-                        />
-                    </div>
-
-                    {/* Icons Layer */}
-                    {MOBILE_LINKS.map((link, index) => {
+                {/* Nav items */}
+                <nav className="relative flex items-center w-full gap-0.5 z-10" aria-label="Mobile Navigation">
+                    {MOBILE_LINKS.map((link) => {
                         const active = isActive(link.href);
                         const Icon = link.icon;
                         return (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                ref={(el) => { linkRefs.current[index] = el; }}
                                 className={cn(
-                                    "relative flex-1 flex flex-col items-center justify-center gap-0.5 py-2 sm:py-3 rounded-[14px] sm:rounded-[18px] transition-colors duration-500 z-10",
-                                    active ? "text-[var(--aero-pill-text)] font-bold" : "text-foreground/50 hover:text-foreground"
+                                    "relative flex-1 flex flex-col items-center justify-center gap-[3px] py-2.5 rounded-[20px] select-none group",
+                                    active
+                                        ? "text-[var(--aero-pill-text)] font-semibold"
+                                        : "text-foreground/50 font-medium transition-colors duration-200 hover:text-foreground"
                                 )}
                             >
-                                <Icon size={18} strokeWidth={active ? 2.5 : 2} />
-                                <span className="text-[9px] sm:text-[10px] font-semibold tracking-tight whitespace-nowrap">
+                                {/* Active pill — same blur-dissolve as desktop */}
+                                <AnimatePresence>
+                                    {active && (
+                                        <motion.div
+                                            key={link.href}
+                                            initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+                                            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                                            exit={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+                                            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                                            className="absolute inset-0 aero-pill rounded-[20px] pointer-events-none z-[-1]"
+                                        >
+                                            {/* Shimmer sweep */}
+                                            <span className="absolute inset-0 rounded-[20px] overflow-hidden pointer-events-none" aria-hidden>
+                                                <motion.span
+                                                    className="absolute inset-0 block"
+                                                    initial={{ x: "-110%" }}
+                                                    animate={{ x: "210%" }}
+                                                    transition={{
+                                                        duration: 1.4,
+                                                        ease: "easeInOut",
+                                                        delay: 0.3,
+                                                        repeat: Infinity,
+                                                        repeatDelay: 4,
+                                                    }}
+                                                    style={{
+                                                        background:
+                                                            "linear-gradient(105deg, transparent 25%, rgba(255,255,255,0.5) 50%, transparent 75%)",
+                                                    }}
+                                                />
+                                            </span>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                {/* Hover glow — CSS only */}
+                                <span className="absolute inset-0 rounded-[20px] bg-foreground/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-0" />
+
+                                <Icon
+                                    size={20}
+                                    strokeWidth={active ? 2.5 : 1.8}
+                                    className="relative z-10 transition-transform duration-300 group-hover:scale-110"
+                                />
+                                <span className="relative z-10 text-[9px] sm:text-[10px] font-semibold tracking-tight whitespace-nowrap">
                                     {t(`tabs.${link.key}` as any)}
                                 </span>
                             </Link>
                         );
                     })}
-                </div>
+                </nav>
             </div>
         </motion.div>
     );

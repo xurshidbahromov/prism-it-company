@@ -1,7 +1,7 @@
 "use client";
 
 import { Container } from "./Container";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
