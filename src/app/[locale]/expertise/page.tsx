@@ -6,8 +6,10 @@ import { CTA } from "@/components/sections/CTA";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function ExpertisePage() {
+    const t = useTranslations("ExpertisePage");
     return (
         <main className="relative overflow-hidden w-full">
             {/* Background Glows — Contained to prevent overflow */}
@@ -16,7 +18,6 @@ export default function ExpertisePage() {
                 <div className="absolute top-[40%] right-[-10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-blue-500/[0.02] blur-[120px] rounded-full transition-opacity duration-1000"></div>
             </div>
 
-            {/* 1. Hero Section */}
             <section className="pt-44 pb-20 md:pt-48 md:pb-32 relative z-10">
                 <Container>
                     <motion.span 
@@ -24,7 +25,7 @@ export default function ExpertisePage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-8 block"
                     >
-                        Our Expertise
+                        {t('hero.badge')}
                     </motion.span>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -32,8 +33,8 @@ export default function ExpertisePage() {
                         transition={{ delay: 0.1 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-heading font-medium tracking-tighter leading-[1.05] mb-8 text-foreground max-w-5xl"
                     >
-                        Engineering for <br className="hidden md:block" />
-                        <span className="text-foreground/40">the next frontier.</span>
+                        {t('hero.titleMain')} <br className="hidden md:block" />
+                        <span className="text-foreground/40">{t('hero.titleHighlight')}</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -41,7 +42,7 @@ export default function ExpertisePage() {
                         transition={{ delay: 0.2 }}
                         className="text-xl md:text-2xl text-foreground/50 font-light max-w-2xl leading-relaxed"
                     >
-                        We bridge the gap between complex technical challenges and elegant, high-performance digital products.
+                        {t('hero.subtext')}
                     </motion.p>
                 </Container>
             </section>
@@ -58,7 +59,7 @@ export default function ExpertisePage() {
                         viewport={{ once: true }}
                         className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6 block"
                     >
-                        Deep Dive
+                        {t('deepDive.badge')}
                     </motion.span>
                     <motion.h2 
                         initial={{ opacity: 0, y: 10 }}
@@ -66,7 +67,7 @@ export default function ExpertisePage() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-foreground tracking-tighter leading-[1.1]"
                     >
-                        Our Core Technological <br /> Pillars & Capabilities
+                        {t('deepDive.title')}
                     </motion.h2>
                 </div>
             </Container>

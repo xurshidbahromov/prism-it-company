@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Mail, MapPin, Phone, Clock, ChevronRight, Instagram, Linkedin, Send } from "lucide-react";
 import { cn } from "@/lib/cn";
 import confetti from "canvas-confetti";
+import { useTranslations } from "next-intl";
+import { track } from "@vercel/analytics";
 
 const triggerConfetti = () => {
     const duration = 3000;
@@ -34,32 +36,11 @@ const triggerConfetti = () => {
     frame();
 };
 
-const projectTypes = [
-    { id: "web", label: "Web Application", desc: "SaaS, internal tools, platforms" },
-    { id: "mobile", label: "Mobile App", desc: "iOS, Android, React Native" },
-    { id: "design", label: "UI/UX Design", desc: "Brand identity, design system" },
-    { id: "ai", label: "AI Integration", desc: "LLMs, automation, agents" },
-    { id: "cloud", label: "Cloud & DevOps", desc: "Infrastructure, CI/CD, migration" },
-    { id: "other", label: "Something Else", desc: "Let's talk about it" },
-];
-
-const budgetRanges = [
-    { id: "10-25k", label: "$10k – $25k" },
-    { id: "25-50k", label: "$25k – $50k" },
-    { id: "50-100k", label: "$50k – $100k" },
-    { id: "100k+", label: "$100k+" },
-];
-
-const timelineOptions = [
-    { id: "asap", label: "ASAP" },
-    { id: "1-3m", label: "1 – 3 months" },
-    { id: "3-6m", label: "3 – 6 months" },
-    { id: "6m+", label: "6+ months" },
-];
-
 const inputClass = "w-full px-5 py-4 bg-foreground/[0.03] border border-foreground/10 rounded-[16px] focus:outline-none focus:border-blue-500/50 focus:bg-foreground/[0.05] transition-all duration-300 text-foreground placeholder:text-foreground/20 text-[15px]";
 
 export default function ContactPage() {
+    const t = useTranslations("ContactPage");
+    
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
     const [selectedBudget, setSelectedBudget] = useState<string>("");
     const [selectedTimeline, setSelectedTimeline] = useState<string>("");
@@ -72,6 +53,10 @@ export default function ContactPage() {
         );
     };
 
+    const projectTypeIds = ["web", "telegram", "automation", "saas", "ecommerce", "other"] as const;
+    const budgetRangeIds = ["300-700", "700-1500", "1500-3000", "3000+"] as const;
+    const timelineOptionIds = ["asap", "1-3m", "3-6m", "6m+"] as const;
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -81,7 +66,7 @@ export default function ContactPage() {
         // Add Web3Forms access key
         const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
         if (!accessKey) {
-            alert("Xatolik: Web3Forms kaliti (NEXT_PUBLIC_WEB3FORMS_KEY) topilmadi. Sozlamalarni tekshiring.");
+            alert("Error: Web3Forms key not found.");
             return;
         }
         formData.append("access_key", accessKey);
@@ -101,16 +86,21 @@ export default function ContactPage() {
             const data = await response.json();
 
             if (data.success) {
+                track('Brief Submitted', {
+                    project_types: selectedTypes.join(','),
+                    budget: selectedBudget,
+                    timeline: selectedTimeline
+                });
                 setSubmitted(true);
                 triggerConfetti();
                 window.scrollTo({ top: 0, behavior: "smooth" });
             } else {
                 console.error("Form error:", data);
-                alert("Xatolik: Xabar yuborilmadi. Qayta urinib ko'ring.");
+                alert("Error sending message. Please try again.");
             }
         } catch (error) {
             console.error("Fetch error:", error);
-            alert("Tarmoq xatosi. Iltimos kuting va qayta urinib ko'ring.");
+            alert("Network error. Please wait and try again.");
         } finally {
             setIsSubmitting(false);
         }
@@ -142,14 +132,14 @@ export default function ContactPage() {
                         className="mb-10 md:mb-16 lg:mb-24"
                     >
                         <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-6 block">
-                            Start a Project
+                            {t('hero.badge')}
                         </span>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-medium tracking-tighter leading-[1.05] mb-8 text-foreground max-w-5xl">
-                            Let's build something{" "}
-                            <span className="text-foreground/40">remarkable.</span>
+                            {t('hero.titleMain')}{" "}
+                            <span className="text-foreground/40">{t('hero.titleHighlight')}</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-foreground/50 font-light max-w-2xl leading-relaxed">
-                            Tell us about your project. We'll review your brief and respond within 24 hours with a tailored proposal.
+                            {t('description')}
                         </p>
                     </motion.div>
 
@@ -165,23 +155,23 @@ export default function ContactPage() {
                                         <div className="flex flex-col gap-6">
                                             <div className="flex items-center gap-3 mb-2">
                                                 <span className="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-[11px] font-bold text-blue-400">01</span>
-                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">About You</span>
+                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">{t('form.aboutYou')}</span>
                                             </div>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="flex flex-col gap-2">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Full Name *</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.name')} *</label>
                                                     <input name="name" required type="text" placeholder="Alex Chen" className={inputClass} />
                                                 </div>
                                                 <div className="flex flex-col gap-2">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Email *</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.email')} *</label>
                                                     <input name="email" required type="email" placeholder="alex@company.com" className={inputClass} />
                                                 </div>
                                                 <div className="flex flex-col gap-2">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Company</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.company')}</label>
                                                     <input name="company" type="text" placeholder="Acme Inc." className={inputClass} />
                                                 </div>
                                                 <div className="flex flex-col gap-2">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Phone (optional)</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.phone')}</label>
                                                     <input name="phone" type="tel" placeholder="+998 90 123 45 67" className={inputClass} />
                                                 </div>
                                             </div>
@@ -194,16 +184,16 @@ export default function ContactPage() {
                                         <div className="flex flex-col gap-6">
                                             <div className="flex items-center gap-3 mb-2">
                                                 <span className="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-[11px] font-bold text-blue-400">02</span>
-                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">Project Type</span>
+                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">{t('form.projectTypesLabel')}</span>
                                             </div>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
-                                                {projectTypes.map((type) => {
-                                                    const active = selectedTypes.includes(type.id);
+                                                {projectTypeIds.map((id) => {
+                                                    const active = selectedTypes.includes(id);
                                                     return (
                                                         <button
-                                                            key={type.id}
+                                                            key={id}
                                                             type="button"
-                                                            onClick={() => toggleType(type.id)}
+                                                            onClick={() => toggleType(id)}
                                                             className={cn(
                                                                 "group relative text-left p-4 rounded-[16px] border transition-all duration-300",
                                                                 active
@@ -211,8 +201,8 @@ export default function ContactPage() {
                                                                     : "bg-foreground/[0.02] border-foreground/[0.06] hover:border-foreground/20 hover:bg-foreground/[0.04]"
                                                             )}
                                                         >
-                                                            <div className="text-sm font-semibold text-foreground mb-1">{type.label}</div>
-                                                            <div className="text-xs text-foreground/40 font-light">{type.desc}</div>
+                                                            <div className="text-sm font-semibold text-foreground mb-1">{t(`form.projectTypes.${id}.label` as any)}</div>
+                                                            <div className="text-xs text-foreground/40 font-light">{t(`form.projectTypes.${id}.desc` as any)}</div>
                                                         </button>
                                                     );
                                                 })}
@@ -226,45 +216,45 @@ export default function ContactPage() {
                                         <div className="flex flex-col gap-6">
                                             <div className="flex items-center gap-3 mb-2">
                                                 <span className="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-[11px] font-bold text-blue-400">03</span>
-                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">Budget & Timeline</span>
+                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">{t('form.budgetTimeline')}</span>
                                             </div>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                                 <div className="flex flex-col gap-3">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Budget Range</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.budgetLabel')}</label>
                                                     <div className="grid grid-cols-2 gap-2">
-                                                        {budgetRanges.map((b) => (
+                                                        {budgetRangeIds.map((id) => (
                                                             <button
-                                                                key={b.id}
+                                                                key={id}
                                                                 type="button"
-                                                                onClick={() => setSelectedBudget(b.id)}
+                                                                onClick={() => setSelectedBudget(id)}
                                                                 className={cn(
                                                                     "px-4 py-3 rounded-[12px] border text-sm font-medium transition-all duration-200",
-                                                                    selectedBudget === b.id
+                                                                    selectedBudget === id
                                                                         ? "bg-blue-500/10 border-blue-500/40 text-blue-400"
                                                                         : "bg-foreground/[0.02] border-foreground/[0.06] text-foreground/60 hover:border-foreground/20"
                                                                 )}
                                                             >
-                                                                {b.label}
+                                                                {t(`form.budgetRanges.${id}` as any)}
                                                             </button>
                                                         ))}
                                                     </div>
                                                 </div>
                                                 <div className="flex flex-col gap-3">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Timeline</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.timelineLabel')}</label>
                                                     <div className="grid grid-cols-2 gap-2">
-                                                        {timelineOptions.map((t) => (
+                                                        {timelineOptionIds.map((id) => (
                                                             <button
-                                                                key={t.id}
+                                                                key={id}
                                                                 type="button"
-                                                                onClick={() => setSelectedTimeline(t.id)}
+                                                                onClick={() => setSelectedTimeline(id)}
                                                                 className={cn(
                                                                     "px-4 py-3 rounded-[12px] border text-sm font-medium transition-all duration-200",
-                                                                    selectedTimeline === t.id
+                                                                    selectedTimeline === id
                                                                         ? "bg-blue-500/10 border-blue-500/40 text-blue-400"
                                                                         : "bg-foreground/[0.02] border-foreground/[0.06] text-foreground/60 hover:border-foreground/20"
                                                                 )}
                                                             >
-                                                                {t.label}
+                                                                {t(`form.timelineOptions.${id}` as any)}
                                                             </button>
                                                         ))}
                                                     </div>
@@ -279,21 +269,21 @@ export default function ContactPage() {
                                         <div className="flex flex-col gap-6">
                                             <div className="flex items-center gap-3 mb-2">
                                                 <span className="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-[11px] font-bold text-blue-400">04</span>
-                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">Project Brief</span>
+                                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">{t('form.detailsLabel')}</span>
                                             </div>
                                             <div className="flex flex-col gap-4">
                                                 <div className="flex flex-col gap-2">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Project Summary *</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.projectSummary')}</label>
                                                     <textarea
                                                         name="message"
                                                         required
                                                         rows={5}
-                                                        placeholder="Describe your project, goals, and any specific requirements. The more detail, the better our proposal..."
+                                                        placeholder={t('form.detailsPlaceholder')}
                                                         className={cn(inputClass, "resize-none")}
                                                     />
                                                 </div>
                                                 <div className="flex flex-col gap-2">
-                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">Reference or Inspiration URL (optional)</label>
+                                                    <label className="text-xs uppercase tracking-widest text-foreground/40 font-medium ml-1">{t('form.referenceUrl')}</label>
                                                     <input name="reference_url" type="url" placeholder="https://example.com" className={inputClass} />
                                                 </div>
                                             </div>
@@ -307,7 +297,7 @@ export default function ContactPage() {
                                         >
                                             <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                             <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-                                                {isSubmitting ? "Sending..." : "Submit Your Brief"}
+                                                {isSubmitting ? t('form.submitting') : t('form.submitButton')}
                                             </span>
                                             {!isSubmitting && <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-white transition-all duration-300" />}
                                         </button>
@@ -326,28 +316,24 @@ export default function ContactPage() {
                                 <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/[0.06] rounded-full blur-[60px] pointer-events-none" />
                                 <div className="relative z-10">
                                     <Clock className="w-8 h-8 text-blue-500 mb-5" strokeWidth={1.5} />
-                                    <h3 className="text-xl font-heading font-medium text-foreground mb-3">24hr Response</h3>
+                                    <h3 className="text-xl font-heading font-medium text-foreground mb-3">{t('aside.responseTitle')}</h3>
                                     <p className="text-sm text-foreground/50 font-light leading-relaxed">
-                                        We review every project brief personally and respond with a detailed proposal — no auto-replies, no generic quotes.
+                                        {t('aside.responseDesc')}
                                     </p>
                                 </div>
                             </div>
 
                             {/* What to expect */}
                             <div className="flex flex-col gap-4">
-                                <h3 className="text-xs uppercase tracking-widest text-foreground/30 font-bold">What happens next</h3>
-                                {[
-                                    { step: "01", title: "Brief Review", desc: "Our team reviews your submission and clarifies any questions." },
-                                    { step: "02", title: "Discovery Call", desc: "A 30-min kickoff to align on goals, scope, and timeline." },
-                                    { step: "03", title: "Tailored Proposal", desc: "You receive a precise quote and phased project roadmap." },
-                                ].map((item) => (
-                                    <div key={item.step} className="flex gap-4 items-start group">
+                                <h3 className="text-xs uppercase tracking-widest text-foreground/30 font-bold">{t('aside.nextStepsTitle')}</h3>
+                                {[0, 1, 2].map((i) => (
+                                    <div key={i} className="flex gap-4 items-start group">
                                         <div className="w-8 h-8 shrink-0 rounded-full bg-foreground/[0.04] border border-foreground/[0.08] flex items-center justify-center text-[10px] font-bold text-foreground/30 mt-0.5">
-                                            {item.step}
+                                            0{i + 1}
                                         </div>
                                         <div>
-                                            <div className="text-sm font-semibold text-foreground mb-0.5">{item.title}</div>
-                                            <div className="text-xs text-foreground/40 font-light leading-relaxed">{item.desc}</div>
+                                            <div className="text-sm font-semibold text-foreground mb-0.5">{t(`aside.steps.${i}.title` as any)}</div>
+                                            <div className="text-xs text-foreground/40 font-light leading-relaxed">{t(`aside.steps.${i}.desc` as any)}</div>
                                         </div>
                                     </div>
                                 ))}
@@ -358,11 +344,11 @@ export default function ContactPage() {
 
                             {/* Contact Info */}
                             <div className="flex flex-col gap-5">
-                                <h3 className="text-xs uppercase tracking-widest text-foreground/30 font-bold">Prefer to reach out directly?</h3>
+                                <h3 className="text-xs uppercase tracking-widest text-foreground/30 font-bold">{t('aside.reachOutTitle')}</h3>
                                 {[
-                                    { icon: Mail, label: "Email", value: "xurshidbahromov06@gmail.com", href: "mailto:xurshidbahromov06@gmail.com" },
-                                    { icon: Phone, label: "Phone", value: "+998 94 101 26 80", href: "tel:+998941012680" },
-                                    { icon: MapPin, label: "Office", value: "Tashkent, Uzbekistan", href: "#" },
+                                    { icon: Mail, label: t('aside.labels.email'), value: "xurshidbahromov06@gmail.com", href: "mailto:xurshidbahromov06@gmail.com" },
+                                    { icon: Phone, label: t('aside.labels.phone'), value: "+998 94 101 26 80", href: "tel:+998941012680" },
+                                    { icon: MapPin, label: t('aside.labels.office'), value: "Tashkent, Uzbekistan", href: "#" },
                                 ].map((item) => (
                                     <a key={item.label} href={item.href} className="flex items-center gap-4 group">
                                         <div className="w-10 h-10 rounded-full bg-foreground/[0.03] border border-foreground/[0.06] flex items-center justify-center group-hover:border-blue-500/30 group-hover:bg-blue-500/5 transition-all duration-300">
@@ -425,17 +411,17 @@ export default function ContactPage() {
                             </svg>
                         </div>
                         <h2 className="text-6xl md:text-8xl lg:text-9xl font-heading font-medium tracking-tighter text-foreground mb-6">
-                            Brief received.
+                            {t('successTitle')}
                         </h2>
                         <p className="text-xl md:text-2xl text-foreground/50 font-light leading-relaxed max-w-2xl mx-auto mb-12">
-                            Thank you! Our team will review your project brief and reach out within 24 hours with a tailored proposal.
+                            {t('successDesc')}
                         </p>
                         <button
-                            onClick={() => setSubmitted(false)}
+                            onClick={() => window.location.href = '/'}
                             className="group flex items-center justify-center gap-3 px-8 py-4 bg-foreground/[0.03] hover:bg-foreground/[0.08] border border-foreground/[0.06] rounded-full text-base font-medium transition-all duration-300"
                         >
                             <ChevronRight className="w-5 h-5 rotate-180 group-hover:-translate-x-1 transition-transform duration-300" />
-                            Submit another brief
+                            {t('successBack')}
                         </button>
                     </motion.div>
                 )}

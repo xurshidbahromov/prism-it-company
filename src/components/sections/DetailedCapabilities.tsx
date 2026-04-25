@@ -3,67 +3,66 @@
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import {
-    PenTool, Code2, Cpu, Cloud,
-    CheckCircle2, Layers, Search,
-    Zap, Rocket, ShieldCheck,
-    MessageSquare, Terminal,
+    Globe, Bot, Zap, Rocket,
+    CheckCircle2, BarChart3,
+    ShoppingCart, Database,
     ArrowRight
 } from "lucide-react";
 import {
     SiReact, SiNextdotjs, SiTypescript,
-    SiTailwindcss, SiFigma, SiNodedotjs,
-    SiPython, SiPostgresql, SiOpenai,
-    SiDocker, SiKubernetes
+    SiTailwindcss, SiNodedotjs,
+    SiPostgresql, SiTelegram,
+    SiStripe, SiPrisma
 } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
 import { cn } from "@/lib/cn";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
-const capabilityIds = ["creative-design", "full-stack", "ai-automation", "cloud-infra"] as const;
+const capabilityIds = ["web-dev", "telegram", "automation", "saas"] as const;
 
 const capabilityIcons = {
-    "creative-design": {
-        icon: PenTool,
+    "web-dev": {
+        icon: Globe,
         color: "text-blue-400",
         bgGlow: "bg-blue-500/10",
         tech: [
-            { icon: SiFigma, name: "Figma" },
-            { icon: Layers, name: "Adobe CC" },
-            { icon: Search, name: "Maze" }
+            { icon: SiNextdotjs, name: "Next.js" },
+            { icon: SiReact, name: "React" },
+            { icon: SiTypescript, name: "TypeScript" },
+            { icon: SiTailwindcss, name: "Tailwind" }
         ]
     },
-    "full-stack": {
-        icon: Code2,
-        color: "text-emerald-400",
-        bgGlow: "bg-emerald-500/10",
+    "telegram": {
+        icon: Bot,
+        color: "text-sky-400",
+        bgGlow: "bg-sky-500/10",
         tech: [
-            { icon: SiNextdotjs, name: "Next.js" },
-            { icon: SiTypescript, name: "TypeScript" },
+            { icon: SiTelegram, name: "Bot API" },
+            { icon: SiNextdotjs, name: "Mini App" },
             { icon: SiNodedotjs, name: "Node.js" },
             { icon: SiPostgresql, name: "PostgreSQL" }
         ]
     },
-    "ai-automation": {
-        icon: Cpu,
+    "automation": {
+        icon: Zap,
+        color: "text-amber-400",
+        bgGlow: "bg-amber-500/10",
+        tech: [
+            { icon: SiReact, name: "React" },
+            { icon: SiNodedotjs, name: "Node.js" },
+            { icon: SiPostgresql, name: "PostgreSQL" },
+            { icon: SiPrisma, name: "Prisma" }
+        ]
+    },
+    "saas": {
+        icon: Rocket,
         color: "text-violet-400",
         bgGlow: "bg-violet-500/10",
         tech: [
-            { icon: SiOpenai, name: "OpenAI" },
-            { icon: SiPython, name: "Python" },
-            { icon: MessageSquare, name: "LangChain" },
-            { icon: Terminal, name: "Pinecone" }
-        ]
-    },
-    "cloud-infra": {
-        icon: Cloud,
-        color: "text-cyan-400",
-        bgGlow: "bg-cyan-500/10",
-        tech: [
-            { icon: FaAws, name: "AWS" },
-            { icon: SiDocker, name: "Docker" },
-            { icon: SiKubernetes, name: "K8s" },
-            { icon: ShieldCheck, name: "Security" }
+            { icon: SiNextdotjs, name: "Next.js" },
+            { icon: SiNodedotjs, name: "Node.js" },
+            { icon: SiStripe, name: "Stripe" },
+            { icon: SiPostgresql, name: "PostgreSQL" }
         ]
     }
 };

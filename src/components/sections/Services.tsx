@@ -1,9 +1,7 @@
 "use client";
 
 import { Container } from "@/components/layout/Container";
-import { SpotlightCard } from "@/components/ui/SpotlightCard";
-import { PenTool, Code2, Cpu, Cloud, ArrowRight } from "lucide-react";
-import { SiOpenai } from "react-icons/si";
+import { Globe, Bot, Zap, Rocket, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
@@ -11,24 +9,24 @@ import { cn } from "@/lib/cn";
 
 const servicesData = [
     {
-        id: "uiux",
-        Icon: PenTool,
-        href: "/expertise#creative-design",
+        id: "web-dev",
+        Icon: Globe,
+        href: "/expertise#web-dev",
     },
     {
-        id: "fullstack",
-        Icon: Code2,
-        href: "/expertise#full-stack",
+        id: "telegram",
+        Icon: Bot,
+        href: "/expertise#telegram",
     },
     {
-        id: "ai",
-        Icon: Cpu,
-        href: "/expertise#ai-automation",
+        id: "automation",
+        Icon: Zap,
+        href: "/expertise#automation",
     },
     {
-        id: "cloud",
-        Icon: Cloud,
-        href: "/expertise#cloud-infra",
+        id: "saas",
+        Icon: Rocket,
+        href: "/expertise#saas",
     },
 ];
 

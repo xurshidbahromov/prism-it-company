@@ -61,8 +61,6 @@ export function StatsRow() {
 
     return (
         <section id="stats" className="py-32 md:py-48 relative z-10 overflow-hidden">
-            {/* Minimal architectural line */}
-            <div className="absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-foreground/10 via-transparent to-transparent hidden md:block"></div>
 
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 xl:gap-24 items-start">

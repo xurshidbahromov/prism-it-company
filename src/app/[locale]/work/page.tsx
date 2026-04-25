@@ -1,12 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
 import { Work } from "@/components/sections/Work";
 import { CTA } from "@/components/sections/CTA";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function WorkPage() {
+    const t = useTranslations("WorkPage");
     return (
         <main className="relative overflow-hidden">
             {/* Background Glows */}
@@ -23,7 +26,7 @@ export default function WorkPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-8 block"
                     >
-                        Case Studies
+                        {t('hero.badge')}
                     </motion.span>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -31,8 +34,8 @@ export default function WorkPage() {
                         transition={{ delay: 0.1 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-heading font-medium tracking-tighter leading-[1.05] mb-8 text-foreground max-w-5xl"
                     >
-                        Proof of <br className="hidden md:block" />
-                        <span className="text-foreground/40">execution.</span>
+                        {t('hero.titleMain')} <br className="hidden md:block" />
+                        <span className="text-foreground/40">{t('hero.titleHighlight')}</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -40,7 +43,7 @@ export default function WorkPage() {
                         transition={{ delay: 0.2 }}
                         className="text-xl md:text-2xl text-foreground/50 font-light max-w-2xl leading-relaxed"
                     >
-                        A showcase of engineering challenges solved and digital products scaled.
+                        {t('hero.subtext')}
                     </motion.p>
                 </Container>
             </section>

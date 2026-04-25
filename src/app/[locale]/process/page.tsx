@@ -6,8 +6,10 @@ import { CTA } from "@/components/sections/CTA";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function ProcessPage() {
+    const t = useTranslations("ProcessPage");
     return (
         <main className="relative">
             {/* Background Glows — Shrink to prevent overflow */}
@@ -25,7 +27,7 @@ export default function ProcessPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-[10px] uppercase tracking-[0.4em] font-bold text-blue-500 mb-8 block"
                     >
-                        Our Methodology
+                        {t('hero.badge')}
                     </motion.span>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -33,8 +35,8 @@ export default function ProcessPage() {
                         transition={{ delay: 0.1 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-heading font-medium tracking-tighter leading-[1.05] mb-8 text-foreground max-w-5xl"
                     >
-                        Built with <br className="hidden md:block" />
-                        <span className="text-foreground/40">precision.</span>
+                        {t('hero.titleMain')} <br className="hidden md:block" />
+                        <span className="text-foreground/40">{t('hero.titleHighlight')}</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -42,7 +44,7 @@ export default function ProcessPage() {
                         transition={{ delay: 0.2 }}
                         className="text-xl md:text-2xl text-foreground/50 font-light max-w-2xl leading-relaxed"
                     >
-                        Protocol-driven engineering that replaces agency chaos with predictable excellence.
+                        {t('hero.subtext')}
                     </motion.p>
                 </Container>
             </section>

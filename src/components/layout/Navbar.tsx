@@ -8,6 +8,7 @@ import { cn } from "@/lib/cn";
 import { motion, AnimatePresence } from "framer-motion";
 import { SettingsDropdown } from "./SettingsDropdown";
 import { useTranslations } from "next-intl";
+import { Logo } from "@/components/ui/Logo";
 
 const NAV_LINK_KEYS = [
     { key: "home", href: "/" },
@@ -15,15 +16,16 @@ const NAV_LINK_KEYS = [
     { key: "process", href: "/process" },
     { key: "work", href: "/work" },
     { key: "about", href: "/about" },
+    { key: "pricing", href: "/pricing" },
     { key: "contact", href: "/contact" },
 ];
 
 const MEGA_MENU_KEYS: Record<string, { key: string; href: string }[]> = {
     "/expertise": [
-        { key: "uiux", href: "/expertise#creative-design" },
-        { key: "fullstack", href: "/expertise#full-stack" },
-        { key: "ai", href: "/expertise#ai-automation" },
-        { key: "cloud", href: "/expertise#cloud-infra" },
+        { key: "web-dev", href: "/expertise#web-dev" },
+        { key: "telegram", href: "/expertise#telegram" },
+        { key: "automation", href: "/expertise#automation" },
+        { key: "saas", href: "/expertise#saas" },
     ],
     "/process": [
         { key: "discovery", href: "/process#discovery" },
@@ -32,9 +34,9 @@ const MEGA_MENU_KEYS: Record<string, { key: string; href: string }[]> = {
         { key: "launch", href: "/process#launch" },
     ],
     "/work": [
-        { key: "fintech", href: "/work#fintech" },
-        { key: "healthcare", href: "/work#healthcare" },
-        { key: "retail", href: "/work#retail" },
+        { key: "ecommerce", href: "/work#ecommerce" },
+        { key: "telegram", href: "/work#telegram" },
+        { key: "crm", href: "/work#crm" },
     ],
     "/about": [
         { key: "story", href: "/about#story" },
@@ -124,8 +126,8 @@ export function Navbar() {
                 >
                     <div className="absolute inset-0 aero-island rounded-[24px] z-[-1]" style={{ backdropFilter: "blur(16px) saturate(180%)", WebkitBackdropFilter: "blur(16px) saturate(180%)" }} />
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-50 rounded-[24px]" />
-                    <div className="w-5 h-5 bg-foreground mask-prism shadow-[0_0_12px_var(--aero-shadow)] flex-shrink-0 relative z-10" />
-                    <span className="text-foreground relative z-10 font-bold">PRISM</span>
+                    <Logo className="relative z-10 drop-shadow-[0_0_12px_var(--aero-shadow)]" />
+                    <span className="text-foreground relative z-10 font-heading font-semibold tracking-[0.2em] uppercase text-sm sm:text-base">PRISM</span>
                 </Link>
 
                 {/* Desktop Nav Island with Mega Menu */}

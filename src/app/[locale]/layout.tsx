@@ -8,6 +8,7 @@ import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { GlobalBackground } from "@/components/ui/GlobalBackground";
+import { Preloader } from "@/components/ui/Preloader";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider } from 'next-intl';
@@ -31,8 +32,32 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "PRISM",
-  description: "Engineering modern digital products.",
+  title: {
+    default: "PRISM IT Studio — Web, Telegram & Business Software",
+    template: "%s | PRISM IT Studio",
+  },
+  description: "Full-stack development studio building websites, Telegram bots & Mini Apps, business automation, and SaaS products for ambitious companies in Uzbekistan and beyond.",
+  keywords: ["web development", "telegram bot", "telegram mini app", "business automation", "CRM", "SaaS", "Uzbekistan", "Tashkent"],
+  authors: [{ name: "PRISM IT Studio" }],
+  creator: "PRISM IT Studio",
+  metadataBase: new URL("https://prismit.studio"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://prismit.studio",
+    siteName: "PRISM IT Studio",
+    title: "PRISM IT Studio — Web, Telegram & Business Software",
+    description: "We build websites, Telegram solutions, business automation tools, and SaaS products. Based in Tashkent, Uzbekistan. Working globally.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PRISM IT Studio",
+    description: "Full-stack development studio — web, Telegram, automation, SaaS.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function RootLayout({
@@ -63,6 +88,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <GlobalBackground />
+          <Preloader />
           <NoiseOverlay />
           <Navbar />
           <main className="flex-grow">

@@ -3,52 +3,56 @@
     "title": "Zamonaviy raqamli mahsulotlar muhandisligi."
   },
   "Hero": {
-    "pill": "Bizning muhandislik orqali o'sayotgan 50+ yirik korxonalarga qo'shiling.",
-    "headingMain": "Biz Biznesni O'zgartiradigan",
-    "headingHighlight": "Dasturiy Ta'minotni",
-    "headingSuffix": "Yaratamiz.",
-    "subtext": "Biz maqsadli brendlar bilan hamkorlik qilib, ularning qadriyatlarini haqiqatga aylantiradigan yuqori samarali texnologik yechimlar va raqamli mahsulotlar yaratamiz.",
-    "ctaPrimary": "Loyihani Boshlash",
-    "ctaSecondary": "Keyslarni Ko'rish",
-    "trustLabel": "Full-Stack va AI Infratuzilmasi",
+    "pill": "Web · Telegram · Avtomatizatsiya · SaaS — Toshkentdan.",
+    "headingMain": "Biz Yaratamiz",
+    "headingHighlight": "Dasturiy",
+    "headingSuffix": "Biznesingizni O'stiradiganini.",
+    "subtext": "Landing sahifalardan tortib Telegram botlar va to'liq SaaS mahsulotlargacha — biznesingizga kerak bo'lgan hamma narsani tez va sifatli qilamiz.",
+    "ctaPrimary": "Loyiha Boshlash",
+    "ctaSecondary": "Ishlarimizni Ko'rish",
+    "trustLabel": "Texnologiyalar Steki",
     "badges": {
-      "frontend": {
-        "name": "Alex Chen",
-        "subtitle": "Frontend Ekspert · 120+ loyihalar"
+      "web": {
+        "name": "Web Dasturlash",
+        "subtitle": "Landing · E-Commerce · Ilovalar"
       },
-      "uiux": {
-        "name": "Sara Kim",
-        "subtitle": "UI/UX Ekspert · Figma ustasi"
+      "telegram": {
+        "name": "Telegram Yechimlari",
+        "subtitle": "Botlar · Mini App · To'lovlar"
       },
-      "backend": {
-        "name": "James L.",
-        "subtitle": "Backend Ekspert · Node / Go"
+      "automation": {
+        "name": "Biznes Avtomatizatsiyasi",
+        "subtitle": "CRM · Dashboard · Ish oqimi"
+      },
+      "saas": {
+        "name": "Mahsulot va SaaS",
+        "subtitle": "MVP · Kengaytirish · Ishga tushirish"
       }
     }
   },
   "Services": {
-    "badge": "Imkoniyatlar",
-    "heading1": "Yuqori o'sishga erishayotgan",
-    "heading2": "korxonalar uchun",
-    "headingHighlight": "xizmatlar.",
-    "viewAll": "Barcha xizmatlarni ko'rish",
+    "badge": "Nima Qilamiz",
+    "heading1": "Haqiqiy bizneslar uchun",
+    "heading2": "haqiqiy",
+    "headingHighlight": "mahsulotlar.",
+    "viewAll": "To'liq ro'yxatni ko'rish",
     "learnMore": "Batafsil",
     "items": {
-      "uiux": {
-        "title": "UI/UX Dizayn",
-        "description": "Foydalanuvchini ushlab qolishni maksimal darajaga ko'taruvchi inson psixologiyasiga ruxlantirilgan interfeyslar."
+      "web-dev": {
+        "title": "Web Dasturlash",
+        "description": "Konversiya keltiruvchi landing pagelardan to to'liq web ilovalargacha — chiroyli, tez va biznesingiz bilan o'sishga tayyor."
       },
-      "fullstack": {
-        "title": "Full-Stack Dasturlash",
-        "description": "Zamonaviy ishonchli dvigatellar yordamida yaratilgan barqaror va kengayuvchan ilovalar."
+      "telegram": {
+        "title": "Telegram Yechimlari",
+        "description": "Aqlli botlar va Mini Applar — mijozlaringiz Telegramdan chiqmagan holda buyurtma bersin, band qilsin, to'lasin."
       },
-      "ai": {
-        "title": "Sun'iy Intellekt",
-        "description": "Biznesga sezilarli ta'sir ko'rsatish uchun mo'ljallangan maxsus LLM jarayonlari va avtonom agentlar."
+      "automation": {
+        "title": "Biznes Avtomatizatsiyasi",
+        "description": "Elektron jadvallarni maxsus CRM, dashboard va ichki vositalar bilan almashtiring. Haftasiga 20+ soat tejang."
       },
-      "cloud": {
-        "title": "Bulutli Tizimlar",
-        "description": "To'liq avtomatlashtirilgan CI/CD va yuqori ishonchli xavfsizlik protokollari bilan barqaror infratuzilma."
+      "saas": {
+        "title": "Mahsulot va SaaS",
+        "description": "G'oyadan to to'laydigan mijozlargacha. MVP ni ishlab chiqib, uni haqiqiy mahsulotga aylantiramiz."
       }
     }
   },
@@ -134,25 +138,26 @@
       "process": "Jarayon",
       "work": "Portfolio",
       "about": "Haqimizda",
-      "contact": "Aloqa"
+      "contact": "Aloqa",
+      "pricing": "Narxlar"
     },
     "megaMenu": {
       "expertise": {
-        "uiux": {
-          "label": "UI/UX Dizayn",
-          "desc": "Insonlarga yo'naltirilgan mukammal interfeyslar"
+        "web-dev": {
+          "label": "Web Dasturlash",
+          "desc": "Saytlar, web ilovalar va onlayn do'konlar"
         },
-        "fullstack": {
-          "label": "Full-Stack",
-          "desc": "Kengayuvchan va zamonaviy ilovalar"
+        "telegram": {
+          "label": "Telegram Yechimlari",
+          "desc": "Biznesingiz uchun aqlli botlar va Mini Applar"
         },
-        "ai": {
-          "label": "AI Integratsiyasi",
-          "desc": "Maxsus LLM va avtonom agentlar"
+        "automation": {
+          "label": "Biznes Avtomatizatsiyasi",
+          "desc": "CRM, dashboard va ish oqimi vositalari"
         },
-        "cloud": {
-          "label": "Bulutli Tizimlar",
-          "desc": "Yuqori xavfsiz va barqaror infratuzilma"
+        "saas": {
+          "label": "Mahsulot va SaaS",
+          "desc": "MVPdan to'liq mahsulotgacha — hammasini quramiz"
         }
       },
       "process": {
@@ -174,17 +179,17 @@
         }
       },
       "work": {
-        "fintech": {
-          "label": "Fintech Banking",
-          "desc": "+40% tranzaksiya tezligi"
+        "ecommerce": {
+          "label": "E-Commerce Sayt",
+          "desc": "3x ko'p buyurtma, Click va Payme"
         },
-        "healthcare": {
-          "label": "Healthcare Data",
-          "desc": "HIPAA mos keluvchi sinxronizatsiya"
+        "telegram": {
+          "label": "Telegram Bot",
+          "desc": "847 faol foydalanuvchi, Mini App"
         },
-        "retail": {
-          "label": "Retail Avtomatlashtirish",
-          "desc": "Yiliga $1.2M tejamkorlik"
+        "crm": {
+          "label": "Biznes CRM",
+          "desc": "Haftada 20 soat tejaldi"
         }
       },
       "about": {
@@ -233,36 +238,39 @@
     }
   },
   "Work": {
-    "badge": "Keyslar",
+    "badge": "Portfolio",
     "title": "Tanlangan so'nggi",
     "titleHighlight": "loyihalar.",
-    "explore": "Loyihani O'rganish",
+    "explore": "Loyihani Ko'rish",
     "projects": {
-      "fintech": {
-        "title": "Fintech Core Banking",
-        "category": "Platforma Muhandisligi",
-        "description": "Global miqyos uchun mo'ljallangan, millionlab tranzaksiyalarni boshqaruvchi bank dvigateli.",
+      "ecommerce": {
+        "title": "E-Commerce Web Ilova",
+        "category": "Web Dasturlash",
+        "description": "Real vaqtli inventar, admin panel va to'lov integratsiyasi bilan to'liq online do'kon.",
         "metrics": [
-          "+40% txn tezligi",
-          "0 uzilish"
+          "3x ko'p buyurtma",
+          "Admin panel",
+          "Click va Payme"
         ]
       },
-      "healthcare": {
-        "title": "Healthcare Data Sync",
-        "category": "Ma'lumotlar Infratuzilmasi",
-        "description": "Tadqiqot institutlari o'rtasida real vaqtda ma'lumot almashish imkonini beruvchi qatlam.",
+      "telegram": {
+        "title": "Telegram Savdo Boti",
+        "category": "Telegram Yechimlari",
+        "description": "Savdo biznesi uchun to'liq Telegram ekotizimi: katalog boti, Mini App va real vaqtli buyurtma boshqaruvi.",
         "metrics": [
-          "HIPAA mos",
-          "Tezkor sinxronizatsiya"
+          "847 faol foydalanuvchi",
+          "Mini App + Bot",
+          "Avtomatik buyurtmalar"
         ]
       },
-      "retail": {
-        "title": "Retail Avtomatlashtirish",
-        "category": "Ichki Tizimlar",
-        "description": "500 dan ortiq savdo nuqtalari uchun logistikani avtomatlashtiruvchi bulutli tizim.",
+      "crm": {
+        "title": "Biznes CRM Tizimi",
+        "category": "Biznes Avtomatizatsiyasi",
+        "description": "Excel varaqlarini real vaqtli analitika, mijozlar boshqaruvi va avtomatik jarayonlar bilan almashtiradigan CRM.",
         "metrics": [
-          "-30% qo'l mehnati",
-          "$1.2M+ tejamkorlik"
+          "Haftada 20 soat tejaldi",
+          "1 247 lead kuzatildi",
+          "89% ushlab qolish"
         ]
       }
     }
@@ -275,14 +283,32 @@
     "primaryButton": "Hamkorlikni Boshlash"
   },
   "Footer": {
-    "description": "Zamonaviy texnologiyalar bilan raqamli tijorat va korporativ infratuzilmaning kelajagini quramiz.",
+    "description": "Saytlar, Telegram yechimlari, biznes avtomatizatsiyasi va SaaS mahsulotlar yaratuvchi Full-Stack dasturlash studiyasi.",
     "addressLabel": "HQ — Toshkent, O'zbekiston",
     "columns": {
-      "quickLinks": "Tezkor Havolalar",
-      "expertise": "Yo'nalishlar",
-      "connect": "Bog'lanish"
+      "services": "Xizmatlar",
+      "company": "Kompaniya",
+      "connect": "Bog'lanish",
+      "legal": "Huquqiy"
     },
-    "copyright": "© 2024 PRISM IT KOMPANIYASI. BARCHA HUQUQLAR HIMOAYALANGAN."
+    "services": {
+      "pricing": "Narxlar",
+      "webDev": "Web Dasturlash",
+      "telegram": "Telegram Yechimlari",
+      "automation": "Biznes Avtomatizatsiyasi",
+      "saas": "Mahsulot va SaaS"
+    },
+    "company": {
+      "about": "Biz Haqimizda",
+      "work": "Portfolio",
+      "process": "Jarayonimiz",
+      "contact": "Aloqa"
+    },
+    "copyright": "© 2025 PRISM IT STUDIO. BARCHA HUQUQLAR HIMOYALANGAN.",
+    "legalLinks": {
+      "privacy": "Maxfiylik siyosati",
+      "terms": "Foydalanish shartlari"
+    }
   },
   "MobileNav": {
     "tabs": {
@@ -294,55 +320,55 @@
     }
   },
   "DetailedCapabilities": {
-    "creative-design": {
-      "title": "Kreativ UI/UX Dizayn",
-      "tagline": "Insonlarga yo'naltirilgan raqamli tajriba",
-      "description": "Biz shunchaki interfeyslarni dizayn qilmaymiz - biz foydalanuvchi xatti-harakatlari va muloqot ma'lumotlariga asoslangan foydalanuvchi yo'llarini loyihalashtiramiz. Bizning maqsadimiz - mantiqiy qarorlarga asoslangan konversiyalarni keltirib chiqaradigan hissiy rezonans yaratishdir.",
+    "web-dev": {
+      "title": "Web Dasturlash",
+      "tagline": "Tez. Chiroyli. Konversiyaga Yo'naltirilgan.",
+      "description": "Biz faqat ko'rinishi yaxshi emas — ishlashi ham zo'r bo'lgan saytlar va web ilovalar yaratamiz. Har bir loyiha mobil-first, SEO-optimizatsiya qilingan va kontent boshqaruv tizimi bilan yetkaziladi — yangiliklar uchun bizga bog'liq bo'lmaysiz.",
       "features": {
-        "0": "Foydalanuvchi tadqiqoti va yo'nalishlar xaritasi",
-        "1": "Yuqori aniqlikdagi interaktiv prototiplash",
-        "2": "Dizayn tizimlari va komponentlar kutubxonasi",
-        "3": "WCAG bo'yicha qulaylik auditini o'tkazish",
-        "4": "A/B testlash va optimallashtirish"
+        "0": "Landing Pagelar va Korporativ Saytlar",
+        "1": "Onlayn Do'konlar (E-Commerce)",
+        "2": "Maxsus Web Ilovalar",
+        "3": "Admin Panellar va Dashboardlar",
+        "4": "SEO va Ishlash Tezligini Optimallashtirish"
       }
     },
-    "full-stack": {
-      "title": "Full-Stack Muhandislik",
-      "tagline": "Kengayuvchan. Barqaror. Yuqori samarali.",
-      "description": "Millionlab so'rovlarni boshqarishga mo'ljallangan ishlab chiqarishga tayyor ilovalarni ishga tushirish. Biz 99.9% ishonchlilik uchun xavfsiz backend, samarali holat boshqaruvi va optimallashtirilgan yetkazib berish jarayonlariga ustuvor ahamiyat beramiz.",
+    "telegram": {
+      "title": "Telegram Yechimlari",
+      "tagline": "Butun Biznesingiz — Bitta Chatda.",
+      "description": "O'zbekistonda Telegram — mijozlaringiz allaqachon bo'lgan platforma. Biz savdo va supportni avtomatlashtiruvchi aqlli botlar va to'liq xarid yoki bron qilish tajribasini ta'minlovchi Mini Applar quramiz — App Store talab qilmaydi.",
       "features": {
-        "0": "Zamonaviy React/Next.js arxitekturasi",
-        "1": "Xavfsiz backend (Node/Go/Python)",
-        "2": "Taqsimlangan tizimlar dizayni",
-        "3": "Real vaqtda ma'lumotlar oqimi",
-        "4": "Tezkor ishlashni sozlash va Core Web Vitals"
+        "0": "Buyurtma va Savdo Botlari",
+        "1": "Support va FAQ Avtomatizatsiyasi",
+        "2": "Telegram Mini Applar (To'liq UI)",
+        "3": "To'lov Integratsiyasi (Click, Payme, Stripe)",
+        "4": "Bot Boshqaruv Uchun Admin Panel"
       }
     },
-    "ai-automation": {
-      "title": "AI va aqlli avtomatlashtirish",
-      "tagline": "Generativ AI-dan tashqari - Haqiqiy intellekt",
-      "description": "Biz AI shov-shuvi va biznes qiymati o'rtasidagi tafovutni bartaraf etamiz. Maxsus sozlangan LLM-lardan tortib avtonom ish oqimi agentlarigacha, biz infratuzilmangiz negiziga intellektni joylashtiramiz.",
+    "automation": {
+      "title": "Biznes Avtomatizatsiyasi",
+      "tagline": "Haftasiga 20+ Soat Tejang.",
+      "description": "Ko'pgina bizneslar kengaymayotgan Excel va qo'lda bajariladigan jarayonlar bilan ishlaydi. Biz bu tartibsizlikni maxsus CRM tizimlar, real vaqt dashboardlari va jamoangiz ishlaydigan tarzga mos workflow vositalar bilan almashtiramiz.",
       "features": {
-        "0": "Maxsus LLM Fine-Tuning va RAG",
-        "1": "Bashoratli tahlil va prognozlash",
-        "2": "Avtonom agentlar va ish oqimi avtomatlashtirish",
-        "3": "Tabiiy til bo'yicha qidiruv (Vektorli ma'lumotlar bazasi)",
-        "4": "Kompyuter ko'rishi va naqshlarni aniqlash"
+        "0": "Maxsus CRM Tizimlar",
+        "1": "Real Vaqt Tahlil Dashboardlari",
+        "2": "Ombor va Inventar Boshqaruvi",
+        "3": "Bron va Uchrashuv Tizimlari",
+        "4": "Uchinchi Tomon API Integratsiyalari"
       }
     },
-    "cloud-infra": {
-      "title": "Bulutli infratuzilma",
-      "tagline": "Avtomatlashtirilgan. Xavfsiz. Global darajada kengayuvchan.",
-      "description": "DevOps - zamonaviy dasturiy ta'minotning yurak urishidir. Biz jamoangizga infratuzilmani kod sifatida ishlatgan holda, uzilishlarsiz va xavfsiz tarzda tezroq ishlash imkonini beruvchi avtomatlashtirilgan ekotizimlarni yaratamiz.",
+    "saas": {
+      "title": "Mahsulot va SaaS Dasturlash",
+      "tagline": "G'oyadan To'laydigan Mijozlargacha.",
+      "description": "Startup g'oyangiz bor, lekin texnik hamkor yo'qmi? Biz sizning texnik jamoangizga aylanamiz. Arxitektura rejalashtirishdan tortib MVP ishga tushirishgacha — investorlarni jalb qiladigan va foydalanuvchilarni ushlab turadigan kengayuvchan mahsulotlar quramiz.",
       "features": {
-        "0": "IaC (Terraform / Pulumi)",
-        "1": "Kubernetes va konteynerlarni boshqarish",
-        "2": "CI/CD jarayonlarini avtomatlashtirish",
-        "3": "Multi-Cloud va Edge Computing",
-        "4": "Zero-Trust xavfsizlik va muvofiqlik"
+        "0": "MVP Ishlab Chiqish va Ishga Tushirish",
+        "1": "SaaS Obuna Platformalari",
+        "2": "Foydalanuvchi Autentifikatsiyasi va Rollari",
+        "3": "To'lov va Hisob-Kitob Tizimlari",
+        "4": "Kengayuvchan Backend Arxitektura"
       }
     },
-    "inquire": "{category} bo'yicha so'rov qoldirish"
+    "inquire": "{category} bo'yicha loyiha boshlash"
   },
   "About": {
     "hero": {
@@ -432,5 +458,384 @@
   },
   "LogoStrip": {
     "trusted": "Soha innovatorlari tomonidan ishonilgan"
+  },
+  "Pricing": {
+    "hero": {
+      "badge": "Narxlar",
+      "titleMain": "Shaffof",
+      "titleHighlight": "narxlar.",
+      "subtext": "Yashirin to'lovlar yo'q. Qolipli narxlar yo'q. Har bir loyiha sizning aniq ehtiyojlaringizga qarab baholanadi."
+    },
+    "popularBadge": "Ommabop",
+    "packages": {
+      "starter": {
+        "name": "Boshlang'ich",
+        "tagline": "Kichik bizneslar uchun",
+        "period": "bir marta",
+        "features": {
+          "0": "Landing yoki korporativ sayt",
+          "1": "Mobil moslashuvchan dizayn",
+          "2": "5 tagacha sahifa",
+          "3": "Aloqa formasi",
+          "4": "Boshlang'ich SEO",
+          "5": "1 oy bepul qo'llab-quvvatlash"
+        },
+        "cta": "Boshlash"
+      },
+      "business": {
+        "name": "Biznes",
+        "tagline": "O'sayotgan kompaniyalar uchun",
+        "period": "bir marta",
+        "features": {
+          "0": "Web ilova yoki Telegram bot",
+          "1": "Maxsus admin panel",
+          "2": "To'lov tizimlari (Click, Payme)",
+          "3": "Foydalanuvchi autentifikatsiyasi",
+          "4": "Real vaqt ma'lumotlari",
+          "5": "3 oy bepul qo'llab-quvvatlash"
+        },
+        "cta": "Loyihani Boshlash"
+      },
+      "saas": {
+        "name": "SaaS / Enterprise",
+        "tagline": "Jiddiy mahsulotlar uchun",
+        "period": "moslashtirilgan",
+        "features": {
+          "0": "Full-stack mahsulot ishlab chiqish",
+          "1": "SaaS arxitekturasi",
+          "2": "Obuna va billing tizimi",
+          "3": "CI/CD va joylashtirish",
+          "4": "Kengaytiriluvchi backend",
+          "5": "Doimiy texnik yordam"
+        },
+        "cta": "Taklif So'rash"
+      }
+    },
+    "note": "Barcha narxlar taxminiy. Yakuniy narx loyiha talablariga asoslanadi.",
+    "freeEstimate": "Bepul hisob-kitob olish →",
+    "addons": {
+      "titleMain": "Qo'shimcha",
+      "titleHighlight": "xizmatlar",
+      "subtext": "Istalgan paketni shu modullar bilan kengaytiring.",
+      "items": {
+        "telegram": {
+          "name": "Telegram Bot (qo'shimcha)",
+          "price": "$150 dan"
+        },
+        "automation": {
+          "name": "Biznesni avtomatlashtirish",
+          "price": "$300 dan"
+        },
+        "multilingual": {
+          "name": "Ko'p tillilik (UZ/RU/EN)",
+          "price": "$100 dan"
+        },
+        "analytics": {
+          "name": "Analitika Dashbordi",
+          "price": "$200 dan"
+        }
+      }
+    },
+    "faq": {
+      "titleMain": "Ko'p so'raladigan",
+      "titleHighlight": "savollar",
+      "items": {
+        "0": {
+          "q": "Odatda bitta loyiha qancha vaqt oladi?",
+          "a": "Landing page 3-7 kun oladi. Telegram bot: 1-2 hafta. To'liq web app yoki CRM murakkabligiga qarab 3-8 hafta."
+        },
+        "1": {
+          "q": "To'lov jarayoni qanday?",
+          "a": "Biz ishni boshlash uchun 50% oldindan to'lov bilan ishlaymiz, qolgan 50% loyiha topshirilganda. Katta loyihalarni qismlarga bo'lishimiz mumkin."
+        },
+        "2": {
+          "q": "Loyihadan so'ng kod menga tegishli bo'ladimi?",
+          "a": "Ha, 100%. To'liq to'lov amalga oshirilgandan so'ng, barcha kodlar va aktivlar sizga tegishli."
+        },
+        "3": {
+          "q": "Topshirilgandan so'ng o'zgarishlar so'rashim mumkinmi?",
+          "a": "Ha. Barcha paketlar xatoliklarni to'g'rilash uchun qo'llab-quvvatlash davrini o'z ichiga oladi. Yangi funksiyalar qo'shish alohida baholanadi."
+        },
+        "4": {
+          "q": "Chet ellik mijozlar bilan ishlaysizmi?",
+          "a": "Albatta. Biz butun dunyo bo'ylab mijozlar bilan ishlaymiz va xalqaro to'lovlarni qabul qilamiz."
+        }
+      }
+    }
+  },
+  "ContactPage": {
+    "title": "Loyihangizni boshlang",
+    "description": "Quyidagi formani to'ldiring va biz sizga 24 soat ichida moslashtirilgan taklif bilan javob beramiz.",
+    "form": {
+      "aboutYou": "Siz haqingizda",
+      "phone": "Telefon (ixtiyoriy)",
+      "budgetTimeline": "Byudjet va muddat",
+      "projectSummary": "Loyiha haqida qisqacha *",
+      "referenceUrl": "Namuna yoki ilhom uchun URL (ixtiyoriy)",
+      "name": "To'liq ism",
+      "email": "Elektron pochta",
+      "company": "Kompaniya (Ixtiyoriy)",
+      "projectTypesLabel": "Loyiha turi",
+      "projectTypes": {
+        "web": {
+          "label": "Web Dasturlash",
+          "desc": "Korporativ sayt, landing page yoki web ilova."
+        },
+        "telegram": {
+          "label": "Telegram Yechim",
+          "desc": "Maxsus bot, Mini App yoki guruh avtomatizatsiyasi."
+        },
+        "automation": {
+          "label": "Biznes Avtomatizatsiya",
+          "desc": "CRM, omborxona yoki maxsus dashboard."
+        },
+        "saas": {
+          "label": "SaaS / Mahsulot",
+          "desc": "Kengayuvchi mahsulotni noldan qurish."
+        },
+        "ecommerce": {
+          "label": "E-Commerce",
+          "desc": "To'lov tizimlari ulangan onlayn do'kon."
+        },
+        "other": {
+          "label": "Boshqa / Noma'lum",
+          "desc": "Keling, suhbatlashamiz va yechim topamiz."
+        }
+      },
+      "budgetLabel": "Byudjet oraliq",
+      "budgetRanges": {
+        "300-700": "$300 – $700",
+        "700-1500": "$700 – $1,500",
+        "1500-3000": "$1,500 – $3,000",
+        "3000+": "$3,000 dan yuqori"
+      },
+      "timelineLabel": "Muddat",
+      "timelineOptions": {
+        "asap": "Tezroq (< 2 hafta)",
+        "1-3m": "1 - 3 oy",
+        "3-6m": "3 - 6 oy",
+        "6m+": "6 oydan ko'p"
+      },
+      "detailsLabel": "Loyiha haqida",
+      "detailsPlaceholder": "Loyihangiz, maqsadlaringiz va talablaringizni tasvirlab bering. Qancha batafsil bo'lsa, shuncha yaxshi...",
+      "submitButton": "So'rovni Yuborish",
+      "submitting": "Yuborilmoqda..."
+    },
+    "socials": "Bizni kuzating",
+    "successTitle": "So'rov qabul qilindi.",
+    "successDesc": "Rahmat! Jamoamiz loyihangizni ko'rib chiqadi va 24 soat ichida maxsus taklif bilan bog'lanadi.",
+    "successBack": "Yangi so'rov yuborish",
+    "hero": {
+      "badge": "Loyihani boshlash",
+      "titleMain": "Keling, ajoyib narsa",
+      "titleHighlight": "yaratamiz."
+    },
+    "aside": {
+      "responseTitle": "24 soat ichida javob",
+      "responseDesc": "Biz har bir loyiha so'rovini shaxsan ko'rib chiqamiz va batafsil taklif bilan javob beramiz — avto-javoblar yoki shablon narxlarsiz.",
+      "nextStepsTitle": "Keyin nima bo'ladi",
+      "steps": {
+        "0": {
+          "title": "So'rovni ko'rib chiqish",
+          "desc": "Jamoamiz sizning so'rovingizni o'rganib chiqadi va savollarga oydinlik kiritadi."
+        },
+        "1": {
+          "title": "Dastlabki qo'ng'iroq",
+          "desc": "Maqsad, ko'lam va muddatni kelishish uchun 30 daqiqalik muloqot."
+        },
+        "2": {
+          "title": "Maxsus taklif",
+          "desc": "Siz aniq narx va loyiha rejasini olasiz."
+        }
+      },
+      "reachOutTitle": "To'g'ridan-to'g'ri bog'lanishni xohlaysizmi?",
+      "labels": {
+        "email": "Email",
+        "phone": "Telefon",
+        "office": "Ofis"
+      }
+    }
+  },
+  "Legal": {
+    "badge": "Huquqiy",
+    "privacyTitle": "Maxfiylik Siyosati",
+    "termsTitle": "Foydalanish Shartlari",
+    "updated": "Oxirgi yangilanish: 26 Aprel, 2025",
+    "privacySections": {
+      "1": {
+        "title": "1. Kirish",
+        "p": "PRISM IT Studio (\"biz\" yoki \"bizning\") shaxsiy ma'lumotlaringizni himoya qilish majburiyatini oladi. Ushbu siyosat sizning veb-saytimizga tashrif buyurganingizda ma'lumotlaringizni qanday yig'ishimizni tushuntiradi."
+      },
+      "2": {
+        "title": "2. Biz yig'adigan ma'lumotlar",
+        "p": "Biz quyidagi turdagi ma'lumotlarni yig'ishimiz mumkin:",
+        "list": [
+          "Shaxsiy ma'lumotlar: Aloqa formasi orqali taqdim etilgan ism, elektron pochta, telefon raqami va kompaniya nomi.",
+          "Foydalanish ma'lumotlari: Tashrif buyurilgan sahifalar, brauzer turi va analitika orqali qurilma ma'lumotlari.",
+          "Aloqa ma'lumotlari: Siz yuborgan xabarlar va loyiha takliflari."
+        ]
+      },
+      "3": {
+        "title": "3. Ma'lumotlardan qanday foydalanamiz",
+        "p": "Biz yig'ilgan ma'lumotlardan quyidagi maqsadlarda foydalanamiz:",
+        "list": [
+          "Loyiha bo'yicha so'rovlarga javob berish",
+          "Siz so'ragan xizmatlarni taqdim etish",
+          "Saytimiz va xizmatlarimizni yaxshilash",
+          "Loyiha yangiliklarini yuborish",
+          "Qonuniy majburiyatlarni bajarish"
+        ]
+      },
+      "4": {
+        "title": "4. Ma'lumotlarni ulashish",
+        "p": "Biz shaxsiy ma'lumotlaringizni uchinchi shaxslarga sotmaymiz. Biz faqat biznesimizni yuritish maqsadida ishonchli xizmat ko'rsatuvchilar bilan bo'lishishimiz mumkin."
+      },
+      "5": {
+        "title": "5. Kukilar (Cookies)",
+        "p": "Saytimiz ishlashi uchun minimal miqdorda kukilardan foydalanadi. Biz reklama kukilaridan foydalanmaymiz."
+      },
+      "6": {
+        "title": "6. Ma'lumotlar xavfsizligi",
+        "p": "Biz HTTPS shifrlash va xavfsiz forma kabi standart xavfsizlik choralarini qo'llaymiz."
+      },
+      "7": {
+        "title": "7. Sizning huquqlaringiz",
+        "p": "Siz quyidagi huquqlarga egasiz:",
+        "list": [
+          "Shaxsiy ma'lumotlaringizga kirishni so'rash",
+          "Ma'lumotlaringizni to'g'rilash yoki o'chirishni so'rash",
+          "Xabarnomalarni qabul qilishga rozilikni bekor qilish"
+        ]
+      },
+      "8": {
+        "title": "8. Biz bilan bog'lanish",
+        "p": "Agar sizda ushbu Maxfiylik Siyosati bo'yicha savollaringiz bo'lsa, biz bilan bog'laning:"
+      }
+    },
+    "termsSections": {
+      "1": {
+        "title": "1. Shartlarga rozilik",
+        "p": "PRISM IT Studio xizmatlaridan foydalanish orqali siz ushbu shartlarga rozi bo'lasiz."
+      },
+      "2": {
+        "title": "2. Xizmatlar",
+        "p": "PRISM IT Studio web dasturlash, Telegram botlar, biznesni avtomatlashtirish va SaaS kabi xizmatlarni taqdim etadi."
+      },
+      "3": {
+        "title": "3. To'lovlar va Qaytarish",
+        "list": [
+          "To'lov shartlari har bir shartnomada belgilanadi.",
+          "Odatda 50% oldindan to'lov talab qilinadi.",
+          "To'lovni qaytarish faqat ish boshlanmagan holatda mavjud.",
+          "Yakuniy to'lov loyiha topshirilganda amalga oshiriladi."
+        ]
+      },
+      "4": {
+        "title": "4. Intellektual Mulk",
+        "p": "To'liq to'lovdan so'ng, mijoz o'z loyihasi uchun yaratilgan barcha kodlarga egalik qiladi."
+      },
+      "5": {
+        "title": "5. Mijozning majburiyatlari",
+        "p": "Mijoz quyidagilarga rozi bo'ladi:",
+        "list": [
+          "Loyiha talablarini aniq taqdim etish",
+          "Muloqotlarga o'z vaqtida javob berish",
+          "Kerakli tizimlarga kirish imkonini taqdim etish",
+          "Taqdim etilgan ishlarni ko'rib chiqish"
+        ]
+      },
+      "6": {
+        "title": "6. Javobgarlikni cheklash",
+        "p": "Bizning umumiy javobgarligimiz mijoz tomonidan to'langan miqdordan oshmaydi."
+      },
+      "7": {
+        "title": "7. Maxfiylik",
+        "p": "Ikkala tomon loyiha davomida olingan ma'lumotlarni maxfiy saqlashga rozi."
+      },
+      "8": {
+        "title": "8. Amaldagi qonunchilik",
+        "p": "Ushbu shartlar O'zbekiston Respublikasi qonunlari bilan tartibga solinadi."
+      },
+      "9": {
+        "title": "9. Aloqa",
+        "p": "Ushbu shartlar bo'yicha savollaringiz bo'lsa, biz bilan bog'laning:"
+      }
+    }
+  },
+  "WorkPage": {
+    "hero": {
+      "badge": "Loyiha Namunasi",
+      "titleMain": "Biz qanday",
+      "titleHighlight": "ishlaymiz.",
+      "subtext": "Biz muvaffaqiyatli hal qilgan muhandislik muammolari va raqamli mahsulotlar."
+    }
+  },
+  "ProcessPage": {
+    "hero": {
+      "badge": "Metodologiyamiz",
+      "titleMain": "Sifat bilan",
+      "titleHighlight": "qurilgan.",
+      "subtext": "Agentliklardagi tartibsizliklarni o'rniga kafolatlangan mukammallikni taklif qiluvchi protokolga asoslangan muhandislik."
+    }
+  },
+  "ExpertisePage": {
+    "hero": {
+      "badge": "Nimalar quramiz",
+      "titleMain": "Haqiqiy biznes uchun",
+      "titleHighlight": "haqiqiy mahsulotlar.",
+      "subtext": "Veb-saytlar va Telegram yechimlaridan tortib, biznesni avtomatlashtirish tizimlari va SaaS mahsulotlarigacha — biz aynan sizning biznesingizga kerak bo'lgan narsani quramiz."
+    },
+    "deepDive": {
+      "badge": "Chuqur Tahlil",
+      "title": "Bizning Texnologik Imkoniyatlarimiz"
+    }
+  },
+  "CaseStudies": {
+    "back": "Loyihalarga qaytish",
+    "challenge": "Muammo va Vazifa",
+    "solution": "Bizning Yechim",
+    "resultsTitle": "Asosiy Natijalar",
+    "techStack": "Texnologiyalar",
+    "clientLabel": "Mijoz",
+    "timelineLabel": "Muddat",
+    "ecommerce": {
+      "title": "E-Commerce Transformatsiyasi",
+      "client": "Retail Brand X",
+      "timeline": "3 Oy",
+      "role": "Full-Stack Dasturlash",
+      "challenge": "Mijoz eskirgan WooCommerce platformasidan foydalanardi. Tizim katta chegirma kunlarida qulab tushar va to'lov jarayonining qiyinligi sababli xaridorlar xaridni oxiriga yetkazmasdan chiqib ketardi.",
+      "solution": "Biz Next.js yordamida frontend uchun o'ta tezkor, backend uchun esa Node.js ga asoslangan maxsus e-commerce yechimini qurdik. Mahalliy to'lov tizimlarini (Payme, Click) ulab, mobil xarid jarayonini eng oson darajaga keltirdik.",
+      "results": {
+        "0": "Mobil konversiya darajasi 300% ga oshdi",
+        "1": "Qora Juma savdolarida uzilishlarsiz (0 downtime) ishladi",
+        "2": "Barcha tovarlar sahifasi bir soniyadan kam vaqtda ochiladigan bo'ldi"
+      }
+    },
+    "telegram": {
+      "title": "Avtomatlashtirilgan Telegram Mini App",
+      "client": "Service Provider Y",
+      "timeline": "6 Hafta",
+      "role": "Telegram Yechimlari",
+      "challenge": "Biznes faqatgina inson operatorlariga bog'lanib qolgan edi. Buyurtmalar qo'lda qabul qilinar va savollarga kech javob qaytarilishi sababli tungi vaqtlarda mijozlar yo'qotilardi.",
+      "solution": "Mijozlarga xizmatlarni ko'rish, vaqtni tanlash va to'g'ridan-to'g'ri Telegram ichida to'lov qilish imkonini beruvchi mukammal Telegram Mini App ishlab chiqdik. Xodimlar uchun esa real vaqtda jadvallarni boshqarish uchun admin panel yaratildi.",
+      "results": {
+        "0": "Birinchi haftadayoq 847 ta faol foydalanuvchi",
+        "1": "Mijozlar so'rovlarining 95% i avtomatlashtirildi",
+        "2": "24/7 buyurtma qabul qilish imkoniyati yaratildi"
+      }
+    },
+    "crm": {
+      "title": "Maxsus Biznes CRM",
+      "client": "Enterprise Z",
+      "timeline": "4 Oy",
+      "role": "Biznesni Avtomatlashtirish",
+      "challenge": "Kompaniya o'z savdo va ombor tizimini 15 ta turli xil Excel jadvallarida yuritardi. Bu esa ma'lumotlar yo'qolishi va operatsion sekinlikni yuzaga keltirardi.",
+      "solution": "Biz markazlashgan CRM va omborni boshqarish tizimini qurdik. Tizim xodimlar ruxsatini boshqarish, real vaqtda analitika, lidlarni avtomatik taqsimlash va ombor qurilmalari bilan ishlash uchun API ga ega.",
+      "results": {
+        "0": "Ma'lumot kiritish uchun ketadigan haftasiga 20+ soat vaqt tejaldi",
+        "1": "Lidlarni mijozga aylantirish darajasi 40% ga oshdi",
+        "2": "Ombor qoldiqlari 100% aniqlikka erishdi"
+      }
+    }
   }
 }

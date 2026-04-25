@@ -1,56 +1,90 @@
 "use client";
 
-import { ReactNode } from "react";
 import { Container } from "@/components/layout/Container";
 import { AeroButton as Button } from "@/components/ui/AeroButton";
 import { Link } from "@/i18n/routing";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-// Assuming you have simple SVG logos in LogoStrip, we can inline or import it.
-// We'll build a custom logo section to match the screenshot perfectly.
+import { ArrowRight, Globe, Bot, Zap, Rocket } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { SiReact, SiNextdotjs, SiTypescript, SiFigma, SiNodedotjs, SiPython, SiPostgresql, SiOpenai } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
+import {
+    SiReact, SiNextdotjs, SiTypescript,
+    SiNodedotjs, SiPostgresql, SiTelegram, SiPrisma
+} from "react-icons/si";
 import { useTranslations } from 'next-intl';
-// badge / expert data structure makes it easy to update from one place
 
-export interface BadgeInfo {
-    id: string;
-    name: string;
-    subtitle: string;
-    gradientFrom: string;
-    gradientTo: string;
-    positionClasses: string;
-    animation: "float" | "floatDelayed" | "floatDelayed2";
-}
-
-const badges: BadgeInfo[] = [
+// ─── Floating Icon Orbs (iOS Glassy Style) ───────────────────────────────────
+const orbs = [
     {
-        id: "frontend",
-        name: "Alex Chen",
-        subtitle: "Frontend Expert · 120+ projects",
-        gradientFrom: "from-blue-500",
-        gradientTo: "to-indigo-600",
-        positionClasses: "top-[18%] left-[1%] xl:left-[2%]",
-        animation: "float",
+        id: "web",
+        icon: Globe,
+        iconColor: "text-blue-400",
+        glowColor: "rgba(59,130,246,0.12)",
+        positionClasses: "top-[22%] left-[4%] xl:left-[6%]",
+        size: "w-14 h-14",
+        delay: 0,
+        duration: 4.4,
+        distance: 16,
     },
     {
-        id: "uiux",
-        name: "Sara Kim",
-        subtitle: "UI/UX Expert · Figma wizard",
-        gradientFrom: "from-violet-500",
-        gradientTo: "to-pink-500",
-        positionClasses: "top-[48%] right-[1%] xl:right-[2%]",
-        animation: "floatDelayed",
+        id: "telegram",
+        icon: Bot,
+        iconColor: "text-sky-400",
+        glowColor: "rgba(14,165,233,0.12)",
+        positionClasses: "top-[38%] right-[4%] xl:right-[7%]",
+        size: "w-16 h-16",
+        delay: 0.9,
+        duration: 3.9,
+        distance: -15,
     },
     {
-        id: "backend",
-        name: "James L.",
-        subtitle: "Backend Expert · Node / Go",
-        gradientFrom: "from-cyan-500",
-        gradientTo: "to-slate-700",
-        positionClasses: "top-[62%] left-[1%] xl:left-[2%]",
-        animation: "floatDelayed2",
+        id: "automation",
+        icon: Zap,
+        iconColor: "text-amber-400",
+        glowColor: "rgba(245,158,11,0.12)",
+        positionClasses: "top-[62%] left-[5%] xl:left-[7%]",
+        size: "w-12 h-12",
+        delay: 1.7,
+        duration: 4.9,
+        distance: 13,
+    },
+    {
+        id: "saas",
+        icon: Rocket,
+        iconColor: "text-violet-400",
+        glowColor: "rgba(139,92,246,0.12)",
+        positionClasses: "top-[70%] right-[5%] xl:right-[6%]",
+        size: "w-14 h-14",
+        delay: 0.4,
+        duration: 5.1,
+        distance: -18,
+    },
+];
+
+// ─── Tech stack for bottom strip ─────────────────────────────────────────────
+const techStack = [
+    {
+        group: "Frontend",
+        icons: [
+            { Icon: SiNextdotjs, color: "hover:text-foreground", label: "Next.js" },
+            { Icon: SiReact, color: "hover:text-[#61DAFB]", label: "React" },
+            { Icon: SiTypescript, color: "hover:text-[#3178C6]", label: "TypeScript" },
+        ],
+    },
+    {
+        group: "Backend & DB",
+        icons: [
+            { Icon: SiNodedotjs, color: "hover:text-[#339933]", label: "Node.js" },
+            { Icon: SiPostgresql, color: "hover:text-[#4169E1]", label: "PostgreSQL" },
+            { Icon: SiPrisma, color: "hover:text-foreground", label: "Prisma" },
+        ],
+    },
+    {
+        group: "Ecosystem",
+        icons: [
+            { Icon: SiTelegram, color: "hover:text-[#26A5E4]", label: "Telegram" },
+            { Icon: Bot as any, color: "hover:text-violet-400", label: "AI Agents", isLucide: true },
+            { Icon: Zap as any, color: "hover:text-amber-400", label: "Automation", isLucide: true },
+        ],
     },
 ];
 
@@ -58,68 +92,50 @@ export function Hero() {
     const t = useTranslations('Hero');
     const shouldReduceMotion = useReducedMotion();
 
-    // Floating animation for expert badges
-    const floatAnimation = {
-        y: shouldReduceMotion ? 0 : [0, -12, 0],
-        transition: { duration: 3, repeat: Infinity, ease: "easeInOut" as const }
-    };
-
-    const floatAnimationDelayed = {
-        y: shouldReduceMotion ? 0 : [0, 12, 0],
-        transition: { duration: 3.5, repeat: Infinity, ease: "easeInOut" as const, delay: 0.5 }
-    };
-
-    const floatAnimationDelayed2 = {
-        y: shouldReduceMotion ? 0 : [0, -8, 0],
-        transition: { duration: 3.2, repeat: Infinity, ease: "easeInOut" as const, delay: 1 }
-    };
-
     return (
-        <section id="top" role="region" aria-labelledby="hero-heading" className="relative pt-32 pb-16 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden">
-
-            {/* Custom Cursor SVG component (reusable inline) */}
-            {/* Expert badges are now data-driven to simplify updates */}
-            {badges.map((b) => {
-                const animMap = {
-                    float: floatAnimation,
-                    floatDelayed: floatAnimationDelayed,
-                    floatDelayed2: floatAnimationDelayed2,
-                } as const;
-
+        <section
+            id="top"
+            role="region"
+            aria-labelledby="hero-heading"
+            className="relative pt-32 pb-16 md:pt-42 md:pb-32 min-h-screen flex flex-col justify-center overflow-hidden"
+        >
+            {/* ── Floating Icon Orbs ───────────────────────────────────────── */}
+            {orbs.map((orb) => {
+                const Icon = orb.icon;
                 return (
                     <motion.div
-                        key={b.id}
-                        animate={animMap[b.animation]}
+                        key={orb.id}
                         className={cn(
-                            "absolute z-20 hidden lg:flex lg:scale-[0.8] xl:scale-100 origin-center items-center gap-3 px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-xl border border-foreground/10 shadow-[0_8px_32px_var(--aero-shadow)] cursor-default select-none transition-all duration-500 will-change-transform",
-                            b.positionClasses,
-                            // Adjust inward strictly on lg so they don't hit edge
-                            b.id === "frontend" && "lg:left-[2%] xl:left-[2%]",
-                            b.id === "uiux" && "lg:right-[2%] xl:right-[2%]",
-                            b.id === "backend" && "lg:left-[2%] xl:left-[2%]"
+                            "absolute z-20 hidden lg:flex items-center justify-center",
+                            "rounded-2xl cursor-default select-none",
+                            "border border-white/[0.09]",
+                            orb.size,
+                            orb.positionClasses,
                         )}
+                        style={{
+                            background: "linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%)",
+                            backdropFilter: "blur(20px) saturate(1.6)",
+                            WebkitBackdropFilter: "blur(20px) saturate(1.6)",
+                            boxShadow: `inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 24px ${orb.glowColor}, 0 0 0 1px rgba(255,255,255,0.04)`,
+                        }}
+                        animate={shouldReduceMotion ? {} : {
+                            y: [0, orb.distance, orb.distance * 0.4, 0],
+                            scale: [1, 1.04, 1.01, 1],
+                        }}
+                        transition={{
+                            duration: orb.duration,
+                            delay: orb.delay,
+                            repeat: Infinity,
+                            ease: [0.45, 0, 0.55, 1],
+                            times: [0, 0.38, 0.68, 1],
+                        }}
                     >
-                        <div
-                            className={`relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br ${b.gradientFrom} ${b.gradientTo} flex items-center justify-center ring-2 ring-white/10 overflow-hidden`}
-                        >
-                            <svg
-                                className="w-8 h-8 text-white/60 mt-1"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <circle cx="12" cy="8" r="4" />
-                                <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" />
-                            </svg>
-                        </div>
-                        <div className="flex flex-col leading-none">
-                            <span className="text-sm font-semibold text-foreground">{t(`badges.${b.id}.name` as any)}</span>
-                            <span className="text-xs text-foreground/50 mt-0.5">{t(`badges.${b.id}.subtitle` as any)}</span>
-                        </div>
+                        <Icon className={cn("w-[22px] h-[22px]", orb.iconColor)} strokeWidth={1.6} />
                     </motion.div>
                 );
             })}
 
+            {/* ── Main Content ────────────────────────────────────────────── */}
             <Container className="relative z-10 flex flex-col items-center text-center">
 
                 {/* Top Pill */}
@@ -129,7 +145,7 @@ export function Hero() {
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     className="flex items-center gap-2 bg-foreground px-5 py-2.5 rounded-full mb-10 shadow-[0_0_30px_var(--aero-shadow)] hover-trigger"
                 >
-                    <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
+                    <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
                     <span className="text-background text-sm font-semibold tracking-tight">
                         {t('pill')}
                     </span>
@@ -143,7 +159,11 @@ export function Hero() {
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
                     className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[68px] xl:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-4xl xl:max-w-5xl"
                 >
-                    {t('headingMain')} <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">{t('headingHighlight')}</span> {t('headingSuffix')}
+                    {t('headingMain')}{" "}
+                    <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">
+                        {t('headingHighlight')}
+                    </span>{" "}
+                    {t('headingSuffix')}
                 </motion.h1>
 
                 {/* Subtext */}
@@ -163,7 +183,6 @@ export function Hero() {
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
                     className="flex flex-col sm:flex-row items-center gap-3 mb-16 w-full sm:w-auto"
                 >
-                    {/* Primary CTA (Blue Pill) */}
                     <Link href="/contact" className="w-full sm:w-auto hover-trigger">
                         <Button
                             variant="aero"
@@ -174,8 +193,6 @@ export function Hero() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
                     </Link>
-
-                    {/* Secondary CTA (Outline Pill) */}
                     <Link href="/work" className="w-full sm:w-auto hover-trigger">
                         <Button
                             variant="ghost"
@@ -187,42 +204,50 @@ export function Hero() {
                     </Link>
                 </motion.div>
 
-
-
-                {/* Trust Logos (Glass Bottom Panel) */}
+                {/* ── Tech Stack Strip ──────────────────────────────────────── */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                    className="w-full max-w-5xl flex flex-col items-center"
+                    className="w-full max-w-5xl flex flex-col items-center gap-5"
                 >
-                    <p className="text-sm font-semibold tracking-widest text-foreground/40 uppercase shrink-0">
+                    <p className="text-xs font-semibold tracking-[0.3em] text-foreground/30 uppercase">
                         {t('trustLabel')}
                     </p>
 
-                    <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-10 bg-background/5 border border-foreground/10 backdrop-blur-md rounded-[24px] sm:rounded-[32px] px-4 sm:px-8 py-4 sm:py-6 shadow-[0_10px_40px_var(--aero-shadow)] hover-trigger">
-                        <div className="flex items-center gap-4 sm:gap-8 md:gap-12 flex-wrap justify-center">
-                            {/* Frontend */}
-                            <div className="flex items-center gap-3 sm:gap-6 lg:border-r border-foreground/10 pr-3 sm:pr-4 lg:pr-8">
-                                <SiNextdotjs className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-foreground transition-colors" />
-                                <SiReact className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#61DAFB] transition-colors" />
-                                <SiTypescript className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3178C6] transition-colors" />
+                    <div className="w-full flex flex-wrap justify-center items-stretch gap-px bg-foreground/[0.06] border border-foreground/[0.08] backdrop-blur-md rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_10px_40px_var(--aero-shadow)]">
+                        {techStack.map((group, gi) => (
+                            <div
+                                key={group.group}
+                                className={cn(
+                                    "flex-1 min-w-[120px] flex flex-col items-center gap-3 px-4 sm:px-8 py-5 bg-background/60 hover:bg-background/80 transition-colors duration-300",
+                                    gi < techStack.length - 1 && "border-r border-foreground/[0.06]"
+                                )}
+                            >
+                                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-foreground/25">
+                                    {group.group}
+                                </span>
+                                <div className="flex items-center gap-4 sm:gap-5">
+                                    {group.icons.map(({ Icon, color, label, isLucide }) => (
+                                        <div key={label} className="group/icon flex flex-col items-center gap-1.5">
+                                            <Icon
+                                                className={cn(
+                                                    "transition-colors duration-300 text-foreground/40",
+                                                    color,
+                                                    isLucide
+                                                        ? "w-5 h-5 sm:w-6 sm:h-6"
+                                                        : "w-5 h-5 sm:w-6 sm:h-6"
+                                                )}
+                                                strokeWidth={isLucide ? 1.5 : undefined}
+                                            />
+                                            <span className="text-[9px] text-foreground/20 group-hover/icon:text-foreground/40 transition-colors tracking-wide">
+                                                {label}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-
-                            {/* Backend & DB */}
-                            <div className="flex items-center gap-3 sm:gap-6 lg:border-r border-foreground/10 pr-3 sm:pr-4 lg:pr-8">
-                                <SiNodedotjs className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#339933] transition-colors" />
-                                <SiPython className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#3776AB] transition-colors" />
-                                <SiPostgresql className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#4169E1] transition-colors" />
-                            </div>
-
-                            {/* AI & Cloud */}
-                            <div className="flex items-center gap-3 sm:gap-6">
-                                <SiOpenai className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#412991] transition-colors" />
-                                <FaAws className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#FF9900] transition-colors" />
-                                <SiFigma className="w-7 h-4 sm:w-12 sm:h-6 md:w-14 md:h-7 text-foreground/60 hover:text-[#F24E1E] transition-colors" />
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </motion.div>
 

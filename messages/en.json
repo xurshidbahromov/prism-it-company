@@ -3,52 +3,56 @@
     "title": "Engineering modern digital products."
   },
   "Hero": {
-    "pill": "Join +50 enterprise clients scaling with our engineering.",
+    "pill": "Web · Telegram · Automation · SaaS — Built in Tashkent.",
     "headingMain": "We Build The",
     "headingHighlight": "Software",
-    "headingSuffix": "That Transforms Businesses.",
-    "subtext": "We partner with ambitious brands to engineer high-performing technological solutions and digital products that turn visions into reality.",
+    "headingSuffix": "That Grows Your Business.",
+    "subtext": "From landing pages to Telegram bots to full SaaS products — we build exactly what your business needs, fast and without compromise.",
     "ctaPrimary": "Start a Project",
-    "ctaSecondary": "View Case Studies",
-    "trustLabel": "Full-Stack & AI Infrastructure",
+    "ctaSecondary": "View Our Work",
+    "trustLabel": "Our Technology Stack",
     "badges": {
-      "frontend": {
-        "name": "Alex Chen",
-        "subtitle": "Frontend Expert · 120+ projects"
+      "web": {
+        "name": "Web Development",
+        "subtitle": "Landing · E-Commerce · Web Apps"
       },
-      "uiux": {
-        "name": "Sara Kim",
-        "subtitle": "UI/UX Expert · Figma wizard"
+      "telegram": {
+        "name": "Telegram Solutions",
+        "subtitle": "Bots · Mini Apps · Payments"
       },
-      "backend": {
-        "name": "James L.",
-        "subtitle": "Backend Expert · Node / Go"
+      "automation": {
+        "name": "Business Automation",
+        "subtitle": "CRM · Dashboards · Workflows"
+      },
+      "saas": {
+        "name": "Product & SaaS",
+        "subtitle": "MVP · Scale · Launch"
       }
     }
   },
   "Services": {
-    "badge": "Capabilities",
-    "heading1": "Services built for",
-    "heading2": "high-growth",
-    "headingHighlight": "ventures.",
-    "viewAll": "View all expertise",
+    "badge": "What We Build",
+    "heading1": "Real products for",
+    "heading2": "real",
+    "headingHighlight": "businesses.",
+    "viewAll": "See full breakdown",
     "learnMore": "Learn More",
     "items": {
-      "uiux": {
-        "title": "UI/UX Design",
-        "description": "Human-centered interfaces built on behavioral psychology to maximize user retention."
+      "web-dev": {
+        "title": "Web Development",
+        "description": "From landing pages that convert to full web apps — pixel-perfect, fast, and built to grow with your business."
       },
-      "fullstack": {
-        "title": "Full-Stack Dev",
-        "description": "Resilient, horizontally scalable applications engineered with modern type-safe engines."
+      "telegram": {
+        "title": "Telegram Solutions",
+        "description": "Smart bots and Mini Apps that let your customers order, book, and pay — all without leaving Telegram."
       },
-      "ai": {
-        "title": "AI Integration",
-        "description": "Custom LLM workflows and autonomous agents designed for measurable business impact."
+      "automation": {
+        "title": "Business Automation",
+        "description": "Replace spreadsheets with custom CRM, dashboards, and internal tools. Save 20+ hours every week."
       },
-      "cloud": {
-        "title": "Cloud Systems",
-        "description": "High-uptime infrastructure with automated CI/CD and zero-trust security protocols."
+      "saas": {
+        "title": "Product & SaaS",
+        "description": "From napkin sketch to paying customers. We build your MVP and scale it into a real product."
       }
     }
   },
@@ -134,25 +138,26 @@
       "process": "Process",
       "work": "Work",
       "about": "About",
+      "pricing": "Pricing",
       "contact": "Contact"
     },
     "megaMenu": {
       "expertise": {
-        "uiux": {
-          "label": "UI/UX Design",
-          "desc": "Human-centered, pixel-perfect interfaces"
+        "web-dev": {
+          "label": "Web Development",
+          "desc": "Websites, web apps, and e-commerce stores"
         },
-        "fullstack": {
-          "label": "Full-Stack Dev",
-          "desc": "Scalable, type-safe modern applications"
+        "telegram": {
+          "label": "Telegram Solutions",
+          "desc": "Smart bots and Mini Apps for your business"
         },
-        "ai": {
-          "label": "AI Integration",
-          "desc": "Custom LLMs and autonomous agents"
+        "automation": {
+          "label": "Business Automation",
+          "desc": "CRM, dashboards, and workflow tools"
         },
-        "cloud": {
-          "label": "Cloud Systems",
-          "desc": "Zero-trust, high-uptime infrastructure"
+        "saas": {
+          "label": "Product & SaaS",
+          "desc": "MVP to full product — we build it all"
         }
       },
       "process": {
@@ -174,17 +179,17 @@
         }
       },
       "work": {
-        "fintech": {
-          "label": "Fintech Core Banking",
-          "desc": "+40% transaction speed, zero downtime"
+        "ecommerce": {
+          "label": "E-Commerce Web App",
+          "desc": "3x more orders, Click & Payme integrated"
         },
-        "healthcare": {
-          "label": "Healthcare Data Sync",
-          "desc": "HIPAA compliant, sub-second sync"
+        "telegram": {
+          "label": "Telegram Sales Bot",
+          "desc": "847 active users, Mini App + Bot"
         },
-        "retail": {
-          "label": "Retail Automation",
-          "desc": "$1.2M saved/yr, -30% manual ops"
+        "crm": {
+          "label": "Business CRM",
+          "desc": "20h/week saved, 1,247 leads tracked"
         }
       },
       "about": {
@@ -233,36 +238,39 @@
     }
   },
   "Work": {
-    "badge": "Case Studies",
+    "badge": "Portfolio",
     "title": "Selected recent",
     "titleHighlight": "projects.",
-    "explore": "Explore Case Study",
+    "explore": "View Project",
     "projects": {
-      "fintech": {
-        "title": "Fintech Core Banking",
-        "category": "Platform Engineering",
-        "description": "A high-frequency banking engine designed for global scale, handling millions of transactions.",
+      "ecommerce": {
+        "title": "E-Commerce Web App",
+        "category": "Web Development",
+        "description": "A full-featured online store with real-time inventory, admin dashboard, and integrated payment processing built for a local retail business.",
         "metrics": [
-          "+40% txn speed",
-          "Zero downtime"
+          "3x more orders",
+          "Admin dashboard",
+          "Click & Payme"
         ]
       },
-      "healthcare": {
-        "title": "Healthcare Data Sync",
-        "category": "Data Infrastructure",
-        "description": "HIPAA-compliant data synchronization layer enabling real-time genomic data sharing.",
+      "telegram": {
+        "title": "Telegram Sales Bot",
+        "category": "Telegram Solutions",
+        "description": "A complete Telegram ecosystem for a retail business: catalog bot, Mini App for checkout, and real-time order management admin panel.",
         "metrics": [
-          "HIPAA compliant",
-          "Sub-second sync"
+          "847 active users",
+          "Mini App + Bot",
+          "Auto orders"
         ]
       },
-      "retail": {
-        "title": "Retail Automation",
-        "category": "Internal Tools",
-        "description": "Cloud-native inventory management system automating logistics for over 500+ locations.",
+      "crm": {
+        "title": "Business CRM Dashboard",
+        "category": "Business Automation",
+        "description": "Custom CRM system replacing Excel sheets with real-time analytics, customer pipeline management, and automated follow-up workflows.",
         "metrics": [
-          "-30% manual ops",
-          "$1.2M saved/yr"
+          "20h/week saved",
+          "1,247 leads tracked",
+          "89% retention"
         ]
       }
     }
@@ -275,14 +283,32 @@
     "primaryButton": "Let's Collaborate"
   },
   "Footer": {
-    "description": "Engineering the future of digital commerce and enterprise infrastructure with high-performance modern tech stacks.",
+    "description": "Full-Stack development studio building websites, Telegram solutions, business automation, and SaaS products for ambitious companies.",
     "addressLabel": "HQ — Tashkent, Uzbekistan",
     "columns": {
-      "quickLinks": "Quick Links",
-      "expertise": "Expertise",
-      "connect": "Connect"
+      "services": "Services",
+      "company": "Company",
+      "connect": "Connect",
+      "legal": "Legal"
     },
-    "copyright": "© 2024 PRISM IT COMPANY. ALL RIGHTS RESERVED."
+    "services": {
+      "pricing": "Pricing",
+      "webDev": "Web Development",
+      "telegram": "Telegram Solutions",
+      "automation": "Business Automation",
+      "saas": "Product & SaaS"
+    },
+    "company": {
+      "about": "About Us",
+      "work": "Case Studies",
+      "process": "Our Process",
+      "contact": "Contact"
+    },
+    "copyright": "© 2025 PRISM IT STUDIO. ALL RIGHTS RESERVED.",
+    "legalLinks": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
   },
   "MobileNav": {
     "tabs": {
@@ -294,55 +320,55 @@
     }
   },
   "DetailedCapabilities": {
-    "creative-design": {
-      "title": "Creative UI/UX Design",
-      "tagline": "Human-Centered Digital Experiences",
-      "description": "We don't just 'design' interfaces — we engineer user journeys based on behavioral psychology and interaction data. Our goal is to create emotional resonance that drives logic-driven conversions.",
+    "web-dev": {
+      "title": "Web Development",
+      "tagline": "Fast. Beautiful. Built to Convert.",
+      "description": "We build websites and web applications that don't just look good — they perform. Every project is mobile-first, SEO-optimized, and delivered with a content management system so you're never dependent on us for updates.",
       "features": {
-        "0": "User Research & Journey Mapping",
-        "1": "High-Fidelity Interaction Prototyping",
-        "2": "Design Systems & Component Libraries",
-        "3": "Accessibility (WCAG) Auditing",
-        "4": "A/B Testing & Optimization"
+        "0": "Landing Pages & Corporate Sites",
+        "1": "E-Commerce Stores",
+        "2": "Custom Web Applications",
+        "3": "Admin Panels & Dashboards",
+        "4": "SEO & Performance Optimization"
       }
     },
-    "full-stack": {
-      "title": "Full-Stack Engineering",
-      "tagline": "Scalable. Resilient. High-Performance.",
-      "description": "Deploying production-ready applications built to handle millions of requests. We prioritize type-safety, efficient state management, and optimized delivery pipelines for 99.9% reliability.",
+    "telegram": {
+      "title": "Telegram Solutions",
+      "tagline": "Your Entire Business Inside a Chat.",
+      "description": "In CIS markets, Telegram is where your customers already are. We build smart bots that automate sales and support, and Mini Apps that deliver a full shopping or booking experience — no app store required.",
       "features": {
-        "0": "Modern React/Next.js Architecture",
-        "1": "Type-Safe Backend (Node/Go/Python)",
-        "2": "Distributed Systems Design",
-        "3": "Real-time Data Streaming",
-        "4": "Performance Tuning & Core Web Vitals"
+        "0": "Order-Taking & Sales Bots",
+        "1": "Support & FAQ Automation",
+        "2": "Telegram Mini Apps (Full UI)",
+        "3": "Payment Integration (Click, Payme, Stripe)",
+        "4": "Admin Panel for Bot Management"
       }
     },
-    "ai-automation": {
-      "title": "AI & Intelligent Automation",
-      "tagline": "Beyond Generative AI — True Intelligence",
-      "description": "We bridge the gap between AI hype and business value. From custom fine-tuned LLMs to autonomous workflow agents, we build intelligence into the fabric of your infrastructure.",
+    "automation": {
+      "title": "Business Automation",
+      "tagline": "Save 20+ Hours Every Week.",
+      "description": "Most businesses run on Excel and manual processes that don't scale. We replace that chaos with custom CRM systems, real-time dashboards, and workflow tools built exactly for how your team works.",
       "features": {
-        "0": "Custom LLM Fine-Tuning & RAG",
-        "1": "Predictive Analytics & Forecasting",
-        "2": "Autonomous Agents & Workflow Automation",
-        "3": "Natural Language Search (Vector DBs)",
-        "4": "Computer Vision & Pattern Recognition"
+        "0": "Custom CRM Systems",
+        "1": "Real-Time Analytics Dashboards",
+        "2": "Inventory & Warehouse Management",
+        "3": "Booking & Appointment Systems",
+        "4": "Third-Party API Integrations"
       }
     },
-    "cloud-infra": {
-      "title": "Cloud & Infrastructure",
-      "tagline": "Automated. Secure. Globally Scalable.",
-      "description": "DevOps is the heartbeat of modern software. We engineer automated ecosystems that allow your team to ship faster with confidence, using zero-trust security and infrastructure-as-code.",
+    "saas": {
+      "title": "Product & SaaS Development",
+      "tagline": "From Idea to Paying Customers.",
+      "description": "Have a startup idea but no technical co-founder? We become your tech team. From architecture planning to MVP launch, we build scalable products that attract investors and retain users.",
       "features": {
-        "0": "IaC (Terraform / Pulumi)",
-        "1": "Kubernetes & Container Orchestration",
-        "2": "CI/CD Pipeline Automation",
-        "3": "Multi-Cloud & Edge Computing",
-        "4": "Zero-Trust Security & Compliance"
+        "0": "MVP Development & Launch",
+        "1": "SaaS Subscription Platforms",
+        "2": "User Authentication & Roles",
+        "3": "Payment & Billing Systems",
+        "4": "Scalable Backend Architecture"
       }
     },
-    "inquire": "Inquire regarding {category}"
+    "inquire": "Start a project in {category}"
   },
   "About": {
     "hero": {
@@ -432,5 +458,384 @@
   },
   "LogoStrip": {
     "trusted": "Trusted by industry innovators"
+  },
+  "Pricing": {
+    "hero": {
+      "badge": "Pricing",
+      "titleMain": "Transparent",
+      "titleHighlight": "pricing.",
+      "subtext": "No hidden fees. No generic quotes. Every project is scoped and priced based on your exact needs."
+    },
+    "popularBadge": "Most Popular",
+    "packages": {
+      "starter": {
+        "name": "Starter",
+        "tagline": "Perfect for small businesses",
+        "period": "one-time",
+        "features": {
+          "0": "Landing page or corporate site",
+          "1": "Mobile-first responsive design",
+          "2": "Up to 5 pages",
+          "3": "Contact form setup",
+          "4": "Basic SEO optimization",
+          "5": "1 month free support"
+        },
+        "cta": "Get Started"
+      },
+      "business": {
+        "name": "Business",
+        "tagline": "For growing companies",
+        "period": "one-time",
+        "features": {
+          "0": "Web app or Telegram bot",
+          "1": "Custom admin panel / dashboard",
+          "2": "Payment integration (Click, Payme)",
+          "3": "User authentication",
+          "4": "Real-time data (if needed)",
+          "5": "3 months free support"
+        },
+        "cta": "Start Project"
+      },
+      "saas": {
+        "name": "SaaS / Enterprise",
+        "tagline": "For serious products",
+        "period": "tailored",
+        "features": {
+          "0": "Full-stack product development",
+          "1": "Multi-tenant SaaS architecture",
+          "2": "Subscription & billing system",
+          "3": "CI/CD & deployment setup",
+          "4": "Scalable backend (Node/Python)",
+          "5": "Ongoing retainer available"
+        },
+        "cta": "Request Proposal"
+      }
+    },
+    "note": "All prices are approximate. Final quote based on project requirements.",
+    "freeEstimate": "Get a free estimate →",
+    "addons": {
+      "titleMain": "Popular",
+      "titleHighlight": "add-ons",
+      "subtext": "Extend any package with these modules.",
+      "items": {
+        "telegram": {
+          "name": "Telegram Bot Add-on",
+          "price": "from $150"
+        },
+        "automation": {
+          "name": "Business Automation Module",
+          "price": "from $300"
+        },
+        "multilingual": {
+          "name": "Multilingual (UZ/RU/EN)",
+          "price": "from $100"
+        },
+        "analytics": {
+          "name": "Analytics Dashboard",
+          "price": "from $200"
+        }
+      }
+    },
+    "faq": {
+      "titleMain": "Frequently asked",
+      "titleHighlight": "questions",
+      "items": {
+        "0": {
+          "q": "How long does a typical project take?",
+          "a": "A landing page takes 3-7 days. A Telegram bot: 1-2 weeks. A full web app or CRM: 3-8 weeks depending on complexity."
+        },
+        "1": {
+          "q": "How does payment work?",
+          "a": "We work with a 50% upfront payment to start, and 50% upon delivery. For larger projects we can split into milestones."
+        },
+        "2": {
+          "q": "Do I own the code after delivery?",
+          "a": "Yes, 100%. Upon final payment, all code and assets belong to you."
+        },
+        "3": {
+          "q": "Can I request changes after delivery?",
+          "a": "Yes. All packages include a support period for bug fixes. Feature additions are quoted separately."
+        },
+        "4": {
+          "q": "Do you work with clients outside Uzbekistan?",
+          "a": "Absolutely. We work with clients globally and accept international payments."
+        }
+      }
+    }
+  },
+  "ContactPage": {
+    "title": "Start your project",
+    "description": "Fill out the form below and we'll get back to you with a tailored proposal within 24 hours.",
+    "form": {
+      "aboutYou": "About You",
+      "phone": "Phone (optional)",
+      "budgetTimeline": "Budget & Timeline",
+      "projectSummary": "Project Summary *",
+      "referenceUrl": "Reference or Inspiration URL (optional)",
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company (Optional)",
+      "projectTypesLabel": "Project Type",
+      "projectTypes": {
+        "web": {
+          "label": "Web Development",
+          "desc": "Corporate site, landing page, or complex web app."
+        },
+        "telegram": {
+          "label": "Telegram Solution",
+          "desc": "Custom bot, Mini App, or group automation."
+        },
+        "automation": {
+          "label": "Business Automation",
+          "desc": "CRM, inventory, or custom dashboard."
+        },
+        "saas": {
+          "label": "SaaS / Product",
+          "desc": "Building a scalable product from scratch."
+        },
+        "ecommerce": {
+          "label": "E-Commerce",
+          "desc": "Online store with payment integrations."
+        },
+        "other": {
+          "label": "Other / Unsure",
+          "desc": "Let's discuss and find the best solution."
+        }
+      },
+      "budgetLabel": "Budget Range",
+      "budgetRanges": {
+        "300-700": "$300 – $700",
+        "700-1500": "$700 – $1,500",
+        "1500-3000": "$1,500 – $3,000",
+        "3000+": "$3,000+"
+      },
+      "timelineLabel": "Timeline",
+      "timelineOptions": {
+        "asap": "ASAP (< 2 weeks)",
+        "1-3m": "1 - 3 months",
+        "3-6m": "3 - 6 months",
+        "6m+": "6+ months"
+      },
+      "detailsLabel": "Project Brief",
+      "detailsPlaceholder": "Describe your project, goals, and any specific requirements. The more detail, the better our proposal...",
+      "submitButton": "Submit Your Brief",
+      "submitting": "Sending..."
+    },
+    "socials": "Follow Us",
+    "successTitle": "Brief received.",
+    "successDesc": "Thank you! Our team will review your project brief and reach out within 24 hours with a tailored proposal.",
+    "successBack": "Submit another brief",
+    "hero": {
+      "badge": "Start a Project",
+      "titleMain": "Let's build something",
+      "titleHighlight": "remarkable."
+    },
+    "aside": {
+      "responseTitle": "24hr Response",
+      "responseDesc": "We review every project brief personally and respond with a detailed proposal — no auto-replies, no generic quotes.",
+      "nextStepsTitle": "What happens next",
+      "steps": {
+        "0": {
+          "title": "Brief Review",
+          "desc": "Our team reviews your submission and clarifies any questions."
+        },
+        "1": {
+          "title": "Discovery Call",
+          "desc": "A 30-min kickoff to align on goals, scope, and timeline."
+        },
+        "2": {
+          "title": "Tailored Proposal",
+          "desc": "You receive a precise quote and phased project roadmap."
+        }
+      },
+      "reachOutTitle": "Prefer to reach out directly?",
+      "labels": {
+        "email": "Email",
+        "phone": "Phone",
+        "office": "Office"
+      }
+    }
+  },
+  "Legal": {
+    "badge": "Legal",
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms of Service",
+    "updated": "Last updated: April 26, 2025",
+    "privacySections": {
+      "1": {
+        "title": "1. Introduction",
+        "p": "PRISM IT Studio (\"we\", \"our\", or \"us\") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services."
+      },
+      "2": {
+        "title": "2. Information We Collect",
+        "p": "We may collect the following types of information:",
+        "list": [
+          "Personal Data: Name, email address, phone number, and company name provided through our contact form.",
+          "Usage Data: Pages visited, time spent on pages, browser type, and device information via analytics.",
+          "Communication Data: Messages and project briefs you send us."
+        ]
+      },
+      "3": {
+        "title": "3. How We Use Your Information",
+        "p": "We use the information we collect to:",
+        "list": [
+          "Respond to your project inquiries and proposals",
+          "Deliver the services you request",
+          "Improve our website and service offerings",
+          "Send project updates and relevant communications",
+          "Comply with legal obligations"
+        ]
+      },
+      "4": {
+        "title": "4. Data Sharing",
+        "p": "We do not sell, trade, or rent your personal information to third parties. We may share your data with trusted service providers solely to operate our business."
+      },
+      "5": {
+        "title": "5. Cookies",
+        "p": "Our website uses minimal cookies necessary for site functionality and anonymous analytics. We do not use advertising or tracking cookies. You may disable cookies in your browser settings."
+      },
+      "6": {
+        "title": "6. Data Security",
+        "p": "We implement industry-standard security measures including HTTPS encryption, secure form submission, and limited data retention. However, no method of transmission over the Internet is 100% secure."
+      },
+      "7": {
+        "title": "7. Your Rights",
+        "p": "You have the right to:",
+        "list": [
+          "Request access to your personal data",
+          "Request correction or deletion of your data",
+          "Withdraw consent for communications at any time"
+        ]
+      },
+      "8": {
+        "title": "8. Contact Us",
+        "p": "If you have questions about this Privacy Policy, please contact us:"
+      }
+    },
+    "termsSections": {
+      "1": {
+        "title": "1. Agreement to Terms",
+        "p": "By accessing or using the services provided by PRISM IT Studio, you agree to be bound by these Terms of Service. If you disagree with any part, you may not use our services."
+      },
+      "2": {
+        "title": "2. Services",
+        "p": "PRISM IT Studio provides software development services including web development, Telegram bots, business automation, and SaaS products. Project scope is defined in a separate Statement of Work."
+      },
+      "3": {
+        "title": "3. Payments & Refunds",
+        "list": [
+          "Payment terms are specified in each agreement.",
+          "Typically, projects require a 50% upfront deposit.",
+          "Refunds are available only for work not yet started.",
+          "Final payment is due upon project delivery."
+        ]
+      },
+      "4": {
+        "title": "4. Intellectual Property",
+        "p": "Upon receipt of full payment, the client owns all custom code created specifically for their project. We retain ownership of general-purpose frameworks used in development."
+      },
+      "5": {
+        "title": "5. Client Responsibilities",
+        "p": "The client agrees to:",
+        "list": [
+          "Provide accurate and complete project requirements",
+          "Respond to communications within a reasonable timeframe",
+          "Provide necessary access to systems or assets",
+          "Review and provide feedback on deliverables"
+        ]
+      },
+      "6": {
+        "title": "6. Limitation of Liability",
+        "p": "Our total liability for any claim shall not exceed the total amount paid by the client for the specific project. We are not liable for indirect or consequential damages."
+      },
+      "7": {
+        "title": "7. Confidentiality",
+        "p": "Both parties agree to keep confidential any proprietary information shared during the course of the project."
+      },
+      "8": {
+        "title": "8. Governing Law",
+        "p": "These Terms are governed by the laws of the Republic of Uzbekistan. Disputes shall be resolved through good-faith negotiation."
+      },
+      "9": {
+        "title": "9. Contact",
+        "p": "For questions about these Terms, please contact us:"
+      }
+    }
+  },
+  "WorkPage": {
+    "hero": {
+      "badge": "Case Studies",
+      "titleMain": "Proof of",
+      "titleHighlight": "execution.",
+      "subtext": "A showcase of engineering challenges solved and digital products scaled."
+    }
+  },
+  "ProcessPage": {
+    "hero": {
+      "badge": "Our Methodology",
+      "titleMain": "Built with",
+      "titleHighlight": "precision.",
+      "subtext": "Protocol-driven engineering that replaces agency chaos with predictable excellence."
+    }
+  },
+  "ExpertisePage": {
+    "hero": {
+      "badge": "What We Build",
+      "titleMain": "Real products for",
+      "titleHighlight": "real businesses.",
+      "subtext": "From websites and Telegram solutions to custom business software and SaaS products — we build exactly what your business needs."
+    },
+    "deepDive": {
+      "badge": "Deep Dive",
+      "title": "Our Core Technological Pillars & Capabilities"
+    }
+  },
+  "CaseStudies": {
+    "back": "Back to Case Studies",
+    "challenge": "The Challenge",
+    "solution": "Our Solution",
+    "resultsTitle": "Key Results",
+    "techStack": "Tech Stack",
+    "clientLabel": "Client",
+    "timelineLabel": "Timeline",
+    "ecommerce": {
+      "title": "E-Commerce Transformation",
+      "client": "Retail Brand X",
+      "timeline": "3 Months",
+      "role": "Full-Stack Development",
+      "challenge": "The client was struggling with an outdated WooCommerce platform that crashed during high traffic sales events and had a confusing checkout flow resulting in high cart abandonment.",
+      "solution": "We built a custom headless e-commerce solution using Next.js for lightning-fast frontend performance and a robust Node.js backend. We integrated local payment gateways (Payme, Click) and optimized the mobile checkout flow for a frictionless experience.",
+      "results": {
+        "0": "300% increase in mobile conversion rate",
+        "1": "0 downtime during Black Friday sales",
+        "2": "Sub-second page load times across the entire catalog"
+      }
+    },
+    "telegram": {
+      "title": "Automated Telegram Mini App",
+      "client": "Service Provider Y",
+      "timeline": "6 Weeks",
+      "role": "Telegram Solutions",
+      "challenge": "The business relied on human operators to manually take bookings and answer FAQs on Telegram, leading to slow response times and lost revenue during off-hours.",
+      "solution": "We developed a comprehensive Telegram Mini App that allows users to browse services, select time slots, and pay directly within Telegram. A companion admin dashboard was built for the staff to manage the schedule in real-time.",
+      "results": {
+        "0": "847 active users in the first week",
+        "1": "Automated 95% of customer inquiries",
+        "2": "24/7 booking capability unlocked"
+      }
+    },
+    "crm": {
+      "title": "Custom Business CRM",
+      "client": "Enterprise Z",
+      "timeline": "4 Months",
+      "role": "Business Automation",
+      "challenge": "The company was managing its sales pipeline and inventory across 15 different messy spreadsheets, causing data silos, lost leads, and operational bottlenecks.",
+      "solution": "We engineered a centralized CRM and inventory management dashboard. It features role-based access, real-time analytics, automated lead assignment, and a custom API to sync with their warehouse hardware.",
+      "results": {
+        "0": "Saved 20+ hours per week in manual data entry",
+        "1": "Increased lead conversion by 40%",
+        "2": "Achieved 100% inventory accuracy"
+      }
+    }
   }
 }

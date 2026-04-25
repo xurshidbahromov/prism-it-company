@@ -3,8 +3,8 @@ import { CTA } from "@/components/sections/CTA";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export const metadata = {
-    title: "About | PRISM",
-    description: "The team and vision behind PRISM software engineering.",
+    title: "About Us",
+    description: "PRISM IT Studio — a Full-Stack development team based in Tashkent, Uzbekistan. We build websites, Telegram solutions, business automation tools, and SaaS products.",
 };
 
 export default function AboutPage() {

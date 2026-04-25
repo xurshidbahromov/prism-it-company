@@ -15,8 +15,6 @@ export function Tabs() {
 
     return (
         <section id="standard" className="py-32 md:py-48 relative overflow-hidden">
-            {/* Architectural guide line */}
-            <div className="absolute top-0 left-[20%] w-[1px] h-full bg-gradient-to-b from-foreground/5 via-transparent to-transparent hidden lg:block"></div>
 
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 xl:gap-24 items-start">

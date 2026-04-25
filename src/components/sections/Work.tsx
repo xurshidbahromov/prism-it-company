@@ -5,21 +5,23 @@ import { Container } from "@/components/layout/Container";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 interface WorkProps {
     showTitle?: boolean;
 }
 
 const PROJECT_IDS = [
-    { id: "fintech", color: "rgba(59, 130, 246, 0.2)", image: "/projects/fintech.png" },
-    { id: "healthcare", color: "rgba(16, 185, 129, 0.2)", image: "/projects/healthcare.png" },
-    { id: "retail", color: "rgba(245, 158, 11, 0.2)", image: "/projects/retail.png" },
+    { id: "ecommerce", color: "rgba(59, 130, 246, 0.2)", image: "/projects/ecommerce.png" },
+    { id: "telegram", color: "rgba(14, 165, 233, 0.2)", image: "/projects/telegram-bot.png" },
+    { id: "crm", color: "rgba(139, 92, 246, 0.2)", image: "/projects/crm.png" },
 ];
 
 export function Work({ showTitle = true }: WorkProps) {
     const t = useTranslations('Work');
+    const locale = useLocale();
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -78,13 +80,13 @@ export function Work({ showTitle = true }: WorkProps) {
                                     zIndex: index + 10,
                                 }}
                             >
-                                <div className={cn(
-                                    "flex flex-col lg:flex-row items-center gap-6 lg:gap-12 xl:gap-24 p-4 sm:p-6 lg:p-8 xl:p-12 rounded-[24px] md:rounded-[40px] bg-foreground/[0.02] border border-foreground/[0.08] backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.4)] transition-all duration-700 hover:bg-foreground/[0.04] hover:border-foreground/[0.12]",
+                                <Link href={`/${locale}/work/${project.id}`} className={cn(
+                                    "flex flex-col lg:flex-row items-center gap-6 lg:gap-12 xl:gap-24 p-4 sm:p-6 lg:p-8 xl:p-12 rounded-[24px] md:rounded-[40px] bg-foreground/[0.02] border border-foreground/[0.08] backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.4)] transition-all duration-700 hover:bg-foreground/[0.04] hover:border-foreground/[0.12] group/card cursor-pointer",
                                     !isEven && "lg:flex-row-reverse"
                                 )}>
                                     
                                     {/* Visual Side: Mockup Container */}
-                                    <div className="w-full lg:w-3/5 aspect-[16/10] relative rounded-[32px] overflow-hidden group/visual">
+                                    <div className="w-full lg:flex-[3] aspect-[16/10] relative rounded-[32px] overflow-hidden group/visual">
                                         {/* Abstract Glow in background */}
                                         <div 
                                             className="absolute inset-0 opacity-20 blur-[100px] pointer-events-none transition-transform duration-1000 group-hover/visual:scale-110"
@@ -112,7 +114,7 @@ export function Work({ showTitle = true }: WorkProps) {
                                     </div>
 
                                     {/* Content Side */}
-                                    <div className="w-full lg:w-2/5 flex flex-col justify-center space-y-8">
+                                    <div className="w-full lg:flex-[2] flex flex-col justify-center space-y-8">
                                         <div className="space-y-6">
                                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
                                                 <span className="text-[10px] font-bold tracking-widest text-blue-500 uppercase">
@@ -141,18 +143,18 @@ export function Work({ showTitle = true }: WorkProps) {
 
                                         {/* Action Button */}
                                         <div className="pt-4">
-                                            <div className="group/btn flex items-center gap-6 cursor-pointer w-fit">
-                                                <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/40 group-hover/btn:text-foreground transition-colors">
+                                            <div className="group/btn flex items-center gap-6 w-fit">
+                                                <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/40 group-hover/card:text-foreground transition-colors">
                                                     {t('explore')}
                                                 </span>
-                                                <div className="w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center bg-foreground/[0.02] group-hover/btn:bg-blue-500 group-hover/btn:border-blue-500 transition-all duration-500 group-hover/btn:scale-110">
-                                                    <ArrowRight className="w-5 h-5 group-hover/btn:text-white transition-colors" />
+                                                <div className="w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center bg-foreground/[0.02] group-hover/card:bg-blue-500 group-hover/card:border-blue-500 transition-all duration-500 group-hover/card:scale-110">
+                                                    <ArrowRight className="w-5 h-5 group-hover/card:text-white transition-colors" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                </div>
+                                </Link>
                             </motion.div>
                         );
                     })}
