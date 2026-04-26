@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, usePathname } from "@/i18n/routing";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Grid, Briefcase, User, MessageCircle } from "lucide-react";
+import { Home, Grid, Briefcase, User, MessageCircle, CreditCard } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useTranslations } from "next-intl";
 
@@ -11,6 +11,7 @@ const MOBILE_LINKS = [
     { key: "home",      href: "/",          icon: Home },
     { key: "expertise", href: "/expertise", icon: Grid },
     { key: "work",      href: "/work",      icon: Briefcase },
+    { key: "pricing",   href: "/pricing",   icon: CreditCard },
     { key: "about",     href: "/about",     icon: User },
     { key: "contact",   href: "/contact",   icon: MessageCircle },
 ];

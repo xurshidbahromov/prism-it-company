@@ -13,14 +13,13 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
     return (
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="wait">
             <motion.div
                 key={pathname}
-                variants={variants}
-                initial="hidden"
-                animate="enter"
-                exit="exit"
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
                 {children}
             </motion.div>

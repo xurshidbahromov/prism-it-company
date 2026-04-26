@@ -30,7 +30,7 @@ export function FadeIn({ children, delay = 0, direction = "up", className }: Fad
                 x: 0,
                 y: 0
             }}
-            viewport={{ once: true, margin: "-20px" }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{
                 duration: 0.5,
                 delay: delay,
