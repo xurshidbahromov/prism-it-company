@@ -47,18 +47,22 @@ export function MobileNav() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 lg:hidden w-[calc(100%-40px)] max-w-[480px]"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 lg:hidden w-[calc(100%-32px)] max-w-[540px]"
             aria-label="Mobile Navigation"
         >
             {/* Glass island shell */}
-            <div className={cn(
-                "relative flex items-center rounded-[28px] transition-all duration-500 ease-in-out",
-                scrolled ? "p-1 max-w-[90%] mx-auto" : "p-1.5"
-            )}>
+            <motion.div 
+                animate={{
+                    padding: scrolled ? "6px 8px" : "8px 10px",
+                    width: "100%",
+                }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="relative flex items-center rounded-[28px] mx-auto"
+            >
                 {/* Background glass */}
                 <div
                     className="absolute inset-0 aero-island rounded-[26px] bg-background/40 dark:bg-white/5"
-                    style={{ backdropFilter: "blur(20px) saturate(180%)", WebkitBackdropFilter: "blur(20px) saturate(180%)" }}
+                    style={{ backdropFilter: "blur(24px) saturate(200%)", WebkitBackdropFilter: "blur(24px) saturate(200%)" }}
                 />
                 {/* Glass reflection */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-20 rounded-[26px] pointer-events-none" />
@@ -73,13 +77,21 @@ export function MobileNav() {
                                 key={link.href}
                                 href={link.href}
                                 className={cn(
-                                    "relative flex-1 flex flex-col items-center justify-center gap-[2px] rounded-[22px] select-none group transition-all duration-500",
-                                    scrolled ? "py-1.5" : "py-2.5",
+                                    "relative flex-1 flex flex-col items-center justify-center rounded-[22px] select-none group transition-all duration-500",
                                     active
                                         ? "text-[var(--aero-pill-text)] font-semibold"
                                         : "text-foreground/50 font-medium transition-colors duration-200 hover:text-foreground"
                                 )}
                             >
+                                <motion.div
+                                    animate={{
+                                        paddingTop: scrolled ? "8px" : "12px",
+                                        paddingBottom: scrolled ? "8px" : "12px",
+                                        gap: scrolled ? "2px" : "4px",
+                                    }}
+                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex flex-col items-center justify-center w-full"
+                                >
                                 {/* Active pill — same blur-dissolve as desktop */}
                                 <AnimatePresence>
                                     {active && (
@@ -118,18 +130,26 @@ export function MobileNav() {
                                 <span className="absolute inset-0 rounded-[20px] bg-foreground/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-0" />
 
                                 <Icon
-                                    size={20}
+                                    size={scrolled ? 18 : 20}
                                     strokeWidth={active ? 2.5 : 1.8}
-                                    className="relative z-10 transition-transform duration-300 group-hover:scale-110"
+                                    className="relative z-10 transition-all duration-500 group-hover:scale-110"
                                 />
-                                <span className="relative z-10 text-[9px] sm:text-[10px] font-semibold tracking-tight whitespace-nowrap">
+                                <motion.span 
+                                    animate={{ 
+                                        opacity: scrolled ? 0.8 : 1,
+                                        scale: scrolled ? 0.9 : 1,
+                                        height: scrolled ? "auto" : "auto" 
+                                    }}
+                                    className="relative z-10 text-[9px] sm:text-[10px] font-semibold tracking-tight whitespace-nowrap"
+                                >
                                     {t(`tabs.${link.key}` as any)}
-                                </span>
+                                </motion.span>
+                                </motion.div>
                             </Link>
                         );
                     })}
                 </nav>
-            </div>
+            </motion.div>
         </motion.div>
     );
 }

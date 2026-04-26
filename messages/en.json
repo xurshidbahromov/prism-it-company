@@ -1,132 +1,132 @@
 {
   "Index": {
-    "title": "Engineering modern digital products."
+    "title": "Elite Digital Product Engineering for Global Scale."
   },
   "Hero": {
-    "pill": "High-end digital product engineering for ambitious businesses.",
-    "headingMain": "We Build The",
-    "headingHighlight": "Software",
-    "headingSuffix": "That Grows Your Business.",
-    "subtext": "From landing pages to Telegram bots to full SaaS products — we build exactly what your business needs, fast and without compromise.",
-    "ctaPrimary": "Start a Project",
-    "ctaSecondary": "View Our Work",
-    "trustLabel": "Our Technology Stack",
+    "pill": "Architecting the future of digital infrastructure.",
+    "headingMain": "Engineering",
+    "headingHighlight": "Digital Excellence",
+    "headingSuffix": "For Global Leaders.",
+    "subtext": "From mission-critical Telegram ecosystems to high-performance SaaS platforms — we architect scalable solutions that redefine industry standards.",
+    "ctaPrimary": "Initiate Project",
+    "ctaSecondary": "View Portfolio",
+    "trustLabel": "Our Core Technology Stack",
     "badges": {
       "web": {
-        "name": "Web Development",
-        "subtitle": "Landing · E-Commerce · Web Apps"
+        "name": "Web Infrastructure",
+        "subtitle": "E-Commerce · High-Performance Apps"
       },
       "telegram": {
-        "name": "Telegram Solutions",
-        "subtitle": "Bots · Mini Apps · Payments"
+        "name": "Telegram Ecosystems",
+        "subtitle": "Mini Apps · Global Payment Systems"
       },
       "automation": {
-        "name": "Business Automation",
-        "subtitle": "CRM · Dashboards · Workflows"
+        "name": "Enterprise Automation",
+        "subtitle": "CRM · Analytics · Decision Logic"
       },
       "saas": {
-        "name": "Product & SaaS",
-        "subtitle": "MVP · Scale · Launch"
+        "name": "Product Engineering",
+        "subtitle": "MVP Strategy · Architecture · Launch"
       }
     }
   },
   "Services": {
-    "badge": "What We Build",
-    "heading1": "Real products for",
-    "heading2": "real",
-    "headingHighlight": "businesses.",
-    "viewAll": "See full breakdown",
-    "learnMore": "Learn More",
+    "badge": "Capabilities",
+    "heading1": "Precision engineering for",
+    "heading2": "unrivaled",
+    "headingHighlight": "performance.",
+    "viewAll": "Explore technical breakdown",
+    "learnMore": "Technical Details",
     "items": {
       "web-dev": {
-        "title": "Web Development",
-        "description": "From landing pages that convert to full web apps — pixel-perfect, fast, and built to grow with your business."
+        "title": "Web Infrastructure",
+        "description": "High-availability web applications built with a focus on speed, security, and infinite scalability."
       },
       "telegram": {
-        "title": "Telegram Solutions",
-        "description": "Smart bots and Mini Apps that let your customers order, book, and pay — all without leaving Telegram."
+        "title": "Telegram Ecosystems",
+        "description": "Advanced Mini Apps and intelligent systems that transform Telegram into a full-scale business platform."
       },
       "automation": {
-        "title": "Business Automation",
-        "description": "Replace spreadsheets with custom CRM, dashboards, and internal tools. Save 20+ hours every week."
+        "title": "Enterprise Automation",
+        "description": "Eliminate operational bottlenecks with bespoke CRM systems and data-driven automation logic."
       },
       "saas": {
-        "title": "Product & SaaS",
-        "description": "From napkin sketch to paying customers. We build your MVP and scale it into a real product."
+        "title": "Product Engineering",
+        "description": "Transforming visionary concepts into production-ready software through rigorous architecture and agile execution."
       }
     }
   },
   "StatsRow": {
-    "badge": "Our Impact",
-    "heading1": "The logic beyond",
-    "heading2": "high-impact",
+    "badge": "Track Record",
+    "heading1": "The engineering",
+    "heading2": "discipline behind",
     "headingHighlight": "success.",
-    "description": "Precision is our primary driver. We measure success by the resilience of the architecture and the tangible value delivered to your bottom line.",
-    "linkPortfolio": "View Portfolio",
-    "linkTrust": "Client Trust",
+    "description": "We don't believe in luck. Every milestone is a result of calculated architecture and meticulous execution.",
+    "linkPortfolio": "Portfolio",
+    "linkTrust": "Methodology",
     "items": {
       "retention": {
         "label": "Client Retention",
-        "description": "Built on engineering excellence and long-term partnership trust."
+        "description": "A testament to our commitment to long-term engineering partnership."
       },
       "projects": {
-        "label": "Projects Delivered",
-        "description": "From tactical MVP launches to enterprise-scale digital transformations."
+        "label": "Systems Delivered",
+        "description": "From tactical MVPs to enterprise-grade digital transformations."
       },
       "users": {
-        "label": "Users Reached",
-        "description": "Products engineered by PRISM serve millions of daily active users."
+        "label": "Daily Active Users",
+        "description": "Our infrastructure powers products serving millions of users worldwide."
       },
       "efficiency": {
-        "label": "Efficiency Lift",
-        "description": "Average operational performance gain through intelligent automation."
+        "label": "Efficiency Gains",
+        "description": "Measured improvement in operational velocity through intelligent automation."
       }
     }
   },
   "Tabs": {
     "badge": "The PRISM Standard",
-    "heading1": "Delivery without",
-    "headingHighlight": "doubt.",
-    "link": "Investigate standard specification",
+    "heading1": "Excellence by",
+    "headingHighlight": "design.",
+    "link": "Explore the PRISM Framework",
     "items": {
       "reliability": {
         "label": "Reliability",
-        "title": "Engineered for maximum stability.",
-        "description": "We build systems that don't just work on day one, but scale elegantly as your user base grows.",
+        "title": "Architected for high availability.",
+        "description": "We build systems that thrive under load, ensuring your business never misses a beat as it scales.",
         "bullets": {
-          "0": "Zero-downtime deployment strategies",
-          "1": "Automated testing and QA pipelines",
-          "2": "Infrastructure as code (IaC)"
+          "0": "Fault-tolerant deployment strategies",
+          "1": "Automated QA and rigorous testing",
+          "2": "Infrastructure as Code (IaC) principles"
         }
       },
       "transparency": {
         "label": "Transparency",
-        "title": "Clear communication, predictable delivery.",
-        "description": "No black boxes. You have full visibility into our codebase, sprint progress, and decision-making.",
+        "title": "Radical visibility, absolute control.",
+        "description": "Total transparency into our code, sprint velocity, and technical decision-making processes.",
         "bullets": {
-          "0": "Weekly progress and velocity reports",
-          "1": "Direct access to engineering leads",
-          "2": "Open architecture documentation"
+          "0": "Real-time progress telemetry",
+          "1": "Direct collaboration with senior leads",
+          "2": "Exhaustive technical documentation"
         }
       },
       "scale": {
         "label": "Scale",
-        "title": "Architected for tomorrow.",
-        "description": "We don't take shortcuts. Every line of code is written with future feature expansions in mind.",
+        "title": "Built for the next 100M users.",
+        "description": "We avoid technical debt by architecting for future growth from the very first line of code.",
         "bullets": {
-          "0": "Microservices and serverless ready",
-          "1": "Global CDN and edge computing",
-          "2": "Optimized database schemas"
+          "0": "Cloud-native & Serverless ready",
+          "1": "Edge computing & Global CDN",
+          "2": "Optimized high-concurrency schemas"
         }
       },
       "growth": {
-        "label": "Growth",
-        "title": "Aligned with your business metrics.",
-        "description": "Technology is a tool for growth. We optimize for conversion, retention, and performance.",
+        "label": "Velocity",
+        "title": "Accelerating your market entry.",
+        "description": "Technology is a multiplier. We optimize every layer for conversion, performance, and user retention.",
         "bullets": {
-          "0": "Technical SEO foundations",
-          "1": "Core Web Vitals optimization",
-          "2": "A/B testing infrastructure"
+          "0": "Performance-first engineering",
+          "1": "Core Web Vitals dominance",
+          "2": "A/B testing and experimentation"
         }
       }
     }
@@ -134,9 +134,9 @@
   "Navbar": {
     "links": {
       "home": "Home",
-      "services": "Services",
-      "process": "Process",
-      "work": "Work",
+      "services": "Expertise",
+      "process": "Methodology",
+      "work": "Case Studies",
       "about": "About",
       "pricing": "Pricing",
       "contact": "Contact"
@@ -144,164 +144,164 @@
     "megaMenu": {
       "expertise": {
         "web-dev": {
-          "label": "Web Development",
-          "desc": "Websites, web apps, and e-commerce stores"
+          "label": "Web Infrastructure",
+          "desc": "High-performance web apps and platforms"
         },
         "telegram": {
-          "label": "Telegram Solutions",
-          "desc": "Smart bots and Mini Apps for your business"
+          "label": "Telegram Ecosystems",
+          "desc": "Mini Apps and automated business logic"
         },
         "automation": {
-          "label": "Business Automation",
-          "desc": "CRM, dashboards, and workflow tools"
+          "label": "Enterprise Automation",
+          "desc": "Custom CRM and operational logic tools"
         },
         "saas": {
-          "label": "Product & SaaS",
-          "desc": "MVP to full product — we build it all"
+          "label": "Product Engineering",
+          "desc": "From MVP strategy to global product scale"
         }
       },
       "process": {
         "discovery": {
-          "label": "Discovery & Architecture",
+          "label": "Strategy & Architecture",
           "desc": "Blueprint before a single line of code"
         },
         "design": {
-          "label": "Design System",
-          "desc": "Component libraries aligned with your brand"
+          "label": "Experience Design",
+          "desc": "High-fidelity design systems for global brands"
         },
         "development": {
-          "label": "Development",
-          "desc": "Agile sprints with strict testing protocols"
+          "label": "Core Development",
+          "desc": "Agile sprints with 100% test coverage"
         },
         "launch": {
-          "label": "Launch & Iterate",
-          "desc": "Zero-downtime deployments from Day 1"
+          "label": "Global Deployment",
+          "desc": "Zero-downtime launches with CI/CD"
         }
       },
       "work": {
         "ecommerce": {
-          "label": "E-Commerce Web App",
-          "desc": "3x more orders, Click & Payme integrated"
+          "label": "E-Commerce Ecosystem",
+          "desc": "300% order growth, seamless payments"
         },
         "telegram": {
-          "label": "Telegram Sales Bot",
-          "desc": "847 active users, Mini App + Bot"
+          "label": "Telegram Retail Hub",
+          "desc": "800+ active users, Mini App experience"
         },
         "crm": {
-          "label": "Business CRM",
-          "desc": "20h/week saved, 1,247 leads tracked"
+          "label": "Operational CRM",
+          "desc": "20h/week saved through automation"
         }
       },
       "about": {
         "story": {
-          "label": "Our Story",
-          "desc": "How PRISM was built and why it matters"
+          "label": "The Studio",
+          "desc": "The vision behind the PRISM standard"
         },
         "team": {
-          "label": "The Team",
-          "desc": "Elite engineers and designers"
+          "label": "The Engineers",
+          "desc": "Elite talent from across the globe"
         },
         "values": {
-          "label": "Our Values",
-          "desc": "Engineering first, outcomes over output"
+          "label": "Our Ethos",
+          "desc": "Engineering first, outcomes always"
         },
         "careers": {
-          "label": "Careers",
-          "desc": "Join our distributed team"
+          "label": "Join Us",
+          "desc": "Careers at the frontier of engineering"
         }
       }
     },
-    "cta": "Get a Proposal"
+    "cta": "Get an Estimate"
   },
   "Process": {
-    "badge": "Method",
-    "title": "Protocol",
-    "titleHighlight": "Mindset.",
-    "description": "We've engineered our process to eliminate ambiguity. From the first line of architecture to the final deployment, every step is governed by data and discipline.",
+    "badge": "Methodology",
+    "title": "Engineering",
+    "titleHighlight": "Discipline.",
+    "description": "Our process is engineered to eliminate noise. From initial architecture to global deployment, every move is governed by data and technical rigor.",
     "steps": {
       "01": {
-        "title": "Discovery & Architecture",
-        "desc": "Deep-dive into business logic, technical constraints, and long-term scaling vectors."
+        "title": "Strategy & Architecture",
+        "desc": "Defining business logic and technical constraints for infinite scale."
       },
       "02": {
-        "title": "Design System & UI/UX",
-        "desc": "Pixel-perfect, accessible, and kinetic interface engineering."
+        "title": "Experience Engineering",
+        "desc": "Developing accessible, kinetic, and high-fidelity interfaces."
       },
       "03": {
-        "title": "Full-Stack Development",
-        "desc": "Agile sprints deploying secure, highly performant code."
+        "title": "Core Development",
+        "desc": "Agile sprints delivering secure, high-performance source code."
       },
       "04": {
-        "title": "Launch & Iterate",
-        "desc": "Zero-downtime deployments, real-time telemetry, and CI/CD stability."
+        "title": "Launch & Telemetry",
+        "desc": "Zero-downtime deployment backed by real-time infrastructure monitoring."
       }
     }
   },
   "Work": {
-    "badge": "Portfolio",
-    "title": "Selected recent",
-    "titleHighlight": "projects.",
-    "explore": "View Project",
+    "badge": "Case Studies",
+    "title": "Selected Engineering",
+    "titleHighlight": "Highlights.",
+    "explore": "Explore Case Study",
     "projects": {
       "ecommerce": {
-        "title": "E-Commerce Web App",
-        "category": "Web Development",
-        "description": "A full-featured online store with real-time inventory, admin dashboard, and integrated payment processing built for a local retail business.",
+        "title": "E-Commerce Ecosystem",
+        "category": "Web Infrastructure",
+        "description": "A high-concurrency retail platform featuring real-time inventory sync and integrated multi-currency payments.",
         "metrics": [
-          "3x more orders",
-          "Admin dashboard",
-          "Click & Payme"
+          "300% Order Growth",
+          "Custom Admin Logic",
+          "Global Payments"
         ]
       },
       "telegram": {
-        "title": "Telegram Sales Bot",
-        "category": "Telegram Solutions",
-        "description": "A complete Telegram ecosystem for a retail business: catalog bot, Mini App for checkout, and real-time order management admin panel.",
+        "title": "Telegram Retail Hub",
+        "category": "Telegram Ecosystems",
+        "description": "Transforming Telegram into a full retail experience with Mini Apps and automated fulfillment logic.",
         "metrics": [
-          "847 active users",
-          "Mini App + Bot",
-          "Auto orders"
+          "847 Active Daily Users",
+          "Mini App Core",
+          "Auto-Fulfillment"
         ]
       },
       "crm": {
-        "title": "Business CRM Dashboard",
-        "category": "Business Automation",
-        "description": "Custom CRM system replacing Excel sheets with real-time analytics, customer pipeline management, and automated follow-up workflows.",
+        "title": "Enterprise CRM Dashboard",
+        "category": "Enterprise Automation",
+        "description": "Replacing fragmented workflows with a centralized data-driven dashboard and automated lead logic.",
         "metrics": [
-          "20h/week saved",
-          "1,247 leads tracked",
-          "89% retention"
+          "20h/Week Saved",
+          "Lead-to-Cash Logic",
+          "89% Retention Lift"
         ]
       }
     }
   },
   "CTA": {
-    "badge": "Start Your Project",
-    "title": "Ready to build",
-    "titleHighlight": "something great?",
-    "description": "Let's create a digital experience that sets you apart from the competition. No fluff, just results.",
-    "primaryButton": "Let's Collaborate"
+    "badge": "Initiate Partnership",
+    "title": "Ready to engineer",
+    "titleHighlight": "excellence?",
+    "description": "Let's build the digital infrastructure that defines your market position. Precision only.",
+    "primaryButton": "Connect with an Engineer"
   },
   "Footer": {
-    "description": "Full-Stack development studio building websites, Telegram solutions, business automation, and SaaS products for ambitious companies.",
+    "description": "High-end product engineering studio architecting websites, Telegram ecosystems, enterprise automation, and SaaS platforms.",
     "addressLabel": "HQ — Tashkent, Uzbekistan",
     "columns": {
-      "services": "Services",
+      "services": "Expertise",
       "company": "Company",
       "connect": "Connect",
       "legal": "Legal"
     },
     "services": {
       "pricing": "Pricing",
-      "webDev": "Web Development",
-      "telegram": "Telegram Solutions",
-      "automation": "Business Automation",
-      "saas": "Product & SaaS"
+      "webDev": "Web Infrastructure",
+      "telegram": "Telegram Ecosystems",
+      "automation": "Enterprise Automation",
+      "saas": "Product Engineering"
     },
     "company": {
-      "about": "About Us",
+      "about": "About",
       "work": "Case Studies",
-      "process": "Our Process",
+      "process": "Methodology",
       "contact": "Contact"
     },
     "copyright": "© 2025 PRISM IT STUDIO. ALL RIGHTS RESERVED.",
@@ -313,7 +313,7 @@
   "MobileNav": {
     "tabs": {
       "home": "Home",
-      "work": "Work",
+      "work": "Projects",
       "expertise": "Expertise",
       "about": "About",
       "pricing": "Pricing",
@@ -322,521 +322,480 @@
   },
   "DetailedCapabilities": {
     "web-dev": {
-      "title": "Web Development",
-      "tagline": "Fast. Beautiful. Built to Convert.",
-      "description": "We build websites and web applications that don't just look good — they perform. Every project is mobile-first, SEO-optimized, and delivered with a content management system so you're never dependent on us for updates.",
+      "title": "Web Infrastructure",
+      "tagline": "Engineered for Performance & Scale.",
+      "description": "We don't just build websites — we engineer high-performance web applications. Every project is cloud-native, SEO-dominant, and built for maximum conversion velocity.",
       "features": {
-        "0": "Landing Pages & Corporate Sites",
-        "1": "E-Commerce Stores",
-        "2": "Custom Web Applications",
-        "3": "Admin Panels & Dashboards",
-        "4": "SEO & Performance Optimization"
+        "0": "High-Performance Corporate Sites",
+        "1": "Global E-Commerce Ecosystems",
+        "2": "Bespoke Web Applications",
+        "3": "Analytics & Control Dashboards",
+        "4": "SEO & Core Web Vitals Optimization"
       }
     },
     "telegram": {
-      "title": "Telegram Solutions",
-      "tagline": "Your Entire Business Inside a Chat.",
-      "description": "In CIS markets, Telegram is where your customers already are. We build smart bots that automate sales and support, and Mini Apps that deliver a full shopping or booking experience — no app store required.",
+      "title": "Telegram Ecosystems",
+      "tagline": "Full-Scale Business Inside Telegram.",
+      "description": "We transform Telegram from a messenger into a powerful business engine. From automated sales bots to high-fidelity Mini Apps — we build the future of chat-based commerce.",
       "features": {
-        "0": "Order-Taking & Sales Bots",
-        "1": "Support & FAQ Automation",
+        "0": "Sales & Fulfillment Bots",
+        "1": "Automated FAQ & Support Logic",
         "2": "Telegram Mini Apps (Full UI)",
-        "3": "Payment Integration (Click, Payme, Stripe)",
-        "4": "Admin Panel for Bot Management"
+        "3": "Integrated Global Payments",
+        "4": "Centralized Management Dashboards"
       }
     },
     "automation": {
-      "title": "Business Automation",
-      "tagline": "Save 20+ Hours Every Week.",
-      "description": "Most businesses run on Excel and manual processes that don't scale. We replace that chaos with custom CRM systems, real-time dashboards, and workflow tools built exactly for how your team works.",
+      "title": "Enterprise Automation",
+      "tagline": "Accelerate Operational Velocity.",
+      "description": "Fragmentation is the enemy of scale. We replace manual workflows with bespoke CRM systems and intelligent data-driven dashboards built specifically for your team's unique requirements.",
       "features": {
-        "0": "Custom CRM Systems",
-        "1": "Real-Time Analytics Dashboards",
-        "2": "Inventory & Warehouse Management",
-        "3": "Booking & Appointment Systems",
-        "4": "Third-Party API Integrations"
+        "0": "Bespoke CRM Architectures",
+        "1": "Real-Time Operational Analytics",
+        "2": "Supply Chain & Inventory Logic",
+        "3": "Resource & Scheduling Systems",
+        "4": "Deep API & System Integrations"
       }
     },
     "saas": {
-      "title": "Product & SaaS Development",
-      "tagline": "From Idea to Paying Customers.",
-      "description": "Have a startup idea but no technical co-founder? We become your tech team. From architecture planning to MVP launch, we build scalable products that attract investors and retain users.",
+      "title": "Product Engineering",
+      "tagline": "From MVP to Global Launch.",
+      "description": "We act as your CTO-on-demand. From architectural planning to MVP execution, we build scalable software products designed to attract capital and dominate markets.",
       "features": {
-        "0": "MVP Development & Launch",
-        "1": "SaaS Subscription Platforms",
-        "2": "User Authentication & Roles",
-        "3": "Payment & Billing Systems",
-        "4": "Scalable Backend Architecture"
+        "0": "MVP Strategy & Execution",
+        "1": "Multi-Tenant SaaS Platforms",
+        "2": "Enterprise Authentication Logic",
+        "3": "Subscription & Billing Engines",
+        "4": "High-Availability Backend Architecture"
       }
     },
-    "inquire": "Start a project in {category}"
+    "inquire": "Engineer a project in {category}"
   },
   "About": {
     "hero": {
-      "badge": "About Us",
-      "titleMain": "We don't just build",
-      "titleHighlight": "software.",
-      "subtext": "We architect digital infrastructure that powers the next generation of ambitious companies."
+      "badge": "The Studio",
+      "titleMain": "We don't just write",
+      "titleHighlight": "code.",
+      "subtext": "We engineer the digital infrastructure that enables visionary companies to lead their industries."
     },
     "stats": {
-      "enterprise": "Enterprise Clients",
-      "revenue": "Client Revenue Generated",
-      "industry": "In the Industry",
-      "countries": "Countries Served"
+      "enterprise": "Enterprise Partners",
+      "revenue": "Value Created for Clients",
+      "industry": "Collective Engineering Years",
+      "countries": "Global Markets Served"
     },
     "mission": {
-      "badge": "Who We Are",
-      "titleMain": "A team of builders,",
-      "titleHighlight": "not just coders.",
-      "p1": "PRISM was founded on a simple idea: the best software teams in the world shouldn't be gatekept behind Silicon Valley zip codes. We built a distributed team of elite engineers and designers who operate with the rigour of a product company — not a traditional agency.",
-      "p2": "Today, we partner with startups scaling their first platform and enterprises re-architecting legacy systems alike. What unites all our work is an unwillingness to compromise on quality."
+      "badge": "Our Identity",
+      "titleMain": "A team of engineers,",
+      "titleHighlight": "not just developers.",
+      "p1": "PRISM was founded on a singular premise: world-class engineering talent should be accessible to anyone with a vision, regardless of geography. We've built an elite, distributed team of architects and designers who operate with the technical rigour of a top-tier product company.",
+      "p2": "Whether we're scaling a startup's first platform or re-architecting legacy enterprise systems, our commitment to technical excellence remains absolute. We do not compromise on quality."
     },
     "team": {
-      "badge": "The Team",
-      "titleMain": "The people behind",
-      "titleHighlight": "the product.",
+      "badge": "The Engineers",
+      "titleMain": "The architects behind",
+      "titleHighlight": "excellence.",
       "members": {
         "alex": {
           "role": "Founder & CEO",
-          "bio": "Ex-Google engineer with 12 years building scalable systems. Believes great software is 80% thinking, 20% code."
+          "bio": "Ex-Google architect with 12+ years in large-scale system engineering. Believes software is 80% architecture, 20% code."
         },
         "sara": {
-          "role": "Head of Design",
-          "bio": "Former lead designer at a Series B fintech. Obsessed with the space between pixels and the human experience."
+          "role": "Head of Experience",
+          "bio": "Former lead designer at a Series B fintech. Obsessed with the junction of high-fidelity design and human logic."
         },
         "james": {
           "role": "CTO",
-          "bio": "Infrastructure architect turned product engineer. Built systems that process 10M+ transactions daily."
+          "bio": "Infrastructure specialist turned product engineer. Built systems handling over 10M daily transactions."
         },
         "mia": {
           "role": "Head of Delivery",
-          "bio": "Keeps every project on time, on spec, and on budget — all while making it look effortless."
+          "bio": "Ensures every project is delivered with surgical precision, on budget, and ahead of the roadmap."
         }
       }
     },
     "values": {
-      "badge": "Our Principles",
-      "titleMain": "How we work,",
+      "badge": "Our Ethos",
+      "titleMain": "How we engineer,",
       "titleHighlight": "and why it matters.",
       "items": {
         "engineering": {
           "title": "Engineering First",
-          "desc": "We don't ship fast — we ship right. Every decision is driven by technical excellence, not shortcuts."
+          "desc": "We don't ship fast — we ship right. Every move is proctored by technical excellence, not convenience."
         },
         "transparency": {
-          "title": "Radical Transparency",
-          "desc": "No black boxes. We work alongside your team with full visibility into process, timelines, and trade-offs."
+          "title": "Total Visibility",
+          "desc": "No black boxes. We work as an extension of your team with absolute visibility into our process and logic."
         },
         "outcomes": {
           "title": "Outcomes Over Output",
-          "desc": "Lines of code don't matter. What matters is measurable business impact — velocity, retention, revenue."
+          "desc": "Code is just the means. The end is measurable business impact — revenue, velocity, and market share."
         }
       }
     }
   },
   "Contact": {
-    "badge": "Contact Us",
-    "titleMain": "Let's start a",
-    "titleHighlight": "conversation.",
-    "subtext": "Have an idea, project, or question? Drop us a message and our team will get back to you within 24 hours.",
+    "badge": "Connect",
+    "titleMain": "Initiate an engineering",
+    "titleHighlight": "consultation.",
+    "subtext": "Have a vision or a challenge? Our team of engineers is ready to help you architect the solution.",
     "labels": {
       "email": "Email",
-      "office": "Office",
+      "office": "HQ",
       "officeLocation": "Tashkent, Uzbekistan"
     },
     "cta": {
-      "badge": "Start a Project",
+      "badge": "Project Inquiry",
       "titleMain": "Ready to build something",
-      "titleHighlight": "remarkable?",
-      "subtext": "Fill out our project brief and get a tailored proposal within 24 hours. No generic quotes — just a precise scope and roadmap built for you.",
+      "titleHighlight": "extraordinary?",
+      "subtext": "Submit your project brief and receive a technical proposal within 24 hours. Precision-scoped, data-driven roadmaps for your vision.",
       "items": {
-        "type": "Project Type",
-        "budget": "Budget & Timeline",
-        "brief": "Project Brief"
+        "type": "Partnership Type",
+        "budget": "Resource Allocation",
+        "brief": "Technical Brief"
       },
-      "link": "Open the project form"
+      "link": "Open the Inquiry Form"
     }
   },
   "LogoStrip": {
-    "trusted": "Trusted by industry innovators"
+    "trusted": "Trusted by market innovators"
   },
   "Pricing": {
     "hero": {
       "badge": "Pricing",
       "titleMain": "Transparent",
-      "titleHighlight": "pricing.",
-      "subtext": "No hidden fees. No generic quotes. Every project is scoped and priced based on your exact needs."
+      "titleHighlight": "economics.",
+      "subtext": "Precision scoping. Zero hidden fees. Every partnership is priced relative to the complexity and impact of the engineering effort."
     },
-    "popularBadge": "Most Popular",
+    "popularBadge": "Industry Standard",
     "packages": {
       "starter": {
-        "name": "Starter",
-        "tagline": "Perfect for small businesses",
-        "period": "one-time",
+        "name": "Standard",
+        "tagline": "For established market presence",
+        "period": "Fixed Quote",
         "features": {
-          "0": "Landing page or corporate site",
-          "1": "Mobile-first responsive design",
-          "2": "Up to 5 pages",
-          "3": "Contact form setup",
-          "4": "Basic SEO optimization",
-          "5": "1 month free support"
+          "0": "High-Performance Corporate Platform",
+          "1": "Cloud-Native Responsive Design",
+          "2": "Optimized Experience Architecture",
+          "3": "Advanced Lead Capture Systems",
+          "4": "Full SEO Dominance",
+          "5": "30-Day Launch Support"
         },
         "cta": "Get Started"
       },
       "business": {
-        "name": "Business",
-        "tagline": "For growing companies",
-        "period": "one-time",
+        "name": "Enterprise",
+        "tagline": "For high-velocity growth",
+        "period": "Fixed Quote",
         "features": {
-          "0": "Web app or Telegram bot",
-          "1": "Custom admin panel / dashboard",
-          "2": "Payment integration (Click, Payme)",
-          "3": "User authentication",
-          "4": "Real-time data (if needed)",
-          "5": "3 months free support"
+          "0": "Web Ecosystem or Telegram Solution",
+          "1": "Bespoke Administrative Dashboards",
+          "2": "Full Payment & Logic Integration",
+          "3": "Secure Authentication Architectures",
+          "4": "Real-Time Data Orchestration",
+          "5": "90-Day Priority Support"
         },
-        "cta": "Start Project"
+        "cta": "Initiate Partnership"
       },
       "saas": {
-        "name": "SaaS / Enterprise",
-        "tagline": "For serious products",
-        "period": "tailored",
+        "name": "Product Retainer",
+        "tagline": "For long-term product scale",
+        "period": "Custom Quote",
         "features": {
-          "0": "Full-stack product development",
-          "1": "Multi-tenant SaaS architecture",
-          "2": "Subscription & billing system",
-          "3": "CI/CD & deployment setup",
-          "4": "Scalable backend (Node/Python)",
-          "5": "Ongoing retainer available"
+          "0": "Full-Stack Product Engineering",
+          "1": "Multi-Tenant SaaS Architectures",
+          "2": "Global Billing & Logic Systems",
+          "3": "CI/CD & DevOps Orchestration",
+          "4": "Scalable Infrastructure Design",
+          "5": "Ongoing Retainer & Scale Support"
         },
-        "cta": "Request Proposal"
+        "cta": "Request Technical Review"
       }
     },
-    "note": "All prices are approximate. Final quote based on project requirements.",
-    "freeEstimate": "Get a free estimate →",
+    "note": "All economics are based on a baseline complexity analysis. Final quotes follow a discovery phase.",
+    "freeEstimate": "Request an Engineering Estimate →",
     "addons": {
-      "titleMain": "Popular",
-      "titleHighlight": "add-ons",
-      "subtext": "Extend any package with these modules.",
+      "titleMain": "Strategic",
+      "titleHighlight": "Add-ons",
+      "subtext": "Extend your platform's capabilities with targeted modules.",
       "items": {
         "telegram": {
-          "name": "Telegram Bot Add-on",
+          "name": "Telegram Ecosystem Module",
           "price": "from $150"
         },
         "automation": {
-          "name": "Business Automation Module",
+          "name": "Operational Automation Module",
           "price": "from $300"
         },
         "multilingual": {
-          "name": "Multilingual (UZ/RU/EN)",
+          "name": "Global Localization (UZ/RU/EN)",
           "price": "from $100"
         },
         "analytics": {
-          "name": "Analytics Dashboard",
+          "name": "Decision Intelligence Dashboard",
           "price": "from $200"
         }
       }
     },
     "faq": {
-      "titleMain": "Frequently asked",
-      "titleHighlight": "questions",
+      "titleMain": "Technical",
+      "titleHighlight": "FAQ",
       "items": {
         "0": {
-          "q": "How long does a typical project take?",
-          "a": "A landing page takes 3-7 days. A Telegram bot: 1-2 weeks. A full web app or CRM: 3-8 weeks depending on complexity."
+          "q": "What is your standard delivery timeline?",
+          "a": "High-performance platforms: 3-7 days. Telegram ecosystems: 1-2 weeks. Full-scale enterprise CRM or SaaS: 3-8 weeks, depending on architectural complexity."
         },
         "1": {
-          "q": "How does payment work?",
-          "a": "We work with a 50% upfront payment to start, and 50% upon delivery. For larger projects we can split into milestones."
+          "q": "What is the capital allocation structure?",
+          "a": "We operate on a 50% initiation deposit and 50% upon successful delivery. Milestone-based allocation is available for larger enterprise efforts."
         },
         "2": {
-          "q": "Do I own the code after delivery?",
-          "a": "Yes, 100%. Upon final payment, all code and assets belong to you."
+          "q": "Do we retain IP and code ownership?",
+          "a": "Yes, 100%. Upon finalization of the partnership, all source code and intellectual property belong to you."
         },
         "3": {
-          "q": "Can I request changes after delivery?",
-          "a": "Yes. All packages include a support period for bug fixes. Feature additions are quoted separately."
+          "q": "How do you handle post-launch iterations?",
+          "a": "All partnerships include a post-launch stabilization period. Further feature engineering is scoped and quoted independently."
         },
         "4": {
-          "q": "Do you work with clients outside Uzbekistan?",
-          "a": "Absolutely. We work with clients globally and accept international payments."
+          "q": "Do you partner with international clients?",
+          "a": "Absolutely. We operate a global engineering studio and accept international capital transfers across all major currencies."
         }
       }
     }
   },
   "ContactPage": {
-    "title": "Start your project",
-    "description": "Fill out the form below and we'll get back to you with a tailored proposal within 24 hours.",
+    "title": "Initiate Technical Inquiry",
+    "description": "Submit your technical requirements and an engineer will reach out with a detailed roadmap within 24 hours.",
     "form": {
-      "aboutYou": "About You",
-      "phone": "Phone (optional)",
-      "budgetTimeline": "Budget & Timeline",
-      "projectSummary": "Project Summary *",
-      "referenceUrl": "Reference or Inspiration URL (optional)",
+      "aboutYou": "Partner Details",
+      "phone": "Phone (Optional)",
+      "budgetTimeline": "Capital & Velocity",
+      "projectSummary": "Technical Summary *",
+      "referenceUrl": "Benchmarks or Inspiration (Optional)",
       "name": "Full Name",
-      "email": "Email Address",
-      "company": "Company (Optional)",
-      "projectTypesLabel": "Project Type",
+      "email": "Business Email",
+      "company": "Organization (Optional)",
+      "projectTypesLabel": "Inquiry Type",
       "projectTypes": {
         "web": {
-          "label": "Web Development",
-          "desc": "Corporate site, landing page, or complex web app."
+          "label": "Web Infrastructure",
+          "desc": "High-availability sites or platforms."
         },
         "telegram": {
           "label": "Telegram Solution",
-          "desc": "Custom bot, Mini App, or group automation."
+          "desc": "Mini Apps or automated sales ecosystems."
         },
         "automation": {
-          "label": "Business Automation",
-          "desc": "CRM, inventory, or custom dashboard."
+          "label": "Enterprise Automation",
+          "desc": "CRM, inventory, or operational logic."
         },
         "saas": {
-          "label": "SaaS / Product",
-          "desc": "Building a scalable product from scratch."
+          "label": "SaaS / Product Scale",
+          "desc": "Architecting a global product from zero."
         },
         "ecommerce": {
           "label": "E-Commerce",
-          "desc": "Online store with payment integrations."
+          "desc": "Retail ecosystems with deep integrations."
         },
         "other": {
-          "label": "Other / Unsure",
-          "desc": "Let's discuss and find the best solution."
+          "label": "Custom Architecture",
+          "desc": "Let's discuss your unique engineering needs."
         }
       },
-      "budgetLabel": "Budget Range",
+      "budgetLabel": "Capital Allocation Range",
       "budgetRanges": {
         "300-700": "$300 – $700",
         "700-1500": "$700 – $1,500",
         "1500-3000": "$1,500 – $3,000",
         "3000+": "$3,000+"
       },
-      "timelineLabel": "Timeline",
+      "timelineLabel": "Required Velocity",
       "timelineOptions": {
-        "asap": "ASAP (< 2 weeks)",
+        "asap": "High Velocity (< 2 weeks)",
         "1-3m": "1 - 3 months",
         "3-6m": "3 - 6 months",
-        "6m+": "6+ months"
+        "6m+": "Strategic Scale (6m+)"
       },
-      "detailsLabel": "Project Brief",
-      "detailsPlaceholder": "Describe your project, goals, and any specific requirements. The more detail, the better our proposal...",
-      "submitButton": "Submit Your Brief",
-      "submitting": "Sending..."
+      "detailsLabel": "Technical Brief",
+      "detailsPlaceholder": "Outline your vision, technical requirements, and objectives. Meticulous detail leads to a more accurate roadmap...",
+      "submitButton": "Submit Inquiry",
+      "submitting": "Processing..."
     },
-    "socials": "Follow Us",
-    "successTitle": "Brief received.",
-    "successDesc": "Thank you! Our team will review your project brief and reach out within 24 hours with a tailored proposal.",
-    "successBack": "Submit another brief",
+    "socials": "Global Network",
+    "successTitle": "Inquiry Processed.",
+    "successDesc": "Your technical brief is being reviewed. A senior engineer will reach out with a roadmap and quote within 24 hours.",
+    "successBack": "Submit another inquiry",
     "hero": {
-      "badge": "Start a Project",
-      "titleMain": "Let's build something",
-      "titleHighlight": "remarkable."
+      "badge": "Partnership",
+      "titleMain": "Engineer your",
+      "titleHighlight": "competitive edge."
     },
     "aside": {
-      "responseTitle": "24hr Response",
-      "responseDesc": "We review every project brief personally and respond with a detailed proposal — no auto-replies, no generic quotes.",
-      "nextStepsTitle": "What happens next",
+      "responseTitle": "24hr Technical Review",
+      "responseDesc": "We review every technical brief personally and respond with a strategic roadmap — no generic quotes, no auto-replies.",
+      "nextStepsTitle": "The Roadmap",
       "steps": {
         "0": {
-          "title": "Brief Review",
-          "desc": "Our team reviews your submission and clarifies any questions."
+          "title": "Technical Review",
+          "desc": "Our architects analyze your brief for technical feasibility and scope."
         },
         "1": {
-          "title": "Discovery Call",
-          "desc": "A 30-min kickoff to align on goals, scope, and timeline."
+          "title": "Discovery Session",
+          "desc": "A 30-min strategy session to align on goals and constraints."
         },
         "2": {
-          "title": "Tailored Proposal",
-          "desc": "You receive a precise quote and phased project roadmap."
+          "title": "Technical Proposal",
+          "desc": "Receive a surgical quote and a phased engineering roadmap."
         }
       },
-      "reachOutTitle": "Prefer to reach out directly?",
+      "reachOutTitle": "Direct channel?",
       "labels": {
         "email": "Email",
         "phone": "Phone",
-        "office": "Office"
+        "office": "Studio"
       }
     }
   },
   "Legal": {
-    "badge": "Legal",
-    "privacyTitle": "Privacy Policy",
-    "termsTitle": "Terms of Service",
+    "badge": "Compliance",
+    "privacyTitle": "Data Privacy Policy",
+    "termsTitle": "Terms of Engagement",
     "updated": "Last updated: April 26, 2025",
     "privacySections": {
       "1": {
-        "title": "1. Introduction",
-        "p": "PRISM IT Studio (\"we\", \"our\", or \"us\") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services."
+        "title": "1. Scope",
+        "p": "PRISM IT Studio is dedicated to maintaining the highest standards of data integrity. This policy outlines our protocols for information processing."
       },
       "2": {
-        "title": "2. Information We Collect",
-        "p": "We may collect the following types of information:",
+        "title": "2. Data Acquisition",
+        "p": "We may process the following categories of data:",
         "list": [
-          "Personal Data: Name, email address, phone number, and company name provided through our contact form.",
-          "Usage Data: Pages visited, time spent on pages, browser type, and device information via analytics.",
-          "Communication Data: Messages and project briefs you send us."
+          "Identification Data: Name, business email, and phone coordinates.",
+          "Telemetry Data: Anonymous usage patterns and technical device diagnostics.",
+          "Engagement Data: Technical briefs and partnership communications."
         ]
       },
       "3": {
-        "title": "3. How We Use Your Information",
-        "p": "We use the information we collect to:",
+        "title": "3. Data Utilization",
+        "p": "We leverage data to:",
         "list": [
-          "Respond to your project inquiries and proposals",
-          "Deliver the services you request",
-          "Improve our website and service offerings",
-          "Send project updates and relevant communications",
-          "Comply with legal obligations"
+          "Execute partnership roadmaps and inquiries",
+          "Deliver high-performance services",
+          "Optimize our internal engineering frameworks",
+          "Maintain clear partnership communication",
+          "Ensure regulatory compliance"
         ]
       },
       "4": {
-        "title": "4. Data Sharing",
-        "p": "We do not sell, trade, or rent your personal information to third parties. We may share your data with trusted service providers solely to operate our business."
+        "title": "4. Data Sovereignty",
+        "p": "We never sell or trade your information. Data is only shared with trusted infrastructure providers necessary for our core operations."
       },
       "5": {
-        "title": "5. Cookies",
-        "p": "Our website uses minimal cookies necessary for site functionality and anonymous analytics. We do not use advertising or tracking cookies. You may disable cookies in your browser settings."
+        "title": "5. Cookie Protocols",
+        "p": "We use minimal functional cookies for performance telemetry. We do not engage in behavioral tracking or ad-retargeting."
       },
       "6": {
-        "title": "6. Data Security",
-        "p": "We implement industry-standard security measures including HTTPS encryption, secure form submission, and limited data retention. However, no method of transmission over the Internet is 100% secure."
+        "title": "6. Infrastructure Security",
+        "p": "We employ enterprise-grade security protocols including absolute HTTPS encryption and secure input validation."
       },
       "7": {
-        "title": "7. Your Rights",
-        "p": "You have the right to:",
+        "title": "7. Partner Rights",
+        "p": "You maintain the right to:",
         "list": [
-          "Request access to your personal data",
-          "Request correction or deletion of your data",
-          "Withdraw consent for communications at any time"
+          "Request full data audits",
+          "Request immediate data erasure",
+          "Revoke communication permissions"
         ]
       },
       "8": {
-        "title": "8. Contact Us",
-        "p": "If you have questions about this Privacy Policy, please contact us:"
+        "title": "8. Contact",
+        "p": "For compliance inquiries, please contact our legal desk:"
       }
     },
     "termsSections": {
       "1": {
-        "title": "1. Agreement to Terms",
-        "p": "By accessing or using the services provided by PRISM IT Studio, you agree to be bound by these Terms of Service. If you disagree with any part, you may not use our services."
+        "title": "1. Agreement",
+        "p": "Engaging with PRISM IT Studio implies agreement to these engineering-standard terms."
       },
       "2": {
         "title": "2. Services",
-        "p": "PRISM IT Studio provides software development services including web development, Telegram bots, business automation, and SaaS products. Project scope is defined in a separate Statement of Work."
+        "p": "We provide specialized product engineering across web, Telegram, and enterprise automation sectors."
       },
       "3": {
-        "title": "3. Payments & Refunds",
+        "title": "3. Economics",
         "list": [
-          "Payment terms are specified in each agreement.",
-          "Typically, projects require a 50% upfront deposit.",
-          "Refunds are available only for work not yet started.",
-          "Final payment is due upon project delivery."
+          "Payment terms are project-specific.",
+          "Standard partnerships require a 50% initiation fee.",
+          "IP transfer occurs upon capital finalization.",
+          "Milestones govern larger enterprise roadmaps."
         ]
       },
       "4": {
-        "title": "4. Intellectual Property",
-        "p": "Upon receipt of full payment, the client owns all custom code created specifically for their project. We retain ownership of general-purpose frameworks used in development."
+        "title": "4. IP Ownership",
+        "p": "Upon final capital allocation, all custom source code belongs to the partner. We retain rights to our proprietary base frameworks."
       },
       "5": {
-        "title": "5. Client Responsibilities",
-        "p": "The client agrees to:",
+        "title": "5. Partner Obligations",
+        "p": "Successful delivery requires:",
         "list": [
-          "Provide accurate and complete project requirements",
-          "Respond to communications within a reasonable timeframe",
-          "Provide necessary access to systems or assets",
-          "Review and provide feedback on deliverables"
+          "Precise and timely technical feedback",
+          "Operational access to necessary systems",
+          "Accurate requirements documentation"
         ]
       },
       "6": {
-        "title": "6. Limitation of Liability",
-        "p": "Our total liability for any claim shall not exceed the total amount paid by the client for the specific project. We are not liable for indirect or consequential damages."
+        "title": "6. Liability Boundaries",
+        "p": "Total liability is capped at the capital allocated for the specific project milestone."
       },
       "7": {
-        "title": "7. Confidentiality",
-        "p": "Both parties agree to keep confidential any proprietary information shared during the course of the project."
+        "title": "7. Non-Disclosure",
+        "p": "Both parties are bound by strict non-disclosure protocols regarding proprietary architecture and logic."
       },
       "8": {
-        "title": "8. Governing Law",
-        "p": "These Terms are governed by the laws of the Republic of Uzbekistan. Disputes shall be resolved through good-faith negotiation."
+        "title": "8. Jurisdiction",
+        "p": "Governed by the legal framework of the Republic of Uzbekistan. Disputes resolved through expert arbitration."
       },
       "9": {
-        "title": "9. Contact",
-        "p": "For questions about these Terms, please contact us:"
+        "title": "9. Inquiry",
+        "p": "For term clarification, contact our studio desk:"
       }
     }
   },
   "WorkPage": {
     "hero": {
       "badge": "Case Studies",
-      "titleMain": "Proof of",
-      "titleHighlight": "execution.",
-      "subtext": "A showcase of engineering challenges solved and digital products scaled."
+      "titleMain": "Evidence of",
+      "titleHighlight": "Execution.",
+      "subtext": "A technical showcase of architectural challenges solved and digital products scaled."
     }
   },
   "ProcessPage": {
     "hero": {
-      "badge": "Our Methodology",
-      "titleMain": "Built with",
-      "titleHighlight": "precision.",
-      "subtext": "Protocol-driven engineering that replaces agency chaos with predictable excellence."
+      "badge": "Methodology",
+      "titleMain": "Precision by",
+      "titleHighlight": "Default.",
+      "subtext": "Protocol-driven engineering that eliminates operational noise and ensures predictable excellence."
     }
   },
   "ExpertisePage": {
     "hero": {
-      "badge": "What We Build",
-      "titleMain": "Real products for",
-      "titleHighlight": "real businesses.",
-      "subtext": "From websites and Telegram solutions to custom business software and SaaS products — we build exactly what your business needs."
+      "badge": "Expertise",
+      "titleMain": "Engineering for",
+      "titleHighlight": "Global Scale.",
+      "subtext": "Architecting high-availability infrastructure across web, Telegram, and enterprise automation."
     },
     "deepDive": {
-      "badge": "Deep Dive",
-      "title": "Our Core Technological Pillars & Capabilities"
+      "badge": "Technical Audit",
+      "title": "Our Core Engineering Pillars & Technological Capabilities"
     }
   },
   "CaseStudies": {
     "back": "Back to Case Studies",
     "challenge": "The Challenge",
-    "solution": "Our Solution",
-    "resultsTitle": "Key Results",
-    "techStack": "Tech Stack",
-    "clientLabel": "Client",
-    "timelineLabel": "Timeline",
-    "ecommerce": {
-      "title": "E-Commerce Transformation",
-      "client": "Retail Brand X",
-      "timeline": "3 Months",
-      "role": "Full-Stack Development",
-      "challenge": "The client was struggling with an outdated WooCommerce platform that crashed during high traffic sales events and had a confusing checkout flow resulting in high cart abandonment.",
-      "solution": "We built a custom headless e-commerce solution using Next.js for lightning-fast frontend performance and a robust Node.js backend. We integrated local payment gateways (Payme, Click) and optimized the mobile checkout flow for a frictionless experience.",
-      "results": {
-        "0": "300% increase in mobile conversion rate",
-        "1": "0 downtime during Black Friday sales",
-        "2": "Sub-second page load times across the entire catalog"
-      }
-    },
-    "telegram": {
-      "title": "Automated Telegram Mini App",
-      "client": "Service Provider Y",
-      "timeline": "6 Weeks",
-      "role": "Telegram Solutions",
-      "challenge": "The business relied on human operators to manually take bookings and answer FAQs on Telegram, leading to slow response times and lost revenue during off-hours.",
-      "solution": "We developed a comprehensive Telegram Mini App that allows users to browse services, select time slots, and pay directly within Telegram. A companion admin dashboard was built for the staff to manage the schedule in real-time.",
-      "results": {
-        "0": "847 active users in the first week",
-        "1": "Automated 95% of customer inquiries",
-        "2": "24/7 booking capability unlocked"
-      }
-    },
-    "crm": {
-      "title": "Custom Business CRM",
-      "client": "Enterprise Z",
-      "timeline": "4 Months",
-      "role": "Business Automation",
-      "challenge": "The company was managing its sales pipeline and inventory across 15 different messy spreadsheets, causing data silos, lost leads, and operational bottlenecks.",
-      "solution": "We engineered a centralized CRM and inventory management dashboard. It features role-based access, real-time analytics, automated lead assignment, and a custom API to sync with their warehouse hardware.",
-      "results": {
-        "0": "Saved 20+ hours per week in manual data entry",
-        "1": "Increased lead conversion by 40%",
-        "2": "Achieved 100% inventory accuracy"
-      }
-    }
+    "solution": "Architectural Solution",
+    "resultsTitle": "Key Metrics",
+    "techStack": "Technology Stack",
+    "clientLabel": "Partner"
   }
 }

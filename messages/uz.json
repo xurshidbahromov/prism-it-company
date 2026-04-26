@@ -4,10 +4,10 @@
   },
   "Hero": {
     "pill": "Biznesingiz uchun professional raqamli mahsulotlar muhandisligi.",
-    "headingMain": "Biz Yaratamiz",
-    "headingHighlight": "Dasturiy",
-    "headingSuffix": "Biznesingizni O'stiradiganini.",
-    "subtext": "Landing sahifalardan tortib Telegram botlar va to'liq SaaS mahsulotlargacha — biznesingizga kerak bo'lgan hamma narsani tez va sifatli qilamiz.",
+    "headingMain": "Biznesingizni O'stiruvchi",
+    "headingHighlight": "Mukammal Tizimlar",
+    "headingSuffix": "Yaratamiz.",
+    "subtext": "Landing sahifalardan tortib Telegram ekotizimlari va murakkab SaaS mahsulotlarigacha — biznesingiz uchun eng to'g'ri raqamli yechimlarni quramiz.",
     "ctaPrimary": "Loyiha Boshlash",
     "ctaSecondary": "Ishlarimizni Ko'rish",
     "trustLabel": "Texnologiyalar Steki",
@@ -61,7 +61,7 @@
     "heading1": "Yuqori ta'sirli",
     "heading2": "muvaffaqiyat",
     "headingHighlight": "ortidagi mantiq.",
-    "description": "Aniqlik bizning asosiy drayverimiz. Biz muvaffaqiyatni arxitektura barqarorligi va biznesingizga keltirilgan haqiqiy qiymat bilan o'lchaymiz.",
+    "description": "Aniqlik bizning asosiy maqsadimiz. Biz muvaffaqiyatni arxitektura barqarorligi va biznesingizga keltirilgan haqiqiy qiymat bilan o'lchaymiz.",
     "linkPortfolio": "Portfolioni Ko'rish",
     "linkTrust": "Mijozlar Ishonchi",
     "items": {
@@ -215,9 +215,9 @@
   },
   "Process": {
     "badge": "Metodologiya",
-    "title": "Protokol",
-    "titleHighlight": "Falsafasi.",
-    "description": "Biz jarayonimizni noaniqliklarni bartaraf etish uchun loyihalashtirdik. Arxitekturaning birinchi qatoridan yakuniy ishga tushirishgacha, har bir qadam ma'lumotlar bilan boshqariladi.",
+    "title": "Muhandislik",
+    "titleHighlight": "Intizomi.",
+    "description": "Biz jarayonimizni noaniqliklarga o'rin qoldirmaydigan qilib loyihalashtirdik. Arxitekturaning birinchi qatoridan tortib, yakuniy ishga tushirishgacha — har bir qadam ma'lumotlar va qat'iy intizomga asoslanadi.",
     "steps": {
       "01": {
         "title": "Tahlil va Arxitektura",
@@ -797,46 +797,6 @@
     "solution": "Bizning Yechim",
     "resultsTitle": "Asosiy Natijalar",
     "techStack": "Texnologiyalar",
-    "clientLabel": "Mijoz",
-    "timelineLabel": "Muddat",
-    "ecommerce": {
-      "title": "E-Commerce Transformatsiyasi",
-      "client": "Retail Brand X",
-      "timeline": "3 Oy",
-      "role": "Full-Stack Dasturlash",
-      "challenge": "Mijoz eskirgan WooCommerce platformasidan foydalanardi. Tizim katta chegirma kunlarida qulab tushar va to'lov jarayonining qiyinligi sababli xaridorlar xaridni oxiriga yetkazmasdan chiqib ketardi.",
-      "solution": "Biz Next.js yordamida frontend uchun o'ta tezkor, backend uchun esa Node.js ga asoslangan maxsus e-commerce yechimini qurdik. Mahalliy to'lov tizimlarini (Payme, Click) ulab, mobil xarid jarayonini eng oson darajaga keltirdik.",
-      "results": {
-        "0": "Mobil konversiya darajasi 300% ga oshdi",
-        "1": "Qora Juma savdolarida uzilishlarsiz (0 downtime) ishladi",
-        "2": "Barcha tovarlar sahifasi bir soniyadan kam vaqtda ochiladigan bo'ldi"
-      }
-    },
-    "telegram": {
-      "title": "Avtomatlashtirilgan Telegram Mini App",
-      "client": "Service Provider Y",
-      "timeline": "6 Hafta",
-      "role": "Telegram Yechimlari",
-      "challenge": "Biznes faqatgina inson operatorlariga bog'lanib qolgan edi. Buyurtmalar qo'lda qabul qilinar va savollarga kech javob qaytarilishi sababli tungi vaqtlarda mijozlar yo'qotilardi.",
-      "solution": "Mijozlarga xizmatlarni ko'rish, vaqtni tanlash va to'g'ridan-to'g'ri Telegram ichida to'lov qilish imkonini beruvchi mukammal Telegram Mini App ishlab chiqdik. Xodimlar uchun esa real vaqtda jadvallarni boshqarish uchun admin panel yaratildi.",
-      "results": {
-        "0": "Birinchi haftadayoq 847 ta faol foydalanuvchi",
-        "1": "Mijozlar so'rovlarining 95% i avtomatlashtirildi",
-        "2": "24/7 buyurtma qabul qilish imkoniyati yaratildi"
-      }
-    },
-    "crm": {
-      "title": "Maxsus Biznes CRM",
-      "client": "Enterprise Z",
-      "timeline": "4 Oy",
-      "role": "Biznesni Avtomatlashtirish",
-      "challenge": "Kompaniya o'z savdo va ombor tizimini 15 ta turli xil Excel jadvallarida yuritardi. Bu esa ma'lumotlar yo'qolishi va operatsion sekinlikni yuzaga keltirardi.",
-      "solution": "Biz markazlashgan CRM va omborni boshqarish tizimini qurdik. Tizim xodimlar ruxsatini boshqarish, real vaqtda analitika, lidlarni avtomatik taqsimlash va ombor qurilmalari bilan ishlash uchun API ga ega.",
-      "results": {
-        "0": "Ma'lumot kiritish uchun ketadigan haftasiga 20+ soat vaqt tejaldi",
-        "1": "Lidlarni mijozga aylantirish darajasi 40% ga oshdi",
-        "2": "Ombor qoldiqlari 100% aniqlikka erishdi"
-      }
-    }
+    "clientLabel": "Mijoz"
   }
 }

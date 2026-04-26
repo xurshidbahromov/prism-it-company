@@ -143,11 +143,8 @@ export function DetailedCapabilities() {
                                         {features.map((feature: any, idx) => (
                                             <div
                                                 key={idx}
-                                                className="group relative bg-foreground/[0.02] border border-foreground/[0.06] p-8 flex flex-col justify-between rounded-3xl hover:bg-foreground/[0.04] hover:border-foreground/10 transition-all duration-500 min-h-[200px] will-change-transform"
+                                                className="group relative bg-foreground/[0.02] border border-foreground/[0.06] p-8 flex flex-col justify-end rounded-3xl hover:bg-foreground/[0.04] hover:border-foreground/10 transition-all duration-500 min-h-[200px] will-change-transform"
                                             >
-                                                <div className="mb-6">
-                                                    <div className={cn("w-1.5 h-10 rounded-full opacity-20 group-hover:opacity-60 transition-opacity duration-500", config.bgGlow.replace('/10', '/60'))}></div>
-                                                </div>
                                                 <span className="text-lg md:text-xl text-foreground/80 font-medium tracking-tight leading-snug group-hover:text-foreground transition-colors duration-500">
                                                     {feature}
                                                 </span>
