@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { useTranslations, useLocale } from "next-intl";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 interface WorkProps {
     showTitle?: boolean;
@@ -143,14 +144,16 @@ export function Work({ showTitle = true }: WorkProps) {
 
                                         {/* Action Button */}
                                         <div className="pt-4">
-                                            <div className="group/btn flex items-center gap-6 w-fit">
-                                                <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/40 group-hover/card:text-foreground transition-colors">
-                                                    {t('explore')}
-                                                </span>
-                                                <div className="w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center bg-foreground/[0.02] group-hover/card:bg-blue-500 group-hover/card:border-blue-500 transition-all duration-500 group-hover/card:scale-110">
-                                                    <ArrowRight className="w-5 h-5 group-hover/card:text-white transition-colors" />
+                                            <Magnetic strength={0.2}>
+                                                <div className="group/btn flex items-center gap-6 w-fit cursor-pointer">
+                                                    <span className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/40 group-hover/card:text-foreground transition-colors">
+                                                        {t('explore')}
+                                                    </span>
+                                                    <div className="w-12 h-12 rounded-full border border-foreground/10 flex items-center justify-center bg-foreground/[0.02] group-hover/card:bg-blue-500 group-hover/card:border-blue-500 transition-all duration-500 group-hover/card:scale-110">
+                                                        <ArrowRight className="w-5 h-5 group-hover/card:text-white transition-colors" />
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </Magnetic>
                                         </div>
                                     </div>
 

@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Logo } from "@/components/ui/Logo";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 export function Footer() {
     const t = useTranslations('Footer');
@@ -19,8 +20,8 @@ export function Footer() {
                     <div className="col-span-12 lg:col-span-4 flex flex-col justify-between">
                         <div>
                             <Link href="/" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm mb-6">
-                                <span className="font-heading font-semibold text-2xl sm:text-3xl tracking-[0.2em] uppercase text-foreground flex items-center gap-4">
-                                    <Logo className="w-8 h-8 drop-shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
+                                <span className="font-logo font-extrabold text-2xl sm:text-3xl tracking-[0.15em] uppercase text-foreground flex items-center gap-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/60">
+                                    <Logo className="w-8 h-8 drop-shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] shrink-0" />
                                     PRISM
                                 </span>
                             </Link>
@@ -100,24 +101,32 @@ export function Footer() {
                         </h4>
                         <ul className="flex flex-col gap-4">
                             <li>
-                                <a href="https://t.me/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group">
-                                    Telegram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                                </a>
+                                <Magnetic strength={0.2}>
+                                    <a href="https://t.me/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group px-2 py-1">
+                                        Telegram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                                    </a>
+                                </Magnetic>
                             </li>
                             <li>
-                                <a href="https://instagram.com/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group">
-                                    Instagram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                                </a>
+                                <Magnetic strength={0.2}>
+                                    <a href="https://instagram.com/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group px-2 py-1">
+                                        Instagram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                                    </a>
+                                </Magnetic>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/company/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group">
-                                    LinkedIn <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                                </a>
+                                <Magnetic strength={0.2}>
+                                    <a href="https://linkedin.com/company/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group px-2 py-1">
+                                        LinkedIn <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                                    </a>
+                                </Magnetic>
                             </li>
                             <li>
-                                <a href="https://github.com/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group">
-                                    GitHub <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                                </a>
+                                <Magnetic strength={0.2}>
+                                    <a href="https://github.com/prismit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-all group px-2 py-1">
+                                        GitHub <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                                    </a>
+                                </Magnetic>
                             </li>
                         </ul>
                     </div>
@@ -140,7 +149,7 @@ export function Footer() {
                         {t('copyright')}
                     </p>
                     <p className="text-xs font-medium tracking-wide">
-                        DESIGNED WITH <span className="text-foreground/80">&hearts;</span> BY PRISM
+                        DESIGNED WITH <span className="text-foreground/80">&hearts;</span> BY <span className="font-logo font-extrabold tracking-[0.1em] text-[11px] text-foreground/60">PRISM</span>
                     </p>
                 </div>
             </Container>
@@ -153,7 +162,7 @@ export function Footer() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="w-full overflow-hidden pointer-events-none select-none"
             >
-                <h2 className="w-full text-center whitespace-nowrap font-heading font-black tracking-tighter text-foreground/[0.06] leading-none uppercase"
+                <h2 className="w-full text-center whitespace-nowrap font-logo font-extrabold tracking-[-0.05em] text-foreground/[0.04] leading-none uppercase"
                     style={{ fontSize: "20vw" }}
                 >
                     PRISM

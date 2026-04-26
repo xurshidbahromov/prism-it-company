@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Outfit, Dancing_Script } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit, Dancing_Script, Syne } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { MobileNav } from "@/components/layout/MobileNav";
@@ -28,6 +28,11 @@ const outfit = Outfit({
 
 const dancingScript = Dancing_Script({
   variable: "--font-dancing-script",
+  subsets: ["latin"],
+});
+
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
 });
 
@@ -78,7 +83,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${plusJakartaSans.variable} ${outfit.variable} ${dancingScript.variable} antialiased bg-background text-foreground min-h-screen flex flex-col font-body transition-colors duration-500 leading-relaxed`}
+        className={`${plusJakartaSans.variable} ${outfit.variable} ${dancingScript.variable} ${syne.variable} antialiased bg-background text-foreground min-h-screen flex flex-col font-body transition-colors duration-500 leading-relaxed`}
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
@@ -91,7 +96,7 @@ export default async function RootLayout({
           <Preloader />
           <NoiseOverlay />
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow relative z-10">
             <PageTransition>
               {children}
             </PageTransition>

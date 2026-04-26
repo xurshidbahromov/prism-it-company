@@ -3,7 +3,7 @@
     "title": "Zamonaviy raqamli mahsulotlar muhandisligi."
   },
   "Hero": {
-    "pill": "Web · Telegram · Avtomatizatsiya · SaaS — Toshkentdan.",
+    "pill": "Biznesingiz uchun professional raqamli mahsulotlar muhandisligi.",
     "headingMain": "Biz Yaratamiz",
     "headingHighlight": "Dasturiy",
     "headingSuffix": "Biznesingizni O'stiradiganini.",
@@ -13,7 +13,7 @@
     "trustLabel": "Texnologiyalar Steki",
     "badges": {
       "web": {
-        "name": "Web Dasturlash",
+        "name": "Web Yechimlari",
         "subtitle": "Landing · E-Commerce · Ilovalar"
       },
       "telegram": {
@@ -39,7 +39,7 @@
     "learnMore": "Batafsil",
     "items": {
       "web-dev": {
-        "title": "Web Dasturlash",
+        "title": "Web Yechimlari",
         "description": "Konversiya keltiruvchi landing pagelardan to to'liq web ilovalargacha — chiroyli, tez va biznesingiz bilan o'sishga tayyor."
       },
       "telegram": {
@@ -144,7 +144,7 @@
     "megaMenu": {
       "expertise": {
         "web-dev": {
-          "label": "Web Dasturlash",
+          "label": "Web Yechimlari",
           "desc": "Saytlar, web ilovalar va onlayn do'konlar"
         },
         "telegram": {
@@ -245,7 +245,7 @@
     "projects": {
       "ecommerce": {
         "title": "E-Commerce Web Ilova",
-        "category": "Web Dasturlash",
+        "category": "Web Yechimlari",
         "description": "Real vaqtli inventar, admin panel va to'lov integratsiyasi bilan to'liq online do'kon.",
         "metrics": [
           "3x ko'p buyurtma",
@@ -265,7 +265,7 @@
       },
       "crm": {
         "title": "Biznes CRM Tizimi",
-        "category": "Biznes Avtomatizatsiyasi",
+        "category": "Avtomatizatsiya Yechimlari",
         "description": "Excel varaqlarini real vaqtli analitika, mijozlar boshqaruvi va avtomatik jarayonlar bilan almashtiradigan CRM.",
         "metrics": [
           "Haftada 20 soat tejaldi",
@@ -293,13 +293,13 @@
     },
     "services": {
       "pricing": "Narxlar",
-      "webDev": "Web Dasturlash",
+      "webDev": "Web Yechimlari",
       "telegram": "Telegram Yechimlari",
       "automation": "Biznes Avtomatizatsiyasi",
       "saas": "Mahsulot va SaaS"
     },
     "company": {
-      "about": "Biz Haqimizda",
+      "about": "Haqimizda",
       "work": "Portfolio",
       "process": "Jarayonimiz",
       "contact": "Aloqa"
@@ -315,7 +315,7 @@
       "home": "Asosiy",
       "work": "Portfolio",
       "expertise": "Xizmatlar",
-      "about": "Biz haqimizda",
+      "about": "Haqimizda",
       "pricing": "Narxlar",
       "contact": "Aloqa"
     }
@@ -579,7 +579,7 @@
       "projectTypesLabel": "Loyiha turi",
       "projectTypes": {
         "web": {
-          "label": "Web Dasturlash",
+          "label": "Web Yechimlari",
           "desc": "Korporativ sayt, landing page yoki web ilova."
         },
         "telegram": {

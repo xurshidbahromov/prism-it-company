@@ -19,8 +19,7 @@ const MOBILE_LINKS = [
 export function MobileNav() {
     const t = useTranslations("MobileNav");
     const pathname = usePathname();
-    const [isVisible, setIsVisible] = useState(true);
-    const lastScrollY = useRef(0);
+    const [scrolled, setScrolled] = useState(false);
     const ticking = useRef(false);
 
     const isActive = (href: string) => {
@@ -28,17 +27,16 @@ export function MobileNav() {
         return pathname.startsWith(href);
     };
 
-    // Hide on scroll-down, show on scroll-up — rAF-throttled
+    // Detect scroll to shrink the nav
     useEffect(() => {
         const handleScroll = () => {
-            if (ticking.current) return;
-            ticking.current = true;
-            window.requestAnimationFrame(() => {
-                const currentY = window.scrollY;
-                setIsVisible(currentY <= lastScrollY.current || currentY <= 80);
-                lastScrollY.current = currentY;
-                ticking.current = false;
-            });
+            if (!ticking.current) {
+                window.requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 20);
+                    ticking.current = false;
+                });
+                ticking.current = true;
+            }
         };
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
@@ -46,22 +44,24 @@ export function MobileNav() {
 
     return (
         <motion.div
-            initial={{ y: 120, opacity: 0 }}
-            animate={{ y: isVisible ? 0 : 120, opacity: isVisible ? 1 : 0 }}
-            transition={{ type: "spring", stiffness: 380, damping: 32, mass: 0.9 }}
-            className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 lg:hidden w-[calc(100%-20px)] max-w-[520px]"
-            style={{ pointerEvents: isVisible ? "auto" : "none" }}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 lg:hidden w-[calc(100%-40px)] max-w-[480px]"
             aria-label="Mobile Navigation"
         >
             {/* Glass island shell */}
-            <div className="relative flex items-center rounded-[26px] p-1.5">
+            <div className={cn(
+                "relative flex items-center rounded-[28px] transition-all duration-500 ease-in-out",
+                scrolled ? "p-1 max-w-[90%] mx-auto" : "p-1.5"
+            )}>
                 {/* Background glass */}
                 <div
-                    className="absolute inset-0 aero-island rounded-[26px]"
-                    style={{ backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }}
+                    className="absolute inset-0 aero-island rounded-[26px] bg-background/40 dark:bg-white/5"
+                    style={{ backdropFilter: "blur(20px) saturate(180%)", WebkitBackdropFilter: "blur(20px) saturate(180%)" }}
                 />
                 {/* Glass reflection */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-40 rounded-[26px] pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-20 rounded-[26px] pointer-events-none" />
 
                 {/* Nav items */}
                 <nav className="relative flex items-center w-full gap-0.5 z-10" aria-label="Mobile Navigation">
@@ -73,7 +73,8 @@ export function MobileNav() {
                                 key={link.href}
                                 href={link.href}
                                 className={cn(
-                                    "relative flex-1 flex flex-col items-center justify-center gap-[3px] py-2.5 rounded-[20px] select-none group",
+                                    "relative flex-1 flex flex-col items-center justify-center gap-[2px] rounded-[22px] select-none group transition-all duration-500",
+                                    scrolled ? "py-1.5" : "py-2.5",
                                     active
                                         ? "text-[var(--aero-pill-text)] font-semibold"
                                         : "text-foreground/50 font-medium transition-colors duration-200 hover:text-foreground"

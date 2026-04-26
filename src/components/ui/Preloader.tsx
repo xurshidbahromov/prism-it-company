@@ -129,7 +129,7 @@ export function Preloader() {
                   initial={{ y: "100%" }}
                   animate={{ y: "0%" }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 1.5 }}
-                  className="text-2xl md:text-4xl font-heading font-semibold tracking-[0.3em] uppercase text-foreground leading-none"
+                  className="text-2xl md:text-4xl font-logo font-extrabold tracking-[0.25em] uppercase text-foreground leading-none bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/60"
                 >
                   PRISM
                 </motion.h1>

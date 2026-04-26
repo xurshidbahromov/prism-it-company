@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SettingsDropdown } from "./SettingsDropdown";
 import { useTranslations } from "next-intl";
 import { Logo } from "@/components/ui/Logo";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 const NAV_LINK_KEYS = [
     { key: "home", href: "/" },
@@ -126,8 +127,12 @@ export function Navbar() {
                 >
                     <div className="absolute inset-0 aero-island rounded-[24px] z-[-1]" style={{ backdropFilter: "blur(16px) saturate(180%)", WebkitBackdropFilter: "blur(16px) saturate(180%)" }} />
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-50 rounded-[24px]" />
-                    <Logo className="relative z-10 drop-shadow-[0_0_12px_var(--aero-shadow)]" />
-                    <span className="text-foreground relative z-10 font-heading font-semibold tracking-[0.2em] uppercase text-sm sm:text-base">PRISM</span>
+                    <Magnetic strength={0.3}>
+                        <div className="flex items-center gap-3 relative z-10">
+                            <Logo className="w-8 h-8 drop-shadow-[0_0_12px_var(--aero-shadow)]" />
+                            <span className="font-logo font-extrabold tracking-[0.15em] uppercase text-sm sm:text-lg bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/60">PRISM</span>
+                        </div>
+                    </Magnetic>
                 </Link>
 
                 {/* Desktop Nav Island with Mega Menu */}
@@ -257,12 +262,14 @@ export function Navbar() {
                     <Link href="/contact" tabIndex={-1} className="hidden lg:flex rounded-[24px] p-1 group relative">
                         <div className="absolute inset-0 aero-island rounded-[24px] z-[-1]" style={{ backdropFilter: "blur(64px) saturate(200%)", WebkitBackdropFilter: "blur(64px) saturate(200%)" }} />
                         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-50 rounded-[24px]" />
-                        <Button
-                            variant="primary"
-                            className="relative z-10 font-semibold px-6 py-4 rounded-[20px] bg-blue-500 hover:bg-white hover:text-blue-600 text-white border-transparent shadow-[0_4px_12px_rgba(59,130,246,0.3)] transition-all duration-500 group-hover:px-8"
-                        >
-                            {t('cta')}
-                        </Button>
+                        <Magnetic strength={0.2}>
+                            <Button
+                                variant="primary"
+                                className="relative z-10 font-semibold px-6 py-4 rounded-[20px] bg-blue-500 hover:bg-white hover:text-blue-600 text-white border-transparent shadow-[0_4px_12px_rgba(59,130,246,0.3)] transition-all duration-500 group-hover:px-8"
+                            >
+                                {t('cta')}
+                            </Button>
+                        </Magnetic>
                     </Link>
                 </div>
             </div>

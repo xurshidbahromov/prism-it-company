@@ -21,6 +21,7 @@ const config: Config = {
                 heading: ["var(--font-space-grotesk)", "sans-serif"],
                 body: ["var(--font-inter)", "sans-serif"],
                 script: ["var(--font-dancing-script)", "cursive"],
+                logo: ["var(--font-syne)", "sans-serif"],
             },
             borderRadius: {
                 DEFAULT: "14px",

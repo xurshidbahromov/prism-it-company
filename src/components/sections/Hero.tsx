@@ -11,6 +11,7 @@ import {
     SiNodedotjs, SiPostgresql, SiTelegram, SiPrisma
 } from "react-icons/si";
 import { useTranslations } from 'next-intl';
+import { Magnetic } from "@/components/ui/Magnetic";
 
 // ─── Floating Icon Orbs (iOS Glassy Style) ───────────────────────────────────
 const orbs = [
@@ -141,11 +142,19 @@ export function Hero() {
                 {/* Top Pill */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-center gap-2 bg-foreground px-5 py-2.5 rounded-full mb-10 shadow-[0_0_30px_var(--aero-shadow)] hover-trigger"
+                    animate={{ 
+                        opacity: 1, 
+                        y: [0, -4, 0],
+                    }}
+                    whileHover={{ scale: 1.02, y: -6 }}
+                    transition={{ 
+                        opacity: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+                        y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                        scale: { duration: 0.2 }
+                    }}
+                    className="flex items-center gap-2 bg-foreground px-5 py-2.5 rounded-full mb-10 shadow-[0_0_30px_var(--aero-shadow)] cursor-default"
                 >
-                    <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+                    <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)] animate-pulse" />
                     <span className="text-background text-sm font-semibold tracking-tight">
                         {t('pill')}
                     </span>
@@ -157,7 +166,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
-                    className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[68px] xl:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-4xl xl:max-w-5xl"
+                    className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[68px] xl:text-[84px] font-heading font-medium text-foreground mb-6 tracking-tight leading-[1.1] max-w-4xl xl:max-w-5xl text-balance"
                 >
                     {t('headingMain')}{" "}
                     <span className="font-script italic font-light text-foreground/[0.95] text-[1.1em] px-2">
@@ -183,24 +192,28 @@ export function Hero() {
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
                     className="flex flex-col sm:flex-row items-center gap-3 mb-16 w-full sm:w-auto"
                 >
-                    <Link href="/contact" className="w-full sm:w-auto hover-trigger">
-                        <Button
-                            variant="aero"
-                            size="pill"
-                            className="w-full sm:w-auto flex items-center justify-center gap-2 group"
-                        >
-                            {t('ctaPrimary')}
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
+                    <Link href="/contact" className="w-full sm:w-auto">
+                        <Magnetic strength={0.2}>
+                            <Button
+                                variant="aero"
+                                size="pill"
+                                className="w-full sm:w-auto flex items-center justify-center gap-2 group"
+                            >
+                                {t('ctaPrimary')}
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </Magnetic>
                     </Link>
-                    <Link href="/work" className="w-full sm:w-auto hover-trigger">
-                        <Button
-                            variant="ghost"
-                            size="pill"
-                            className="w-full sm:w-auto font-medium"
-                        >
-                            {t('ctaSecondary')}
-                        </Button>
+                    <Link href="/work" className="w-full sm:w-auto">
+                        <Magnetic strength={0.2}>
+                            <Button
+                                variant="ghost"
+                                size="pill"
+                                className="w-full sm:w-auto font-medium"
+                            >
+                                {t('ctaSecondary')}
+                            </Button>
+                        </Magnetic>
                     </Link>
                 </motion.div>
 
