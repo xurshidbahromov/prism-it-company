@@ -97,9 +97,7 @@ export default async function RootLayout({
           <NoiseOverlay />
           <Navbar />
           <main className="flex-grow relative z-10">
-            <PageTransition>
-              {children}
-            </PageTransition>
+            {children}
           </main>
           <MobileNav />
           <Footer />

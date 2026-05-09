@@ -1,0 +1,56 @@
+<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="cut-top">
+      <rect width="100" height="100" fill="white" />
+      <line x1="-10" y1="110" x2="110" y2="-10" stroke="black" strokeWidth="12" />
+      <polygon points="-10,110 110,-10 110,110" fill="black" />
+    </mask>
+    
+    <mask id="cut-bottom">
+      <rect width="100" height="100" fill="white" />
+      <line x1="-10" y1="110" x2="110" y2="-10" stroke="black" strokeWidth="12" />
+      <polygon points="-10,110 110,-10 -10,-10" fill="black" />
+    </mask>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;display=swap');
+      .logo-text { 
+        font-family: 'Syne', sans-serif; 
+        font-weight: 800; 
+        font-size: 42px; 
+        text-transform: uppercase; 
+        letter-spacing: 0.15em; 
+        fill: url(#text-grad);
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-text { fill: white; }
+      }
+    </style>
+  </defs>
+
+  <!-- Icon Section -->
+  <g transform="translate(0, 0)">
+    <rect 
+      x="12" y="12" width="76" height="76" rx="22" 
+      fill="#000" fill-opacity="0.05"
+      stroke="#000" stroke-opacity="0.4" stroke-width="4"
+      mask="url(#cut-top)" 
+    />
+    <rect 
+      x="12" y="12" width="76" height="76" rx="22" 
+      fill="#3B82F6" fill-opacity="0.1"
+      stroke="#3B82F6" stroke-opacity="0.6" stroke-width="4"
+      mask="url(#cut-bottom)" 
+    />
+    <rect x="14" y="14" width="72" height="72" rx="20" fill="#000" fill-opacity="0.1" mask="url(#cut-top)" />
+    <rect x="14" y="14" width="72" height="72" rx="20" fill="#3B82F6" fill-opacity="0.2" mask="url(#cut-bottom)" />
+  </g>
+
+  <!-- Text Section -->
+  <text x="115" y="65" class="logo-text">PRISM</text>
+</svg>
